@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>partoandisheh</name>
+	<creationDate>Ordibehesht 1400</creationDate>
+	<author>Khashayar Pouradabi</author>
+	<authorEmail>pouradaby@gmail.com</authorEmail>
+	<authorUrl>www.netparsi.com</authorUrl>
+	<copyright>Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<files>
+		<folder>css</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>font</folder>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="presetcolor" type="color" label="TPL_PA_PRESETCOLOR" />
+				<field name="headercontact" type="list" label="TPL_PA_CONTACTITEMS" class="btn-group" multiple="true">
+					<option value="phone">TPL_PA_PHONE</option>
+					<option value="cellphone">TPL_PA_CELLPHONE</option>
+					<option value="fax">TPL_PA_FAX</option>
+					<option value="address">TPL_PA_ADDRESS</option>
+					<option value="email">TPL_PA_EMAIL</option>
+				</field>
+				<field name="headercta" type="radio" label="TPL_PA_HEADERCTA" class="btn-group" default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="contact" label="TPL_PA_CONTACT">
+				<field name="email" type="text" label="TPL_PA_EMAIL" />
+				<field name="cellphone" type="text" label="TPL_PA_CELLPHONE" />
+				<field name="phone" type="textarea" label="TPL_PA_PHONE" />
+				<field name="fax" type="textarea" label="TPL_PA_FAX" />
+				<field name="addressfa" type="textarea" label="TPL_PA_ADDRESS_FA" />
+				<field name="addressen" type="textarea" label="TPL_PA_ADDRESS_EN" />
+				<field name="lat" type="text" label="TPL_PA_LAT" />
+				<field name="lng" type="text" label="TPL_PA_LNG" />
+				<field name="socials" type="repeatable" icon="list" label="TPL_PA_SOCIALS">
+					<fieldset hidden="true" name="slides" repeat="true">
+						<field name="icon" class="width-100" type="text" label="TPL_PA_ICON" />
+						<field name="link" type="text" label="TPL_PA_URL" />
+						<field name="title" type="text" label="TPL_PA_TITLE" />
+					</fieldset>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
