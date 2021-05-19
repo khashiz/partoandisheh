@@ -18,7 +18,7 @@ $layout   = $app->input->getCmd('layout', '');
 $task     = $app->input->getCmd('task', '');
 $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->get('sitename');
-$netparsi = JTEXT::_('NETPARSI');
+$netparsi = '<a href="https://netparsi.com" target="_blank">'.JTEXT::_('NETPARSI').'</a>';
 $lang = JFactory::getLanguage();
 $languages = JLanguageHelper::getLanguages('lang_code');
 $languageCode = $languages[ $lang->getTag() ]->sef;
@@ -193,7 +193,40 @@ $cells = explode("\n", $params->get('cellphone'));
     </div>
 </main>
 <jdoc:include type="modules" name="pagebottom" style="xhtml" />
-<footer></footer>
+<footer class="uk-background-primary uk-position-relative">
+    <div class="uk-padding-large uk-padding-remove-horizontal uk-position-relative">
+        <div>
+            <div class="uk-container">
+                <div class="uk-text-center uk-text-zero">
+                    <div class="uk-margin-bottom logo">
+                        <a href="<?php echo JURI::base(); ?>" title="<?php echo $sitename; ?>" class="uk-text-primary uk-display-inline-block uk-margin-small-bottom"><img src="<?php echo JURI::base().'images/sprite.svg#logo'; ?>" width="60" height="60" data-uk-svg></a>
+                        <p class="uk-text-small font uk-text-bold uk-text-white uk-margin-remove"><?php echo $sitename; ?></p>
+                    </div>
+                    <jdoc:include type="modules" name="footer" style="xhtml" />
+                    <?php if (!empty($params->get('socials'))) { ?>
+                        <div class="uk-text-zero uk-margin-medium-bottom socials">
+                            <div>
+                                <ul class="uk-grid-small uk-flex-center" data-uk-grid>
+                                    <?php for($j=0;$j<$total;$j++) { ?>
+                                        <?php if ($socialsicons['link'][$j] != '') { ?>
+                                            <li>
+                                                <a href="<?php echo $socialsicons['link'][$j]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-text-white uk-padding-remove" target="_blank" title="<?php echo $socialsicons['title'][$j]; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$j] ?>" width="18" height="18" data-uk-svg></a>
+                                            </li>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <div class="copyright">
+                        <p class="uk-text-tiny font uk-margin-remove"><?php echo JText::sprintf('COPYRIGHT', $sitename); ?></p>
+                        <p class="uk-text-tiny font uk-margin-remove"><?php echo JText::sprintf('DESIGNEDBY', $netparsi); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <div id="hamMenu" data-uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar uk-card uk-card-default uk-padding-remove bgWhite">
         <div class="uk-flex uk-flex-column uk-height-1-1">
@@ -208,7 +241,8 @@ $cells = explode("\n", $params->get('cellphone'));
                 <div class="uk-padding-small"><jdoc:include type="modules" name="offcanvas" style="xhtml" /></div>
             </div>
             <div class="uk-text-center uk-padding">
-                <a href="<?php echo JURI::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-inline-block logo" target="_self"><img src="<?php echo JURI::base().'images/sprite.svg#logo'.$languageCode; ?>" width="150" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                <a href="<?php echo JURI::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-block uk- logo" target="_self"><img src="<?php echo JURI::base().'images/sprite.svg#logo'.$languageCode; ?>" width="150" alt="<?php echo $sitename; ?>" data-uk-svg></a>
+                <p class="uk-text-small font uk-text-bold uk-text-white uk-margin-remove"><?php echo $sitename; ?></p>
             </div>
         </div>
     </div>

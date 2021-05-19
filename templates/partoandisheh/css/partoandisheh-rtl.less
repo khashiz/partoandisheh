@@ -132,7 +132,74 @@ header{
     }
   }
 }
-footer{}
+footer{
+  &:before{
+    content: '';
+    width: 836px;
+    height: 306px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url("../img/bl-nodes.png") no-repeat bottom left;
+    opacity: .2;
+    @media(max-width: 959px){
+      opacity: .1;
+    }
+  }
+  div{
+    &.logo{
+      svg{
+        circle{
+          fill: @primary;
+        }
+        path{
+          stroke: #fff;
+        }
+      }
+    }
+    &.menu{
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        li{
+          display: inline-block;
+          a{
+            font-size: 14px;
+            display: inline-block;
+            color: #eee;
+            padding: 0 15px;
+            font-weight: 300;
+            text-decoration: none;
+            .font;
+            &:hover{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    &.socials{
+      a{
+        color: #eee;
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+    &.copyright{
+      color: #ddd;
+      a{
+        text-decoration: none;
+        color: #ddd;
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
 //UIKit Overrides
 .uk-background-primary{
   background-color: @primary;
