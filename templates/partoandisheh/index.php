@@ -114,7 +114,7 @@ $cells = explode("\n", $params->get('cellphone'));
             <div class="uk-grid-small" data-uk-grid>
                 <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@m">
                     <div>
-                        <a href="#hamMenu" data-uk-toggle class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-lineheight-zero"><img src="<?php echo JURI::base().'images/sprite.svg#bars'; ?>" width="18" height="18" data-uk-svg></a>
+                        <a href="#hamMenu" data-uk-toggle class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero"><img src="<?php echo JURI::base().'images/sprite.svg#bars'; ?>" width="18" height="18" data-uk-svg></a>
                     </div>
                 </div>
                 <div class="uk-width-auto">
@@ -131,7 +131,7 @@ $cells = explode("\n", $params->get('cellphone'));
                 <jdoc:include type="modules" name="header" style="xhtml" />
                 <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@m">
                     <div>
-                        <a href="tel:<?php echo $phones[0]; ?>" class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-lineheight-zero"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></a>
+                        <a href="tel:<?php echo $phones[0]; ?>" class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></a>
                     </div>
                 </div>
             </div>

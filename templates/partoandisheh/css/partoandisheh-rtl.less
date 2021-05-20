@@ -64,21 +64,16 @@
 }
 //Mixins
 //Utilities
-.uk-lineheight-zero{
-  line-height: 0;
-}
-.uk-text-zero{
-  font-size: 0;
-}
-.uk-text-tiny{
-  font-size: 12px;
-}
-.uk-text-white{
-  color: #fff;
-}
-.ltr{
-  direction: ltr;
-}
+.uk-line-height-zero{line-height: 0;}
+.uk-text-zero{font-size: 0;}
+.uk-text-tiny{font-size: 12px;}
+.ltr{direction: ltr;}
+.uk-text-white{color: #fff;}
+.uk-text-dark{color: #222;}
+.uk-text-primary{color: @primary !important;}
+.uk-text-secondary{color: @secondary !important;}
+.hoverPrimary{&:hover{color: @primary !important;}}
+.hoverSecondary{&:hover{color: @secondary !important;}}
 header{
   div{
     &.topBar{
@@ -132,6 +127,12 @@ header{
     }
   }
 }
+main{
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+section{}
 footer{
   &:before{
     content: '';
@@ -206,12 +207,6 @@ footer{
 }
 .uk-background-secondary{
   background-color: @secondary;
-}
-.uk-text-primary{
-  color: @primary !important;
-}
-.uk-text-secondary{
-  color: @secondary !important;
 }
 .uk-button{
   &.uk-button-primary{

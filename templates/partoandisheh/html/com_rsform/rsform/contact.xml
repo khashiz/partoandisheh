@@ -10,4 +10,26 @@
 			<field name="formId" type="forms" default="" label="COM_RSFORM_SELECT_FORM" description="COM_RSFORM_SELECT_FORM_DESC" onchange="generateFormLink();" />
 		</fieldset>
 	</fields>
+	<fields name="params">
+		<fieldset name="page-options">
+			<field type="radio" name="bg" label="TPL_PA_BACKGROUND" class="btn-group" default="primary">
+				<option value="primary">TPL_PA_PRIMARY_COLOR</option>
+				<option value="secondary">TPL_PA_SECONDARY_COLOR</option>
+				<option value="muted">TPL_PA_GRAY_COLOR</option>
+				<option value="image">TPL_PA_IMAGE</option>
+			</field>
+			<field type="radio" name="textcolor" label="TPL_PA_TEXTCOLOR" class="btn-group" default="primary" showon="bg:muted">
+				<option value="primary">TPL_PA_PRIMARY_COLOR</option>
+				<option value="secondary">TPL_PA_SECONDARY_COLOR</option>
+				<option value="dark">TPL_PA_DARK_COLOR</option>
+			</field>
+			<field type="media" name="bgimg" label="TPL_PA_BGIMAGE" showon="bg:image" />
+			<field type="text" name="subtitle" label="TPL_PA_SUBTITLE" class="input-xxlarge" />
+			<field type="radio" name="height" label="TPL_PA_HEIGHT" class="btn-group" default="uk-padding">
+				<option value="uk-padding">TPL_PA_NORMAL</option>
+				<option value="uk-padding-large">TPL_PA_LARGE</option>
+			</field>
+			<field type="spacer" name="spacer1" hr="true" />
+		</fieldset>
+	</fields>
 </metadata>
