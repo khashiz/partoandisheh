@@ -201,12 +201,46 @@ footer{
     }
   }
 }
+.blogImagePlaceholder{
+  svg{
+    circle{
+      fill: #f8f8f8;
+    }
+    path{
+      stroke: #ccc;
+    }
+  }
+}
 //UIKit Overrides
 .uk-background-primary{
   background-color: @primary;
 }
 .uk-background-secondary{
   background-color: @secondary;
+}
+.introText{
+  p{
+    &:last-child,
+    &:only-child{
+      margin-bottom: 0;
+    }
+  }
+}
+.uk-pagination{
+  li{
+    span,a{
+      .font;
+    }
+    span{
+      color: #ccc;
+    }
+    a{
+      color: #222;
+      &:hover{
+        color: @secondary;
+      }
+    }
+  }
 }
 .uk-button{
   &.uk-button-primary{
