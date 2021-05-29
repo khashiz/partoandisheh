@@ -10,6 +10,8 @@
 */
 @grayLight: #f8f8f8;
 @gray: #efefef;
+@danger: #f0506e;
+@dangerBg: #fef4f6;
 //Fonts
 @font-face {
   font-family: 'IBMPlexSans';
@@ -63,6 +65,26 @@
   font-weight: 500;
 }
 //Mixins
+.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.transition (@transition: all .3s ease-out) {
+  transition: @transition;
+  -moz-transition: @transition;
+  -webkit-transition: @transition;
+}
+.transform (@transform) {
+  transform: @transform;
+  -moz-transform: @transform;
+  -webkit-transform: @transform;
+}
+.box-shadow (@shadow) {
+  box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+}
 //Utilities
 .uk-line-height-zero{line-height: 0;}
 .uk-text-zero{font-size: 0;}
@@ -211,6 +233,40 @@ footer{
     }
   }
 }
+.grecaptcha-badge{z-index: 3;}
+.formError{.font;font-size: 12px; color: @danger;}
+.formNoError{display: none;}
+.regForm{
+  fieldset{
+    border: 0;
+    outline: none;
+  }
+  label{
+    .font;
+    strong{
+      color: @danger;
+      margin: 0 5px;
+      font-weight: 700;
+    }
+  }
+  input,select,textarea{
+      color: #222;
+      padding: 5px 8px;
+      .transition;
+      &:focus{
+        border-color: @secondary;
+        .box-shadow(0 0 0 1px @secondary);
+      }
+  }
+}
+.uk-select{
+  &:not([multiple]){
+    &:not([size]){
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVQ4T83TuRHCMBSE4c9NQE7GUQRHByQUQF0UQEIHHEUAIQVQBfNm7BkhLAIcYMW7/75LlY6v6ujXL8AOI2zwLLQ2wB4PbEOTtnDGHDcsWyBhPmGKCxY5IARHzFogw9o8wRWrJiAfYgq515VEUCR/mPMKmrZzSISM8+RGXFpjCgntW9npgL/dQUAOtXhd2ky/Dumnb/H/Fl49ax0R15VW+AAAAABJRU5ErkJggg==);
+      background-position: 13px 13px;
+    }
+  }
+}
 //UIKit Overrides
 .uk-background-primary{
   background-color: @primary;
@@ -262,5 +318,51 @@ footer{
   }
   &.uk-button-secondary{
     background-color: @secondary;
+    &:hover{
+      background-color: darken(@secondary, 5%);
+    }
+    &:focus{
+      background-color: darken(@secondary, 10%);
+    }
+  }
+  &.uk-button-instagram{
+    background-color: #e1306c;
+    border: 1px solid darken(#e1306c, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#e1306c, 5%);
+    }
+  }
+  &.uk-button-facebook{
+    background-color: #3b5998;
+    border: 1px solid darken(#3b5998, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#3b5998, 5%);
+    }
+  }
+  &.uk-button-telegram{
+    background-color: #179cde;
+    border: 1px solid darken(#179cde, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#179cde, 5%);
+    }
+  }
+  &.uk-button-whatsapp{
+    background-color: #128c7e;
+    border: 1px solid darken(#128c7e, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#128c7e, 5%);
+    }
+  }
+  &.uk-button-twitter{
+    background-color: #1da1f2;
+    border: 1px solid darken(#1da1f2, 5%);
+    color: #fff;
+    &:hover{
+      background-color: darken(#1da1f2, 5%);
+    }
   }
 }

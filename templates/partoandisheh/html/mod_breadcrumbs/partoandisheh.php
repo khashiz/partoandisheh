@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
     <div class="uk-padding-small uk-padding-remove-horizontal">
         <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="uk-flex-center uk-child-width-auto uk-grid-collapse" data-uk-grid>
             <?php if ($params->get('showHere', 1)) : ?>
-                <li class="uk-width-1-1 uk-width-auto@m uk-text-center">
+                <li class="uk-width-1-1 uk-width-auto@m uk-text-center uk-visible@m">
                     <span class="font uk-text-light uk-text-small uk-text-muted uk-margin-small-left"><?php echo JText::_('MOD_BREADCRUMBS_HERE'); ?></span>
                 </li>
             <?php else : ?>
