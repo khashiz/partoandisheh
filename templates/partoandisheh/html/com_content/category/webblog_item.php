@@ -27,26 +27,28 @@ $isUnpublished = ($this->item->state == 0 || $this->item->publish_up > $currentD
 	<div class="system-unpublished">
 <?php endif; ?>
         <div class="uk-height-1-1">
-            <div class="uk-card uk-card-default uk-height-1-1">
+            <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-height-1-1">
                 <?php echo JLayoutHelper::render('joomla.content.pa_weblog_list_image', $this->item); ?>
-                <div class="uk-card-body">
-                    <div><?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?></div>
-                    <?php echo JLayoutHelper::render('joomla.content.pa_weblog_list_title', $this->item); ?>
-                    <div class="uk-text-justify font uk-text-tiny uk-margin-small-top introText"><?php echo $this->item->introtext; ?></div>
-                    <?php if ($params->get('show_readmore') && $this->item->readmore) :
-                        if ($params->get('access-view')) :
-                            $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
-                        else :
-                            $menu = JFactory::getApplication()->getMenu();
-                            $active = $menu->getActive();
-                            $itemId = $active->id;
-                            $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
-                            $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
-                        endif; ?>
+                <div class="uk-card-body uk-padding-small">
+                    <div class="uk-padding-small">
+                        <div><?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?></div>
+                        <?php echo JLayoutHelper::render('joomla.content.pa_weblog_list_title', $this->item); ?>
+                        <div class="uk-text-justify font uk-text-tiny uk-margin-small-top introText"><?php echo $this->item->introtext; ?></div>
+                        <?php if ($params->get('show_readmore') && $this->item->readmore) :
+                            if ($params->get('access-view')) :
+                                $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
+                            else :
+                                $menu = JFactory::getApplication()->getMenu();
+                                $active = $menu->getActive();
+                                $itemId = $active->id;
+                                $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
+                                $link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
+                            endif; ?>
 
-                        <?php echo JLayoutHelper::render('joomla.content.pa_weblog_readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+                            <?php echo JLayoutHelper::render('joomla.content.pa_weblog_readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
 
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>

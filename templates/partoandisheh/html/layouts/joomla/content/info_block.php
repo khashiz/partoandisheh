@@ -12,13 +12,13 @@ defined('_JEXEC') or die;
 $blockPosition = $displayData['params']->get('info_block_position', 0);
 
 ?>
-	<dl class="article-info muted uk-margin-small-bottom uk-grid-small uk-grid-divider" data-uk-grid>
+	<dl class="article-info muted uk-margin-small-bottom uk-grid-small uk-grid-divider uk-text-tiny" data-uk-grid>
 
 		<?php if ($displayData['position'] === 'above' && ($blockPosition == 0 || $blockPosition == 2)
 				|| $displayData['position'] === 'below' && ($blockPosition == 1)
 				) : ?>
 
-			<dt class="article-info-term">
+			<dt class="article-info-term uk-hidden">
 				<?php if ($displayData['params']->get('info_block_show_title', 1)) : ?>
 					<?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?>
 				<?php endif; ?>

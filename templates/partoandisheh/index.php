@@ -145,10 +145,10 @@ $cells = explode("\n", $params->get('cellphone'));
                 <div class="uk-overlay-primary uk-position-cover"></div>
             <?php } ?>
             <div class="uk-container uk-position-relative">
-                <div>
-                    <h1 class="uk-margin-remove uk-text-<?php echo $pageparams->get('bg') == 'muted' ? $pageparams->get('textcolor') : 'white'; ?> uk-text-center font uk-text-bold"><?php echo $pageparams->get('page_heading'); ?></h1>
+                <div data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > .animate; delay: 250;">
+                    <h1 class="animate uk-margin-remove uk-text-<?php echo $pageparams->get('bg') == 'muted' ? $pageparams->get('textcolor') : 'white'; ?> uk-text-center font uk-text-bold"><?php echo $pageparams->get('page_heading'); ?></h1>
                     <?php if (!empty($pageparams->get('subtitle'))) { ?>
-                        <p class="uk-margin-small-top uk-margin-remove-bottom uk-text-<?php echo $pageparams->get('bg') == 'muted' ? 'muted' : 'white'; ?> uk-text-center font uk-text-light"><?php echo $pageparams->get('subtitle'); ?></p>
+                        <p class="animate uk-margin-small-top uk-margin-remove-bottom uk-text-<?php echo $pageparams->get('bg') == 'muted' ? 'muted' : 'white'; ?> uk-text-center font uk-text-light"><?php echo $pageparams->get('subtitle'); ?></p>
                     <?php } ?>
                 </div>
             </div>
