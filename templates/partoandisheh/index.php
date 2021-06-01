@@ -109,7 +109,7 @@ $cells = explode("\n", $params->get('cellphone'));
             </div>
         </div>
     </div>
-    <div class="uk-box-shadow-small">
+    <div class="uk-box-shadow-small uk-background-white" data-uk-sticky="top: 130; animation: uk-animation-slide-top;">
         <div class="uk-container">
             <div class="uk-grid-small" data-uk-grid>
                 <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@m">

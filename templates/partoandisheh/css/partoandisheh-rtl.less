@@ -90,6 +90,7 @@
 .uk-text-zero{font-size: 0;}
 .uk-text-tiny{font-size: 12px;}
 .ltr{direction: ltr;}
+.uk-background-white{background-color: #fff;}
 .uk-text-white{color: #fff;}
 .uk-text-dark{color: #222;}
 .uk-text-primary{color: @primary !important;}
@@ -262,18 +263,25 @@ footer{
     .font;
     strong{
       color: @danger;
-      margin: 0 5px;
+      margin: 0 5px 0 0;
       font-weight: 700;
     }
   }
-  input,select,textarea{
-      color: #222;
-      padding: 5px 8px;
-      .transition;
-      &:focus{
-        border-color: @secondary;
-        .box-shadow(0 0 0 1px @secondary);
-      }
+  input:not(.uk-radio):not(.uk-checkbox),
+  select,
+  textarea{
+    color: #222;
+    padding: 5px 8px;
+    .transition;
+    &:focus{
+      border-color: @secondary;
+      .box-shadow(0 0 0 1px @secondary);
+    }
+  }
+}
+.rsform-block-problem{
+  input{
+    margin-left: 10px;
   }
 }
 .uk-select{
@@ -281,6 +289,71 @@ footer{
     &:not([size]){
       background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVQ4T83TuRHCMBSE4c9NQE7GUQRHByQUQF0UQEIHHEUAIQVQBfNm7BkhLAIcYMW7/75LlY6v6ujXL8AOI2zwLLQ2wB4PbEOTtnDGHDcsWyBhPmGKCxY5IARHzFogw9o8wRWrJiAfYgq515VEUCR/mPMKmrZzSISM8+RGXFpjCgntW9npgL/dQUAOtXhd2ky/Dumnb/H/Fl49ax0R15VW+AAAAABJRU5ErkJggg==);
       background-position: 13px 13px;
+    }
+  }
+}
+.uk-checkbox{
+  .border-radius(3px);
+  &:checked{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c3ZnanM9Imh0dHA6Ly9zdmdqcy5jb20vc3ZnanMiIHZlcnNpb249IjEuMSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxNzQuMjM5IDE3NC4yMzkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPgo8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Ik03NC40MzksMTU3LjUxOWMtMS41OSwxLjg0OC00LjM0LDEuOTg5LTYuMTExLDAuMzEzTDEuMzgsOTQuNDY4Yy0xLjc3MS0xLjY3Ni0xLjg0OC00LjQ5Ni0wLjE3My02LjI2N2wyMS4zMy0yMi41MzkgIGMxLjY3Ni0xLjc3MSw0LjQ5Ni0xLjg0OCw2LjI2Ny0wLjE3M2wzNi41NzEsMzQuNjExYzEuNzcxLDEuNjc2LDQuNTIxLDEuNTM1LDYuMTExLTAuMzEzbDcxLjQ0Ny04My4wMTUgIGMxLjU5LTEuODQ4LDQuNDA0LTIuMDU5LDYuMjUxLTAuNDY4bDIzLjUxOCwyMC4yNDJjMS44NDgsMS41OSwyLjA1OSw0LjQwNCwwLjQ2OCw2LjI1Mkw3NC40MzksMTU3LjUxOXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiLz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPgo=);
+    background-size: 70%;
+  }
+}
+.uk-radio{
+  margin: 0;
+}
+//Datepicker
+.ui-datepicker{
+  background-color: #fff;
+  .border-radius(5px);
+  .box-shadow(0 2px 8px rgba(0, 0, 0, .08));
+  .transform(translateY(10px));
+  > div,
+  > table{
+    padding: 15px;
+  }
+  table{
+    &.ui-datepicker-calendar{
+      font-size: 0;
+      thead{
+        tr{
+          th{
+            color: #999;
+          }
+        }
+      }
+      th,td{
+        padding: 0;
+        span,a{
+          font-size: 14px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          .font;
+          .border-radius(5px);
+        }
+        a{
+          text-decoration: none;
+          color: #222;
+          &:hover{
+            background-color: #f0f0f0;
+          }
+        }
+        &.ui-datepicker-today{
+          a{
+            background-color: @primary;
+            color: #fff;
+            font-weight: 700;
+          }
+        }
+      }
+      .ui-state-disabled {
+        opacity: .3;
+        cursor: no-drop;
+      }
     }
   }
 }
@@ -381,5 +454,20 @@ footer{
     &:hover{
       background-color: darken(#1da1f2, 5%);
     }
+  }
+}
+.uk-checkbox,
+.uk-radio:checked{
+  &:checked,
+  &:indeterminate{
+    background-color: @secondary;
+    border-color: @secondary;
+    &:focus{
+      background-color: @secondary;
+      border-color: @secondary;
+    }
+  }
+  &:focus{
+    border-color: @secondary;
   }
 }

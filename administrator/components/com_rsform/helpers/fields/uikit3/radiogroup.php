@@ -15,7 +15,7 @@ class RSFormProFieldUikit3RadioGroup extends RSFormProFieldRadioGroup
 		// For convenience
 		extract($data);
 		
-		return '<label for="'.$this->escape($id).$i.'">'.$this->buildInput($data).$item->label.'</label> ';
+		return '<div class="uk-text-zero uk-display-inline-block"><label class="uk-flex uk-flex-middle" for="'.$this->escape($id).$i.'">'.$this->buildInput($data).'<span class="uk-text-dark uk-text-small">&ensp;'.$item->label.'</span></label></div>&emsp;';
 	}
 	
 	public function buildItem($data) {
@@ -26,7 +26,7 @@ class RSFormProFieldUikit3RadioGroup extends RSFormProFieldRadioGroup
 	public function setFlow() {
 		$flow		= $this->getProperty('FLOW', 'HORIZONTAL');
 		if ($flow != 'HORIZONTAL') {
-			$this->glue = '<br />';
+			$this->glue = '';
 			$this->blocks = array('1' => 'uk-width-1-1', '2' => 'uk-width-1-2', '3' => 'uk-width-1-3', '4' => 'uk-width-1-4', '6' => 'uk-width-1-6');
 			$this->splitterStart = '<div class="{block_size}">';
 			$this->splitterEnd = '</div>';
