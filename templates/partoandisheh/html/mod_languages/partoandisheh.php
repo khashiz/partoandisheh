@@ -73,7 +73,7 @@ if ($params->get('dropdown', 0) && !$params->get('dropdownimage', 1))
 	<?php foreach ($list as $language) : ?>
 		<?php if (!$language->active) : ?>
 			<li>
-			<a class="uk-button uk-button-default uk-text-secondary uk-button-small fontEN uk-text-bold" href="<?php echo htmlspecialchars_decode(htmlspecialchars($language->link, ENT_QUOTES, 'UTF-8'), ENT_NOQUOTES); ?>">
+			<a class="uk-button uk-button-default uk-button-small uk-border-rounded uk-box-shadow-small fontEN uk-text-bold" href="<?php echo htmlspecialchars_decode(htmlspecialchars($language->link, ENT_QUOTES, 'UTF-8'), ENT_NOQUOTES); ?>">
 			<?php if ($params->get('image', 1)) : ?>
 				<?php if ($language->image) : ?>
 					<?php echo JHtml::_('image', 'mod_languages/' . $language->image . '.gif', $language->title_native, array('title' => $language->title_native), true); ?>

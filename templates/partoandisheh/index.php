@@ -168,7 +168,7 @@ $cells = explode("\n", $params->get('cellphone'));
                             <div class="uk-width-1-1 uk-width-1-4@m">
                                 <aside data-uk-sticky="offset: 110; bottom: true;">
                                     <div>
-                                        <div class="uk-child-width-1-1 uk-grid-small" data-uk-grid><jdoc:include type="modules" name="sidestart" style="xhtml" /></div>
+                                        <div class="uk-child-width-1-1" data-uk-grid><jdoc:include type="modules" name="sidestart" style="xhtml" /></div>
                                     </div>
                                 </aside>
                             </div>
