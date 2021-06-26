@@ -1,21 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 11:30 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.15
+-- Host: localhost:3306
+-- Generation Time: Jun 26, 2021 at 09:15 AM
+-- Server version: 5.7.32
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `parto`
@@ -28,14 +21,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `brqs1_action_logs` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `message_language_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `log_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `user_id` int(11) NOT NULL DEFAULT 0,
-  `item_id` int(11) NOT NULL DEFAULT 0,
-  `ip_address` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0.0.0.0'
+                                     `id` int(10) UNSIGNED NOT NULL,
+                                     `message_language_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                     `log_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `user_id` int(11) NOT NULL DEFAULT '0',
+                                     `item_id` int(11) NOT NULL DEFAULT '0',
+                                     `ip_address` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0.0.0.0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -918,7 +911,20 @@ INSERT INTO `brqs1_action_logs` (`id`, `message_language_key`, `message`, `log_d
 (865, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":2,\"title\":\"\\u0622\\u06cc\\u062a\\u0645 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u06cc\\u06a9 \\u0628\\u0644\\u0627\\u06af (2)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=2\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 08:50:19', 'com_content.article', 120, 2, 'COM_ACTIONLOGS_DISABLED'),
 (866, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-12 08:50:19', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
 (867, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":3,\"title\":\"\\u0627\\u06cc\\u0646 \\u0622\\u06cc\\u062a\\u0645 \\u0646\\u0633\\u0628\\u062a \\u0628\\u0647 \\u0628\\u0642\\u06cc\\u0647 \\u0622\\u06cc\\u062a\\u0645 \\u0647\\u0627 \\u062f\\u0627\\u0631\\u0627\\u06cc \\u0639\\u0646\\u0648\\u0627\\u0646 \\u0628\\u0644\\u0646\\u062f \\u062a\\u0631\\u06cc \\u0627\\u0633\\u062a \\u0628\\u0631\\u0627\\u06cc \\u062a\\u0633\\u062a \\u0631\\u0627\\u0628\\u0637 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=3\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 08:50:37', 'com_content.article', 120, 3, 'COM_ACTIONLOGS_DISABLED'),
-(868, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-12 08:50:37', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED');
+(868, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-12 08:50:37', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(869, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-12 09:39:38', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(870, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-12 09:40:18', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(871, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":104,\"title\":\"\\u062e\\u0627\\u0646\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=104\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 09:40:58', 'com_menus.item', 120, 104, 'COM_ACTIONLOGS_DISABLED'),
+(872, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-12 09:40:58', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(873, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_OUT', '{\"action\":\"logout\",\"id\":\"120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-12 09:41:27', 'com_users', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(874, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-12 10:39:16', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(875, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-12 10:57:23', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(876, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-12 10:57:23', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(877, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:02', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
+(878, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-12 10:58:02', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(879, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:11', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
+(880, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:19', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
+(881, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:45', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED');
 
 -- --------------------------------------------------------
 
@@ -927,8 +933,8 @@ INSERT INTO `brqs1_action_logs` (`id`, `message_language_key`, `message`, `log_d
 --
 
 CREATE TABLE `brqs1_action_logs_extensions` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                                `id` int(10) UNSIGNED NOT NULL,
+                                                `extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -962,9 +968,9 @@ INSERT INTO `brqs1_action_logs_extensions` (`id`, `extension`) VALUES
 --
 
 CREATE TABLE `brqs1_action_logs_users` (
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `notify` tinyint(3) UNSIGNED NOT NULL,
-  `extensions` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                           `user_id` int(10) UNSIGNED NOT NULL,
+                                           `notify` tinyint(3) UNSIGNED NOT NULL,
+                                           `extensions` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -974,13 +980,13 @@ CREATE TABLE `brqs1_action_logs_users` (
 --
 
 CREATE TABLE `brqs1_action_log_config` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `id_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_prefix` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+                                           `id` int(10) UNSIGNED NOT NULL,
+                                           `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `id_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                           `title_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                           `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                           `text_prefix` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1015,14 +1021,14 @@ INSERT INTO `brqs1_action_log_config` (`id`, `type_title`, `type_alias`, `id_hol
 --
 
 CREATE TABLE `brqs1_assets` (
-  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-  `parent_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set parent.',
-  `lft` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set lft.',
-  `rgt` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set rgt.',
-  `level` int(10) UNSIGNED NOT NULL COMMENT 'The cached level in the nested tree.',
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
-  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
-  `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
+                                `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                                `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
+                                `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+                                `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+                                `level` int(10) UNSIGNED NOT NULL COMMENT 'The cached level in the nested tree.',
+                                `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
+                                `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
+                                `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1151,9 +1157,9 @@ INSERT INTO `brqs1_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 --
 
 CREATE TABLE `brqs1_associations` (
-  `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
-  `context` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The context of the associated item.',
-  `key` char(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
+                                      `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
+                                      `context` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The context of the associated item.',
+                                      `key` char(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1189,40 +1195,40 @@ INSERT INTO `brqs1_associations` (`id`, `context`, `key`) VALUES
 --
 
 CREATE TABLE `brqs1_banners` (
-  `id` int(11) NOT NULL,
-  `cid` int(11) NOT NULL DEFAULT 0,
-  `type` int(11) NOT NULL DEFAULT 0,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `imptotal` int(11) NOT NULL DEFAULT 0,
-  `impmade` int(11) NOT NULL DEFAULT 0,
-  `clicks` int(11) NOT NULL DEFAULT 0,
-  `clickurl` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `catid` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `custombannercode` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sticky` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `own_prefix` tinyint(4) NOT NULL DEFAULT 0,
-  `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `purchase_type` tinyint(4) NOT NULL DEFAULT -1,
-  `track_clicks` tinyint(4) NOT NULL DEFAULT -1,
-  `track_impressions` tinyint(4) NOT NULL DEFAULT -1,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `reset` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `created_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1
+                                 `id` int(11) NOT NULL,
+                                 `cid` int(11) NOT NULL DEFAULT '0',
+                                 `type` int(11) NOT NULL DEFAULT '0',
+                                 `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                                 `imptotal` int(11) NOT NULL DEFAULT '0',
+                                 `impmade` int(11) NOT NULL DEFAULT '0',
+                                 `clicks` int(11) NOT NULL DEFAULT '0',
+                                 `clickurl` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `state` tinyint(4) NOT NULL DEFAULT '0',
+                                 `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `custombannercode` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `sticky` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                 `ordering` int(11) NOT NULL DEFAULT '0',
+                                 `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+                                 `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+                                 `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+                                 `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
+                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `reset` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1232,20 +1238,20 @@ CREATE TABLE `brqs1_banners` (
 --
 
 CREATE TABLE `brqs1_banner_clients` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `extrainfo` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `own_prefix` tinyint(4) NOT NULL DEFAULT 0,
-  `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `purchase_type` tinyint(4) NOT NULL DEFAULT -1,
-  `track_clicks` tinyint(4) NOT NULL DEFAULT -1,
-  `track_impressions` tinyint(4) NOT NULL DEFAULT -1
+                                        `id` int(11) NOT NULL,
+                                        `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `extrainfo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `state` tinyint(4) NOT NULL DEFAULT '0',
+                                        `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+                                        `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+                                        `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+                                        `track_impressions` tinyint(4) NOT NULL DEFAULT '-1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1255,10 +1261,10 @@ CREATE TABLE `brqs1_banner_clients` (
 --
 
 CREATE TABLE `brqs1_banner_tracks` (
-  `track_date` datetime NOT NULL,
-  `track_type` int(10) UNSIGNED NOT NULL,
-  `banner_id` int(10) UNSIGNED NOT NULL,
-  `count` int(10) UNSIGNED NOT NULL DEFAULT 0
+                                       `track_date` datetime NOT NULL,
+                                       `track_type` int(10) UNSIGNED NOT NULL,
+                                       `banner_id` int(10) UNSIGNED NOT NULL,
+                                       `count` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1268,33 +1274,33 @@ CREATE TABLE `brqs1_banner_tracks` (
 --
 
 CREATE TABLE `brqs1_categories` (
-  `id` int(11) NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `lft` int(11) NOT NULL DEFAULT 0,
-  `rgt` int(11) NOT NULL DEFAULT 0,
-  `level` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `published` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta description for the page.',
-  `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta keywords for the page.',
-  `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1
+                                    `id` int(11) NOT NULL,
+                                    `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+                                    `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `lft` int(11) NOT NULL DEFAULT '0',
+                                    `rgt` int(11) NOT NULL DEFAULT '0',
+                                    `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                                    `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `description` mediumtext COLLATE utf8mb4_unicode_ci,
+                                    `published` tinyint(4) NOT NULL DEFAULT '0',
+                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `params` text COLLATE utf8mb4_unicode_ci,
+                                    `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta description for the page.',
+                                    `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta keywords for the page.',
+                                    `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
+                                    `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1324,49 +1330,49 @@ INSERT INTO `brqs1_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 --
 
 CREATE TABLE `brqs1_contact_details` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `con_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `suburb` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `postcode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `misc` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `default_con` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `published` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL DEFAULT 0,
-  `catid` int(11) NOT NULL DEFAULT 0,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `webpage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `sortname1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `sortname2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `sortname3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `language` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Set if contact is featured.',
-  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0
+                                         `id` int(11) NOT NULL,
+                                         `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+                                         `con_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `address` text COLLATE utf8mb4_unicode_ci,
+                                         `suburb` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `state` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `country` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `postcode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `misc` mediumtext COLLATE utf8mb4_unicode_ci,
+                                         `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `email_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                         `default_con` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                         `published` tinyint(4) NOT NULL DEFAULT '0',
+                                         `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                         `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                         `ordering` int(11) NOT NULL DEFAULT '0',
+                                         `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `user_id` int(11) NOT NULL DEFAULT '0',
+                                         `catid` int(11) NOT NULL DEFAULT '0',
+                                         `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                         `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `webpage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `sortname1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `sortname2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `sortname3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `language` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                         `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                         `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                         `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                         `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if contact is featured.',
+                                         `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+                                         `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                         `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                         `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                         `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1376,37 +1382,37 @@ CREATE TABLE `brqs1_contact_details` (
 --
 
 CREATE TABLE `brqs1_content` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `introtext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fulltext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `catid` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `attribs` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Set if article is featured.',
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The language code for the article.',
-  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                 `id` int(10) UNSIGNED NOT NULL,
+                                 `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+                                 `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                                 `introtext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `fulltext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `state` tinyint(4) NOT NULL DEFAULT '0',
+                                 `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `attribs` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                 `ordering` int(11) NOT NULL DEFAULT '0',
+                                 `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
+                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The language code for the article.',
+                                 `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+                                 `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1414,14 +1420,14 @@ CREATE TABLE `brqs1_content` (
 --
 
 INSERT INTO `brqs1_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`, `note`) VALUES
-(1, 77, 'آیتم شماره یک بلاگ', 'آیتم-شماره-یک-بلاگ', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>\r\n', '\r\n<p>با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-29 22:37:16', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/animals\\/800px_wobbegong.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 6, 5, '', '', 1, 133, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 1, '*', '', ''),
+(1, 77, 'آیتم شماره یک بلاگ', 'آیتم-شماره-یک-بلاگ', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>\r\n', '\r\n<p>با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-29 22:37:16', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/animals\\/800px_wobbegong.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 6, 5, '', '', 1, 134, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 1, '*', '', ''),
 (2, 78, 'آیتم شماره یک بلاگ (2)', 'آیتم-شماره-یک-بلاگ-2', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>\r\n', '\r\n<p>و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-06-12 08:50:19', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 4, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 1, '*', '', ''),
 (3, 79, 'این آیتم نسبت به بقیه آیتم ها دارای عنوان بلند تری است برای تست رابط کاربری', 'آیتم-شماره-یک-بلاگ-3', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی</p>\r\n', '\r\n<p>می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-06-12 08:50:37', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 3, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 1, '*', '', ''),
 (4, 80, 'آیتم شماره یک بلاگ (4)', 'آیتم-شماره-یک-بلاگ-4', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان</p>\r\n', '\r\n<p>که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-23 13:03:49', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 2, '', '', 1, 1, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
 (5, 81, 'آیتم شماره یک بلاگ (5)', 'آیتم-شماره-یک-بلاگ-5', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>\r\n', '\r\n<p>با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-23 13:03:59', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 1, '', '', 1, 28, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(6, 84, 'خشایار پورادبی', 'خشایار-پورادبی', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', '', 1, 9, '2021-05-29 21:35:56', 120, '', '2021-05-30 14:43:46', 120, 0, '0000-00-00 00:00:00', '2021-05-29 21:35:56', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/animals\\/800px_koala_ag1.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/landscape\\/800px_ormiston_pound.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 14, 1, '', '', 1, 135, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
+(6, 84, 'خشایار پورادبی', 'خشایار-پورادبی', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', '', 1, 9, '2021-05-29 21:35:56', 120, '', '2021-05-30 14:43:46', 120, 0, '0000-00-00 00:00:00', '2021-05-29 21:35:56', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/animals\\/800px_koala_ag1.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/landscape\\/800px_ormiston_pound.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 14, 1, '', '', 1, 136, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
 (7, 96, 'test', 'test', '', '', 1, 9, '2021-05-30 12:32:57', 120, '', '2021-05-30 12:32:57', 0, 0, '0000-00-00 00:00:00', '2021-05-30 12:32:57', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 0, '', '', 1, 2, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(9, 100, 'مشاوره پیش از ازدواج', 'مشاوره-پیش-از-ازدواج', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-12 06:00:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/1.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/psychologist.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 5, 5, '', '', 1, 120, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(9, 100, 'مشاوره پیش از ازدواج', 'مشاوره-پیش-از-ازدواج', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-12 06:00:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/1.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/psychologist.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 5, 5, '', '', 1, 121, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (10, 101, 'مشاوره امور طلاق', 'مشاوره-امور-طلاق', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:03', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/2.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 4, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (11, 102, 'مشاوره تحصیلی', 'مشاوره-تحصیلی', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/3.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 3, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (12, 103, 'امور استرس و کنترل اضطراب', 'امور-استرس-و-کنترل-اضطراب', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:18', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/2.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 2, '', '', 1, 5, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
@@ -1435,12 +1441,12 @@ INSERT INTO `brqs1_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 --
 
 CREATE TABLE `brqs1_contentitem_tag_map` (
-  `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
-  `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
-  `tag_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the tag table',
-  `tag_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Date of most recent save for this tag-item',
-  `type_id` mediumint(9) NOT NULL COMMENT 'PK from the content_type table'
+                                             `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                             `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
+                                             `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
+                                             `tag_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the tag table',
+                                             `tag_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of most recent save for this tag-item',
+                                             `type_id` mediumint(9) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maps items from content tables to tags';
 
 --
@@ -1459,8 +1465,8 @@ INSERT INTO `brqs1_contentitem_tag_map` (`type_alias`, `core_content_id`, `conte
 --
 
 CREATE TABLE `brqs1_content_frontpage` (
-  `content_id` int(11) NOT NULL DEFAULT 0,
-  `ordering` int(11) NOT NULL DEFAULT 0
+                                           `content_id` int(11) NOT NULL DEFAULT '0',
+                                           `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1479,10 +1485,10 @@ INSERT INTO `brqs1_content_frontpage` (`content_id`, `ordering`) VALUES
 --
 
 CREATE TABLE `brqs1_content_rating` (
-  `content_id` int(11) NOT NULL DEFAULT 0,
-  `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `rating_count` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `lastip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                        `content_id` int(11) NOT NULL DEFAULT '0',
+                                        `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `rating_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `lastip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1492,14 +1498,14 @@ CREATE TABLE `brqs1_content_rating` (
 --
 
 CREATE TABLE `brqs1_content_types` (
-  `type_id` int(10) UNSIGNED NOT NULL,
-  `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `rules` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `field_mappings` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `router` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `content_history_options` varchar(5120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
+                                       `type_id` int(10) UNSIGNED NOT NULL,
+                                       `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `rules` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `field_mappings` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `router` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `content_history_options` varchar(5120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1528,8 +1534,8 @@ INSERT INTO `brqs1_content_types` (`type_id`, `type_title`, `type_alias`, `table
 --
 
 CREATE TABLE `brqs1_core_log_searches` (
-  `search_term` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0
+                                           `search_term` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1539,24 +1545,24 @@ CREATE TABLE `brqs1_core_log_searches` (
 --
 
 CREATE TABLE `brqs1_extensions` (
-  `extension_id` int(11) NOT NULL,
-  `package_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Parent package ID for extensions installed as a package.',
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `element` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `folder` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `client_id` tinyint(4) NOT NULL,
-  `enabled` tinyint(4) NOT NULL DEFAULT 0,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `protected` tinyint(4) NOT NULL DEFAULT 0,
-  `manifest_cache` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `custom_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `system_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ordering` int(11) DEFAULT 0,
-  `state` int(11) DEFAULT 0
+                                    `extension_id` int(11) NOT NULL,
+                                    `package_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Parent package ID for extensions installed as a package.',
+                                    `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `element` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `folder` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `client_id` tinyint(4) NOT NULL,
+                                    `enabled` tinyint(4) NOT NULL DEFAULT '0',
+                                    `access` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                    `protected` tinyint(4) NOT NULL DEFAULT '0',
+                                    `manifest_cache` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `custom_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `system_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `ordering` int(11) DEFAULT '0',
+                                    `state` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1696,7 +1702,7 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"July 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTH_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{\"name\":\"plg_twofactorauth_yubikey\",\"type\":\"plugin\",\"creationDate\":\"September 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.2.0\",\"description\":\"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"yubikey\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{\"name\":\"plg_search_tags\",\"type\":\"plugin\",\"creationDate\":\"March 2014\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEARCH_TAGS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tags\"}', '{\"search_limit\":\"50\",\"show_tagged_items\":\"1\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1623476170}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1623583124}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{\"name\":\"plg_editors-xtd_module\",\"type\":\"plugin\",\"creationDate\":\"October 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_MODULE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"module\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"November 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '{\"mode\":3,\"lastrun\":\"\",\"unique_id\":\"a102029fc43c5d8cc3c7ad16efca92afd16a526f\",\"interval\":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{\"name\":\"plg_installer_packageinstaller\",\"type\":\"plugin\",\"creationDate\":\"May 2016\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.6.0\",\"description\":\"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"packageinstaller\"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1775,30 +1781,30 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 --
 
 CREATE TABLE `brqs1_fields` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `group_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `default_value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `required` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(11) NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fieldparams` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `access` int(11) NOT NULL DEFAULT 1
+                                `id` int(10) UNSIGNED NOT NULL,
+                                `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `default_value` text COLLATE utf8mb4_unicode_ci,
+                                `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
+                                `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                `state` tinyint(4) NOT NULL DEFAULT '0',
+                                `required` tinyint(4) NOT NULL DEFAULT '0',
+                                `checked_out` int(11) NOT NULL DEFAULT '0',
+                                `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `ordering` int(11) NOT NULL DEFAULT '0',
+                                `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                `fieldparams` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1825,8 +1831,8 @@ INSERT INTO `brqs1_fields` (`id`, `asset_id`, `context`, `group_id`, `title`, `n
 --
 
 CREATE TABLE `brqs1_fields_categories` (
-  `field_id` int(11) NOT NULL DEFAULT 0,
-  `category_id` int(11) NOT NULL DEFAULT 0
+                                           `field_id` int(11) NOT NULL DEFAULT '0',
+                                           `category_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1860,23 +1866,23 @@ INSERT INTO `brqs1_fields_categories` (`field_id`, `category_id`) VALUES
 --
 
 CREATE TABLE `brqs1_fields_groups` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(11) NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `access` int(11) NOT NULL DEFAULT 1
+                                       `id` int(10) UNSIGNED NOT NULL,
+                                       `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                       `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `state` tinyint(4) NOT NULL DEFAULT '0',
+                                       `checked_out` int(11) NOT NULL DEFAULT '0',
+                                       `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                       `ordering` int(11) NOT NULL DEFAULT '0',
+                                       `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                       `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                       `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                       `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                       `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                       `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1895,9 +1901,9 @@ INSERT INTO `brqs1_fields_groups` (`id`, `asset_id`, `context`, `title`, `note`,
 --
 
 CREATE TABLE `brqs1_fields_values` (
-  `field_id` int(10) UNSIGNED NOT NULL,
-  `item_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
-  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+                                       `field_id` int(10) UNSIGNED NOT NULL,
+                                       `item_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
+                                       `value` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1925,20 +1931,20 @@ INSERT INTO `brqs1_fields_values` (`field_id`, `item_id`, `value`) VALUES
 --
 
 CREATE TABLE `brqs1_finder_filters` (
-  `filter_id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `alias` varchar(255) NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 1,
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) UNSIGNED NOT NULL,
-  `created_by_alias` varchar(255) NOT NULL,
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `map_count` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `data` text NOT NULL,
-  `params` mediumtext DEFAULT NULL
+                                        `filter_id` int(10) UNSIGNED NOT NULL,
+                                        `title` varchar(255) NOT NULL,
+                                        `alias` varchar(255) NOT NULL,
+                                        `state` tinyint(4) NOT NULL DEFAULT '1',
+                                        `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `created_by` int(10) UNSIGNED NOT NULL,
+                                        `created_by_alias` varchar(255) NOT NULL,
+                                        `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `map_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `data` text NOT NULL,
+                                        `params` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1948,25 +1954,25 @@ CREATE TABLE `brqs1_finder_filters` (
 --
 
 CREATE TABLE `brqs1_finder_links` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `route` varchar(255) NOT NULL,
-  `title` varchar(400) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `indexdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `md5sum` varchar(32) DEFAULT NULL,
-  `published` tinyint(4) NOT NULL DEFAULT 1,
-  `state` int(11) DEFAULT 1,
-  `access` int(11) DEFAULT 0,
-  `language` varchar(8) NOT NULL,
-  `publish_start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `list_price` double UNSIGNED NOT NULL DEFAULT 0,
-  `sale_price` double UNSIGNED NOT NULL DEFAULT 0,
-  `type_id` int(11) NOT NULL,
-  `object` mediumblob NOT NULL
+                                      `link_id` int(10) UNSIGNED NOT NULL,
+                                      `url` varchar(255) NOT NULL,
+                                      `route` varchar(255) NOT NULL,
+                                      `title` varchar(400) DEFAULT NULL,
+                                      `description` text,
+                                      `indexdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                      `md5sum` varchar(32) DEFAULT NULL,
+                                      `published` tinyint(4) NOT NULL DEFAULT '1',
+                                      `state` int(11) DEFAULT '1',
+                                      `access` int(11) DEFAULT '0',
+                                      `language` varchar(8) NOT NULL,
+                                      `publish_start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                      `publish_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                      `start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                      `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                      `list_price` double UNSIGNED NOT NULL DEFAULT '0',
+                                      `sale_price` double UNSIGNED NOT NULL DEFAULT '0',
+                                      `type_id` int(11) NOT NULL,
+                                      `object` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1976,9 +1982,9 @@ CREATE TABLE `brqs1_finder_links` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms0` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1988,9 +1994,9 @@ CREATE TABLE `brqs1_finder_links_terms0` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms1` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2000,9 +2006,9 @@ CREATE TABLE `brqs1_finder_links_terms1` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms2` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2012,9 +2018,9 @@ CREATE TABLE `brqs1_finder_links_terms2` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms3` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2024,9 +2030,9 @@ CREATE TABLE `brqs1_finder_links_terms3` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms4` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2036,9 +2042,9 @@ CREATE TABLE `brqs1_finder_links_terms4` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms5` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2048,9 +2054,9 @@ CREATE TABLE `brqs1_finder_links_terms5` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms6` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2060,9 +2066,9 @@ CREATE TABLE `brqs1_finder_links_terms6` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms7` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2072,9 +2078,9 @@ CREATE TABLE `brqs1_finder_links_terms7` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms8` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2084,9 +2090,9 @@ CREATE TABLE `brqs1_finder_links_terms8` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms9` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2096,9 +2102,9 @@ CREATE TABLE `brqs1_finder_links_terms9` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsa` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2108,9 +2114,9 @@ CREATE TABLE `brqs1_finder_links_termsa` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsb` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2120,9 +2126,9 @@ CREATE TABLE `brqs1_finder_links_termsb` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsc` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2132,9 +2138,9 @@ CREATE TABLE `brqs1_finder_links_termsc` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsd` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2144,9 +2150,9 @@ CREATE TABLE `brqs1_finder_links_termsd` (
 --
 
 CREATE TABLE `brqs1_finder_links_termse` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2156,9 +2162,9 @@ CREATE TABLE `brqs1_finder_links_termse` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsf` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `weight` float UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `term_id` int(10) UNSIGNED NOT NULL,
+                                             `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2168,12 +2174,12 @@ CREATE TABLE `brqs1_finder_links_termsf` (
 --
 
 CREATE TABLE `brqs1_finder_taxonomy` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `title` varchar(255) NOT NULL,
-  `state` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
-  `access` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `ordering` tinyint(3) UNSIGNED NOT NULL DEFAULT 0
+                                         `id` int(10) UNSIGNED NOT NULL,
+                                         `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                         `title` varchar(255) NOT NULL,
+                                         `state` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
+                                         `access` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                         `ordering` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2190,8 +2196,8 @@ INSERT INTO `brqs1_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 --
 
 CREATE TABLE `brqs1_finder_taxonomy_map` (
-  `link_id` int(10) UNSIGNED NOT NULL,
-  `node_id` int(10) UNSIGNED NOT NULL
+                                             `link_id` int(10) UNSIGNED NOT NULL,
+                                             `node_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2201,15 +2207,15 @@ CREATE TABLE `brqs1_finder_taxonomy_map` (
 --
 
 CREATE TABLE `brqs1_finder_terms` (
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `term` varchar(75) NOT NULL,
-  `stem` varchar(75) NOT NULL,
-  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `weight` float UNSIGNED NOT NULL DEFAULT 0,
-  `soundex` varchar(75) NOT NULL,
-  `links` int(11) NOT NULL DEFAULT 0,
-  `language` char(3) NOT NULL DEFAULT ''
+                                      `term_id` int(10) UNSIGNED NOT NULL,
+                                      `term` varchar(75) NOT NULL,
+                                      `stem` varchar(75) NOT NULL,
+                                      `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                      `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                      `weight` float UNSIGNED NOT NULL DEFAULT '0',
+                                      `soundex` varchar(75) NOT NULL,
+                                      `links` int(11) NOT NULL DEFAULT '0',
+                                      `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2219,8 +2225,8 @@ CREATE TABLE `brqs1_finder_terms` (
 --
 
 CREATE TABLE `brqs1_finder_terms_common` (
-  `term` varchar(75) NOT NULL,
-  `language` varchar(3) NOT NULL
+                                             `term` varchar(75) NOT NULL,
+                                             `language` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2346,13 +2352,13 @@ INSERT INTO `brqs1_finder_terms_common` (`term`, `language`) VALUES
 --
 
 CREATE TABLE `brqs1_finder_tokens` (
-  `term` varchar(75) NOT NULL,
-  `stem` varchar(75) NOT NULL,
-  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `weight` float UNSIGNED NOT NULL DEFAULT 1,
-  `context` tinyint(3) UNSIGNED NOT NULL DEFAULT 2,
-  `language` char(3) NOT NULL DEFAULT ''
+                                       `term` varchar(75) NOT NULL,
+                                       `stem` varchar(75) NOT NULL,
+                                       `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                       `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                       `weight` float UNSIGNED NOT NULL DEFAULT '1',
+                                       `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
+                                       `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2362,17 +2368,17 @@ CREATE TABLE `brqs1_finder_tokens` (
 --
 
 CREATE TABLE `brqs1_finder_tokens_aggregate` (
-  `term_id` int(10) UNSIGNED NOT NULL,
-  `map_suffix` char(1) NOT NULL,
-  `term` varchar(75) NOT NULL,
-  `stem` varchar(75) NOT NULL,
-  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `term_weight` float UNSIGNED NOT NULL,
-  `context` tinyint(3) UNSIGNED NOT NULL DEFAULT 2,
-  `context_weight` float UNSIGNED NOT NULL,
-  `total_weight` float UNSIGNED NOT NULL,
-  `language` char(3) NOT NULL DEFAULT ''
+                                                 `term_id` int(10) UNSIGNED NOT NULL,
+                                                 `map_suffix` char(1) NOT NULL,
+                                                 `term` varchar(75) NOT NULL,
+                                                 `stem` varchar(75) NOT NULL,
+                                                 `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                                 `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                                 `term_weight` float UNSIGNED NOT NULL,
+                                                 `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
+                                                 `context_weight` float UNSIGNED NOT NULL,
+                                                 `total_weight` float UNSIGNED NOT NULL,
+                                                 `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2382,9 +2388,9 @@ CREATE TABLE `brqs1_finder_tokens_aggregate` (
 --
 
 CREATE TABLE `brqs1_finder_types` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `mime` varchar(100) NOT NULL
+                                      `id` int(10) UNSIGNED NOT NULL,
+                                      `title` varchar(100) NOT NULL,
+                                      `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2394,20 +2400,20 @@ CREATE TABLE `brqs1_finder_types` (
 --
 
 CREATE TABLE `brqs1_languages` (
-  `lang_id` int(10) UNSIGNED NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title_native` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sef` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sitename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `published` int(11) NOT NULL DEFAULT 0,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `ordering` int(11) NOT NULL DEFAULT 0
+                                   `lang_id` int(10) UNSIGNED NOT NULL,
+                                   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+                                   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `title_native` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `sef` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `description` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `sitename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                   `published` int(11) NOT NULL DEFAULT '0',
+                                   `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2425,19 +2431,19 @@ INSERT INTO `brqs1_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `tit
 --
 
 CREATE TABLE `brqs1_logregsms_confirm` (
-  `id` int(11) NOT NULL,
-  `created_on` varchar(255) NOT NULL,
-  `mobile` varchar(255) NOT NULL,
-  `from` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL,
-  `is_confirmed` int(11) NOT NULL,
-  `state` int(11) NOT NULL,
-  `asset_id` int(11) NOT NULL,
-  `ordering` int(11) NOT NULL,
-  `checked_out` int(11) NOT NULL,
-  `checked_out_time` datetime NOT NULL,
-  `created_by` int(11) NOT NULL
+                                           `id` int(11) NOT NULL,
+                                           `created_on` varchar(255) NOT NULL,
+                                           `mobile` varchar(255) NOT NULL,
+                                           `from` varchar(255) NOT NULL,
+                                           `code` varchar(255) NOT NULL,
+                                           `time` varchar(255) NOT NULL,
+                                           `is_confirmed` int(11) NOT NULL,
+                                           `state` int(11) NOT NULL,
+                                           `asset_id` int(11) NOT NULL,
+                                           `ordering` int(11) NOT NULL,
+                                           `checked_out` int(11) NOT NULL,
+                                           `checked_out_time` datetime NOT NULL,
+                                           `created_by` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -2454,14 +2460,14 @@ INSERT INTO `brqs1_logregsms_confirm` (`id`, `created_on`, `mobile`, `from`, `co
 --
 
 CREATE TABLE `brqs1_logregsms_smsarchives` (
-  `id` int(11) NOT NULL,
-  `created_on` varchar(20) NOT NULL,
-  `time` varchar(20) NOT NULL,
-  `to` varchar(20) NOT NULL,
-  `from` varchar(20) NOT NULL,
-  `message` text NOT NULL,
-  `text` text NOT NULL,
-  `result` text NOT NULL
+                                               `id` int(11) NOT NULL,
+                                               `created_on` varchar(20) NOT NULL,
+                                               `time` varchar(20) NOT NULL,
+                                               `to` varchar(20) NOT NULL,
+                                               `from` varchar(20) NOT NULL,
+                                               `message` text NOT NULL,
+                                               `text` text NOT NULL,
+                                               `result` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2478,30 +2484,30 @@ INSERT INTO `brqs1_logregsms_smsarchives` (`id`, `created_on`, `time`, `to`, `fr
 --
 
 CREATE TABLE `brqs1_menu` (
-  `id` int(11) NOT NULL,
-  `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The display title of the menu item.',
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'The SEF alias of the menu item.',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `path` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The computed path of the menu item based on the alias field.',
-  `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The actually link the menu item refers to.',
-  `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of link: Component, URL, Alias, Separator',
-  `published` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'The published state of the menu link.',
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'The parent menu item in the menu tree.',
-  `level` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'The relative level in the tree.',
-  `component_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to #__extensions.id',
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to #__users.id',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'The time the menu item was checked out.',
-  `browserNav` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'The click behaviour of the link.',
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'The access level required to view the menu item.',
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The image of the menu item.',
-  `template_style_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded data for the menu item.',
-  `lft` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set lft.',
-  `rgt` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set rgt.',
-  `home` tinyint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Indicates if this menu item is the home or default page.',
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `client_id` tinyint(4) NOT NULL DEFAULT 0
+                              `id` int(11) NOT NULL,
+                              `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
+                              `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The display title of the menu item.',
+                              `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'The SEF alias of the menu item.',
+                              `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                              `path` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The computed path of the menu item based on the alias field.',
+                              `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The actually link the menu item refers to.',
+                              `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of link: Component, URL, Alias, Separator',
+                              `published` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The published state of the menu link.',
+                              `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'The parent menu item in the menu tree.',
+                              `level` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The relative level in the tree.',
+                              `component_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__extensions.id',
+                              `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__users.id',
+                              `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'The time the menu item was checked out.',
+                              `browserNav` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The click behaviour of the link.',
+                              `access` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The access level required to view the menu item.',
+                              `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The image of the menu item.',
+                              `template_style_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `params` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded data for the menu item.',
+                              `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+                              `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+                              `home` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
+                              `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                              `client_id` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2532,7 +2538,7 @@ INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (22, 'main', 'com_associations', 'Multilingual Associations', '', 'Multilingual Associations', 'index.php?option=com_associations', 'component', 1, 1, 1, 34, 0, '0000-00-00 00:00:00', 0, 0, 'class:associations', 0, '', 39, 40, 0, '*', 1),
 (101, 'mainmenu', 'Home', 'home', '', 'home', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_text\":1,\"page_title\":\"\",\"show_page_heading\":1,\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 41, 42, 1, '*', 0),
 (102, 'mainmenu-en-gb', 'Home', 'home-en-gb', '', 'home-en-gb', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"multi_column_order\":\"1\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"show_noauth\":\"\",\"article-allow_ratings\":\"\",\"article-allow_comments\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_readmore\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"show_page_heading\":1,\"page_title\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 43, 44, 1, 'en-GB', 0),
-(104, 'mainmenu-fa-ir', 'خانه', 'home-fa', '', 'home-fa', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 45, 46, 1, 'fa-IR', 0),
+(104, 'mainmenu-fa-ir', 'خانه', 'home-fa', '', 'home-fa', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"12\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 45, 46, 1, 'fa-IR', 0),
 (105, 'mainmenu-fa-ir', 'تماس با ما', 'contact', '', 'contact', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:contact&formId=5', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\\u0627\\u0632 \\u0637\\u0631\\u06cc\\u0642 \\u0641\\u0631\\u0645 \\u0632\\u06cc\\u0631 \\u0628\\u0627 \\u0645\\u0627 \\u062f\\u0631 \\u0627\\u0631\\u062a\\u0628\\u0627\\u0637 \\u0628\\u0627\\u0634\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062a\\u0645\\u0627\\u0633 \\u0628\\u0627 \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 67, 68, 0, 'fa-IR', 0),
 (106, 'main', 'com_rsseo', 'com_rsseo', '', 'com_rsseo', 'index.php?option=com_rsseo', 'component', 1, 1, 1, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 69, 102, 0, '', 1),
 (107, 'main', 'COM_RSSEO_MENU_OVERVIEW', 'com_rsseo_menu_overview', '', 'com_rsseo/com_rsseo_menu_overview', 'index.php?option=com_rsseo', 'component', 1, 106, 2, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 70, 71, 0, '', 1),
@@ -2553,7 +2559,7 @@ INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (122, 'main', 'COM_RSSEO_MENU_REPORT', 'com_rsseo_menu_report', '', 'com_rsseo/com_rsseo_menu_report', 'index.php?option=com_rsseo&view=report', 'component', 1, 106, 2, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 100, 101, 0, '', 1),
 (123, 'mainmenu-fa-ir', 'خدمات ما', 'services', '', 'services', 'index.php?option=com_content&view=category&layout=partoandisheh:services&id=8', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"secondary\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\\u0641\\u0647\\u0631\\u0633\\u062a\\u06cc \\u0627\\u0632 \\u062e\\u062f\\u0645\\u0627\\u062a\\u06cc \\u06a9\\u0647 \\u062f\\u0631 \\u0645\\u062c\\u0645\\u0648\\u0639\\u0647 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0645\\u06cc\\u200c\\u06af\\u0631\\u062f\\u0646\\u062f.\",\"height\":\"uk-padding-large\",\"layout_type\":\"blog\",\"show_category_heading_title_text\":\"\",\"show_category_title\":\"\",\"show_description\":\"1\",\"show_description_image\":\"\",\"maxLevel\":\"\",\"show_empty_categories\":\"\",\"show_no_articles\":\"\",\"show_subcat_desc\":\"\",\"show_cat_num_articles\":\"\",\"show_cat_tags\":\"\",\"page_subheading\":\"\",\"num_leading_articles\":\"\",\"num_intro_articles\":\"\",\"num_columns\":\"\",\"num_links\":\"\",\"multi_column_order\":\"1\",\"show_subcategory_content\":\"\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"show_featured\":\"\",\"article_layout\":\"partoandisheh:service\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 47, 58, 0, 'fa-IR', 0),
 (124, 'mainmenu-fa-ir', 'روانشناسان', 'psychologists', '', 'psychologists', 'index.php?option=com_content&view=category&layout=partoandisheh:psychologists&id=9', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"secondary\",\"textcolor\":\"secondary\",\"bgimg\":\"\",\"subtitle\":\"\\u0628\\u0627 \\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u0648 \\u062f\\u0631\\u0645\\u0627\\u0646\\u06af\\u0631\\u0627\\u0646 \\u0645\\u0631\\u06a9\\u0632 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647 \\u0622\\u0634\\u0646\\u0627 \\u0634\\u0648\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"layout_type\":\"blog\",\"show_category_heading_title_text\":\"\",\"show_category_title\":\"\",\"show_description\":\"\",\"show_description_image\":\"\",\"maxLevel\":\"\",\"show_empty_categories\":\"\",\"show_no_articles\":\"\",\"show_subcat_desc\":\"\",\"show_cat_num_articles\":\"\",\"show_cat_tags\":\"\",\"page_subheading\":\"\",\"num_leading_articles\":\"\",\"num_intro_articles\":\"\",\"num_columns\":\"4\",\"num_links\":\"\",\"multi_column_order\":\"1\",\"show_subcategory_content\":\"\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"show_featured\":\"\",\"article_layout\":\"partoandisheh:psychologist\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 59, 60, 0, 'fa-IR', 0),
-(125, 'mainmenu-fa-ir', 'رزرو نوبت مشاوره', 'appointment', '', 'appointment', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:appointment&formId=4', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\\u0628\\u0631\\u0627\\u06cc \\u062a\\u0639\\u06cc\\u06cc\\u0646 \\u0632\\u0645\\u0627\\u0646 \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647 \\u060c \\u0641\\u0631\\u0645 \\u0632\\u06cc\\u0631 \\u0631\\u0627 \\u0628\\u0647 \\u062f\\u0642\\u062a \\u0645\\u0637\\u0627\\u0644\\u0639\\u0647 \\u0648 \\u062a\\u06a9\\u0645\\u06cc\\u0644 \\u0646\\u0645\\u0627\\u06cc\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 61, 62, 0, 'fa-IR', 0),
+(125, 'mainmenu-fa-ir', 'رزرو نوبت مشاوره', 'appointment', '', 'appointment', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:appointment&formId=4', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"secondary\",\"bgimg\":\"\",\"subtitle\":\"\\u0628\\u0631\\u0627\\u06cc \\u062a\\u0639\\u06cc\\u06cc\\u0646 \\u0632\\u0645\\u0627\\u0646 \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647 \\u060c \\u0641\\u0631\\u0645 \\u0632\\u06cc\\u0631 \\u0631\\u0627 \\u0628\\u0647 \\u062f\\u0642\\u062a \\u0645\\u0637\\u0627\\u0644\\u0639\\u0647 \\u0648 \\u062a\\u06a9\\u0645\\u06cc\\u0644 \\u0646\\u0645\\u0627\\u06cc\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 61, 62, 0, 'fa-IR', 0),
 (126, 'mainmenu-fa-ir', 'بلاگ', 'blog', '', 'blog', 'index.php?option=com_content&view=category&layout=partoandisheh:webblog&id=10', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"secondary\",\"textcolor\":\"primary\",\"bgimg\":\"\",\"subtitle\":\"\\u0622\\u062e\\u0631\\u06cc\\u0646 \\u0645\\u0637\\u0627\\u0644\\u0628 \\u0639\\u0644\\u0645\\u06cc \\u0648 \\u0622\\u0645\\u0648\\u0632\\u0634\\u06cc \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"height\":\"uk-padding-large\",\"layout_type\":\"blog\",\"show_category_heading_title_text\":\"\",\"show_category_title\":\"\",\"show_description\":\"\",\"show_description_image\":\"\",\"maxLevel\":\"\",\"show_empty_categories\":\"\",\"show_no_articles\":\"\",\"show_subcat_desc\":\"\",\"show_cat_num_articles\":\"\",\"show_cat_tags\":\"\",\"page_subheading\":\"\",\"num_leading_articles\":\"18\",\"num_intro_articles\":\"\",\"num_columns\":\"\",\"num_links\":\"\",\"multi_column_order\":\"1\",\"show_subcategory_content\":\"\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"0\",\"show_featured\":\"\",\"article_layout\":\"partoandisheh:article\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"0\",\"show_category\":\"0\",\"link_category\":\"0\",\"show_parent_category\":\"0\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"0\",\"show_vote\":\"\",\"show_readmore\":\"0\",\"show_readmore_title\":\"0\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0628\\u0644\\u0627\\u06af\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 63, 64, 0, 'fa-IR', 0),
 (127, 'mainmenu-fa-ir', 'درباره ما', 'about', '', 'about', 'index.php?option=com_rsseo', 'component', 1, 1, 1, 10003, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"columns\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 65, 66, 0, 'fa-IR', 0),
 (128, 'main', 'RSFormPro', 'rsformpro', '', 'rsformpro', 'index.php?option=com_rsform', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 103, 114, 0, '', 1),
@@ -2582,12 +2588,12 @@ INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 --
 
 CREATE TABLE `brqs1_menu_types` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `client_id` int(11) NOT NULL DEFAULT 0
+                                    `id` int(10) UNSIGNED NOT NULL,
+                                    `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `title` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `client_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2606,15 +2612,15 @@ INSERT INTO `brqs1_menu_types` (`id`, `asset_id`, `menutype`, `title`, `descript
 --
 
 CREATE TABLE `brqs1_messages` (
-  `message_id` int(10) UNSIGNED NOT NULL,
-  `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `folder_id` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `priority` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                  `message_id` int(10) UNSIGNED NOT NULL,
+                                  `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                  `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                  `folder_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                  `date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                  `state` tinyint(4) NOT NULL DEFAULT '0',
+                                  `priority` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2624,9 +2630,9 @@ CREATE TABLE `brqs1_messages` (
 --
 
 CREATE TABLE `brqs1_messages_cfg` (
-  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `cfg_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `cfg_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                      `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                      `cfg_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                      `cfg_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2636,24 +2642,24 @@ CREATE TABLE `brqs1_messages_cfg` (
 --
 
 CREATE TABLE `brqs1_modules` (
-  `id` int(11) NOT NULL,
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
-  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `position` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `published` tinyint(4) NOT NULL DEFAULT 0,
-  `module` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `showtitle` tinyint(3) UNSIGNED NOT NULL DEFAULT 1,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `client_id` tinyint(4) NOT NULL DEFAULT 0,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL
+                                 `id` int(11) NOT NULL,
+                                 `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+                                 `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `content` text COLLATE utf8mb4_unicode_ci,
+                                 `ordering` int(11) NOT NULL DEFAULT '0',
+                                 `position` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                 `published` tinyint(4) NOT NULL DEFAULT '0',
+                                 `module` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                 `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                 `showtitle` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
+                                 `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `client_id` tinyint(4) NOT NULL DEFAULT '0',
+                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2698,8 +2704,8 @@ INSERT INTO `brqs1_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 --
 
 CREATE TABLE `brqs1_modules_menu` (
-  `moduleid` int(11) NOT NULL DEFAULT 0,
-  `menuid` int(11) NOT NULL DEFAULT 0
+                                      `moduleid` int(11) NOT NULL DEFAULT '0',
+                                      `menuid` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2764,36 +2770,36 @@ INSERT INTO `brqs1_modules_menu` (`moduleid`, `menuid`) VALUES
 --
 
 CREATE TABLE `brqs1_newsfeeds` (
-  `catid` int(11) NOT NULL DEFAULT 0,
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `link` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `published` tinyint(4) NOT NULL DEFAULT 0,
-  `numarticles` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `cache_time` int(10) UNSIGNED NOT NULL DEFAULT 3600,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `rtl` tinyint(4) NOT NULL DEFAULT 0,
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `images` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                   `catid` int(11) NOT NULL DEFAULT '0',
+                                   `id` int(10) UNSIGNED NOT NULL,
+                                   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                                   `link` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                   `published` tinyint(4) NOT NULL DEFAULT '0',
+                                   `numarticles` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                   `cache_time` int(10) UNSIGNED NOT NULL DEFAULT '3600',
+                                   `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                   `ordering` int(11) NOT NULL DEFAULT '0',
+                                   `rtl` tinyint(4) NOT NULL DEFAULT '0',
+                                   `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                   `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                   `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+                                   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                   `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                   `images` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2803,10 +2809,10 @@ CREATE TABLE `brqs1_newsfeeds` (
 --
 
 CREATE TABLE `brqs1_overrider` (
-  `id` int(11) NOT NULL COMMENT 'Primary Key',
-  `constant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `string` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+                                   `id` int(11) NOT NULL COMMENT 'Primary Key',
+                                   `constant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `string` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2816,20 +2822,20 @@ CREATE TABLE `brqs1_overrider` (
 --
 
 CREATE TABLE `brqs1_postinstall_messages` (
-  `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
-  `extension_id` bigint(20) NOT NULL DEFAULT 700 COMMENT 'FK to #__extensions',
-  `title_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
-  `description_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for description',
-  `action_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `language_extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'com_postinstall' COMMENT 'Extension holding lang keys',
-  `language_client_id` tinyint(4) NOT NULL DEFAULT 1,
-  `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'link' COMMENT 'Message type - message, link, action',
-  `action_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'RAD URI to the PHP file containing action method',
-  `action` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'Action method name or URL',
-  `condition_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'RAD URI to file holding display condition method',
-  `condition_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Display condition method, must return boolean',
-  `version_introduced` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
-  `enabled` tinyint(4) NOT NULL DEFAULT 1
+                                              `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
+                                              `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
+                                              `title_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
+                                              `description_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for description',
+                                              `action_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `language_extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'com_postinstall' COMMENT 'Extension holding lang keys',
+                                              `language_client_id` tinyint(4) NOT NULL DEFAULT '1',
+                                              `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'link' COMMENT 'Message type - message, link, action',
+                                              `action_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'RAD URI to the PHP file containing action method',
+                                              `action` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'Action method name or URL',
+                                              `condition_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'RAD URI to file holding display condition method',
+                                              `condition_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Display condition method, must return boolean',
+                                              `version_introduced` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
+                                              `enabled` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2855,14 +2861,14 @@ INSERT INTO `brqs1_postinstall_messages` (`postinstall_message_id`, `extension_i
 --
 
 CREATE TABLE `brqs1_privacy_consents` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `state` int(11) NOT NULL DEFAULT 1,
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remind` tinyint(4) NOT NULL DEFAULT 0,
-  `token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                          `id` int(10) UNSIGNED NOT NULL,
+                                          `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                          `state` int(11) NOT NULL DEFAULT '1',
+                                          `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                          `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                          `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                          `remind` tinyint(4) NOT NULL DEFAULT '0',
+                                          `token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2872,13 +2878,13 @@ CREATE TABLE `brqs1_privacy_consents` (
 --
 
 CREATE TABLE `brqs1_privacy_requests` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `requested_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `status` tinyint(4) NOT NULL DEFAULT 0,
-  `request_type` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `confirm_token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `confirm_token_created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                          `id` int(10) UNSIGNED NOT NULL,
+                                          `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                          `requested_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                          `status` tinyint(4) NOT NULL DEFAULT '0',
+                                          `request_type` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                          `confirm_token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                          `confirm_token_created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2888,16 +2894,16 @@ CREATE TABLE `brqs1_privacy_requests` (
 --
 
 CREATE TABLE `brqs1_redirect_links` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `old_url` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `new_url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referer` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `published` tinyint(4) NOT NULL,
-  `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `header` smallint(6) NOT NULL DEFAULT 301
+                                        `id` int(10) UNSIGNED NOT NULL,
+                                        `old_url` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `new_url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                        `referer` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                        `published` tinyint(4) NOT NULL,
+                                        `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `header` smallint(6) NOT NULL DEFAULT '301'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2907,11 +2913,11 @@ CREATE TABLE `brqs1_redirect_links` (
 --
 
 CREATE TABLE `brqs1_rsform_calculations` (
-  `id` int(11) NOT NULL,
-  `formId` int(11) NOT NULL,
-  `total` varchar(255) NOT NULL,
-  `expression` text NOT NULL,
-  `ordering` int(11) NOT NULL
+                                             `id` int(11) NOT NULL,
+                                             `formId` int(11) NOT NULL,
+                                             `total` varchar(255) NOT NULL,
+                                             `expression` text NOT NULL,
+                                             `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2921,11 +2927,11 @@ CREATE TABLE `brqs1_rsform_calculations` (
 --
 
 CREATE TABLE `brqs1_rsform_components` (
-  `ComponentId` int(11) NOT NULL,
-  `FormId` int(11) NOT NULL DEFAULT 0,
-  `ComponentTypeId` int(11) NOT NULL DEFAULT 0,
-  `Order` int(11) NOT NULL DEFAULT 0,
-  `Published` tinyint(1) NOT NULL DEFAULT 1
+                                           `ComponentId` int(11) NOT NULL,
+                                           `FormId` int(11) NOT NULL DEFAULT '0',
+                                           `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
+                                           `Order` int(11) NOT NULL DEFAULT '0',
+                                           `Published` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2981,8 +2987,8 @@ INSERT INTO `brqs1_rsform_components` (`ComponentId`, `FormId`, `ComponentTypeId
 --
 
 CREATE TABLE `brqs1_rsform_component_types` (
-  `ComponentTypeId` int(11) NOT NULL,
-  `ComponentTypeName` text NOT NULL
+                                                `ComponentTypeId` int(11) NOT NULL,
+                                                `ComponentTypeName` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3018,12 +3024,12 @@ INSERT INTO `brqs1_rsform_component_types` (`ComponentTypeId`, `ComponentTypeNam
 --
 
 CREATE TABLE `brqs1_rsform_component_type_fields` (
-  `ComponentTypeId` int(11) NOT NULL DEFAULT 0,
-  `FieldName` text NOT NULL,
-  `FieldType` varchar(32) NOT NULL DEFAULT 'hidden',
-  `FieldValues` text NOT NULL,
-  `Properties` text NOT NULL,
-  `Ordering` int(11) NOT NULL DEFAULT 0
+                                                      `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
+                                                      `FieldName` text NOT NULL,
+                                                      `FieldType` varchar(32) NOT NULL DEFAULT 'hidden',
+                                                      `FieldValues` text NOT NULL,
+                                                      `Properties` text NOT NULL,
+                                                      `Ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3303,13 +3309,13 @@ INSERT INTO `brqs1_rsform_component_type_fields` (`ComponentTypeId`, `FieldName`
 --
 
 CREATE TABLE `brqs1_rsform_conditions` (
-  `id` int(11) NOT NULL,
-  `form_id` int(11) NOT NULL,
-  `action` varchar(16) NOT NULL,
-  `block` tinyint(1) NOT NULL,
-  `component_id` text NOT NULL,
-  `condition` varchar(16) NOT NULL,
-  `lang_code` varchar(32) NOT NULL
+                                           `id` int(11) NOT NULL,
+                                           `form_id` int(11) NOT NULL,
+                                           `action` varchar(16) NOT NULL,
+                                           `block` tinyint(1) NOT NULL,
+                                           `component_id` text NOT NULL,
+                                           `condition` varchar(16) NOT NULL,
+                                           `lang_code` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3327,11 +3333,11 @@ INSERT INTO `brqs1_rsform_conditions` (`id`, `form_id`, `action`, `block`, `comp
 --
 
 CREATE TABLE `brqs1_rsform_condition_details` (
-  `id` int(11) NOT NULL,
-  `condition_id` int(11) NOT NULL,
-  `component_id` int(11) NOT NULL,
-  `operator` varchar(16) NOT NULL,
-  `value` varchar(255) NOT NULL
+                                                  `id` int(11) NOT NULL,
+                                                  `condition_id` int(11) NOT NULL,
+                                                  `component_id` int(11) NOT NULL,
+                                                  `operator` varchar(16) NOT NULL,
+                                                  `value` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3349,8 +3355,8 @@ INSERT INTO `brqs1_rsform_condition_details` (`id`, `condition_id`, `component_i
 --
 
 CREATE TABLE `brqs1_rsform_config` (
-  `SettingName` varchar(64) NOT NULL DEFAULT '',
-  `SettingValue` text NOT NULL
+                                       `SettingName` varchar(64) NOT NULL DEFAULT '',
+                                       `SettingValue` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3364,7 +3370,7 @@ INSERT INTO `brqs1_rsform_config` (`SettingName`, `SettingValue`) VALUES
 ('calculations.nodecimals', '2'),
 ('calculations.thousands', ','),
 ('deleteafter.interval', '10'),
-('deleteafter.last_run', '1623490152'),
+('deleteafter.last_run', '1623600655'),
 ('disposable_domains', ''),
 ('export.limit', '500'),
 ('export.mask', 'export-{formId}-{domain}-{date}'),
@@ -3392,24 +3398,24 @@ INSERT INTO `brqs1_rsform_config` (`SettingName`, `SettingValue`) VALUES
 --
 
 CREATE TABLE `brqs1_rsform_directory` (
-  `formId` int(11) NOT NULL,
-  `filename` varchar(255) NOT NULL DEFAULT 'export.pdf',
-  `csvfilename` varchar(255) NOT NULL DEFAULT '{alias}.csv',
-  `enablepdf` tinyint(1) NOT NULL,
-  `enablecsv` tinyint(1) NOT NULL,
-  `HideEmptyValues` tinyint(1) NOT NULL,
-  `ShowGoogleMap` tinyint(1) NOT NULL,
-  `ViewLayout` longtext NOT NULL,
-  `ViewLayoutName` text NOT NULL,
-  `ViewLayoutAutogenerate` tinyint(1) NOT NULL,
-  `CSS` text NOT NULL,
-  `JS` text NOT NULL,
-  `ListScript` text NOT NULL,
-  `DetailsScript` text NOT NULL,
-  `EmailsScript` text NOT NULL,
-  `EmailsCreatedScript` text NOT NULL,
-  `groups` text NOT NULL,
-  `DeletionGroups` text NOT NULL
+                                          `formId` int(11) NOT NULL,
+                                          `filename` varchar(255) NOT NULL DEFAULT 'export.pdf',
+                                          `csvfilename` varchar(255) NOT NULL DEFAULT '{alias}.csv',
+                                          `enablepdf` tinyint(1) NOT NULL,
+                                          `enablecsv` tinyint(1) NOT NULL,
+                                          `HideEmptyValues` tinyint(1) NOT NULL,
+                                          `ShowGoogleMap` tinyint(1) NOT NULL,
+                                          `ViewLayout` longtext NOT NULL,
+                                          `ViewLayoutName` text NOT NULL,
+                                          `ViewLayoutAutogenerate` tinyint(1) NOT NULL,
+                                          `CSS` text NOT NULL,
+                                          `JS` text NOT NULL,
+                                          `ListScript` text NOT NULL,
+                                          `DetailsScript` text NOT NULL,
+                                          `EmailsScript` text NOT NULL,
+                                          `EmailsCreatedScript` text NOT NULL,
+                                          `groups` text NOT NULL,
+                                          `DeletionGroups` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3419,14 +3425,14 @@ CREATE TABLE `brqs1_rsform_directory` (
 --
 
 CREATE TABLE `brqs1_rsform_directory_fields` (
-  `formId` int(11) NOT NULL,
-  `componentId` int(11) NOT NULL,
-  `viewable` tinyint(1) NOT NULL,
-  `searchable` tinyint(1) NOT NULL,
-  `editable` tinyint(1) NOT NULL,
-  `indetails` tinyint(1) NOT NULL,
-  `incsv` tinyint(1) NOT NULL,
-  `ordering` int(11) NOT NULL
+                                                 `formId` int(11) NOT NULL,
+                                                 `componentId` int(11) NOT NULL,
+                                                 `viewable` tinyint(1) NOT NULL,
+                                                 `searchable` tinyint(1) NOT NULL,
+                                                 `editable` tinyint(1) NOT NULL,
+                                                 `indetails` tinyint(1) NOT NULL,
+                                                 `incsv` tinyint(1) NOT NULL,
+                                                 `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3436,19 +3442,19 @@ CREATE TABLE `brqs1_rsform_directory_fields` (
 --
 
 CREATE TABLE `brqs1_rsform_emails` (
-  `id` int(11) NOT NULL,
-  `formId` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `from` varchar(255) NOT NULL,
-  `fromname` varchar(255) NOT NULL,
-  `replyto` varchar(255) NOT NULL,
-  `replytoname` varchar(255) NOT NULL,
-  `to` varchar(255) NOT NULL,
-  `cc` varchar(255) NOT NULL,
-  `bcc` varchar(255) NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `mode` tinyint(1) NOT NULL,
-  `message` text NOT NULL
+                                       `id` int(11) NOT NULL,
+                                       `formId` int(11) NOT NULL,
+                                       `type` varchar(255) NOT NULL,
+                                       `from` varchar(255) NOT NULL,
+                                       `fromname` varchar(255) NOT NULL,
+                                       `replyto` varchar(255) NOT NULL,
+                                       `replytoname` varchar(255) NOT NULL,
+                                       `to` varchar(255) NOT NULL,
+                                       `cc` varchar(255) NOT NULL,
+                                       `bcc` varchar(255) NOT NULL,
+                                       `subject` varchar(255) NOT NULL,
+                                       `mode` tinyint(1) NOT NULL,
+                                       `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3458,91 +3464,91 @@ CREATE TABLE `brqs1_rsform_emails` (
 --
 
 CREATE TABLE `brqs1_rsform_forms` (
-  `FormId` int(11) NOT NULL,
-  `FormName` text NOT NULL,
-  `FormLayout` longtext NOT NULL,
-  `GridLayout` mediumtext NOT NULL,
-  `FormLayoutName` text NOT NULL,
-  `LoadFormLayoutFramework` tinyint(1) NOT NULL DEFAULT 1,
-  `FormLayoutAutogenerate` tinyint(1) NOT NULL DEFAULT 1,
-  `FormLayoutFlow` tinyint(1) NOT NULL DEFAULT 0,
-  `DisableSubmitButton` tinyint(1) NOT NULL DEFAULT 0,
-  `RemoveCaptchaLogged` tinyint(1) NOT NULL DEFAULT 0,
-  `CSS` text NOT NULL,
-  `JS` text NOT NULL,
-  `FormTitle` text NOT NULL,
-  `ShowFormTitle` tinyint(1) NOT NULL DEFAULT 1,
-  `Published` tinyint(1) NOT NULL DEFAULT 1,
-  `Lang` varchar(255) NOT NULL DEFAULT '',
-  `ReturnUrl` text NOT NULL,
-  `ShowSystemMessage` tinyint(1) NOT NULL DEFAULT 1,
-  `ShowThankyou` tinyint(1) NOT NULL DEFAULT 1,
-  `ScrollToThankYou` tinyint(1) NOT NULL DEFAULT 0,
-  `ThankYouMessagePopUp` tinyint(1) NOT NULL DEFAULT 0,
-  `Thankyou` text NOT NULL,
-  `ShowContinue` tinyint(1) NOT NULL DEFAULT 1,
-  `UserEmailText` text NOT NULL,
-  `UserEmailTo` text NOT NULL,
-  `UserEmailCC` varchar(255) NOT NULL,
-  `UserEmailBCC` varchar(255) NOT NULL,
-  `UserEmailFrom` varchar(255) NOT NULL DEFAULT '',
-  `UserEmailReplyTo` varchar(255) NOT NULL,
-  `UserEmailReplyToName` varchar(255) NOT NULL,
-  `UserEmailFromName` varchar(255) NOT NULL DEFAULT '',
-  `UserEmailSubject` varchar(255) NOT NULL DEFAULT '',
-  `UserEmailMode` tinyint(4) NOT NULL DEFAULT 1,
-  `UserEmailAttach` tinyint(4) NOT NULL,
-  `UserEmailAttachFile` varchar(255) NOT NULL,
-  `AdminEmailText` text NOT NULL,
-  `AdminEmailTo` text NOT NULL,
-  `AdminEmailCC` varchar(255) NOT NULL,
-  `AdminEmailBCC` varchar(255) NOT NULL,
-  `AdminEmailFrom` varchar(255) NOT NULL DEFAULT '',
-  `AdminEmailReplyTo` varchar(255) NOT NULL,
-  `AdminEmailReplyToName` varchar(255) NOT NULL,
-  `AdminEmailFromName` varchar(255) NOT NULL DEFAULT '',
-  `AdminEmailSubject` varchar(255) NOT NULL DEFAULT '',
-  `AdminEmailMode` tinyint(4) NOT NULL DEFAULT 1,
-  `DeletionEmailText` text NOT NULL,
-  `DeletionEmailTo` text NOT NULL,
-  `DeletionEmailCC` varchar(255) NOT NULL,
-  `DeletionEmailBCC` varchar(255) NOT NULL,
-  `DeletionEmailFrom` varchar(255) NOT NULL DEFAULT '',
-  `DeletionEmailReplyTo` varchar(255) NOT NULL,
-  `DeletionEmailReplyToName` varchar(255) NOT NULL,
-  `DeletionEmailFromName` varchar(255) NOT NULL DEFAULT '',
-  `DeletionEmailSubject` varchar(255) NOT NULL DEFAULT '',
-  `DeletionEmailMode` tinyint(4) NOT NULL DEFAULT 1,
-  `ScriptProcess` text NOT NULL,
-  `ScriptProcess2` text NOT NULL,
-  `ScriptBeforeDisplay` text NOT NULL,
-  `ScriptBeforeValidation` text NOT NULL,
-  `ScriptDisplay` text NOT NULL,
-  `UserEmailScript` text NOT NULL,
-  `AdminEmailScript` text NOT NULL,
-  `AdditionalEmailsScript` text NOT NULL,
-  `MetaTitle` tinyint(1) NOT NULL,
-  `MetaDesc` text NOT NULL,
-  `MetaKeywords` text NOT NULL,
-  `Required` varchar(255) NOT NULL DEFAULT '(*)',
-  `ErrorMessage` text NOT NULL,
-  `MultipleSeparator` varchar(64) NOT NULL DEFAULT '\\n',
-  `TextareaNewLines` tinyint(1) NOT NULL DEFAULT 1,
-  `CSSClass` varchar(255) NOT NULL,
-  `CSSId` varchar(255) NOT NULL DEFAULT 'userForm',
-  `CSSName` varchar(255) NOT NULL,
-  `CSSAction` text NOT NULL,
-  `CSSAdditionalAttributes` text NOT NULL,
-  `AjaxValidation` tinyint(1) NOT NULL,
-  `ScrollToError` tinyint(1) NOT NULL,
-  `Keepdata` tinyint(1) NOT NULL DEFAULT 1,
-  `KeepIP` tinyint(1) NOT NULL DEFAULT 1,
-  `DeleteSubmissionsAfter` int(11) NOT NULL DEFAULT 0,
-  `Backendmenu` tinyint(1) NOT NULL,
-  `ConfirmSubmission` tinyint(1) NOT NULL DEFAULT 0,
-  `ConfirmSubmissionUrl` text NOT NULL,
-  `Access` varchar(5) NOT NULL,
-  `LimitSubmissions` int(11) NOT NULL DEFAULT 0
+                                      `FormId` int(11) NOT NULL,
+                                      `FormName` text NOT NULL,
+                                      `FormLayout` longtext NOT NULL,
+                                      `GridLayout` mediumtext NOT NULL,
+                                      `FormLayoutName` text NOT NULL,
+                                      `LoadFormLayoutFramework` tinyint(1) NOT NULL DEFAULT '1',
+                                      `FormLayoutAutogenerate` tinyint(1) NOT NULL DEFAULT '1',
+                                      `FormLayoutFlow` tinyint(1) NOT NULL DEFAULT '0',
+                                      `DisableSubmitButton` tinyint(1) NOT NULL DEFAULT '0',
+                                      `RemoveCaptchaLogged` tinyint(1) NOT NULL DEFAULT '0',
+                                      `CSS` text NOT NULL,
+                                      `JS` text NOT NULL,
+                                      `FormTitle` text NOT NULL,
+                                      `ShowFormTitle` tinyint(1) NOT NULL DEFAULT '1',
+                                      `Published` tinyint(1) NOT NULL DEFAULT '1',
+                                      `Lang` varchar(255) NOT NULL DEFAULT '',
+                                      `ReturnUrl` text NOT NULL,
+                                      `ShowSystemMessage` tinyint(1) NOT NULL DEFAULT '1',
+                                      `ShowThankyou` tinyint(1) NOT NULL DEFAULT '1',
+                                      `ScrollToThankYou` tinyint(1) NOT NULL DEFAULT '0',
+                                      `ThankYouMessagePopUp` tinyint(1) NOT NULL DEFAULT '0',
+                                      `Thankyou` text NOT NULL,
+                                      `ShowContinue` tinyint(1) NOT NULL DEFAULT '1',
+                                      `UserEmailText` text NOT NULL,
+                                      `UserEmailTo` text NOT NULL,
+                                      `UserEmailCC` varchar(255) NOT NULL,
+                                      `UserEmailBCC` varchar(255) NOT NULL,
+                                      `UserEmailFrom` varchar(255) NOT NULL DEFAULT '',
+                                      `UserEmailReplyTo` varchar(255) NOT NULL,
+                                      `UserEmailReplyToName` varchar(255) NOT NULL,
+                                      `UserEmailFromName` varchar(255) NOT NULL DEFAULT '',
+                                      `UserEmailSubject` varchar(255) NOT NULL DEFAULT '',
+                                      `UserEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+                                      `UserEmailAttach` tinyint(4) NOT NULL,
+                                      `UserEmailAttachFile` varchar(255) NOT NULL,
+                                      `AdminEmailText` text NOT NULL,
+                                      `AdminEmailTo` text NOT NULL,
+                                      `AdminEmailCC` varchar(255) NOT NULL,
+                                      `AdminEmailBCC` varchar(255) NOT NULL,
+                                      `AdminEmailFrom` varchar(255) NOT NULL DEFAULT '',
+                                      `AdminEmailReplyTo` varchar(255) NOT NULL,
+                                      `AdminEmailReplyToName` varchar(255) NOT NULL,
+                                      `AdminEmailFromName` varchar(255) NOT NULL DEFAULT '',
+                                      `AdminEmailSubject` varchar(255) NOT NULL DEFAULT '',
+                                      `AdminEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+                                      `DeletionEmailText` text NOT NULL,
+                                      `DeletionEmailTo` text NOT NULL,
+                                      `DeletionEmailCC` varchar(255) NOT NULL,
+                                      `DeletionEmailBCC` varchar(255) NOT NULL,
+                                      `DeletionEmailFrom` varchar(255) NOT NULL DEFAULT '',
+                                      `DeletionEmailReplyTo` varchar(255) NOT NULL,
+                                      `DeletionEmailReplyToName` varchar(255) NOT NULL,
+                                      `DeletionEmailFromName` varchar(255) NOT NULL DEFAULT '',
+                                      `DeletionEmailSubject` varchar(255) NOT NULL DEFAULT '',
+                                      `DeletionEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+                                      `ScriptProcess` text NOT NULL,
+                                      `ScriptProcess2` text NOT NULL,
+                                      `ScriptBeforeDisplay` text NOT NULL,
+                                      `ScriptBeforeValidation` text NOT NULL,
+                                      `ScriptDisplay` text NOT NULL,
+                                      `UserEmailScript` text NOT NULL,
+                                      `AdminEmailScript` text NOT NULL,
+                                      `AdditionalEmailsScript` text NOT NULL,
+                                      `MetaTitle` tinyint(1) NOT NULL,
+                                      `MetaDesc` text NOT NULL,
+                                      `MetaKeywords` text NOT NULL,
+                                      `Required` varchar(255) NOT NULL DEFAULT '(*)',
+                                      `ErrorMessage` text NOT NULL,
+                                      `MultipleSeparator` varchar(64) NOT NULL DEFAULT '\\n',
+                                      `TextareaNewLines` tinyint(1) NOT NULL DEFAULT '1',
+                                      `CSSClass` varchar(255) NOT NULL,
+                                      `CSSId` varchar(255) NOT NULL DEFAULT 'userForm',
+                                      `CSSName` varchar(255) NOT NULL,
+                                      `CSSAction` text NOT NULL,
+                                      `CSSAdditionalAttributes` text NOT NULL,
+                                      `AjaxValidation` tinyint(1) NOT NULL,
+                                      `ScrollToError` tinyint(1) NOT NULL,
+                                      `Keepdata` tinyint(1) NOT NULL DEFAULT '1',
+                                      `KeepIP` tinyint(1) NOT NULL DEFAULT '1',
+                                      `DeleteSubmissionsAfter` int(11) NOT NULL DEFAULT '0',
+                                      `Backendmenu` tinyint(1) NOT NULL,
+                                      `ConfirmSubmission` tinyint(1) NOT NULL DEFAULT '0',
+                                      `ConfirmSubmissionUrl` text NOT NULL,
+                                      `Access` varchar(5) NOT NULL,
+                                      `LimitSubmissions` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3560,22 +3566,22 @@ INSERT INTO `brqs1_rsform_forms` (`FormId`, `FormName`, `FormLayout`, `GridLayou
 --
 
 CREATE TABLE `brqs1_rsform_mappings` (
-  `id` int(11) NOT NULL,
-  `formId` int(11) NOT NULL,
-  `connection` tinyint(1) NOT NULL,
-  `host` varchar(255) NOT NULL,
-  `driver` varchar(16) NOT NULL,
-  `port` int(10) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `database` varchar(255) NOT NULL,
-  `method` tinyint(1) NOT NULL,
-  `table` varchar(255) NOT NULL,
-  `data` text NOT NULL,
-  `wheredata` text NOT NULL,
-  `extra` text NOT NULL,
-  `andor` text NOT NULL,
-  `ordering` int(11) NOT NULL
+                                         `id` int(11) NOT NULL,
+                                         `formId` int(11) NOT NULL,
+                                         `connection` tinyint(1) NOT NULL,
+                                         `host` varchar(255) NOT NULL,
+                                         `driver` varchar(16) NOT NULL,
+                                         `port` int(10) NOT NULL,
+                                         `username` varchar(255) NOT NULL,
+                                         `password` varchar(255) NOT NULL,
+                                         `database` varchar(255) NOT NULL,
+                                         `method` tinyint(1) NOT NULL,
+                                         `table` varchar(255) NOT NULL,
+                                         `data` text NOT NULL,
+                                         `wheredata` text NOT NULL,
+                                         `extra` text NOT NULL,
+                                         `andor` text NOT NULL,
+                                         `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3585,13 +3591,13 @@ CREATE TABLE `brqs1_rsform_mappings` (
 --
 
 CREATE TABLE `brqs1_rsform_posts` (
-  `form_id` int(11) NOT NULL,
-  `enabled` tinyint(1) NOT NULL,
-  `method` tinyint(1) NOT NULL,
-  `fields` mediumtext NOT NULL,
-  `headers` mediumtext NOT NULL,
-  `silent` tinyint(1) NOT NULL,
-  `url` text NOT NULL
+                                      `form_id` int(11) NOT NULL,
+                                      `enabled` tinyint(1) NOT NULL,
+                                      `method` tinyint(1) NOT NULL,
+                                      `fields` mediumtext NOT NULL,
+                                      `headers` mediumtext NOT NULL,
+                                      `silent` tinyint(1) NOT NULL,
+                                      `url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3609,10 +3615,10 @@ INSERT INTO `brqs1_rsform_posts` (`form_id`, `enabled`, `method`, `fields`, `hea
 --
 
 CREATE TABLE `brqs1_rsform_properties` (
-  `PropertyId` int(11) NOT NULL,
-  `ComponentId` int(11) NOT NULL DEFAULT 0,
-  `PropertyName` text NOT NULL,
-  `PropertyValue` text NOT NULL
+                                           `PropertyId` int(11) NOT NULL,
+                                           `ComponentId` int(11) NOT NULL DEFAULT '0',
+                                           `PropertyName` text NOT NULL,
+                                           `PropertyValue` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4155,15 +4161,15 @@ INSERT INTO `brqs1_rsform_properties` (`PropertyId`, `ComponentId`, `PropertyNam
 --
 
 CREATE TABLE `brqs1_rsform_submissions` (
-  `SubmissionId` int(11) NOT NULL,
-  `FormId` int(11) NOT NULL DEFAULT 0,
-  `DateSubmitted` datetime NOT NULL,
-  `UserIp` varchar(255) NOT NULL DEFAULT '',
-  `Username` varchar(255) NOT NULL DEFAULT '',
-  `UserId` text NOT NULL,
-  `Lang` varchar(255) NOT NULL,
-  `confirmed` tinyint(1) NOT NULL,
-  `SubmissionHash` varchar(32) NOT NULL
+                                            `SubmissionId` int(11) NOT NULL,
+                                            `FormId` int(11) NOT NULL DEFAULT '0',
+                                            `DateSubmitted` datetime NOT NULL,
+                                            `UserIp` varchar(255) NOT NULL DEFAULT '',
+                                            `Username` varchar(255) NOT NULL DEFAULT '',
+                                            `UserId` text NOT NULL,
+                                            `Lang` varchar(255) NOT NULL,
+                                            `confirmed` tinyint(1) NOT NULL,
+                                            `SubmissionHash` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4184,9 +4190,9 @@ INSERT INTO `brqs1_rsform_submissions` (`SubmissionId`, `FormId`, `DateSubmitted
 --
 
 CREATE TABLE `brqs1_rsform_submission_columns` (
-  `FormId` int(11) NOT NULL,
-  `ColumnName` varchar(255) NOT NULL,
-  `ColumnStatic` tinyint(1) NOT NULL
+                                                   `FormId` int(11) NOT NULL,
+                                                   `ColumnName` varchar(255) NOT NULL,
+                                                   `ColumnStatic` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4196,11 +4202,11 @@ CREATE TABLE `brqs1_rsform_submission_columns` (
 --
 
 CREATE TABLE `brqs1_rsform_submission_values` (
-  `SubmissionValueId` int(11) NOT NULL,
-  `FormId` int(11) NOT NULL,
-  `SubmissionId` int(11) NOT NULL DEFAULT 0,
-  `FieldName` text NOT NULL,
-  `FieldValue` text NOT NULL
+                                                  `SubmissionValueId` int(11) NOT NULL,
+                                                  `FormId` int(11) NOT NULL,
+                                                  `SubmissionId` int(11) NOT NULL DEFAULT '0',
+                                                  `FieldName` text NOT NULL,
+                                                  `FieldValue` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4299,12 +4305,12 @@ INSERT INTO `brqs1_rsform_submission_values` (`SubmissionValueId`, `FormId`, `Su
 --
 
 CREATE TABLE `brqs1_rsform_translations` (
-  `id` int(11) NOT NULL,
-  `form_id` int(11) NOT NULL,
-  `lang_code` varchar(32) NOT NULL,
-  `reference` varchar(255) NOT NULL,
-  `reference_id` varchar(255) NOT NULL,
-  `value` text NOT NULL
+                                             `id` int(11) NOT NULL,
+                                             `form_id` int(11) NOT NULL,
+                                             `lang_code` varchar(32) NOT NULL,
+                                             `reference` varchar(255) NOT NULL,
+                                             `reference_id` varchar(255) NOT NULL,
+                                             `value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4554,11 +4560,11 @@ INSERT INTO `brqs1_rsform_translations` (`id`, `form_id`, `lang_code`, `referenc
 --
 
 CREATE TABLE `brqs1_rsseo_broken_links` (
-  `id` int(11) NOT NULL,
-  `pid` int(11) NOT NULL DEFAULT 0,
-  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `published` tinyint(1) NOT NULL DEFAULT 0
+                                            `id` int(11) NOT NULL,
+                                            `pid` int(11) NOT NULL DEFAULT '0',
+                                            `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                            `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                            `published` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4568,22 +4574,22 @@ CREATE TABLE `brqs1_rsseo_broken_links` (
 --
 
 CREATE TABLE `brqs1_rsseo_competitors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `parent_id` int(11) NOT NULL DEFAULT 0,
-  `age` int(11) NOT NULL DEFAULT 0,
-  `alexa` int(11) NOT NULL DEFAULT -1,
-  `technorati` int(11) NOT NULL DEFAULT -1,
-  `googlep` int(11) NOT NULL DEFAULT -1,
-  `bingp` int(11) NOT NULL DEFAULT -1,
-  `googleb` int(11) NOT NULL DEFAULT -1,
-  `bingb` int(11) NOT NULL DEFAULT -1,
-  `googler` int(11) NOT NULL DEFAULT -1,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `tags` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `mozpagerank` int(11) NOT NULL DEFAULT 0,
-  `mozpa` int(11) NOT NULL DEFAULT 0,
-  `mozda` int(11) NOT NULL DEFAULT 0
+                                           `id` int(11) NOT NULL,
+                                           `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `parent_id` int(11) NOT NULL DEFAULT '0',
+                                           `age` int(11) NOT NULL DEFAULT '0',
+                                           `alexa` int(11) NOT NULL DEFAULT '-1',
+                                           `technorati` int(11) NOT NULL DEFAULT '-1',
+                                           `googlep` int(11) NOT NULL DEFAULT '-1',
+                                           `bingp` int(11) NOT NULL DEFAULT '-1',
+                                           `googleb` int(11) NOT NULL DEFAULT '-1',
+                                           `bingb` int(11) NOT NULL DEFAULT '-1',
+                                           `googler` int(11) NOT NULL DEFAULT '-1',
+                                           `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                           `tags` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `mozpagerank` int(11) NOT NULL DEFAULT '0',
+                                           `mozpa` int(11) NOT NULL DEFAULT '0',
+                                           `mozda` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4593,8 +4599,8 @@ CREATE TABLE `brqs1_rsseo_competitors` (
 --
 
 CREATE TABLE `brqs1_rsseo_data` (
-  `type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `data` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+                                    `type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `data` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4604,14 +4610,14 @@ CREATE TABLE `brqs1_rsseo_data` (
 --
 
 CREATE TABLE `brqs1_rsseo_errors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `error` int(5) NOT NULL DEFAULT 0,
-  `type` tinyint(1) NOT NULL DEFAULT 0,
-  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `layout` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `itemid` int(11) NOT NULL DEFAULT 0,
-  `published` tinyint(1) NOT NULL DEFAULT 0
+                                      `id` int(11) NOT NULL,
+                                      `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                      `error` int(5) NOT NULL DEFAULT '0',
+                                      `type` tinyint(1) NOT NULL DEFAULT '0',
+                                      `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                      `layout` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                      `itemid` int(11) NOT NULL DEFAULT '0',
+                                      `published` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4621,10 +4627,10 @@ CREATE TABLE `brqs1_rsseo_errors` (
 --
 
 CREATE TABLE `brqs1_rsseo_error_links` (
-  `id` int(11) NOT NULL,
-  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `code` int(11) NOT NULL DEFAULT 0,
-  `count` int(11) NOT NULL DEFAULT 0
+                                           `id` int(11) NOT NULL,
+                                           `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                           `code` int(11) NOT NULL DEFAULT '0',
+                                           `count` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4686,10 +4692,10 @@ INSERT INTO `brqs1_rsseo_error_links` (`id`, `url`, `code`, `count`) VALUES
 --
 
 CREATE TABLE `brqs1_rsseo_error_links_referer` (
-  `id` int(11) NOT NULL,
-  `idl` int(11) NOT NULL DEFAULT 0,
-  `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                                   `id` int(11) NOT NULL,
+                                                   `idl` int(11) NOT NULL DEFAULT '0',
+                                                   `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                                   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5054,10 +5060,10 @@ INSERT INTO `brqs1_rsseo_error_links_referer` (`id`, `idl`, `referer`, `date`) V
 --
 
 CREATE TABLE `brqs1_rsseo_gkeywords` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `site` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                         `id` int(11) NOT NULL,
+                                         `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `site` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5067,16 +5073,16 @@ CREATE TABLE `brqs1_rsseo_gkeywords` (
 --
 
 CREATE TABLE `brqs1_rsseo_gkeywords_data` (
-  `id` int(11) NOT NULL,
-  `idk` int(11) NOT NULL DEFAULT 0,
-  `date` date NOT NULL DEFAULT '0000-00-00',
-  `page` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `device` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `clicks` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `impressions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `ctr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                              `id` int(11) NOT NULL,
+                                              `idk` int(11) NOT NULL DEFAULT '0',
+                                              `date` date NOT NULL DEFAULT '0000-00-00',
+                                              `page` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `device` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `clicks` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `impressions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `ctr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                              `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5086,15 +5092,15 @@ CREATE TABLE `brqs1_rsseo_gkeywords_data` (
 --
 
 CREATE TABLE `brqs1_rsseo_keywords` (
-  `id` int(11) NOT NULL,
-  `keyword` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `importance` enum('low','relevant','important','critical') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'low',
-  `bold` int(2) NOT NULL DEFAULT 0,
-  `underline` int(2) NOT NULL DEFAULT 0,
-  `limit` int(3) NOT NULL DEFAULT 0,
-  `attributes` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                        `id` int(11) NOT NULL,
+                                        `keyword` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `importance` enum('low','relevant','important','critical') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'low',
+                                        `bold` int(2) NOT NULL DEFAULT '0',
+                                        `underline` int(2) NOT NULL DEFAULT '0',
+                                        `limit` int(3) NOT NULL DEFAULT '0',
+                                        `attributes` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5104,10 +5110,10 @@ CREATE TABLE `brqs1_rsseo_keywords` (
 --
 
 CREATE TABLE `brqs1_rsseo_keyword_position` (
-  `id` int(11) NOT NULL,
-  `idk` int(11) NOT NULL DEFAULT 0,
-  `position` int(11) NOT NULL DEFAULT 0,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                                `id` int(11) NOT NULL,
+                                                `idk` int(11) NOT NULL DEFAULT '0',
+                                                `position` int(11) NOT NULL DEFAULT '0',
+                                                `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5117,10 +5123,10 @@ CREATE TABLE `brqs1_rsseo_keyword_position` (
 --
 
 CREATE TABLE `brqs1_rsseo_logs` (
-  `id` int(11) NOT NULL,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                    `id` int(11) NOT NULL,
+                                    `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5130,40 +5136,40 @@ CREATE TABLE `brqs1_rsseo_logs` (
 --
 
 CREATE TABLE `brqs1_rsseo_pages` (
-  `id` int(11) NOT NULL,
-  `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hash` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `sef` varchar(444) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `short` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keywordsdensity` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sitemap` tinyint(1) NOT NULL DEFAULT 0,
-  `insitemap` int(2) NOT NULL DEFAULT 0,
-  `crawled` tinyint(1) NOT NULL DEFAULT 0,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified` int(3) NOT NULL DEFAULT 0,
-  `level` tinyint(4) NOT NULL DEFAULT 0,
-  `grade` float(10,2) NOT NULL DEFAULT -1.00,
-  `params` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `densityparams` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                                     `id` int(11) NOT NULL,
+                                     `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                     `hash` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `sef` varchar(444) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `short` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                     `keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                     `keywordsdensity` text COLLATE utf8mb4_unicode_ci,
+                                     `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                     `sitemap` tinyint(1) NOT NULL DEFAULT '0',
+                                     `insitemap` int(2) NOT NULL DEFAULT '0',
+                                     `crawled` tinyint(1) NOT NULL DEFAULT '0',
+                                     `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `modified` int(3) NOT NULL DEFAULT '0',
+                                     `level` tinyint(4) NOT NULL DEFAULT '0',
+                                     `grade` float(10,2) NOT NULL DEFAULT '-1.00',
+  `params` text COLLATE utf8mb4_unicode_ci,
+  `densityparams` text COLLATE utf8mb4_unicode_ci,
   `canonical` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `robots` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `frequency` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `priority` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `imagesnoalt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `imagesnowh` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hits` int(11) NOT NULL DEFAULT 0,
-  `custom` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imagesnoalt` text COLLATE utf8mb4_unicode_ci,
+  `imagesnowh` text COLLATE utf8mb4_unicode_ci,
+  `hits` int(11) NOT NULL DEFAULT '0',
+  `custom` text COLLATE utf8mb4_unicode_ci,
   `parent` varchar(333) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `external` int(11) NOT NULL DEFAULT 0,
-  `internal` int(11) NOT NULL DEFAULT 0,
-  `customhead` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `scripts` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `css` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` int(5) NOT NULL DEFAULT 0,
-  `published` tinyint(2) NOT NULL DEFAULT 1
+  `external` int(11) NOT NULL DEFAULT '0',
+  `internal` int(11) NOT NULL DEFAULT '0',
+  `customhead` text COLLATE utf8mb4_unicode_ci,
+  `scripts` text COLLATE utf8mb4_unicode_ci,
+  `css` text COLLATE utf8mb4_unicode_ci,
+  `status` int(5) NOT NULL DEFAULT '0',
+  `published` tinyint(2) NOT NULL DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5171,7 +5177,7 @@ CREATE TABLE `brqs1_rsseo_pages` (
 --
 
 INSERT INTO `brqs1_rsseo_pages` (`id`, `url`, `hash`, `sef`, `short`, `title`, `keywords`, `keywordsdensity`, `description`, `sitemap`, `insitemap`, `crawled`, `date`, `modified`, `level`, `grade`, `params`, `densityparams`, `canonical`, `robots`, `frequency`, `priority`, `imagesnoalt`, `imagesnowh`, `hits`, `custom`, `parent`, `external`, `internal`, `customhead`, `scripts`, `css`, `status`, `published`) VALUES
-(1, '', '', '', '', '', '', '', '', 0, 0, 0, '2021-05-17 06:17:12', 0, 0, 0.00, '', '', '', '', '', '', '', '', 281, NULL, '', 0, 0, NULL, NULL, NULL, 0, 1);
+(1, '', '', '', '', '', '', '', '', 0, 0, 0, '2021-05-17 06:17:12', 0, 0, 0.00, '', '', '', '', '', '', '', '', 284, NULL, '', 0, 0, NULL, NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5180,12 +5186,12 @@ INSERT INTO `brqs1_rsseo_pages` (`id`, `url`, `hash`, `sef`, `short`, `title`, `
 --
 
 CREATE TABLE `brqs1_rsseo_redirects` (
-  `id` int(11) NOT NULL,
-  `from` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `type` enum('301','302') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '301',
-  `hits` int(11) NOT NULL DEFAULT 0,
-  `published` int(2) NOT NULL DEFAULT 0
+                                         `id` int(11) NOT NULL,
+                                         `from` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `type` enum('301','302') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '301',
+                                         `hits` int(11) NOT NULL DEFAULT '0',
+                                         `published` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5195,11 +5201,11 @@ CREATE TABLE `brqs1_rsseo_redirects` (
 --
 
 CREATE TABLE `brqs1_rsseo_redirects_referer` (
-  `id` int(11) NOT NULL,
-  `rid` int(11) NOT NULL DEFAULT 0,
-  `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                                 `id` int(11) NOT NULL,
+                                                 `rid` int(11) NOT NULL DEFAULT '0',
+                                                 `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                                 `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                                 `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5209,21 +5215,21 @@ CREATE TABLE `brqs1_rsseo_redirects_referer` (
 --
 
 CREATE TABLE `brqs1_rsseo_statistics` (
-  `id` int(11) NOT NULL,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `age` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `googlep` int(11) NOT NULL DEFAULT 0,
-  `googleb` int(11) NOT NULL DEFAULT 0,
-  `googler` int(11) NOT NULL DEFAULT 0,
-  `bingp` int(11) NOT NULL DEFAULT 0,
-  `bingb` int(11) NOT NULL DEFAULT 0,
-  `alexa` int(11) NOT NULL DEFAULT 0,
-  `fb_share_count` int(11) NOT NULL DEFAULT 0,
-  `fb_like_count` int(11) NOT NULL DEFAULT 0,
-  `linkedin` int(11) NOT NULL DEFAULT 0,
-  `mozpagerank` int(11) NOT NULL DEFAULT 0,
-  `mozpa` int(11) NOT NULL DEFAULT 0,
-  `mozda` int(11) NOT NULL DEFAULT 0
+                                          `id` int(11) NOT NULL,
+                                          `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                          `age` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                          `googlep` int(11) NOT NULL DEFAULT '0',
+                                          `googleb` int(11) NOT NULL DEFAULT '0',
+                                          `googler` int(11) NOT NULL DEFAULT '0',
+                                          `bingp` int(11) NOT NULL DEFAULT '0',
+                                          `bingb` int(11) NOT NULL DEFAULT '0',
+                                          `alexa` int(11) NOT NULL DEFAULT '0',
+                                          `fb_share_count` int(11) NOT NULL DEFAULT '0',
+                                          `fb_like_count` int(11) NOT NULL DEFAULT '0',
+                                          `linkedin` int(11) NOT NULL DEFAULT '0',
+                                          `mozpagerank` int(11) NOT NULL DEFAULT '0',
+                                          `mozpa` int(11) NOT NULL DEFAULT '0',
+                                          `mozda` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5240,15 +5246,15 @@ INSERT INTO `brqs1_rsseo_statistics` (`id`, `date`, `age`, `googlep`, `googleb`,
 --
 
 CREATE TABLE `brqs1_rsseo_visitors` (
-  `id` int(11) NOT NULL,
-  `session_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `time` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `ip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `user_id` int(11) NOT NULL DEFAULT 0,
-  `agent` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `referer` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `page` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                        `id` int(11) NOT NULL,
+                                        `session_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                        `time` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `ip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `user_id` int(11) NOT NULL DEFAULT '0',
+                                        `agent` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                        `referer` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                        `page` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5258,8 +5264,8 @@ CREATE TABLE `brqs1_rsseo_visitors` (
 --
 
 CREATE TABLE `brqs1_schemas` (
-  `extension_id` int(11) NOT NULL,
-  `version_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+                                 `extension_id` int(11) NOT NULL,
+                                 `version_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5277,13 +5283,13 @@ INSERT INTO `brqs1_schemas` (`extension_id`, `version_id`) VALUES
 --
 
 CREATE TABLE `brqs1_session` (
-  `session_id` varbinary(192) NOT NULL,
-  `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
-  `guest` tinyint(3) UNSIGNED DEFAULT 1,
-  `time` int(11) NOT NULL DEFAULT 0,
-  `data` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `userid` int(11) DEFAULT 0,
-  `username` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT ''
+                                 `session_id` varbinary(192) NOT NULL,
+                                 `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
+                                 `guest` tinyint(3) UNSIGNED DEFAULT '1',
+                                 `time` int(11) NOT NULL DEFAULT '0',
+                                 `data` mediumtext COLLATE utf8mb4_unicode_ci,
+                                 `userid` int(11) DEFAULT '0',
+                                 `username` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5291,8 +5297,8 @@ CREATE TABLE `brqs1_session` (
 --
 
 INSERT INTO `brqs1_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-(0x6c33376937377070747331676776633372326d65386636366131, 1, 1, 1623490205, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:808:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyO3M6NToidG9rZW4iO3M6MzI6Ind2Q2IzRmt1OFBVSW15OE1PQUFXdEZKQVltOUVDWFRjIjtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjM0OTAyMDQ7czo0OiJsYXN0IjtpOjE2MjM0OTAyMDQ7czozOiJub3ciO2k6MTYyMzQ5MDIwNDt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 0, ''),
-(0x6c746876686a696d7469396a346b65653230316c383964613463, 0, 1, 1623490172, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo1O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyMzQ5MDE1NjtzOjQ6Imxhc3QiO2k6MTYyMzQ5MDE2ODtzOjM6Im5vdyI7aToxNjIzNDkwMTcxO319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, '');
+(0x39716964386f6d767063736375746f38756f6e72753775726b6b, 1, 1, 1623600655, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:736:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo1O3M6NToidG9rZW4iO3M6MzI6InQwVWN2cEFBbUR4c3p4a005cVNaQndBak84N0NhS0xGIjtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjM1OTgwODI7czo0OiJsYXN0IjtpOjE2MjM1OTk4MTU7czozOiJub3ciO2k6MTYyMzYwMDY1NTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
+(0x6a3535756d6a346b6167386f626e67746f326771726775363932, 0, 1, 1623497367, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTozO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyMzQ5NzIwOTtzOjQ6Imxhc3QiO2k6MTYyMzQ5NzIwOTtzOjM6Im5vdyI7aToxNjIzNDk3MzY3O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, '');
 
 -- --------------------------------------------------------
 
@@ -5301,36 +5307,36 @@ INSERT INTO `brqs1_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 --
 
 CREATE TABLE `brqs1_tags` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `lft` int(11) NOT NULL DEFAULT 0,
-  `rgt` int(11) NOT NULL DEFAULT 0,
-  `level` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `published` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta description for the page.',
-  `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta keywords for the page.',
-  `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded metadata properties.',
-  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                              `id` int(10) UNSIGNED NOT NULL,
+                              `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `lft` int(11) NOT NULL DEFAULT '0',
+                              `rgt` int(11) NOT NULL DEFAULT '0',
+                              `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                              `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                              `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                              `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `published` tinyint(4) NOT NULL DEFAULT '0',
+                              `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                              `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta description for the page.',
+                              `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta keywords for the page.',
+                              `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded metadata properties.',
+                              `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                              `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                              `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                              `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                              `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
+                              `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                              `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                              `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5350,12 +5356,12 @@ INSERT INTO `brqs1_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 --
 
 CREATE TABLE `brqs1_template_styles` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `template` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `client_id` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `home` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+                                         `id` int(10) UNSIGNED NOT NULL,
+                                         `template` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `client_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                         `home` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+                                         `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                         `params` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5376,10 +5382,10 @@ INSERT INTO `brqs1_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 --
 
 CREATE TABLE `brqs1_ucm_base` (
-  `ucm_id` int(10) UNSIGNED NOT NULL,
-  `ucm_item_id` int(11) NOT NULL,
-  `ucm_type_id` int(11) NOT NULL,
-  `ucm_language_id` int(11) NOT NULL
+                                  `ucm_id` int(10) UNSIGNED NOT NULL,
+                                  `ucm_item_id` int(11) NOT NULL,
+                                  `ucm_type_id` int(11) NOT NULL,
+                                  `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5396,38 +5402,38 @@ INSERT INTO `brqs1_ucm_base` (`ucm_id`, `ucm_item_id`, `ucm_type_id`, `ucm_langu
 --
 
 CREATE TABLE `brqs1_ucm_content` (
-  `core_content_id` int(10) UNSIGNED NOT NULL,
-  `core_type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
-  `core_title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `core_alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `core_body` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_state` tinyint(4) NOT NULL DEFAULT 0,
-  `core_checked_out_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_checked_out_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `core_access` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `core_params` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_featured` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
-  `core_metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-  `core_created_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `core_created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `core_created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Most recent user that modified',
-  `core_modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `core_publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_content_item_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'ID from the individual type table',
-  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
-  `core_images` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_urls` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_hits` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `core_version` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `core_ordering` int(11) NOT NULL DEFAULT 0,
-  `core_metakey` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_metadesc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `core_catid` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-  `core_type_id` int(10) UNSIGNED NOT NULL DEFAULT 0
+                                     `core_content_id` int(10) UNSIGNED NOT NULL,
+                                     `core_type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
+                                     `core_title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `core_alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+                                     `core_body` mediumtext COLLATE utf8mb4_unicode_ci,
+                                     `core_state` tinyint(4) NOT NULL DEFAULT '0',
+                                     `core_checked_out_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `core_checked_out_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_params` text COLLATE utf8mb4_unicode_ci,
+                                     `core_featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
+                                     `core_created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `core_created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `core_modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Most recent user that modified',
+                                     `core_modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `core_language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                     `core_publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `core_publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `core_content_item_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'ID from the individual type table',
+                                     `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+                                     `core_images` text COLLATE utf8mb4_unicode_ci,
+                                     `core_urls` text COLLATE utf8mb4_unicode_ci,
+                                     `core_hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+                                     `core_ordering` int(11) NOT NULL DEFAULT '0',
+                                     `core_metakey` text COLLATE utf8mb4_unicode_ci,
+                                     `core_metadesc` text COLLATE utf8mb4_unicode_ci,
+                                     `core_catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+                                     `core_type_id` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
 
 --
@@ -5444,16 +5450,16 @@ INSERT INTO `brqs1_ucm_content` (`core_content_id`, `core_type_alias`, `core_tit
 --
 
 CREATE TABLE `brqs1_ucm_history` (
-  `version_id` int(10) UNSIGNED NOT NULL,
-  `ucm_item_id` int(10) UNSIGNED NOT NULL,
-  `ucm_type_id` int(10) UNSIGNED NOT NULL,
-  `version_note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Optional version name',
-  `save_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `editor_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `character_count` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Number of characters in this version.',
-  `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
-  `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
-  `keep_forever` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0=auto delete; 1=keep'
+                                     `version_id` int(10) UNSIGNED NOT NULL,
+                                     `ucm_item_id` int(10) UNSIGNED NOT NULL,
+                                     `ucm_type_id` int(10) UNSIGNED NOT NULL,
+                                     `version_note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Optional version name',
+                                     `save_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                     `editor_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                     `character_count` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
+                                     `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
+                                     `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
+                                     `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5546,20 +5552,20 @@ INSERT INTO `brqs1_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 --
 
 CREATE TABLE `brqs1_updates` (
-  `update_id` int(11) NOT NULL,
-  `update_site_id` int(11) DEFAULT 0,
-  `extension_id` int(11) DEFAULT 0,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `element` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `folder` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `client_id` tinyint(4) DEFAULT 0,
-  `version` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `detailsurl` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `infourl` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
+                                 `update_id` int(11) NOT NULL,
+                                 `update_site_id` int(11) DEFAULT '0',
+                                 `extension_id` int(11) DEFAULT '0',
+                                 `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                 `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `element` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                 `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                 `folder` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                 `client_id` tinyint(4) DEFAULT '0',
+                                 `version` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                 `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `detailsurl` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `infourl` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                 `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
 
 -- --------------------------------------------------------
@@ -5569,13 +5575,13 @@ CREATE TABLE `brqs1_updates` (
 --
 
 CREATE TABLE `brqs1_update_sites` (
-  `update_site_id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `enabled` int(11) DEFAULT 0,
-  `last_check_timestamp` bigint(20) DEFAULT 0,
-  `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
+                                      `update_site_id` int(11) NOT NULL,
+                                      `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                      `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+                                      `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                      `enabled` int(11) DEFAULT '0',
+                                      `last_check_timestamp` bigint(20) DEFAULT '0',
+                                      `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Update Sites';
 
 --
@@ -5583,7 +5589,7 @@ CREATE TABLE `brqs1_update_sites` (
 --
 
 INSERT INTO `brqs1_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1623486410, ''),
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1623583127, ''),
 (2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1623476619, ''),
 (3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1623476631, ''),
 (4, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1623476642, ''),
@@ -5599,8 +5605,8 @@ INSERT INTO `brqs1_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 --
 
 CREATE TABLE `brqs1_update_sites_extensions` (
-  `update_site_id` int(11) NOT NULL DEFAULT 0,
-  `extension_id` int(11) NOT NULL DEFAULT 0
+                                                 `update_site_id` int(11) NOT NULL DEFAULT '0',
+                                                 `extension_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Links extensions to update sites';
 
 --
@@ -5624,11 +5630,11 @@ INSERT INTO `brqs1_update_sites_extensions` (`update_site_id`, `extension_id`) V
 --
 
 CREATE TABLE `brqs1_usergroups` (
-  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Adjacency List Reference Id',
-  `lft` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set lft.',
-  `rgt` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set rgt.',
-  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+                                    `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                                    `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
+                                    `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+                                    `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+                                    `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5653,22 +5659,22 @@ INSERT INTO `brqs1_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 --
 
 CREATE TABLE `brqs1_users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `username` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `block` tinyint(4) NOT NULL DEFAULT 0,
-  `sendEmail` tinyint(4) DEFAULT 0,
-  `registerDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `lastvisitDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `activation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastResetTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date of last password reset',
-  `resetCount` int(11) NOT NULL DEFAULT 0 COMMENT 'Count of password resets since lastResetTime',
-  `otpKey` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
-  `otep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
-  `requireReset` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'Require user to reset password on next login'
+                               `id` int(11) NOT NULL,
+                               `name` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                               `username` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                               `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                               `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                               `block` tinyint(4) NOT NULL DEFAULT '0',
+                               `sendEmail` tinyint(4) DEFAULT '0',
+                               `registerDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                               `lastvisitDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                               `activation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                               `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                               `lastResetTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date of last password reset',
+                               `resetCount` int(11) NOT NULL DEFAULT '0' COMMENT 'Count of password resets since lastResetTime',
+                               `otpKey` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
+                               `otep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
+                               `requireReset` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Require user to reset password on next login'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5676,7 +5682,7 @@ CREATE TABLE `brqs1_users` (
 --
 
 INSERT INTO `brqs1_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(120, 'Super User', 'developer', 'pouradaby@gmail.com', '$2y$10$Z6edbSeUa.FCLNbrs5S/9eI5MyVHhywPRhM85HE2VZTjZFcSYBNDK', 0, 1, '2021-04-29 01:18:21', '2021-06-12 05:43:15', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+(120, 'Super User', 'developer', 'pouradaby@gmail.com', '$2y$10$Z6edbSeUa.FCLNbrs5S/9eI5MyVHhywPRhM85HE2VZTjZFcSYBNDK', 0, 1, '2021-04-29 01:18:21', '2021-06-12 10:57:23', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -5685,13 +5691,13 @@ INSERT INTO `brqs1_users` (`id`, `name`, `username`, `email`, `password`, `block
 --
 
 CREATE TABLE `brqs1_user_keys` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `series` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `invalid` tinyint(4) NOT NULL,
-  `time` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `uastring` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+                                   `id` int(10) UNSIGNED NOT NULL,
+                                   `user_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `series` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `invalid` tinyint(4) NOT NULL,
+                                   `time` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                   `uastring` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5701,21 +5707,21 @@ CREATE TABLE `brqs1_user_keys` (
 --
 
 CREATE TABLE `brqs1_user_notes` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `catid` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `subject` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state` tinyint(4) NOT NULL DEFAULT 0,
-  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) UNSIGNED NOT NULL,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+                                    `id` int(10) UNSIGNED NOT NULL,
+                                    `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `subject` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `state` tinyint(4) NOT NULL DEFAULT '0',
+                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+                                    `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `modified_user_id` int(10) UNSIGNED NOT NULL,
+                                    `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                    `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5725,10 +5731,10 @@ CREATE TABLE `brqs1_user_notes` (
 --
 
 CREATE TABLE `brqs1_user_profiles` (
-  `user_id` int(11) NOT NULL,
-  `profile_key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `profile_value` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ordering` int(11) NOT NULL DEFAULT 0
+                                       `user_id` int(11) NOT NULL,
+                                       `profile_key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `profile_value` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                                       `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Simple user profile storage table';
 
 -- --------------------------------------------------------
@@ -5738,8 +5744,8 @@ CREATE TABLE `brqs1_user_profiles` (
 --
 
 CREATE TABLE `brqs1_user_usergroup_map` (
-  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Foreign Key to #__usergroups.id'
+                                            `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+                                            `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5756,7 +5762,7 @@ INSERT INTO `brqs1_user_usergroup_map` (`user_id`, `group_id`) VALUES
 --
 
 CREATE TABLE `brqs1_utf8_conversion` (
-  `converted` tinyint(4) NOT NULL DEFAULT 0
+    `converted` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5773,10 +5779,10 @@ INSERT INTO `brqs1_utf8_conversion` (`converted`) VALUES
 --
 
 CREATE TABLE `brqs1_viewlevels` (
-  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `ordering` int(11) NOT NULL DEFAULT 0,
-  `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
+                                    `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                                    `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+                                    `ordering` int(11) NOT NULL DEFAULT '0',
+                                    `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5798,7 +5804,7 @@ INSERT INTO `brqs1_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Indexes for table `brqs1_action_logs`
 --
 ALTER TABLE `brqs1_action_logs`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_user_id_logdate` (`user_id`,`log_date`),
   ADD KEY `idx_user_id_extension` (`user_id`,`extension`),
@@ -5808,26 +5814,26 @@ ALTER TABLE `brqs1_action_logs`
 -- Indexes for table `brqs1_action_logs_extensions`
 --
 ALTER TABLE `brqs1_action_logs_extensions`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_action_logs_users`
 --
 ALTER TABLE `brqs1_action_logs_users`
-  ADD PRIMARY KEY (`user_id`),
+    ADD PRIMARY KEY (`user_id`),
   ADD KEY `idx_notify` (`notify`);
 
 --
 -- Indexes for table `brqs1_action_log_config`
 --
 ALTER TABLE `brqs1_action_log_config`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_assets`
 --
 ALTER TABLE `brqs1_assets`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_asset_name` (`name`),
   ADD KEY `idx_lft_rgt` (`lft`,`rgt`),
   ADD KEY `idx_parent_id` (`parent_id`);
@@ -5836,14 +5842,14 @@ ALTER TABLE `brqs1_assets`
 -- Indexes for table `brqs1_associations`
 --
 ALTER TABLE `brqs1_associations`
-  ADD PRIMARY KEY (`context`,`id`),
+    ADD PRIMARY KEY (`context`,`id`),
   ADD KEY `idx_key` (`key`);
 
 --
 -- Indexes for table `brqs1_banners`
 --
 ALTER TABLE `brqs1_banners`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100)),
@@ -5854,7 +5860,7 @@ ALTER TABLE `brqs1_banners`
 -- Indexes for table `brqs1_banner_clients`
 --
 ALTER TABLE `brqs1_banner_clients`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100));
 
@@ -5862,7 +5868,7 @@ ALTER TABLE `brqs1_banner_clients`
 -- Indexes for table `brqs1_banner_tracks`
 --
 ALTER TABLE `brqs1_banner_tracks`
-  ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
+    ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
   ADD KEY `idx_track_date` (`track_date`),
   ADD KEY `idx_track_type` (`track_type`),
   ADD KEY `idx_banner_id` (`banner_id`);
@@ -5871,7 +5877,7 @@ ALTER TABLE `brqs1_banner_tracks`
 -- Indexes for table `brqs1_categories`
 --
 ALTER TABLE `brqs1_categories`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `cat_idx` (`extension`,`published`,`access`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -5884,7 +5890,7 @@ ALTER TABLE `brqs1_categories`
 -- Indexes for table `brqs1_contact_details`
 --
 ALTER TABLE `brqs1_contact_details`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`published`),
@@ -5898,7 +5904,7 @@ ALTER TABLE `brqs1_contact_details`
 -- Indexes for table `brqs1_content`
 --
 ALTER TABLE `brqs1_content`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
@@ -5913,35 +5919,35 @@ ALTER TABLE `brqs1_content`
 -- Indexes for table `brqs1_contentitem_tag_map`
 --
 ALTER TABLE `brqs1_contentitem_tag_map`
-  ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
-  ADD KEY `idx_tag_type` (`tag_id`,`type_id`),
-  ADD KEY `idx_date_id` (`tag_date`,`tag_id`),
-  ADD KEY `idx_core_content_id` (`core_content_id`);
+    ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
+    ADD KEY `idx_tag_type` (`tag_id`,`type_id`),
+    ADD KEY `idx_date_id` (`tag_date`,`tag_id`),
+    ADD KEY `idx_core_content_id` (`core_content_id`);
 
 --
 -- Indexes for table `brqs1_content_frontpage`
 --
 ALTER TABLE `brqs1_content_frontpage`
-  ADD PRIMARY KEY (`content_id`);
+    ADD PRIMARY KEY (`content_id`);
 
 --
 -- Indexes for table `brqs1_content_rating`
 --
 ALTER TABLE `brqs1_content_rating`
-  ADD PRIMARY KEY (`content_id`);
+    ADD PRIMARY KEY (`content_id`);
 
 --
 -- Indexes for table `brqs1_content_types`
 --
 ALTER TABLE `brqs1_content_types`
-  ADD PRIMARY KEY (`type_id`),
+    ADD PRIMARY KEY (`type_id`),
   ADD KEY `idx_alias` (`type_alias`(100));
 
 --
 -- Indexes for table `brqs1_extensions`
 --
 ALTER TABLE `brqs1_extensions`
-  ADD PRIMARY KEY (`extension_id`),
+    ADD PRIMARY KEY (`extension_id`),
   ADD KEY `element_clientid` (`element`,`client_id`),
   ADD KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
@@ -5950,7 +5956,7 @@ ALTER TABLE `brqs1_extensions`
 -- Indexes for table `brqs1_fields`
 --
 ALTER TABLE `brqs1_fields`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_created_user_id` (`created_user_id`),
@@ -5962,13 +5968,13 @@ ALTER TABLE `brqs1_fields`
 -- Indexes for table `brqs1_fields_categories`
 --
 ALTER TABLE `brqs1_fields_categories`
-  ADD PRIMARY KEY (`field_id`,`category_id`);
+    ADD PRIMARY KEY (`field_id`,`category_id`);
 
 --
 -- Indexes for table `brqs1_fields_groups`
 --
 ALTER TABLE `brqs1_fields_groups`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_created_by` (`created_by`),
@@ -5980,20 +5986,20 @@ ALTER TABLE `brqs1_fields_groups`
 -- Indexes for table `brqs1_fields_values`
 --
 ALTER TABLE `brqs1_fields_values`
-  ADD KEY `idx_field_id` (`field_id`),
+    ADD KEY `idx_field_id` (`field_id`),
   ADD KEY `idx_item_id` (`item_id`(191));
 
 --
 -- Indexes for table `brqs1_finder_filters`
 --
 ALTER TABLE `brqs1_finder_filters`
-  ADD PRIMARY KEY (`filter_id`);
+    ADD PRIMARY KEY (`filter_id`);
 
 --
 -- Indexes for table `brqs1_finder_links`
 --
 ALTER TABLE `brqs1_finder_links`
-  ADD PRIMARY KEY (`link_id`),
+    ADD PRIMARY KEY (`link_id`),
   ADD KEY `idx_type` (`type_id`),
   ADD KEY `idx_title` (`title`(100)),
   ADD KEY `idx_md5` (`md5sum`),
@@ -6005,7 +6011,7 @@ ALTER TABLE `brqs1_finder_links`
 -- Indexes for table `brqs1_finder_links_terms0`
 --
 ALTER TABLE `brqs1_finder_links_terms0`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6013,7 +6019,7 @@ ALTER TABLE `brqs1_finder_links_terms0`
 -- Indexes for table `brqs1_finder_links_terms1`
 --
 ALTER TABLE `brqs1_finder_links_terms1`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6021,7 +6027,7 @@ ALTER TABLE `brqs1_finder_links_terms1`
 -- Indexes for table `brqs1_finder_links_terms2`
 --
 ALTER TABLE `brqs1_finder_links_terms2`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6029,7 +6035,7 @@ ALTER TABLE `brqs1_finder_links_terms2`
 -- Indexes for table `brqs1_finder_links_terms3`
 --
 ALTER TABLE `brqs1_finder_links_terms3`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6037,7 +6043,7 @@ ALTER TABLE `brqs1_finder_links_terms3`
 -- Indexes for table `brqs1_finder_links_terms4`
 --
 ALTER TABLE `brqs1_finder_links_terms4`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6045,7 +6051,7 @@ ALTER TABLE `brqs1_finder_links_terms4`
 -- Indexes for table `brqs1_finder_links_terms5`
 --
 ALTER TABLE `brqs1_finder_links_terms5`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6053,7 +6059,7 @@ ALTER TABLE `brqs1_finder_links_terms5`
 -- Indexes for table `brqs1_finder_links_terms6`
 --
 ALTER TABLE `brqs1_finder_links_terms6`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6061,7 +6067,7 @@ ALTER TABLE `brqs1_finder_links_terms6`
 -- Indexes for table `brqs1_finder_links_terms7`
 --
 ALTER TABLE `brqs1_finder_links_terms7`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6069,7 +6075,7 @@ ALTER TABLE `brqs1_finder_links_terms7`
 -- Indexes for table `brqs1_finder_links_terms8`
 --
 ALTER TABLE `brqs1_finder_links_terms8`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6077,7 +6083,7 @@ ALTER TABLE `brqs1_finder_links_terms8`
 -- Indexes for table `brqs1_finder_links_terms9`
 --
 ALTER TABLE `brqs1_finder_links_terms9`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6085,7 +6091,7 @@ ALTER TABLE `brqs1_finder_links_terms9`
 -- Indexes for table `brqs1_finder_links_termsa`
 --
 ALTER TABLE `brqs1_finder_links_termsa`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6093,7 +6099,7 @@ ALTER TABLE `brqs1_finder_links_termsa`
 -- Indexes for table `brqs1_finder_links_termsb`
 --
 ALTER TABLE `brqs1_finder_links_termsb`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6101,7 +6107,7 @@ ALTER TABLE `brqs1_finder_links_termsb`
 -- Indexes for table `brqs1_finder_links_termsc`
 --
 ALTER TABLE `brqs1_finder_links_termsc`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6109,7 +6115,7 @@ ALTER TABLE `brqs1_finder_links_termsc`
 -- Indexes for table `brqs1_finder_links_termsd`
 --
 ALTER TABLE `brqs1_finder_links_termsd`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6117,7 +6123,7 @@ ALTER TABLE `brqs1_finder_links_termsd`
 -- Indexes for table `brqs1_finder_links_termse`
 --
 ALTER TABLE `brqs1_finder_links_termse`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6125,7 +6131,7 @@ ALTER TABLE `brqs1_finder_links_termse`
 -- Indexes for table `brqs1_finder_links_termsf`
 --
 ALTER TABLE `brqs1_finder_links_termsf`
-  ADD PRIMARY KEY (`link_id`,`term_id`),
+    ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6133,7 +6139,7 @@ ALTER TABLE `brqs1_finder_links_termsf`
 -- Indexes for table `brqs1_finder_taxonomy`
 --
 ALTER TABLE `brqs1_finder_taxonomy`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `parent_id` (`parent_id`),
   ADD KEY `state` (`state`),
   ADD KEY `ordering` (`ordering`),
@@ -6144,7 +6150,7 @@ ALTER TABLE `brqs1_finder_taxonomy`
 -- Indexes for table `brqs1_finder_taxonomy_map`
 --
 ALTER TABLE `brqs1_finder_taxonomy_map`
-  ADD PRIMARY KEY (`link_id`,`node_id`),
+    ADD PRIMARY KEY (`link_id`,`node_id`),
   ADD KEY `link_id` (`link_id`),
   ADD KEY `node_id` (`node_id`);
 
@@ -6152,7 +6158,7 @@ ALTER TABLE `brqs1_finder_taxonomy_map`
 -- Indexes for table `brqs1_finder_terms`
 --
 ALTER TABLE `brqs1_finder_terms`
-  ADD PRIMARY KEY (`term_id`),
+    ADD PRIMARY KEY (`term_id`),
   ADD UNIQUE KEY `idx_term` (`term`),
   ADD KEY `idx_term_phrase` (`term`,`phrase`),
   ADD KEY `idx_stem_phrase` (`stem`,`phrase`),
@@ -6162,35 +6168,35 @@ ALTER TABLE `brqs1_finder_terms`
 -- Indexes for table `brqs1_finder_terms_common`
 --
 ALTER TABLE `brqs1_finder_terms_common`
-  ADD KEY `idx_word_lang` (`term`,`language`),
+    ADD KEY `idx_word_lang` (`term`,`language`),
   ADD KEY `idx_lang` (`language`);
 
 --
 -- Indexes for table `brqs1_finder_tokens`
 --
 ALTER TABLE `brqs1_finder_tokens`
-  ADD KEY `idx_word` (`term`),
+    ADD KEY `idx_word` (`term`),
   ADD KEY `idx_context` (`context`);
 
 --
 -- Indexes for table `brqs1_finder_tokens_aggregate`
 --
 ALTER TABLE `brqs1_finder_tokens_aggregate`
-  ADD KEY `token` (`term`),
+    ADD KEY `token` (`term`),
   ADD KEY `keyword_id` (`term_id`);
 
 --
 -- Indexes for table `brqs1_finder_types`
 --
 ALTER TABLE `brqs1_finder_types`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `title` (`title`);
 
 --
 -- Indexes for table `brqs1_languages`
 --
 ALTER TABLE `brqs1_languages`
-  ADD PRIMARY KEY (`lang_id`),
+    ADD PRIMARY KEY (`lang_id`),
   ADD UNIQUE KEY `idx_sef` (`sef`),
   ADD UNIQUE KEY `idx_langcode` (`lang_code`),
   ADD KEY `idx_access` (`access`),
@@ -6200,19 +6206,19 @@ ALTER TABLE `brqs1_languages`
 -- Indexes for table `brqs1_logregsms_confirm`
 --
 ALTER TABLE `brqs1_logregsms_confirm`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_logregsms_smsarchives`
 --
 ALTER TABLE `brqs1_logregsms_smsarchives`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_menu`
 --
 ALTER TABLE `brqs1_menu`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`(100),`language`),
   ADD KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`),
   ADD KEY `idx_menutype` (`menutype`),
@@ -6225,27 +6231,27 @@ ALTER TABLE `brqs1_menu`
 -- Indexes for table `brqs1_menu_types`
 --
 ALTER TABLE `brqs1_menu_types`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_menutype` (`menutype`);
 
 --
 -- Indexes for table `brqs1_messages`
 --
 ALTER TABLE `brqs1_messages`
-  ADD PRIMARY KEY (`message_id`),
+    ADD PRIMARY KEY (`message_id`),
   ADD KEY `useridto_state` (`user_id_to`,`state`);
 
 --
 -- Indexes for table `brqs1_messages_cfg`
 --
 ALTER TABLE `brqs1_messages_cfg`
-  ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
+    ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
 
 --
 -- Indexes for table `brqs1_modules`
 --
 ALTER TABLE `brqs1_modules`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `published` (`published`,`access`),
   ADD KEY `newsfeeds` (`module`,`published`),
   ADD KEY `idx_language` (`language`);
@@ -6254,13 +6260,13 @@ ALTER TABLE `brqs1_modules`
 -- Indexes for table `brqs1_modules_menu`
 --
 ALTER TABLE `brqs1_modules_menu`
-  ADD PRIMARY KEY (`moduleid`,`menuid`);
+    ADD PRIMARY KEY (`moduleid`,`menuid`);
 
 --
 -- Indexes for table `brqs1_newsfeeds`
 --
 ALTER TABLE `brqs1_newsfeeds`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`published`),
@@ -6273,32 +6279,32 @@ ALTER TABLE `brqs1_newsfeeds`
 -- Indexes for table `brqs1_overrider`
 --
 ALTER TABLE `brqs1_overrider`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_postinstall_messages`
 --
 ALTER TABLE `brqs1_postinstall_messages`
-  ADD PRIMARY KEY (`postinstall_message_id`);
+    ADD PRIMARY KEY (`postinstall_message_id`);
 
 --
 -- Indexes for table `brqs1_privacy_consents`
 --
 ALTER TABLE `brqs1_privacy_consents`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
 -- Indexes for table `brqs1_privacy_requests`
 --
 ALTER TABLE `brqs1_privacy_requests`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_redirect_links`
 --
 ALTER TABLE `brqs1_redirect_links`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_old_url` (`old_url`(100)),
   ADD KEY `idx_link_modifed` (`modified_date`);
 
@@ -6306,7 +6312,7 @@ ALTER TABLE `brqs1_redirect_links`
 -- Indexes for table `brqs1_rsform_calculations`
 --
 ALTER TABLE `brqs1_rsform_calculations`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `formId` (`formId`),
   ADD KEY `ordering` (`ordering`),
   ADD KEY `formId_2` (`formId`,`ordering`);
@@ -6315,34 +6321,34 @@ ALTER TABLE `brqs1_rsform_calculations`
 -- Indexes for table `brqs1_rsform_components`
 --
 ALTER TABLE `brqs1_rsform_components`
-  ADD UNIQUE KEY `ComponentId` (`ComponentId`),
-  ADD KEY `ComponentTypeId` (`ComponentTypeId`),
-  ADD KEY `FormId` (`FormId`);
+    ADD UNIQUE KEY `ComponentId` (`ComponentId`),
+    ADD KEY `ComponentTypeId` (`ComponentTypeId`),
+    ADD KEY `FormId` (`FormId`);
 
 --
 -- Indexes for table `brqs1_rsform_component_types`
 --
 ALTER TABLE `brqs1_rsform_component_types`
-  ADD PRIMARY KEY (`ComponentTypeId`);
+    ADD PRIMARY KEY (`ComponentTypeId`);
 
 --
 -- Indexes for table `brqs1_rsform_component_type_fields`
 --
 ALTER TABLE `brqs1_rsform_component_type_fields`
-  ADD KEY `ComponentTypeId` (`ComponentTypeId`);
+    ADD KEY `ComponentTypeId` (`ComponentTypeId`);
 
 --
 -- Indexes for table `brqs1_rsform_conditions`
 --
 ALTER TABLE `brqs1_rsform_conditions`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `form_id` (`form_id`);
 
 --
 -- Indexes for table `brqs1_rsform_condition_details`
 --
 ALTER TABLE `brqs1_rsform_condition_details`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `condition_id` (`condition_id`),
   ADD KEY `component_id` (`component_id`);
 
@@ -6350,56 +6356,56 @@ ALTER TABLE `brqs1_rsform_condition_details`
 -- Indexes for table `brqs1_rsform_config`
 --
 ALTER TABLE `brqs1_rsform_config`
-  ADD PRIMARY KEY (`SettingName`);
+    ADD PRIMARY KEY (`SettingName`);
 
 --
 -- Indexes for table `brqs1_rsform_directory`
 --
 ALTER TABLE `brqs1_rsform_directory`
-  ADD PRIMARY KEY (`formId`);
+    ADD PRIMARY KEY (`formId`);
 
 --
 -- Indexes for table `brqs1_rsform_directory_fields`
 --
 ALTER TABLE `brqs1_rsform_directory_fields`
-  ADD UNIQUE KEY `formId` (`formId`,`componentId`);
+    ADD UNIQUE KEY `formId` (`formId`,`componentId`);
 
 --
 -- Indexes for table `brqs1_rsform_emails`
 --
 ALTER TABLE `brqs1_rsform_emails`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsform_forms`
 --
 ALTER TABLE `brqs1_rsform_forms`
-  ADD PRIMARY KEY (`FormId`);
+    ADD PRIMARY KEY (`FormId`);
 
 --
 -- Indexes for table `brqs1_rsform_mappings`
 --
 ALTER TABLE `brqs1_rsform_mappings`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsform_posts`
 --
 ALTER TABLE `brqs1_rsform_posts`
-  ADD PRIMARY KEY (`form_id`);
+    ADD PRIMARY KEY (`form_id`);
 
 --
 -- Indexes for table `brqs1_rsform_properties`
 --
 ALTER TABLE `brqs1_rsform_properties`
-  ADD UNIQUE KEY `PropertyId` (`PropertyId`),
-  ADD KEY `ComponentId` (`ComponentId`);
+    ADD UNIQUE KEY `PropertyId` (`PropertyId`),
+    ADD KEY `ComponentId` (`ComponentId`);
 
 --
 -- Indexes for table `brqs1_rsform_submissions`
 --
 ALTER TABLE `brqs1_rsform_submissions`
-  ADD PRIMARY KEY (`SubmissionId`),
+    ADD PRIMARY KEY (`SubmissionId`),
   ADD KEY `FormId` (`FormId`),
   ADD KEY `SubmissionId` (`SubmissionId`,`FormId`,`DateSubmitted`),
   ADD KEY `SubmissionHash` (`SubmissionHash`);
@@ -6408,13 +6414,13 @@ ALTER TABLE `brqs1_rsform_submissions`
 -- Indexes for table `brqs1_rsform_submission_columns`
 --
 ALTER TABLE `brqs1_rsform_submission_columns`
-  ADD PRIMARY KEY (`FormId`,`ColumnName`,`ColumnStatic`);
+    ADD PRIMARY KEY (`FormId`,`ColumnName`,`ColumnStatic`);
 
 --
 -- Indexes for table `brqs1_rsform_submission_values`
 --
 ALTER TABLE `brqs1_rsform_submission_values`
-  ADD PRIMARY KEY (`SubmissionValueId`),
+    ADD PRIMARY KEY (`SubmissionValueId`),
   ADD KEY `FormId` (`FormId`),
   ADD KEY `SubmissionId` (`SubmissionId`);
 
@@ -6422,7 +6428,7 @@ ALTER TABLE `brqs1_rsform_submission_values`
 -- Indexes for table `brqs1_rsform_translations`
 --
 ALTER TABLE `brqs1_rsform_translations`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `form_id` (`form_id`),
   ADD KEY `lang_code` (`lang_code`),
   ADD KEY `reference` (`reference`),
@@ -6432,78 +6438,78 @@ ALTER TABLE `brqs1_rsform_translations`
 -- Indexes for table `brqs1_rsseo_broken_links`
 --
 ALTER TABLE `brqs1_rsseo_broken_links`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `brqs1_rsseo_competitors`
 --
 ALTER TABLE `brqs1_rsseo_competitors`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_data`
 --
 ALTER TABLE `brqs1_rsseo_data`
-  ADD PRIMARY KEY (`type`);
+    ADD PRIMARY KEY (`type`);
 
 --
 -- Indexes for table `brqs1_rsseo_errors`
 --
 ALTER TABLE `brqs1_rsseo_errors`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_error_links`
 --
 ALTER TABLE `brqs1_rsseo_error_links`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_error_links_referer`
 --
 ALTER TABLE `brqs1_rsseo_error_links_referer`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idl` (`idl`);
 
 --
 -- Indexes for table `brqs1_rsseo_gkeywords`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_gkeywords_data`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords_data`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idk` (`idk`);
 
 --
 -- Indexes for table `brqs1_rsseo_keywords`
 --
 ALTER TABLE `brqs1_rsseo_keywords`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Keyword` (`keyword`);
 
 --
 -- Indexes for table `brqs1_rsseo_keyword_position`
 --
 ALTER TABLE `brqs1_rsseo_keyword_position`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idk` (`idk`);
 
 --
 -- Indexes for table `brqs1_rsseo_logs`
 --
 ALTER TABLE `brqs1_rsseo_logs`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_pages`
 --
 ALTER TABLE `brqs1_rsseo_pages`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `sef` (`sef`(200)),
   ADD KEY `hash` (`hash`),
   ADD KEY `hash_2` (`hash`,`published`);
@@ -6512,26 +6518,26 @@ ALTER TABLE `brqs1_rsseo_pages`
 -- Indexes for table `brqs1_rsseo_redirects`
 --
 ALTER TABLE `brqs1_rsseo_redirects`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_redirects_referer`
 --
 ALTER TABLE `brqs1_rsseo_redirects_referer`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `rid` (`rid`);
 
 --
 -- Indexes for table `brqs1_rsseo_statistics`
 --
 ALTER TABLE `brqs1_rsseo_statistics`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_visitors`
 --
 ALTER TABLE `brqs1_rsseo_visitors`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `session_id` (`session_id`),
   ADD KEY `id-session_id` (`id`,`session_id`);
 
@@ -6539,13 +6545,13 @@ ALTER TABLE `brqs1_rsseo_visitors`
 -- Indexes for table `brqs1_schemas`
 --
 ALTER TABLE `brqs1_schemas`
-  ADD PRIMARY KEY (`extension_id`,`version_id`);
+    ADD PRIMARY KEY (`extension_id`,`version_id`);
 
 --
 -- Indexes for table `brqs1_session`
 --
 ALTER TABLE `brqs1_session`
-  ADD PRIMARY KEY (`session_id`),
+    ADD PRIMARY KEY (`session_id`),
   ADD KEY `userid` (`userid`),
   ADD KEY `time` (`time`),
   ADD KEY `client_id_guest` (`client_id`,`guest`);
@@ -6554,7 +6560,7 @@ ALTER TABLE `brqs1_session`
 -- Indexes for table `brqs1_tags`
 --
 ALTER TABLE `brqs1_tags`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `tag_idx` (`published`,`access`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -6567,7 +6573,7 @@ ALTER TABLE `brqs1_tags`
 -- Indexes for table `brqs1_template_styles`
 --
 ALTER TABLE `brqs1_template_styles`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_template` (`template`),
   ADD KEY `idx_client_id` (`client_id`),
   ADD KEY `idx_client_id_home` (`client_id`,`home`);
@@ -6576,7 +6582,7 @@ ALTER TABLE `brqs1_template_styles`
 -- Indexes for table `brqs1_ucm_base`
 --
 ALTER TABLE `brqs1_ucm_base`
-  ADD PRIMARY KEY (`ucm_id`),
+    ADD PRIMARY KEY (`ucm_id`),
   ADD KEY `idx_ucm_item_id` (`ucm_item_id`),
   ADD KEY `idx_ucm_type_id` (`ucm_type_id`),
   ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
@@ -6585,7 +6591,7 @@ ALTER TABLE `brqs1_ucm_base`
 -- Indexes for table `brqs1_ucm_content`
 --
 ALTER TABLE `brqs1_ucm_content`
-  ADD PRIMARY KEY (`core_content_id`),
+    ADD PRIMARY KEY (`core_content_id`),
   ADD KEY `tag_idx` (`core_state`,`core_access`),
   ADD KEY `idx_access` (`core_access`),
   ADD KEY `idx_alias` (`core_alias`(100)),
@@ -6603,7 +6609,7 @@ ALTER TABLE `brqs1_ucm_content`
 -- Indexes for table `brqs1_ucm_history`
 --
 ALTER TABLE `brqs1_ucm_history`
-  ADD PRIMARY KEY (`version_id`),
+    ADD PRIMARY KEY (`version_id`),
   ADD KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`),
   ADD KEY `idx_save_date` (`save_date`);
 
@@ -6611,25 +6617,25 @@ ALTER TABLE `brqs1_ucm_history`
 -- Indexes for table `brqs1_updates`
 --
 ALTER TABLE `brqs1_updates`
-  ADD PRIMARY KEY (`update_id`);
+    ADD PRIMARY KEY (`update_id`);
 
 --
 -- Indexes for table `brqs1_update_sites`
 --
 ALTER TABLE `brqs1_update_sites`
-  ADD PRIMARY KEY (`update_site_id`);
+    ADD PRIMARY KEY (`update_site_id`);
 
 --
 -- Indexes for table `brqs1_update_sites_extensions`
 --
 ALTER TABLE `brqs1_update_sites_extensions`
-  ADD PRIMARY KEY (`update_site_id`,`extension_id`);
+    ADD PRIMARY KEY (`update_site_id`,`extension_id`);
 
 --
 -- Indexes for table `brqs1_usergroups`
 --
 ALTER TABLE `brqs1_usergroups`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`),
   ADD KEY `idx_usergroup_title_lookup` (`title`),
   ADD KEY `idx_usergroup_adjacency_lookup` (`parent_id`),
@@ -6639,7 +6645,7 @@ ALTER TABLE `brqs1_usergroups`
 -- Indexes for table `brqs1_users`
 --
 ALTER TABLE `brqs1_users`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_username` (`username`),
   ADD KEY `idx_name` (`name`(100)),
   ADD KEY `idx_block` (`block`),
@@ -6649,7 +6655,7 @@ ALTER TABLE `brqs1_users`
 -- Indexes for table `brqs1_user_keys`
 --
 ALTER TABLE `brqs1_user_keys`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `series` (`series`),
   ADD KEY `user_id` (`user_id`);
 
@@ -6657,7 +6663,7 @@ ALTER TABLE `brqs1_user_keys`
 -- Indexes for table `brqs1_user_notes`
 --
 ALTER TABLE `brqs1_user_notes`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_category_id` (`catid`);
 
@@ -6665,19 +6671,19 @@ ALTER TABLE `brqs1_user_notes`
 -- Indexes for table `brqs1_user_profiles`
 --
 ALTER TABLE `brqs1_user_profiles`
-  ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
+    ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
 
 --
 -- Indexes for table `brqs1_user_usergroup_map`
 --
 ALTER TABLE `brqs1_user_usergroup_map`
-  ADD PRIMARY KEY (`user_id`,`group_id`);
+    ADD PRIMARY KEY (`user_id`,`group_id`);
 
 --
 -- Indexes for table `brqs1_viewlevels`
 --
 ALTER TABLE `brqs1_viewlevels`
-  ADD PRIMARY KEY (`id`),
+    ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
 
 --
@@ -6688,417 +6694,412 @@ ALTER TABLE `brqs1_viewlevels`
 -- AUTO_INCREMENT for table `brqs1_action_logs`
 --
 ALTER TABLE `brqs1_action_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=869;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=882;
 
 --
 -- AUTO_INCREMENT for table `brqs1_action_logs_extensions`
 --
 ALTER TABLE `brqs1_action_logs_extensions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `brqs1_action_log_config`
 --
 ALTER TABLE `brqs1_action_log_config`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `brqs1_assets`
 --
 ALTER TABLE `brqs1_assets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=118;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `brqs1_banners`
 --
 ALTER TABLE `brqs1_banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_banner_clients`
 --
 ALTER TABLE `brqs1_banner_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_categories`
 --
 ALTER TABLE `brqs1_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `brqs1_contact_details`
 --
 ALTER TABLE `brqs1_contact_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_content`
 --
 ALTER TABLE `brqs1_content`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `brqs1_content_types`
 --
 ALTER TABLE `brqs1_content_types`
-  MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
+    MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `brqs1_extensions`
 --
 ALTER TABLE `brqs1_extensions`
-  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10020;
+    MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10020;
 
 --
 -- AUTO_INCREMENT for table `brqs1_fields`
 --
 ALTER TABLE `brqs1_fields`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `brqs1_fields_groups`
 --
 ALTER TABLE `brqs1_fields_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_filters`
 --
 ALTER TABLE `brqs1_finder_filters`
-  MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_links`
 --
 ALTER TABLE `brqs1_finder_links`
-  MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_taxonomy`
 --
 ALTER TABLE `brqs1_finder_taxonomy`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_terms`
 --
 ALTER TABLE `brqs1_finder_terms`
-  MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_types`
 --
 ALTER TABLE `brqs1_finder_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_languages`
 --
 ALTER TABLE `brqs1_languages`
-  MODIFY `lang_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `lang_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_logregsms_confirm`
 --
 ALTER TABLE `brqs1_logregsms_confirm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_logregsms_smsarchives`
 --
 ALTER TABLE `brqs1_logregsms_smsarchives`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_menu`
 --
 ALTER TABLE `brqs1_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `brqs1_menu_types`
 --
 ALTER TABLE `brqs1_menu_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `brqs1_messages`
 --
 ALTER TABLE `brqs1_messages`
-  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_modules`
 --
 ALTER TABLE `brqs1_modules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `brqs1_newsfeeds`
 --
 ALTER TABLE `brqs1_newsfeeds`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_overrider`
 --
 ALTER TABLE `brqs1_overrider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
 
 --
 -- AUTO_INCREMENT for table `brqs1_postinstall_messages`
 --
 ALTER TABLE `brqs1_postinstall_messages`
-  MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+    MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `brqs1_privacy_consents`
 --
 ALTER TABLE `brqs1_privacy_consents`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_privacy_requests`
 --
 ALTER TABLE `brqs1_privacy_requests`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_redirect_links`
 --
 ALTER TABLE `brqs1_redirect_links`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_calculations`
 --
 ALTER TABLE `brqs1_rsform_calculations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_components`
 --
 ALTER TABLE `brqs1_rsform_components`
-  MODIFY `ComponentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+    MODIFY `ComponentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_component_types`
 --
 ALTER TABLE `brqs1_rsform_component_types`
-  MODIFY `ComponentTypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2424;
+    MODIFY `ComponentTypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2424;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_conditions`
 --
 ALTER TABLE `brqs1_rsform_conditions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_condition_details`
 --
 ALTER TABLE `brqs1_rsform_condition_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_emails`
 --
 ALTER TABLE `brqs1_rsform_emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_forms`
 --
 ALTER TABLE `brqs1_rsform_forms`
-  MODIFY `FormId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `FormId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_mappings`
 --
 ALTER TABLE `brqs1_rsform_mappings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_properties`
 --
 ALTER TABLE `brqs1_rsform_properties`
-  MODIFY `PropertyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=693;
+    MODIFY `PropertyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=693;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_submissions`
 --
 ALTER TABLE `brqs1_rsform_submissions`
-  MODIFY `SubmissionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `SubmissionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_submission_values`
 --
 ALTER TABLE `brqs1_rsform_submission_values`
-  MODIFY `SubmissionValueId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+    MODIFY `SubmissionValueId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_translations`
 --
 ALTER TABLE `brqs1_rsform_translations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_broken_links`
 --
 ALTER TABLE `brqs1_rsseo_broken_links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_competitors`
 --
 ALTER TABLE `brqs1_rsseo_competitors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_errors`
 --
 ALTER TABLE `brqs1_rsseo_errors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_error_links`
 --
 ALTER TABLE `brqs1_rsseo_error_links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_error_links_referer`
 --
 ALTER TABLE `brqs1_rsseo_error_links_referer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=350;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=350;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_gkeywords`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_gkeywords_data`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_keywords`
 --
 ALTER TABLE `brqs1_rsseo_keywords`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_keyword_position`
 --
 ALTER TABLE `brqs1_rsseo_keyword_position`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_logs`
 --
 ALTER TABLE `brqs1_rsseo_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_pages`
 --
 ALTER TABLE `brqs1_rsseo_pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_redirects`
 --
 ALTER TABLE `brqs1_rsseo_redirects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_redirects_referer`
 --
 ALTER TABLE `brqs1_rsseo_redirects_referer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_statistics`
 --
 ALTER TABLE `brqs1_rsseo_statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_visitors`
 --
 ALTER TABLE `brqs1_rsseo_visitors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_tags`
 --
 ALTER TABLE `brqs1_tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `brqs1_template_styles`
 --
 ALTER TABLE `brqs1_template_styles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brqs1_ucm_content`
 --
 ALTER TABLE `brqs1_ucm_content`
-  MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+    MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_ucm_history`
 --
 ALTER TABLE `brqs1_ucm_history`
-  MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+    MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `brqs1_updates`
 --
 ALTER TABLE `brqs1_updates`
-  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1301;
+    MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_update_sites`
 --
 ALTER TABLE `brqs1_update_sites`
-  MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+    MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brqs1_usergroups`
 --
 ALTER TABLE `brqs1_usergroups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brqs1_users`
 --
 ALTER TABLE `brqs1_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `brqs1_user_keys`
 --
 ALTER TABLE `brqs1_user_keys`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_user_notes`
 --
 ALTER TABLE `brqs1_user_notes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_viewlevels`
 --
 ALTER TABLE `brqs1_viewlevels`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
