@@ -14,8 +14,8 @@ class RSFormProFieldUikit3CheckboxGroup extends RSFormProFieldCheckboxGroup
 	protected function buildLabel($data) {
 		// For convenience
 		extract($data);
-		
-		return '<div class="uk-text-zero"><label class="uk-flex uk-flex-middle" for="'.$this->escape($id).$i.'">'.$this->buildInput($data).'<span class="uk-text-dark uk-text-small">'.$item->label.'</span></label></div>';
+
+        return '<div class="uk-text-zero"><label class="uk-flex uk-flex-middle" for="'.$this->escape($id).$i.'">'.$this->buildInput($data).'<span class="uk-text-dark uk-text-small">'.$item->label.'</span></label></div>';
 	}
 	
 	public function buildItem($data) {
@@ -26,13 +26,13 @@ class RSFormProFieldUikit3CheckboxGroup extends RSFormProFieldCheckboxGroup
 	public function setFlow() {
 		$flow		= $this->getProperty('FLOW', 'HORIZONTAL');
 		if ($flow != 'HORIZONTAL') {
-			$this->glue = '';
-			$this->blocks = array('1' => 'uk-width-1-1', '2' => 'uk-width-1-2', '3' => 'uk-width-1-3', '4' => 'uk-width-1-2 uk-width-1-4@m', '6' => 'uk-width-1-6');
-			$this->splitterStart = '<div class="{block_size}"><div class="uk-child-width-1-1 uk-grid-small" data-uk-grid>';
-			$this->splitterEnd = '</div></div>';
+			$this->glue = '<br />';
+			$this->blocks = array('1' => 'uk-width-1-1', '2' => 'uk-width-1-2', '3' => 'uk-width-1-3', '4' => 'uk-width-1-4', '6' => 'uk-width-1-6');
+			$this->splitterStart = '<div class="{block_size}">';
+			$this->splitterEnd = '</div>';
 			
 			if ($flow != 'VERTICAL') {
-				$this->gridStart = '<div class="uk-grid-small" data-uk-grid>';
+				$this->gridStart = '<div class="uk-grid">';
 				$this->gridEnd = '</div>';
 			}
 		}

@@ -11,7 +11,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 class plgSystemRsfprecaptchav3InstallerScript
 {
 	protected static $minJoomla = '3.7.0';
-	protected static $minComponent = '2.3.9';
+	protected static $minComponent = '3.0.0';
 
 	public function preflight($type, $parent)
 	{
@@ -69,8 +69,6 @@ class plgSystemRsfprecaptchav3InstallerScript
 	
 	protected function copyFiles($source)
 	{
-		jimport('joomla.filesystem.folder');
-		
 		// Copy /admin files
 		$src	= $source.'/admin';
 		$dest 	= JPATH_ADMINISTRATOR.'/components/com_rsform';

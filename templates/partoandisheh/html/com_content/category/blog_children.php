@@ -60,7 +60,7 @@ if ($this->maxLevel != 0 && count($this->children[$this->category->id]) > 0) : ?
 
 				<?php if ($this->params->get('show_subcat_desc') == 1) : ?>
 					<?php if ($child->description) : ?>
-						<div class="category-desc">
+						<div class="sectionTitle">
 							<?php echo JHtml::_('content.prepare', $child->description, '', 'com_content.category'); ?>
 						</div>
 					<?php endif; ?>

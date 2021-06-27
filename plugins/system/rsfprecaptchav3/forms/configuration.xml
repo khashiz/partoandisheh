@@ -4,7 +4,7 @@
 
 		<field name="recaptchav3.sitekey" type="text" label="PLG_SYSTEM_RSFPRECAPTCHAV3_SITE_KEY" size="100" />
 		<field name="recaptchav3.secretkey" type="text" label="PLG_SYSTEM_RSFPRECAPTCHAV3_SECRET_KEY" size="100" />
-		<field name="recaptchav3.allpages" type="radio" class="btn-group" label="PLG_SYSTEM_RSFPRECAPTCHAV3_ALLPAGES" description="PLG_SYSTEM_RSFPRECAPTCHAV3_ALLPAGES_DESC">
+		<field name="recaptchav3.allpages" type="radio" class="btn-group btn-group-yesno" label="PLG_SYSTEM_RSFPRECAPTCHAV3_ALLPAGES" description="PLG_SYSTEM_RSFPRECAPTCHAV3_ALLPAGES_DESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>

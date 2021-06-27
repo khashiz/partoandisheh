@@ -14,7 +14,7 @@ class plgSystemRsfprecaptchav3 extends JPlugin
 	protected $autoloadLanguage = true;
 	
 	// Show field in Form Components
-	public function rsfp_bk_onAfterShowComponents() {
+	public function onRsformBackendAfterShowComponents() {
 		$input 		= JFactory::getApplication()->input;
 		$formId 	= $input->getInt('formId');
 		$exists 	= RSFormProHelper::componentExists($formId, RSFORM_FIELD_RECAPTCHAV3);
@@ -26,8 +26,8 @@ class plgSystemRsfprecaptchav3 extends JPlugin
 	}
 
 	// Show the Configuration tab
-	public function rsfp_bk_onAfterShowConfigurationTabs($tabs) {		
-		$tabs->addTitle(JText::_('PLG_SYSTEM_RSFPRECAPTCHAV3_LABEL'), 'form-recaptcha-v3');
+	public function onRsformBackendAfterShowConfigurationTabs($tabs) {
+		$tabs->addTitle(JText::_('PLG_SYSTEM_RSFPRECAPTCHAV3_LABEL'), 'page-recaptchav3');
 		$tabs->addContent($this->showConfigurationScreen());
 	}
 
@@ -84,7 +84,7 @@ class plgSystemRsfprecaptchav3 extends JPlugin
 		return $contents;
 	}
 
-	public function rsfp_f_onInitFormDisplay($args)
+	public function onRsformFrontendInitFormDisplay($args)
 	{
 		if ($componentIds = RSFormProHelper::componentExists($args['formId'], RSFORM_FIELD_RECAPTCHAV3))
 		{
@@ -100,7 +100,7 @@ class plgSystemRsfprecaptchav3 extends JPlugin
 		}
 	}
 
-	public function rsfp_onDefineHiddenComponents(&$hiddenComponents)
+	public function onRsformDefineHiddenComponents(&$hiddenComponents)
 	{
 		$hiddenComponents[] = RSFORM_FIELD_RECAPTCHAV3;
 	}

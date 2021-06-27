@@ -158,6 +158,7 @@ $cells = explode("\n", $params->get('cellphone'));
 <jdoc:include type="message" />
 <jdoc:include type="modules" name="pagetop" style="xhtml" />
 <main>
+    <jdoc:include type="modules" name="outertop" style="xhtml" />
     <div class="uk-padding uk-padding-remove-horizontal">
         <jdoc:include type="modules" name="bodytop" style="xhtml" />
         <div>
@@ -191,6 +192,7 @@ $cells = explode("\n", $params->get('cellphone'));
         </div>
         <jdoc:include type="modules" name="bodybottom" style="xhtml" />
     </div>
+    <jdoc:include type="modules" name="outerbottom" style="xhtml" />
 </main>
 <jdoc:include type="modules" name="pagebottom" style="xhtml" />
 <footer class="uk-background-primary uk-position-relative">

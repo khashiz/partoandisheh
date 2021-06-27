@@ -51,7 +51,7 @@ endforeach;
 	<?php endif; ?>
 
 	<?php if ($beforeDisplayContent || $afterDisplayContent || $this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
-		<div class="category-desc clearfix uk-text-center uk-margin-top uk-margin-large-bottom">
+		<div class="sectionTitle clearfix uk-text-center uk-margin-top uk-margin-large-bottom">
 			<?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
 				<img src="<?php echo $this->category->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>"/>
 			<?php endif; ?>

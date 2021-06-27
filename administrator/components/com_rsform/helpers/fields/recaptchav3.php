@@ -102,7 +102,6 @@ class RSFormProFieldRecaptchav3 extends RSFormProField
 
 			try
 			{
-				jimport('joomla.http.factory');
 				$http = JHttpFactory::getHttp();
 				if ($request = $http->get('https://www.google.com/recaptcha/api/siteverify?secret='.urlencode($secretKey).'&response='.urlencode($response).'&remoteip='.urlencode($ip)))
 				{

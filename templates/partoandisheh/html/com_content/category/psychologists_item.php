@@ -28,7 +28,7 @@ $isUnpublished = ($this->item->state == 0 || $this->item->publish_up > $currentD
 <?php endif; ?>
         <div class="uk-height-1-1">
             <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-small uk-overflow-hidden uk-height-1-1">
-                <?php echo JLayoutHelper::render('joomla.content.pa_list_square_image', $this->item); ?>
+                <?php echo JLayoutHelper::render('joomla.content.pa_psy_list_image', $this->item); ?>
                 <div class="uk-card-body uk-padding-small">
                     <div class="uk-padding-small">
                         <?php echo JLayoutHelper::render('joomla.content.pa_psy_list_title', $this->item); ?>

@@ -62,7 +62,7 @@ $groups = $user->getAuthorisedViewLevels();
 
 				<?php if ($this->params->get('show_subcat_desc') == 1) : ?>
 					<?php if ($child->description) : ?>
-						<div class="category-desc">
+						<div class="sectionTitle">
 							<?php echo JHtml::_('content.prepare', $child->description, '', 'com_content.category'); ?>
 						</div>
 					<?php endif; ?>

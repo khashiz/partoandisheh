@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>UT Joomstagram</name>
+	<author>Unitemplates.com</author>
+	<creationDate>May 2021</creationDate>
+	<copyright>Copyright (C) 2015 - 2021 Unitemplates.com. All rights reserved.</copyright>
+	<license>NU General Public License version 2 or later.</license>
+	<authorEmail>info@unitemplates.com</authorEmail>
+	<authorUrl>www.unitemplates.com</authorUrl>
+	<version>3.0.0</version>
+	<description>MOD_UT_JOOMSTAGRAM_XML_DESCRIPTION</description>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_ut_joomstagram.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_ut_joomstagram.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_ut_joomstagram.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_ut_joomstagram.sys.ini</language>
+	</languages>	
+	<files>
+		<filename module="mod_ut_joomstagram">mod_ut_joomstagram.php</filename>
+		<filename>helper.php</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="jg_token" type="textarea" label="JG_TOKEN_LABEL" description="JG_TOKEN_DESC" required="true"/>
+				<field name="jg_username" type="text" label="JG_USER_LABEL" required="true" />
+				<field name="jg_cache_time" type="number" label="JG_CAHCE_TIME_LABEL" description="JG_CAHCE_TIME_DESC" filter="integer" default="360"/>
+				<field name="jg_intro" type="textarea" label="JG_INTRO_LABEL" description="JG_INTRO_DESC" />
+				<field name="jg_show_profile" type="radio" label="JG_SHOW_PROFILE_LABEL" description="JG_SHOW_PROFILE_DESC" default="0" class="btn-group btn-group-yesno radio">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="jg_user_img" type="media" showon="jg_show_profile:1" label="JG_USER_IMG_LABEL" />
+				<field name="jg_name" type="text" showon="jg_show_profile:1" label="JG_NAME_LABEL" />
+				<field name="jg_biography" type="textarea" showon="jg_show_profile:1" label="JG_BIOGRAPHY_LABEL" description="JG_BIOGRAPHY_DESC" />
+				<field name="jg_image_size"  type="number" label="JG_IMAGE_SIZE_LABEL" description="JG_IMAGE_SIZE_DESC" default="320" min="1" />
+				<field name="jg_columns" type="list" label="JG_COLUMNS_LABEL" description="JG_COLUMNS_DESC" default="4">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+				</field>
+				<field name="jg_columns_md" type="list" label="JG_COLUMNS_MD_LABEL" description="JG_COLUMNS_MD_DESC" default="3">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+				</field>
+				<field name="jg_columns_sm" type="list" label="JG_COLUMNS_SM_LABEL" description="JG_COLUMNS_SM_DESC" default="2">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+				</field>
+				<field name="jg_rows" type="text" label="JG_ROWS_LABEL" description="JG_ROWS_DESC" default="2"/>
+				<field name="jg_padding" type="text" label="JG_PADDING_LABEL" description="JG_PADDING_DESC" default="0" />
+			</fieldset>
+			<fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="add_container" type="list" label="JG_ADD_CONTAINER_LABEL" description="JG_ADD_CONTAINER_DESC" default="0">
+                    <option value="0">JNO</option>
+                    <option value="container">JYES</option>
+                </field>
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+        <server type="extension" name="UT Joomstagram">https://update.unitemplates.com/extensions/mod_ut_joomstagram.xml</server>
+    </updateservers>
+</extension>
