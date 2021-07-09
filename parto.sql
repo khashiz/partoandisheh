@@ -1,14 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 26, 2021 at 09:15 AM
--- Server version: 5.7.32
--- PHP Version: 7.4.12
+-- Generation Time: Jul 09, 2021 at 09:52 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `parto`
@@ -21,14 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `brqs1_action_logs` (
-                                     `id` int(10) UNSIGNED NOT NULL,
-                                     `message_language_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                     `log_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `user_id` int(11) NOT NULL DEFAULT '0',
-                                     `item_id` int(11) NOT NULL DEFAULT '0',
-                                     `ip_address` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0.0.0.0'
+  `id` int(10) UNSIGNED NOT NULL,
+  `message_language_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `log_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `item_id` int(11) NOT NULL DEFAULT '0',
+  `ip_address` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0.0.0.0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -924,7 +932,93 @@ INSERT INTO `brqs1_action_logs` (`id`, `message_language_key`, `message`, `log_d
 (878, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-12 10:58:02', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
 (879, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:11', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
 (880, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:19', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
-(881, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:45', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED');
+(881, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":125,\"title\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=125\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-12 10:58:45', 'com_menus.item', 120, 125, 'COM_ACTIONLOGS_DISABLED'),
+(882, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-26 14:38:13', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(883, 'PLG_ACTIONLOG_JOOMLA_PLUGIN_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_PLUGIN\",\"id\":\"10009\",\"name\":\"plg_installer_rsform\",\"extension_name\":\"plg_installer_rsform\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:40:58', 'com_installer', 120, 10009, 'COM_ACTIONLOGS_DISABLED'),
+(884, 'PLG_ACTIONLOG_JOOMLA_PLUGIN_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_PLUGIN\",\"id\":\"10010\",\"name\":\"System - RSForm! Pro Delete Submissions\",\"extension_name\":\"System - RSForm! Pro Delete Submissions\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:40:58', 'com_installer', 120, 10010, 'COM_ACTIONLOGS_DISABLED'),
+(885, 'PLG_ACTIONLOG_JOOMLA_EXTENSION_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_COMPONENT\",\"id\":\"10007\",\"name\":\"com_rsform\",\"extension_name\":\"com_rsform\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:40:58', 'com_installer', 120, 10007, 'COM_ACTIONLOGS_DISABLED'),
+(886, 'PLG_ACTIONLOG_JOOMLA_PLUGIN_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_PLUGIN\",\"id\":10020,\"name\":\"System - RSForm! Pro\",\"extension_name\":\"System - RSForm! Pro\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:41:24', 'com_installer', 120, 10020, 'COM_ACTIONLOGS_DISABLED'),
+(887, 'PLG_ACTIONLOG_JOOMLA_PLUGIN_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_PLUGIN\",\"id\":\"10012\",\"name\":\"System - RSForm! Pro reCAPTCHA v3\",\"extension_name\":\"System - RSForm! Pro reCAPTCHA v3\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:41:42', 'com_installer', 120, 10012, 'COM_ACTIONLOGS_DISABLED'),
+(888, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":15,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=15\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:49:21', 'com_content.article', 120, 15, 'COM_ACTIONLOGS_DISABLED'),
+(889, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":16,\"title\":\"About us\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=16\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:49:34', 'com_content.article', 120, 16, 'COM_ACTIONLOGS_DISABLED'),
+(890, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":15,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=15\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:49:45', 'com_content.article', 120, 15, 'COM_ACTIONLOGS_DISABLED'),
+(891, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 14:49:45', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(892, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":16,\"title\":\"About us\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=16\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:49:52', 'com_content.article', 120, 16, 'COM_ACTIONLOGS_DISABLED'),
+(893, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 14:49:52', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(894, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":127,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=127\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:50:17', 'com_menus.item', 120, 127, 'COM_ACTIONLOGS_DISABLED'),
+(895, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-26 14:50:17', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(896, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":127,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=127\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:51:02', 'com_menus.item', 120, 127, 'COM_ACTIONLOGS_DISABLED'),
+(897, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-26 14:51:02', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(898, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":15,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=15\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:51:11', 'com_content.article', 120, 15, 'COM_ACTIONLOGS_DISABLED'),
+(899, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 14:51:11', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(900, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":16,\"title\":\"About us\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=16\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:51:19', 'com_content.article', 120, 16, 'COM_ACTIONLOGS_DISABLED'),
+(901, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 14:51:19', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(902, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":127,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=127\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:52:05', 'com_menus.item', 120, 127, 'COM_ACTIONLOGS_DISABLED'),
+(903, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-26 14:52:05', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(904, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":127,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=127\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:52:35', 'com_menus.item', 120, 127, 'COM_ACTIONLOGS_DISABLED'),
+(905, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MENU_ITEM\",\"id\":127,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_menus&task=item.edit&id=127\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 14:52:50', 'com_menus.item', 120, 127, 'COM_ACTIONLOGS_DISABLED'),
+(906, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__menu\"}', '2021-06-26 14:52:50', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(907, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"extension_name\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:00:36', 'com_modules.module', 120, 101, 'COM_ACTIONLOGS_DISABLED'),
+(908, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"extension_name\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:08:47', 'com_modules.module', 120, 101, 'COM_ACTIONLOGS_DISABLED'),
+(909, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 15:08:47', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(910, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"extension_name\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:08:50', 'com_modules.module', 120, 101, 'COM_ACTIONLOGS_DISABLED'),
+(911, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 15:08:50', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(912, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"extension_name\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:09:28', 'com_modules.module', 120, 101, 'COM_ACTIONLOGS_DISABLED'),
+(913, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 15:09:28', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(914, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":101,\"title\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"extension_name\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=101\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:41:09', 'com_modules.module', 120, 101, 'COM_ACTIONLOGS_DISABLED'),
+(915, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 15:41:09', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(916, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MEDIA\",\"id\":0,\"title\":\"portrait.jpg\",\"itemlink\":\"index.php?option=com_media&view=media\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:49:21', 'com_media.file', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(917, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":7,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=7\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:49:25', 'com_content.article', 120, 7, 'COM_ACTIONLOGS_DISABLED'),
+(918, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 15:49:25', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(919, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":6,\"title\":\"\\u062a\\u06a9\\u062a\\u0645 \\u062c\\u0627\\u0646 \\u0646\\u062b\\u0627\\u0631\\u06cc\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=6\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 15:49:51', 'com_content.article', 120, 6, 'COM_ACTIONLOGS_DISABLED'),
+(920, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 15:49:51', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(921, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-26 16:31:20', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(922, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 16:31:33', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(923, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":17,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=17\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 16:31:33', 'com_content.article', 120, 17, 'COM_ACTIONLOGS_DISABLED'),
+(924, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 16:31:34', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(925, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":18,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (3)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=18\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 16:31:34', 'com_content.article', 120, 18, 'COM_ACTIONLOGS_DISABLED'),
+(926, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 16:31:35', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(927, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 16:31:39', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(928, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_PUBLISHED', '{\"action\":\"publish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":18,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (3)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=18\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 16:31:39', 'com_content.article', 120, 18, 'COM_ACTIONLOGS_DISABLED'),
+(929, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 16:31:42', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(930, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_PUBLISHED', '{\"action\":\"publish\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":17,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=17\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 16:31:42', 'com_content.article', 120, 17, 'COM_ACTIONLOGS_DISABLED'),
+(931, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-06-26 23:31:03', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(932, 'PLG_ACTIONLOG_JOOMLA_EXTENSION_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":10021,\"name\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:31:27', 'com_installer', 120, 10021, 'COM_ACTIONLOGS_DISABLED'),
+(933, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:32:49', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(934, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:32:49', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(935, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:34:05', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(936, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:34:05', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(937, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:42:54', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(938, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:42:54', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(939, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:43:11', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(940, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:43:11', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(941, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"UT Joomstagram\",\"extension_name\":\"UT Joomstagram\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:50:53', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(942, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:50:53', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(943, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":102,\"title\":\"\\u0641\\u06cc\\u062f \\u0627\\u06cc\\u0646\\u0633\\u062a\\u0627\\u06af\\u0631\\u0627\\u0645\",\"extension_name\":\"\\u0641\\u06cc\\u062f \\u0627\\u06cc\\u0646\\u0633\\u062a\\u0627\\u06af\\u0631\\u0627\\u0645\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=102\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:51:33', 'com_modules.module', 120, 102, 'COM_ACTIONLOGS_DISABLED'),
+(944, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-26 23:51:33', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(945, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":17,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=17\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:58:00', 'com_content.article', 120, 17, 'COM_ACTIONLOGS_DISABLED');
+INSERT INTO `brqs1_action_logs` (`id`, `message_language_key`, `message`, `log_date`, `extension`, `user_id`, `item_id`, `ip_address`) VALUES
+(946, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 23:58:00', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(947, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_ARTICLE\",\"id\":17,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"itemlink\":\"index.php?option=com_content&task=article.edit&id=17\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-26 23:58:14', 'com_content.article', 120, 17, 'COM_ACTIONLOGS_DISABLED'),
+(948, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-26 23:58:14', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(949, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__content\"}', '2021-06-27 00:09:46', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(950, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__fields_groups\"}', '2021-06-27 00:10:55', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(951, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":103,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"extension_name\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=103\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:13:50', 'com_modules.module', 120, 103, 'COM_ACTIONLOGS_DISABLED'),
+(952, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":103,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"extension_name\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=103\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:14:20', 'com_modules.module', 120, 103, 'COM_ACTIONLOGS_DISABLED'),
+(953, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-27 00:14:20', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(954, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":103,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"extension_name\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=103\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:14:35', 'com_modules.module', 120, 103, 'COM_ACTIONLOGS_DISABLED'),
+(955, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-27 00:14:35', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(956, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":103,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"extension_name\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=103\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:15:07', 'com_modules.module', 120, 103, 'COM_ACTIONLOGS_DISABLED'),
+(957, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-27 00:15:07', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(958, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MODULE\",\"id\":103,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"extension_name\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"itemlink\":\"index.php?option=com_modules&task=module.edit&id=103\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:17:49', 'com_modules.module', 120, 103, 'COM_ACTIONLOGS_DISABLED'),
+(959, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-27 00:17:49', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(960, 'PLG_ACTIONLOG_JOOMLA_USER_CHECKIN', '{\"action\":\"checkin\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"table\":\"#__modules\"}', '2021-06-27 00:19:56', 'com_checkin', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(961, 'PLG_SYSTEM_ACTIONLOGS_CONTENT_ADDED', '{\"action\":\"add\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_MEDIA\",\"id\":0,\"title\":\"square.png\",\"itemlink\":\"index.php?option=com_media&view=media\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-06-27 00:23:02', 'com_media.file', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(962, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2021-07-09 18:47:52', 'com_users', 120, 0, 'COM_ACTIONLOGS_DISABLED'),
+(963, 'PLG_ACTIONLOG_JOOMLA_USER_UPDATE', '{\"action\":\"joomlaupdate\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_USER\",\"id\":\"120\",\"title\":\"developer\",\"itemlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\",\"version\":\"3.9.28\",\"oldversion\":\"3.9.27\"}', '2021-07-09 18:49:51', 'com_joomlaupdate', 120, 120, 'COM_ACTIONLOGS_DISABLED'),
+(964, 'PLG_ACTIONLOG_JOOMLA_EXTENSION_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_LANGUAGE\",\"id\":\"10000\",\"name\":\"Persian\",\"extension_name\":\"Persian\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-07-09 18:51:31', 'com_installer', 120, 10000, 'COM_ACTIONLOGS_DISABLED'),
+(965, 'PLG_ACTIONLOG_JOOMLA_EXTENSION_INSTALLED', '{\"action\":\"install\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_LANGUAGE\",\"id\":\"10001\",\"name\":\"Persian\",\"extension_name\":\"Persian\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-07-09 18:51:31', 'com_installer', 120, 10001, 'COM_ACTIONLOGS_DISABLED'),
+(966, 'PLG_ACTIONLOG_JOOMLA_EXTENSION_UPDATED', '{\"action\":\"update\",\"type\":\"PLG_ACTIONLOG_JOOMLA_TYPE_PACKAGE\",\"id\":\"10002\",\"name\":\"Persian Language Pack\",\"extension_name\":\"Persian Language Pack\",\"userid\":\"120\",\"username\":\"developer\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=120\"}', '2021-07-09 18:51:31', 'com_installer', 120, 10002, 'COM_ACTIONLOGS_DISABLED');
 
 -- --------------------------------------------------------
 
@@ -933,8 +1027,8 @@ INSERT INTO `brqs1_action_logs` (`id`, `message_language_key`, `message`, `log_d
 --
 
 CREATE TABLE `brqs1_action_logs_extensions` (
-                                                `id` int(10) UNSIGNED NOT NULL,
-                                                `extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `id` int(10) UNSIGNED NOT NULL,
+  `extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -968,9 +1062,9 @@ INSERT INTO `brqs1_action_logs_extensions` (`id`, `extension`) VALUES
 --
 
 CREATE TABLE `brqs1_action_logs_users` (
-                                           `user_id` int(10) UNSIGNED NOT NULL,
-                                           `notify` tinyint(3) UNSIGNED NOT NULL,
-                                           `extensions` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `notify` tinyint(3) UNSIGNED NOT NULL,
+  `extensions` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -980,13 +1074,13 @@ CREATE TABLE `brqs1_action_logs_users` (
 --
 
 CREATE TABLE `brqs1_action_log_config` (
-                                           `id` int(10) UNSIGNED NOT NULL,
-                                           `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `id_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                           `title_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                           `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                           `text_prefix` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `id_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_holder` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text_prefix` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1021,14 +1115,14 @@ INSERT INTO `brqs1_action_log_config` (`id`, `type_title`, `type_alias`, `id_hol
 --
 
 CREATE TABLE `brqs1_assets` (
-                                `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-                                `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
-                                `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
-                                `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-                                `level` int(10) UNSIGNED NOT NULL COMMENT 'The cached level in the nested tree.',
-                                `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
-                                `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
-                                `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+  `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
+  `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+  `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+  `level` int(10) UNSIGNED NOT NULL COMMENT 'The cached level in the nested tree.',
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
+  `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1036,119 +1130,128 @@ CREATE TABLE `brqs1_assets` (
 --
 
 INSERT INTO `brqs1_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 225, 0, 'root.1', 'Root Asset', '{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
+(1, 0, 0, 243, 0, 'root.1', 'Root Asset', '{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
 (7, 1, 13, 16, 1, 'com_contact', 'com_contact', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(8, 1, 17, 90, 1, 'com_content', 'com_content', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1}}'),
-(9, 1, 91, 92, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 93, 94, 1, 'com_installer', 'com_installer', '{\"core.manage\":{\"7\":0},\"core.delete\":{\"7\":0},\"core.edit.state\":{\"7\":0}}'),
-(11, 1, 95, 100, 1, 'com_languages', 'com_languages', '{\"core.admin\":{\"7\":1}}'),
-(12, 1, 101, 102, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 103, 104, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 105, 106, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 107, 108, 1, 'com_media', 'com_media', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}'),
-(16, 1, 109, 116, 1, 'com_menus', 'com_menus', '{\"core.admin\":{\"7\":1}}'),
-(17, 1, 117, 118, 1, 'com_messages', 'com_messages', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
-(18, 1, 119, 178, 1, 'com_modules', 'com_modules', '{\"core.admin\":{\"7\":1}}'),
-(19, 1, 179, 182, 1, 'com_newsfeeds', 'com_newsfeeds', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(20, 1, 183, 184, 1, 'com_plugins', 'com_plugins', '{\"core.admin\":{\"7\":1}}'),
-(21, 1, 185, 186, 1, 'com_redirect', 'com_redirect', '{\"core.admin\":{\"7\":1}}'),
-(22, 1, 187, 188, 1, 'com_search', 'com_search', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(23, 1, 189, 190, 1, 'com_templates', 'com_templates', '{\"core.admin\":{\"7\":1}}'),
-(24, 1, 191, 194, 1, 'com_users', 'com_users', '{\"core.admin\":{\"7\":1}}'),
-(26, 1, 195, 196, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(8, 1, 17, 102, 1, 'com_content', 'com_content', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1}}'),
+(9, 1, 103, 104, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 105, 106, 1, 'com_installer', 'com_installer', '{\"core.manage\":{\"7\":0},\"core.delete\":{\"7\":0},\"core.edit.state\":{\"7\":0}}'),
+(11, 1, 107, 112, 1, 'com_languages', 'com_languages', '{\"core.admin\":{\"7\":1}}'),
+(12, 1, 113, 114, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 115, 116, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 117, 118, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 119, 120, 1, 'com_media', 'com_media', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}'),
+(16, 1, 121, 128, 1, 'com_menus', 'com_menus', '{\"core.admin\":{\"7\":1}}'),
+(17, 1, 129, 130, 1, 'com_messages', 'com_messages', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
+(18, 1, 131, 196, 1, 'com_modules', 'com_modules', '{\"core.admin\":{\"7\":1}}'),
+(19, 1, 197, 200, 1, 'com_newsfeeds', 'com_newsfeeds', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(20, 1, 201, 202, 1, 'com_plugins', 'com_plugins', '{\"core.admin\":{\"7\":1}}'),
+(21, 1, 203, 204, 1, 'com_redirect', 'com_redirect', '{\"core.admin\":{\"7\":1}}'),
+(22, 1, 205, 206, 1, 'com_search', 'com_search', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(23, 1, 207, 208, 1, 'com_templates', 'com_templates', '{\"core.admin\":{\"7\":1}}'),
+(24, 1, 209, 212, 1, 'com_users', 'com_users', '{\"core.admin\":{\"7\":1}}'),
+(26, 1, 213, 214, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 19, 2, 'com_content.category.2', 'Uncategorised', '{}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{}'),
-(30, 19, 180, 181, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
-(32, 24, 192, 193, 2, 'com_users.category.7', 'Uncategorised', '{}'),
-(33, 1, 197, 198, 1, 'com_finder', 'com_finder', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(34, 1, 199, 200, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
-(35, 1, 201, 202, 1, 'com_tags', 'com_tags', '{}'),
-(36, 1, 203, 204, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 205, 206, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 207, 208, 1, 'com_postinstall', 'com_postinstall', '{}'),
-(39, 18, 120, 121, 2, 'com_modules.module.1', 'منوی فارسی فوتر', '{}'),
-(40, 18, 122, 123, 2, 'com_modules.module.2', 'Login', '{}'),
-(41, 18, 124, 125, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
-(42, 18, 126, 127, 2, 'com_modules.module.4', 'Recently Added Articles', '{}'),
-(43, 18, 128, 129, 2, 'com_modules.module.8', 'Toolbar', '{}'),
-(44, 18, 130, 131, 2, 'com_modules.module.9', 'Quick Icons', '{}'),
-(45, 18, 132, 133, 2, 'com_modules.module.10', 'Logged-in Users', '{}'),
-(46, 18, 134, 135, 2, 'com_modules.module.12', 'Admin Menu', '{}'),
-(47, 18, 136, 137, 2, 'com_modules.module.13', 'Admin Submenu', '{}'),
-(48, 18, 138, 139, 2, 'com_modules.module.14', 'User Status', '{}'),
-(49, 18, 140, 141, 2, 'com_modules.module.15', 'Title', '{}'),
-(50, 18, 142, 143, 2, 'com_modules.module.16', 'Login Form', '{}'),
-(51, 18, 144, 145, 2, 'com_modules.module.17', 'مسیر سایت', '{}'),
-(52, 18, 146, 147, 2, 'com_modules.module.79', 'Multilanguage status', '{}'),
-(53, 18, 148, 149, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
-(54, 16, 110, 111, 2, 'com_menus.menu.1', 'منو پنهان', '{}'),
-(55, 18, 150, 151, 2, 'com_modules.module.87', 'Sample Data', '{}'),
-(56, 1, 209, 210, 1, 'com_privacy', 'com_privacy', '{}'),
-(57, 1, 211, 212, 1, 'com_actionlogs', 'com_actionlogs', '{}'),
-(58, 18, 152, 153, 2, 'com_modules.module.88', 'Latest Actions', '{}'),
-(59, 18, 154, 155, 2, 'com_modules.module.89', 'Privacy Dashboard', '{}'),
-(60, 11, 96, 97, 2, 'com_languages.language.2', 'فارسی', '{}'),
-(61, 18, 156, 157, 2, 'com_modules.module.90', 'تغییر زبان', '{}'),
-(62, 16, 112, 113, 2, 'com_menus.menu.2', 'منوی انگلیسی', '{}'),
-(63, 18, 158, 159, 2, 'com_modules.module.91', 'Main menu en-GB', '{}'),
-(64, 16, 114, 115, 2, 'com_menus.menu.3', 'منوی فارسی', '{}'),
-(65, 18, 160, 161, 2, 'com_modules.module.92', 'منوی اصلی', '{}'),
-(66, 1, 213, 214, 1, 'com_rsseo', 'com_rsseo', '{}'),
-(67, 11, 98, 99, 2, 'com_languages.language.1', 'English', '{}'),
+(30, 19, 198, 199, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
+(32, 24, 210, 211, 2, 'com_users.category.7', 'Uncategorised', '{}'),
+(33, 1, 215, 216, 1, 'com_finder', 'com_finder', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(34, 1, 217, 218, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
+(35, 1, 219, 220, 1, 'com_tags', 'com_tags', '{}'),
+(36, 1, 221, 222, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 223, 224, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 225, 226, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(39, 18, 132, 133, 2, 'com_modules.module.1', 'منوی فارسی فوتر', '{}'),
+(40, 18, 134, 135, 2, 'com_modules.module.2', 'Login', '{}'),
+(41, 18, 136, 137, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
+(42, 18, 138, 139, 2, 'com_modules.module.4', 'Recently Added Articles', '{}'),
+(43, 18, 140, 141, 2, 'com_modules.module.8', 'Toolbar', '{}'),
+(44, 18, 142, 143, 2, 'com_modules.module.9', 'Quick Icons', '{}'),
+(45, 18, 144, 145, 2, 'com_modules.module.10', 'Logged-in Users', '{}'),
+(46, 18, 146, 147, 2, 'com_modules.module.12', 'Admin Menu', '{}'),
+(47, 18, 148, 149, 2, 'com_modules.module.13', 'Admin Submenu', '{}'),
+(48, 18, 150, 151, 2, 'com_modules.module.14', 'User Status', '{}'),
+(49, 18, 152, 153, 2, 'com_modules.module.15', 'Title', '{}'),
+(50, 18, 154, 155, 2, 'com_modules.module.16', 'Login Form', '{}'),
+(51, 18, 156, 157, 2, 'com_modules.module.17', 'مسیر سایت', '{}'),
+(52, 18, 158, 159, 2, 'com_modules.module.79', 'Multilanguage status', '{}'),
+(53, 18, 160, 161, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
+(54, 16, 122, 123, 2, 'com_menus.menu.1', 'منو پنهان', '{}'),
+(55, 18, 162, 163, 2, 'com_modules.module.87', 'Sample Data', '{}'),
+(56, 1, 227, 228, 1, 'com_privacy', 'com_privacy', '{}'),
+(57, 1, 229, 230, 1, 'com_actionlogs', 'com_actionlogs', '{}'),
+(58, 18, 164, 165, 2, 'com_modules.module.88', 'Latest Actions', '{}'),
+(59, 18, 166, 167, 2, 'com_modules.module.89', 'Privacy Dashboard', '{}'),
+(60, 11, 108, 109, 2, 'com_languages.language.2', 'فارسی', '{}'),
+(61, 18, 168, 169, 2, 'com_modules.module.90', 'تغییر زبان', '{}'),
+(62, 16, 124, 125, 2, 'com_menus.menu.2', 'منوی انگلیسی', '{}'),
+(63, 18, 170, 171, 2, 'com_modules.module.91', 'Main menu en-GB', '{}'),
+(64, 16, 126, 127, 2, 'com_menus.menu.3', 'منوی فارسی', '{}'),
+(65, 18, 172, 173, 2, 'com_modules.module.92', 'منوی اصلی', '{}'),
+(66, 1, 231, 232, 1, 'com_rsseo', 'com_rsseo', '{}'),
+(67, 11, 110, 111, 2, 'com_languages.language.1', 'English', '{}'),
 (68, 8, 20, 33, 2, 'com_content.category.8', 'خدمات ما', '{}'),
-(69, 8, 34, 39, 2, 'com_content.category.9', 'روانشناسان', '{}'),
-(70, 8, 40, 51, 2, 'com_content.category.10', 'بلاگ', '{}'),
-(71, 8, 52, 53, 2, 'com_content.category.11', 'درباره ما', '{}'),
-(72, 8, 54, 55, 2, 'com_content.category.12', 'Services', '{}'),
-(73, 8, 56, 57, 2, 'com_content.category.13', 'Psychologists', '{}'),
-(74, 8, 58, 59, 2, 'com_content.category.14', 'Blog', '{}'),
-(75, 8, 60, 61, 2, 'com_content.category.15', 'About us', '{}'),
-(76, 1, 215, 216, 1, 'com_rsform', 'com_rsform', '{}'),
-(77, 70, 41, 42, 3, 'com_content.article.1', 'آیتم شماره یک بلاگ', '{}'),
-(78, 70, 43, 44, 3, 'com_content.article.2', 'آیتم شماره یک بلاگ (2)', '{}'),
-(79, 70, 45, 46, 3, 'com_content.article.3', 'این آیتم نسبت به بقیه آیتم ها دارای عنوان بلند تری است برای تست رابط کاربری', '{}'),
-(80, 70, 47, 48, 3, 'com_content.article.4', 'آیتم شماره یک بلاگ (4)', '{}'),
-(81, 70, 49, 50, 3, 'com_content.article.5', 'آیتم شماره یک بلاگ (5)', '{}'),
-(82, 1, 217, 218, 1, 'com_fields', 'com_fields', '{}'),
-(83, 1, 219, 220, 1, 'com_associations', 'com_associations', '{}'),
-(84, 69, 35, 36, 3, 'com_content.article.6', 'خشایار پورادبی', '{}'),
-(85, 1, 221, 222, 1, '#__ucm_content.1', '#__ucm_content.1', '{}'),
-(87, 1, 223, 224, 1, 'com_logregsms', 'LOGREGSMS', '{}'),
-(88, 18, 162, 163, 2, 'com_modules.module.93', ' ماژول نمایش ثبت نام و لاگین پیامکی ', '{}'),
-(89, 8, 62, 77, 2, 'com_content.fieldgroup.1', 'More Information', '{}'),
-(90, 89, 63, 64, 3, 'com_content.field.1', 'Education', '{}'),
-(91, 89, 65, 66, 3, 'com_content.field.2', 'Social Networks', '{}'),
-(92, 89, 67, 68, 3, 'com_content.field.3', 'Phone', '{}'),
-(93, 89, 69, 70, 3, 'com_content.field.4', 'Cellphone', '{}'),
-(94, 89, 71, 72, 3, 'com_content.field.5', 'Email', '{}'),
-(95, 89, 73, 74, 3, 'com_content.field.6', 'Availability', '{}'),
-(96, 69, 37, 38, 3, 'com_content.article.7', 'test', '{}'),
-(97, 89, 75, 76, 3, 'com_content.field.7', 'Specialty', '{}'),
-(98, 18, 164, 165, 2, 'com_modules.module.94', 'frfrfffef', '{}'),
+(69, 8, 34, 43, 2, 'com_content.category.9', 'روانشناسان', '{}'),
+(70, 8, 44, 55, 2, 'com_content.category.10', 'بلاگ', '{}'),
+(71, 8, 56, 59, 2, 'com_content.category.11', 'درباره ما', '{}'),
+(72, 8, 60, 61, 2, 'com_content.category.12', 'Services', '{}'),
+(73, 8, 62, 63, 2, 'com_content.category.13', 'Psychologists', '{}'),
+(74, 8, 64, 65, 2, 'com_content.category.14', 'Blog', '{}'),
+(75, 8, 66, 69, 2, 'com_content.category.15', 'About us', '{}'),
+(76, 1, 233, 234, 1, 'com_rsform', 'com_rsform', '{}'),
+(77, 70, 45, 46, 3, 'com_content.article.1', 'آیتم شماره یک بلاگ', '{}'),
+(78, 70, 47, 48, 3, 'com_content.article.2', 'آیتم شماره یک بلاگ (2)', '{}'),
+(79, 70, 49, 50, 3, 'com_content.article.3', 'این آیتم نسبت به بقیه آیتم ها دارای عنوان بلند تری است برای تست رابط کاربری', '{}'),
+(80, 70, 51, 52, 3, 'com_content.article.4', 'آیتم شماره یک بلاگ (4)', '{}'),
+(81, 70, 53, 54, 3, 'com_content.article.5', 'آیتم شماره یک بلاگ (5)', '{}'),
+(82, 1, 235, 236, 1, 'com_fields', 'com_fields', '{}'),
+(83, 1, 237, 238, 1, 'com_associations', 'com_associations', '{}'),
+(84, 69, 35, 36, 3, 'com_content.article.6', 'تکتم جان نثاری', '{}'),
+(85, 1, 239, 240, 1, '#__ucm_content.1', '#__ucm_content.1', '{}'),
+(87, 1, 241, 242, 1, 'com_logregsms', 'LOGREGSMS', '{}'),
+(88, 18, 174, 175, 2, 'com_modules.module.93', ' ماژول نمایش ثبت نام و لاگین پیامکی ', '{}'),
+(89, 8, 70, 85, 2, 'com_content.fieldgroup.1', 'More Information', '{}'),
+(90, 89, 71, 72, 3, 'com_content.field.1', 'Education', '{}'),
+(91, 89, 73, 74, 3, 'com_content.field.2', 'Social Networks', '{}'),
+(92, 89, 75, 76, 3, 'com_content.field.3', 'Phone', '{}'),
+(93, 89, 77, 78, 3, 'com_content.field.4', 'Cellphone', '{}'),
+(94, 89, 79, 80, 3, 'com_content.field.5', 'Email', '{}'),
+(95, 89, 81, 82, 3, 'com_content.field.6', 'Availability', '{}'),
+(96, 69, 37, 38, 3, 'com_content.article.7', 'شهریار شهیدی', '{}'),
+(97, 89, 83, 84, 3, 'com_content.field.7', 'Specialty', '{}'),
+(98, 18, 176, 177, 2, 'com_modules.module.94', 'frfrfffef', '{}'),
 (100, 68, 21, 22, 3, 'com_content.article.9', 'مشاوره پیش از ازدواج', '{}'),
 (101, 68, 23, 24, 3, 'com_content.article.10', 'مشاوره امور طلاق', '{}'),
 (102, 68, 25, 26, 3, 'com_content.article.11', 'مشاوره تحصیلی', '{}'),
 (103, 68, 27, 28, 3, 'com_content.article.12', 'امور استرس و کنترل اضطراب', '{}'),
 (104, 68, 29, 30, 3, 'com_content.article.13', 'مشاوره امور مربوط به کدکان', '{}'),
 (105, 68, 31, 32, 3, 'com_content.article.14', 'امور مربوط به وسواس', '{}'),
-(106, 8, 78, 79, 2, 'com_content.fieldgroup.2', 'Linked Banner', '{}'),
-(107, 8, 80, 89, 2, 'com_content.fieldgroup.3', 'Linked Banner', '{}'),
-(108, 107, 81, 82, 3, 'com_content.field.8', 'Media', '{}'),
-(109, 107, 83, 84, 3, 'com_content.field.9', 'Title', '{}'),
-(110, 107, 85, 86, 3, 'com_content.field.10', 'Subtitle', '{}'),
-(111, 107, 87, 88, 3, 'com_content.field.11', 'Link', '{}'),
-(112, 18, 166, 167, 2, 'com_modules.module.95', 'خدمات', '{}'),
-(113, 18, 168, 169, 2, 'com_modules.module.96', 'رزرو نوبت', '{}'),
-(114, 18, 170, 171, 2, 'com_modules.module.97', 'خدمات', '{}'),
-(115, 18, 172, 173, 2, 'com_modules.module.98', 'به مشاوره نیاز دارید ؟', '{}'),
-(116, 18, 174, 175, 2, 'com_modules.module.99', 'ساعات کاری مرکز', '{}'),
-(117, 18, 176, 177, 2, 'com_modules.module.100', 'شاید این مطالب برای شما مفید باشد', '{}');
+(106, 8, 86, 87, 2, 'com_content.fieldgroup.2', 'Linked Banner', '{}'),
+(107, 8, 88, 97, 2, 'com_content.fieldgroup.3', 'Linked Banner', '{}'),
+(108, 107, 89, 90, 3, 'com_content.field.8', 'Media', '{}'),
+(109, 107, 91, 92, 3, 'com_content.field.9', 'Title', '{}'),
+(110, 107, 93, 94, 3, 'com_content.field.10', 'Subtitle', '{}'),
+(111, 107, 95, 96, 3, 'com_content.field.11', 'Link', '{}'),
+(112, 18, 178, 179, 2, 'com_modules.module.95', 'خدمات', '{}'),
+(113, 18, 180, 181, 2, 'com_modules.module.96', 'رزرو نوبت', '{}'),
+(114, 18, 182, 183, 2, 'com_modules.module.97', 'خدمات', '{}'),
+(115, 18, 184, 185, 2, 'com_modules.module.98', 'به مشاوره نیاز دارید ؟', '{}'),
+(116, 18, 186, 187, 2, 'com_modules.module.99', 'ساعات کاری مرکز', '{}'),
+(117, 18, 188, 189, 2, 'com_modules.module.100', 'شاید این مطالب برای شما مفید باشد', '{}'),
+(118, 71, 57, 58, 3, 'com_content.article.15', 'درباره ما', '{}'),
+(119, 75, 67, 68, 3, 'com_content.article.16', 'About us', '{}'),
+(120, 18, 190, 191, 2, 'com_modules.module.101', 'روانشناسان پرتو اندیشه', '{}'),
+(121, 69, 39, 40, 3, 'com_content.article.17', 'شهریار شهیدی (2)', '{}'),
+(122, 69, 41, 42, 3, 'com_content.article.18', 'شهریار شهیدی (3)', '{}'),
+(123, 18, 192, 193, 2, 'com_modules.module.102', 'فید اینستاگرام', '{}'),
+(124, 8, 98, 99, 2, 'com_content.fieldgroup.4', 'Intro Section', '{}'),
+(125, 8, 100, 101, 2, 'com_content.fieldgroup.5', 'Statistics', '{}'),
+(126, 18, 194, 195, 2, 'com_modules.module.103', 'درباره ما', '{}');
 
 -- --------------------------------------------------------
 
@@ -1157,9 +1260,9 @@ INSERT INTO `brqs1_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 --
 
 CREATE TABLE `brqs1_associations` (
-                                      `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
-                                      `context` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The context of the associated item.',
-                                      `key` char(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
+  `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
+  `context` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The context of the associated item.',
+  `key` char(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1186,7 +1289,9 @@ INSERT INTO `brqs1_associations` (`id`, `context`, `key`) VALUES
 (127, 'com_menus.item', 'bb3d6b327f9f3f1287cc8eaa75d19827'),
 (138, 'com_menus.item', 'bb3d6b327f9f3f1287cc8eaa75d19827'),
 (126, 'com_menus.item', 'bf6f1773097cf77cc133b5984c09b90f'),
-(137, 'com_menus.item', 'bf6f1773097cf77cc133b5984c09b90f');
+(137, 'com_menus.item', 'bf6f1773097cf77cc133b5984c09b90f'),
+(15, 'com_content.item', 'ec0f6803e70915701c1614c7806cccd3'),
+(16, 'com_content.item', 'ec0f6803e70915701c1614c7806cccd3');
 
 -- --------------------------------------------------------
 
@@ -1195,40 +1300,40 @@ INSERT INTO `brqs1_associations` (`id`, `context`, `key`) VALUES
 --
 
 CREATE TABLE `brqs1_banners` (
-                                 `id` int(11) NOT NULL,
-                                 `cid` int(11) NOT NULL DEFAULT '0',
-                                 `type` int(11) NOT NULL DEFAULT '0',
-                                 `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                                 `imptotal` int(11) NOT NULL DEFAULT '0',
-                                 `impmade` int(11) NOT NULL DEFAULT '0',
-                                 `clicks` int(11) NOT NULL DEFAULT '0',
-                                 `clickurl` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `state` tinyint(4) NOT NULL DEFAULT '0',
-                                 `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `custombannercode` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `sticky` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                 `ordering` int(11) NOT NULL DEFAULT '0',
-                                 `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
-                                 `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
-                                 `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-                                 `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `reset` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
+  `id` int(11) NOT NULL,
+  `cid` int(11) NOT NULL DEFAULT '0',
+  `type` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `imptotal` int(11) NOT NULL DEFAULT '0',
+  `impmade` int(11) NOT NULL DEFAULT '0',
+  `clicks` int(11) NOT NULL DEFAULT '0',
+  `clickurl` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `custombannercode` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sticky` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+  `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `reset` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1238,20 +1343,20 @@ CREATE TABLE `brqs1_banners` (
 --
 
 CREATE TABLE `brqs1_banner_clients` (
-                                        `id` int(11) NOT NULL,
-                                        `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `extrainfo` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `state` tinyint(4) NOT NULL DEFAULT '0',
-                                        `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
-                                        `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
-                                        `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-                                        `track_impressions` tinyint(4) NOT NULL DEFAULT '-1'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `extrainfo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+  `metakey_prefix` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1261,10 +1366,10 @@ CREATE TABLE `brqs1_banner_clients` (
 --
 
 CREATE TABLE `brqs1_banner_tracks` (
-                                       `track_date` datetime NOT NULL,
-                                       `track_type` int(10) UNSIGNED NOT NULL,
-                                       `banner_id` int(10) UNSIGNED NOT NULL,
-                                       `count` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `track_date` datetime NOT NULL,
+  `track_type` int(10) UNSIGNED NOT NULL,
+  `banner_id` int(10) UNSIGNED NOT NULL,
+  `count` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1274,33 +1379,33 @@ CREATE TABLE `brqs1_banner_tracks` (
 --
 
 CREATE TABLE `brqs1_categories` (
-                                    `id` int(11) NOT NULL,
-                                    `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
-                                    `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `lft` int(11) NOT NULL DEFAULT '0',
-                                    `rgt` int(11) NOT NULL DEFAULT '0',
-                                    `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                                    `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `description` mediumtext COLLATE utf8mb4_unicode_ci,
-                                    `published` tinyint(4) NOT NULL DEFAULT '0',
-                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `params` text COLLATE utf8mb4_unicode_ci,
-                                    `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta description for the page.',
-                                    `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta keywords for the page.',
-                                    `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-                                    `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
+  `id` int(11) NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `lft` int(11) NOT NULL DEFAULT '0',
+  `rgt` int(11) NOT NULL DEFAULT '0',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `description` mediumtext COLLATE utf8mb4_unicode_ci,
+  `published` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci,
+  `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta description for the page.',
+  `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta keywords for the page.',
+  `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1330,49 +1435,49 @@ INSERT INTO `brqs1_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 --
 
 CREATE TABLE `brqs1_contact_details` (
-                                         `id` int(11) NOT NULL,
-                                         `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-                                         `con_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `address` text COLLATE utf8mb4_unicode_ci,
-                                         `suburb` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `state` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `country` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `postcode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `misc` mediumtext COLLATE utf8mb4_unicode_ci,
-                                         `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `email_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                         `default_con` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                         `published` tinyint(4) NOT NULL DEFAULT '0',
-                                         `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                         `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                         `ordering` int(11) NOT NULL DEFAULT '0',
-                                         `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `user_id` int(11) NOT NULL DEFAULT '0',
-                                         `catid` int(11) NOT NULL DEFAULT '0',
-                                         `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                         `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `webpage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `sortname1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `sortname2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `sortname3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `language` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                         `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                         `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                         `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                         `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if contact is featured.',
-                                         `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-                                         `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                         `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                         `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                         `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `con_position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `suburb` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postcode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `misc` mediumtext COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `default_con` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `published` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `catid` int(11) NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `webpage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `sortname1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `sortname2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `sortname3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `language` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if contact is featured.',
+  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1382,37 +1487,37 @@ CREATE TABLE `brqs1_contact_details` (
 --
 
 CREATE TABLE `brqs1_content` (
-                                 `id` int(10) UNSIGNED NOT NULL,
-                                 `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
-                                 `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                                 `introtext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `fulltext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `state` tinyint(4) NOT NULL DEFAULT '0',
-                                 `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `attribs` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                 `ordering` int(11) NOT NULL DEFAULT '0',
-                                 `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
-                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The language code for the article.',
-                                 `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-                                 `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `introtext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fulltext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attribs` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The language code for the article.',
+  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1425,14 +1530,18 @@ INSERT INTO `brqs1_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 (3, 79, 'این آیتم نسبت به بقیه آیتم ها دارای عنوان بلند تری است برای تست رابط کاربری', 'آیتم-شماره-یک-بلاگ-3', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی</p>\r\n', '\r\n<p>می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-06-12 08:50:37', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 3, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 1, '*', '', ''),
 (4, 80, 'آیتم شماره یک بلاگ (4)', 'آیتم-شماره-یک-بلاگ-4', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان</p>\r\n', '\r\n<p>که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-23 13:03:49', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 2, '', '', 1, 1, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
 (5, 81, 'آیتم شماره یک بلاگ (5)', 'آیتم-شماره-یک-بلاگ-5', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع</p>\r\n', '\r\n<p>با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 10, '2021-05-20 18:38:31', 120, '', '2021-05-23 13:03:59', 120, 0, '0000-00-00 00:00:00', '2021-05-20 18:38:31', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 1, '', '', 1, 28, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(6, 84, 'خشایار پورادبی', 'خشایار-پورادبی', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', '', 1, 9, '2021-05-29 21:35:56', 120, '', '2021-05-30 14:43:46', 120, 0, '0000-00-00 00:00:00', '2021-05-29 21:35:56', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/sampledata\\/parks\\/animals\\/800px_koala_ag1.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/landscape\\/800px_ormiston_pound.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 14, 1, '', '', 1, 136, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(7, 96, 'test', 'test', '', '', 1, 9, '2021-05-30 12:32:57', 120, '', '2021-05-30 12:32:57', 0, 0, '0000-00-00 00:00:00', '2021-05-30 12:32:57', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 0, '', '', 1, 2, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(9, 100, 'مشاوره پیش از ازدواج', 'مشاوره-پیش-از-ازدواج', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-12 06:00:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/1.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/psychologist.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 5, 5, '', '', 1, 121, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
-(10, 101, 'مشاوره امور طلاق', 'مشاوره-امور-طلاق', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:03', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/2.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 4, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(6, 84, 'تکتم جان نثاری', 'تکتم-جان-نثاری', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', '', 1, 9, '2021-05-29 21:35:56', 120, '', '2021-06-26 15:49:51', 120, 0, '0000-00-00 00:00:00', '2021-05-29 21:35:56', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/portrait.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/sampledata\\/parks\\/landscape\\/800px_pinnacles_western_australia.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 15, 3, '', '', 1, 137, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
+(7, 96, 'شهریار شهیدی', 'شهریار-شهیدی', '', '', 1, 9, '2021-05-30 12:32:57', 120, '', '2021-06-26 15:49:25', 120, 0, '0000-00-00 00:00:00', '2021-05-30 12:32:57', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/portrait.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 2, 2, '', '', 1, 2, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(9, 100, 'مشاوره پیش از ازدواج', 'مشاوره-پیش-از-ازدواج', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>\r\n<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-12 06:00:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/1.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/psychologist.jpg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 5, 5, '', '', 1, 123, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(10, 101, 'مشاوره امور طلاق', 'مشاوره-امور-طلاق', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:03', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/2.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 4, '', '', 1, 4, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (11, 102, 'مشاوره تحصیلی', 'مشاوره-تحصیلی', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:10', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/3.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 3, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (12, 103, 'امور استرس و کنترل اضطراب', 'امور-استرس-و-کنترل-اضطراب', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:18', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/2.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 2, '', '', 1, 5, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
 (13, 104, 'مشاوره امور مربوط به کدکان', 'مشاوره-امور-مربوط-به-کدکان', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:25', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/1.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 1, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
-(14, 105, 'امور مربوط به وسواس', 'امور-مربوط-به-وسواس', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:33', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/3.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 0, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', '');
+(14, 105, 'امور مربوط به وسواس', 'امور-مربوط-به-وسواس', '<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>\r\n', '\r\n<p>و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>', 1, 8, '2021-06-11 00:00:16', 120, '', '2021-06-11 00:42:33', 120, 0, '0000-00-00 00:00:00', '2021-06-11 00:00:16', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/services\\/3.png\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 4, 0, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(15, 118, 'درباره ما', 'درباره-ما', '', '', 1, 11, '2021-06-26 14:49:21', 120, '', '2021-06-26 14:51:11', 120, 0, '0000-00-00 00:00:00', '2021-06-26 14:49:21', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"partoandisheh:about\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 3, 1, '', '', 1, 105, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(16, 119, 'About us', 'about', '', '', 1, 15, '2021-06-26 14:49:34', 120, '', '2021-06-26 14:51:19', 120, 0, '0000-00-00 00:00:00', '2021-06-26 14:49:34', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"partoandisheh:about\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 3, 0, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'en-GB', '', ''),
+(17, 121, 'شهریار شهیدی (2)', 'شهریار-شهیدی-2', '', '', 1, 9, '2021-05-30 12:32:57', 120, '', '2021-06-26 23:58:14', 120, 0, '0000-00-00 00:00:00', '2021-05-30 12:32:57', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 3, 1, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', ''),
+(18, 122, 'شهریار شهیدی (3)', 'شهریار-شهیدی-3', '', '', 1, 9, '2021-05-30 12:32:57', 120, '', '2021-06-26 16:31:34', 0, 0, '0000-00-00 00:00:00', '2021-05-30 12:32:57', '0000-00-00 00:00:00', '{\"image_intro\":\"images\\/portrait.jpg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 0, '', '', 1, 0, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, 'fa-IR', '', '');
 
 -- --------------------------------------------------------
 
@@ -1441,12 +1550,12 @@ INSERT INTO `brqs1_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 --
 
 CREATE TABLE `brqs1_contentitem_tag_map` (
-                                             `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                             `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
-                                             `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
-                                             `tag_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the tag table',
-                                             `tag_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of most recent save for this tag-item',
-                                             `type_id` mediumint(9) NOT NULL COMMENT 'PK from the content_type table'
+  `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
+  `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
+  `tag_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the tag table',
+  `tag_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of most recent save for this tag-item',
+  `type_id` mediumint(9) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maps items from content tables to tags';
 
 --
@@ -1465,8 +1574,8 @@ INSERT INTO `brqs1_contentitem_tag_map` (`type_alias`, `core_content_id`, `conte
 --
 
 CREATE TABLE `brqs1_content_frontpage` (
-                                           `content_id` int(11) NOT NULL DEFAULT '0',
-                                           `ordering` int(11) NOT NULL DEFAULT '0'
+  `content_id` int(11) NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1485,10 +1594,10 @@ INSERT INTO `brqs1_content_frontpage` (`content_id`, `ordering`) VALUES
 --
 
 CREATE TABLE `brqs1_content_rating` (
-                                        `content_id` int(11) NOT NULL DEFAULT '0',
-                                        `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `rating_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `lastip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `content_id` int(11) NOT NULL DEFAULT '0',
+  `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `rating_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `lastip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1498,14 +1607,14 @@ CREATE TABLE `brqs1_content_rating` (
 --
 
 CREATE TABLE `brqs1_content_types` (
-                                       `type_id` int(10) UNSIGNED NOT NULL,
-                                       `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `rules` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `field_mappings` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `router` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `content_history_options` varchar(5120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
+  `type_id` int(10) UNSIGNED NOT NULL,
+  `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `rules` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `field_mappings` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `router` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `content_history_options` varchar(5120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1534,8 +1643,8 @@ INSERT INTO `brqs1_content_types` (`type_id`, `type_title`, `type_alias`, `table
 --
 
 CREATE TABLE `brqs1_core_log_searches` (
-                                           `search_term` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `search_term` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1545,24 +1654,24 @@ CREATE TABLE `brqs1_core_log_searches` (
 --
 
 CREATE TABLE `brqs1_extensions` (
-                                    `extension_id` int(11) NOT NULL,
-                                    `package_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Parent package ID for extensions installed as a package.',
-                                    `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `element` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `folder` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `client_id` tinyint(4) NOT NULL,
-                                    `enabled` tinyint(4) NOT NULL DEFAULT '0',
-                                    `access` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                    `protected` tinyint(4) NOT NULL DEFAULT '0',
-                                    `manifest_cache` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `custom_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `system_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `ordering` int(11) DEFAULT '0',
-                                    `state` int(11) DEFAULT '0'
+  `extension_id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Parent package ID for extensions installed as a package.',
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `element` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `folder` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `client_id` tinyint(4) NOT NULL,
+  `enabled` tinyint(4) NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `protected` tinyint(4) NOT NULL DEFAULT '0',
+  `manifest_cache` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `custom_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `system_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) DEFAULT '0',
+  `state` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1605,7 +1714,7 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (35, 0, 'com_privacy', 'component', 'com_privacy', '', 1, 1, 1, 1, '{\"name\":\"com_privacy\",\"type\":\"component\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"COM_PRIVACY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"privacy\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (36, 0, 'com_actionlogs', 'component', 'com_actionlogs', '', 1, 1, 1, 1, '{\"name\":\"com_actionlogs\",\"type\":\"component\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"COM_ACTIONLOGS_XML_DESCRIPTION\",\"group\":\"\"}', '{\"ip_logging\":0,\"csv_delimiter\":\",\",\"loggable_extensions\":[\"com_banners\",\"com_cache\",\"com_categories\",\"com_checkin\",\"com_config\",\"com_contact\",\"com_content\",\"com_installer\",\"com_media\",\"com_menus\",\"com_messages\",\"com_modules\",\"com_newsfeeds\",\"com_plugins\",\"com_redirect\",\"com_tags\",\"com_templates\",\"com_users\"]}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (102, 0, 'LIB_PHPUTF8', 'library', 'phputf8', '', 0, 1, 1, 1, '{\"name\":\"LIB_PHPUTF8\",\"type\":\"library\",\"creationDate\":\"2006\",\"author\":\"Harry Fuecks\",\"copyright\":\"Copyright various authors\",\"authorEmail\":\"hfuecks@gmail.com\",\"authorUrl\":\"http:\\/\\/sourceforge.net\\/projects\\/phputf8\",\"version\":\"0.5\",\"description\":\"LIB_PHPUTF8_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"phputf8\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(103, 0, 'LIB_JOOMLA', 'library', 'joomla', '', 0, 1, 1, 1, '{\"name\":\"LIB_JOOMLA\",\"type\":\"library\",\"creationDate\":\"2008\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"https:\\/\\/www.joomla.org\",\"version\":\"13.1\",\"description\":\"LIB_JOOMLA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"joomla\"}', '{\"mediaversion\":\"e7407806235bc7d4591672ebe08ecf6e\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(103, 0, 'LIB_JOOMLA', 'library', 'joomla', '', 0, 1, 1, 1, '{\"name\":\"LIB_JOOMLA\",\"type\":\"library\",\"creationDate\":\"2008\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"https:\\/\\/www.joomla.org\",\"version\":\"13.1\",\"description\":\"LIB_JOOMLA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"joomla\"}', '{\"mediaversion\":\"1fa78effcf3de78752d1624e1f12c3c0\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (104, 0, 'LIB_IDNA', 'library', 'idna_convert', '', 0, 1, 1, 1, '{\"name\":\"LIB_IDNA\",\"type\":\"library\",\"creationDate\":\"2004\",\"author\":\"phlyLabs\",\"copyright\":\"2004-2011 phlyLabs Berlin, http:\\/\\/phlylabs.de\",\"authorEmail\":\"phlymail@phlylabs.de\",\"authorUrl\":\"http:\\/\\/phlylabs.de\",\"version\":\"0.8.0\",\"description\":\"LIB_IDNA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"idna_convert\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (105, 0, 'FOF', 'library', 'fof', '', 0, 1, 1, 1, '{\"name\":\"FOF\",\"type\":\"library\",\"creationDate\":\"2015-04-22 13:15:32\",\"author\":\"Nicholas K. Dionysopoulos \\/ Akeeba Ltd\",\"copyright\":\"(C)2011-2015 Nicholas K. Dionysopoulos\",\"authorEmail\":\"nicholas@akeebabackup.com\",\"authorUrl\":\"https:\\/\\/www.akeebabackup.com\",\"version\":\"2.4.3\",\"description\":\"LIB_FOF_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"fof\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (106, 0, 'LIB_PHPASS', 'library', 'phpass', '', 0, 1, 1, 1, '{\"name\":\"LIB_PHPASS\",\"type\":\"library\",\"creationDate\":\"2004-2006\",\"author\":\"Solar Designer\",\"copyright\":\"\",\"authorEmail\":\"solar@openwall.com\",\"authorUrl\":\"http:\\/\\/www.openwall.com\\/phpass\\/\",\"version\":\"0.3\",\"description\":\"LIB_PHPASS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"phpass\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -1702,7 +1811,7 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"July 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTH_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{\"name\":\"plg_twofactorauth_yubikey\",\"type\":\"plugin\",\"creationDate\":\"September 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.2.0\",\"description\":\"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"yubikey\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{\"name\":\"plg_search_tags\",\"type\":\"plugin\",\"creationDate\":\"March 2014\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEARCH_TAGS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tags\"}', '{\"search_limit\":\"50\",\"show_tagged_items\":\"1\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1623583124}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1625856464}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{\"name\":\"plg_editors-xtd_module\",\"type\":\"plugin\",\"creationDate\":\"October 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_MODULE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"module\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"November 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '{\"mode\":3,\"lastrun\":\"\",\"unique_id\":\"a102029fc43c5d8cc3c7ad16efca92afd16a526f\",\"interval\":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{\"name\":\"plg_installer_packageinstaller\",\"type\":\"plugin\",\"creationDate\":\"May 2016\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.6.0\",\"description\":\"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"packageinstaller\"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1737,7 +1846,7 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (484, 0, 'PLG_ACTIONLOG_JOOMLA', 'plugin', 'joomla', 'actionlog', 0, 1, 1, 0, '{\"name\":\"PLG_ACTIONLOG_JOOMLA\",\"type\":\"plugin\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_ACTIONLOG_JOOMLA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"joomla\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
 (485, 0, 'plg_system_privacyconsent', 'plugin', 'privacyconsent', 'system', 0, 0, 1, 0, '{\"name\":\"plg_system_privacyconsent\",\"type\":\"plugin\",\"creationDate\":\"April 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_PRIVACYCONSENT_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"privacyconsent\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(486, 0, 'plg_system_logrotation', 'plugin', 'logrotation', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_logrotation\",\"type\":\"plugin\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_LOGROTATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"logrotation\"}', '{\"lastrun\":1622298567}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(486, 0, 'plg_system_logrotation', 'plugin', 'logrotation', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_logrotation\",\"type\":\"plugin\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_LOGROTATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"logrotation\"}', '{\"lastrun\":1625856470}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (487, 0, 'plg_privacy_user', 'plugin', 'user', 'privacy', 0, 1, 1, 0, '{\"name\":\"plg_privacy_user\",\"type\":\"plugin\",\"creationDate\":\"May 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_PRIVACY_USER_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"user\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (488, 0, 'plg_quickicon_privacycheck', 'plugin', 'privacycheck', 'quickicon', 0, 1, 1, 0, '{\"name\":\"plg_quickicon_privacycheck\",\"type\":\"plugin\",\"creationDate\":\"June 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_QUICKICON_PRIVACYCHECK_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"privacycheck\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (489, 0, 'plg_user_terms', 'plugin', 'terms', 'user', 0, 0, 1, 0, '{\"name\":\"plg_user_terms\",\"type\":\"plugin\",\"creationDate\":\"June 2018\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_USER_TERMS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"terms\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -1751,28 +1860,30 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (504, 0, 'hathor', 'template', 'hathor', '', 1, 1, 1, 0, '{\"name\":\"hathor\",\"type\":\"template\",\"creationDate\":\"May 2010\",\"author\":\"Andrea Tarr\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"\",\"version\":\"3.0.0\",\"description\":\"TPL_HATHOR_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"templateDetails\"}', '{\"showSiteName\":\"0\",\"colourChoice\":\"0\",\"boldText\":\"0\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (506, 0, 'protostar', 'template', 'protostar', '', 0, 1, 1, 0, '{\"name\":\"protostar\",\"type\":\"template\",\"creationDate\":\"4\\/30\\/2012\",\"author\":\"Kyle Ledbetter\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"\",\"version\":\"1.0\",\"description\":\"TPL_PROTOSTAR_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"templateDetails\"}', '{\"templateColor\":\"\",\"logoFile\":\"\",\"googleFont\":\"1\",\"googleFontName\":\"Open+Sans\",\"fluidContainer\":\"0\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (507, 0, 'isis', 'template', 'isis', '', 1, 1, 1, 0, '{\"name\":\"isis\",\"type\":\"template\",\"creationDate\":\"3\\/30\\/2012\",\"author\":\"Kyle Ledbetter\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"\",\"version\":\"1.0\",\"description\":\"TPL_ISIS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"templateDetails\"}', '{\"templateColor\":\"\",\"logoFile\":\"\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(600, 802, 'English (en-GB)', 'language', 'en-GB', '', 0, 1, 1, 1, '{\"name\":\"English (en-GB)\",\"type\":\"language\",\"creationDate\":\"May 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.27\",\"description\":\"en-GB site language\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(601, 802, 'English (en-GB)', 'language', 'en-GB', '', 1, 1, 1, 1, '{\"name\":\"English (en-GB)\",\"type\":\"language\",\"creationDate\":\"May 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.27\",\"description\":\"en-GB administrator language\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(700, 0, 'files_joomla', 'file', 'joomla', '', 0, 1, 1, 1, '{\"name\":\"files_joomla\",\"type\":\"file\",\"creationDate\":\"May 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.27\",\"description\":\"FILES_JOOMLA_XML_DESCRIPTION\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(802, 0, 'English (en-GB) Language Pack', 'package', 'pkg_en-GB', '', 0, 1, 1, 1, '{\"name\":\"English (en-GB) Language Pack\",\"type\":\"package\",\"creationDate\":\"May 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.27.1\",\"description\":\"en-GB language pack\",\"group\":\"\",\"filename\":\"pkg_en-GB\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10000, 10002, 'Persian', 'language', 'fa-IR', '', 0, 1, 0, 0, '{\"name\":\"Persian\",\"type\":\"language\",\"creationDate\":\"May 2021\",\"author\":\"Persian Translation Team, Joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.27.1\",\"description\":\"Persian site language pack for Joomla 3.9.27\",\"group\":\"\",\"filename\":\"install\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10001, 10002, 'Persian', 'language', 'fa-IR', '', 1, 1, 0, 0, '{\"name\":\"Persian\",\"type\":\"language\",\"creationDate\":\"May 2021\",\"author\":\"Persian Translation Team, Joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.27.1\",\"description\":\"Persian administrator language pack for Joomla 3.9.27\",\"group\":\"\",\"filename\":\"install\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10002, 0, 'Persian Language Pack', 'package', 'pkg_fa-IR', '', 0, 1, 1, 0, '{\"name\":\"Persian Language Pack\",\"type\":\"package\",\"creationDate\":\"May 2021\",\"author\":\"Farsi translation team, joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.27.1\",\"description\":\"\\n\\t\\t<h3>\\u0641\\u0627\\u0631\\u0633\\u06cc \\u0633\\u0627\\u0632 \\u062c\\u0648\\u0645\\u0644\\u0627 3.9 \\u06a9\\u0627\\u0631\\u06cc \\u0627\\u0632 \\u062a\\u06cc\\u0645 \\u0628\\u0631\\u06af\\u0632\\u06cc\\u062f\\u0647 \\u062c\\u0648\\u0645\\u0644\\u0627 \\u062f\\u0631 \\u0627\\u06cc\\u0631\\u0627\\u0646. \\u062c\\u0648\\u0645\\u0644\\u0627 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u062f\\u0627\\u062a \\u06a9\\u0627\\u0645<\\/h3>\\n\\t\\t<h3>Joomla! 3.9 Full Farsi (fa-IR) Language Package version 3.9.27v1, JoomlaFarsi.com<\\/h3>\\n\\t\\t<br>\",\"group\":\"\",\"filename\":\"pkg_fa-IR\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(600, 802, 'English (en-GB)', 'language', 'en-GB', '', 0, 1, 1, 1, '{\"name\":\"English (en-GB)\",\"type\":\"language\",\"creationDate\":\"July 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.28\",\"description\":\"en-GB site language\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(601, 802, 'English (en-GB)', 'language', 'en-GB', '', 1, 1, 1, 1, '{\"name\":\"English (en-GB)\",\"type\":\"language\",\"creationDate\":\"July 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.28\",\"description\":\"en-GB administrator language\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(700, 0, 'files_joomla', 'file', 'joomla', '', 0, 1, 1, 1, '{\"name\":\"files_joomla\",\"type\":\"file\",\"creationDate\":\"July 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 - 2020 Open Source Matters. All rights reserved\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.28\",\"description\":\"FILES_JOOMLA_XML_DESCRIPTION\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(802, 0, 'English (en-GB) Language Pack', 'package', 'pkg_en-GB', '', 0, 1, 1, 1, '{\"name\":\"English (en-GB) Language Pack\",\"type\":\"package\",\"creationDate\":\"July 2021\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.28.1\",\"description\":\"en-GB language pack\",\"group\":\"\",\"filename\":\"pkg_en-GB\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10000, 10002, 'Persian', 'language', 'fa-IR', '', 0, 1, 0, 0, '{\"name\":\"Persian\",\"type\":\"language\",\"creationDate\":\"July 2021\",\"author\":\"Persian Translation Team, Joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.28.1\",\"description\":\"Persian site language pack for Joomla 3.9.28\",\"group\":\"\",\"filename\":\"install\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10001, 10002, 'Persian', 'language', 'fa-IR', '', 1, 1, 0, 0, '{\"name\":\"Persian\",\"type\":\"language\",\"creationDate\":\"July 2021\",\"author\":\"Persian Translation Team, Joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.28.1\",\"description\":\"Persian administrator language pack for Joomla 3.9.28\",\"group\":\"\",\"filename\":\"install\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10002, 0, 'Persian Language Pack', 'package', 'pkg_fa-IR', '', 0, 1, 1, 0, '{\"name\":\"Persian Language Pack\",\"type\":\"package\",\"creationDate\":\"July 2021\",\"author\":\"Farsi translation team, joomlafarsi.com\",\"copyright\":\"Copyright (C) 2005 - 2021 Joomlafarsi.com and Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"info@joomlafarsi.com\",\"authorUrl\":\"www.joomlafarsi.com\",\"version\":\"3.9.28.1\",\"description\":\"\\n\\t\\t<h3>\\u0641\\u0627\\u0631\\u0633\\u06cc \\u0633\\u0627\\u0632 \\u062c\\u0648\\u0645\\u0644\\u0627 3.9 \\u06a9\\u0627\\u0631\\u06cc \\u0627\\u0632 \\u062a\\u06cc\\u0645 \\u0628\\u0631\\u06af\\u0632\\u06cc\\u062f\\u0647 \\u062c\\u0648\\u0645\\u0644\\u0627 \\u062f\\u0631 \\u0627\\u06cc\\u0631\\u0627\\u0646. \\u062c\\u0648\\u0645\\u0644\\u0627 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u062f\\u0627\\u062a \\u06a9\\u0627\\u0645<\\/h3>\\n\\t\\t<h3>Joomla! 3.9 Full Farsi (fa-IR) Language Package version 3.9.28v1, JoomlaFarsi.com<\\/h3>\\n\\t\\t<br>\",\"group\":\"\",\"filename\":\"pkg_fa-IR\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10003, 0, 'com_rsseo', 'component', 'com_rsseo', '', 1, 1, 0, 0, '{\"name\":\"com_rsseo\",\"type\":\"component\",\"creationDate\":\"July 2016\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2016 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"1.21.10\",\"description\":\"RSSeo! helps you increase the website traffic and optimize it for search engines.\",\"group\":\"\",\"filename\":\"rsseo\"}', '{\"global_register_code\":\"\",\"global_dateformat\":\"d M y H:i\",\"load_jquery\":\"1\",\"log_errors\":\"1\",\"custom_errors\":\"0\",\"track_visitors\":\"0\",\"obfuscate_visitor_ip\":\"0\",\"robots_permissions\":\"644\",\"title_length\":\"50\",\"keywords_length\":\"10\",\"description_length\":\"150\",\"google_domain\":\"google.com\",\"enable_age\":\"1\",\"enable_bingp\":\"1\",\"enable_bingb\":\"1\",\"enable_alexa\":\"1\",\"enable_moz\":\"1\",\"moz_access_id\":\"\",\"moz_secret\":\"\",\"analytics_enable\":\"0\",\"analytics_client_id\":\"\",\"analytics_secret\":\"\",\"ga_tracking\":\"0\",\"ga_type\":\"0\",\"ga_code\":\"\",\"request_timeout\":\"0\",\"crawler_type\":\"loopback\",\"crawler_enable_auto\":\"0\",\"crawler_save\":\"1\",\"crawler_nofollow\":\"0\",\"crawler_level\":\"2\",\"site_name_in_title\":\"0\",\"site_name_separator\":\"|\",\"crawler_sef\":\"1\",\"crawler_title_duplicate\":\"1\",\"crawler_title_length\":\"1\",\"crawler_description_duplicate\":\"1\",\"crawler_description_length\":\"1\",\"crawler_keywords\":\"1\",\"crawler_headings\":\"1\",\"crawler_images\":\"1\",\"crawler_images_alt\":\"1\",\"crawler_images_hw\":\"1\",\"crawler_intext_links\":\"1\",\"crawler_ignore\":\"{*}tmpl=component{*}\\r\\n{*}format=pdf{*}\\r\\n{*}format=feed{*}\\r\\n{*}output=pdf{*}\\r\\n{*}?gclid={*}\\r\\n{*}.feed\\r\\n{*}.feed?type{*}\\r\\n{*}.raw?type{*}\",\"exclude_noindex\":\"0\",\"sitemap_permissions\":\"644\",\"enable_sitemap_cron\":\"0\",\"sitemap_cron_type\":\"0\",\"sitemap_cron_security\":\"707cb49519002c0b36d6ae726aa02589\",\"sitemap_autocrawled\":\"2\",\"sitemap_autocrawled_rule\":\"\",\"enable_keyword_replace\":\"1\",\"approved_chars\":\",;:.?!$%*&()[]{} ><\",\"keyword_density_enable\":\"1\",\"copykeywords\":\"0\",\"overwritekeywords\":\"0\",\"eanble_k_cron\":\"0\",\"k_cron_run\":\"weekly\",\"subdomains\":\"\",\"proxy_enable\":\"0\",\"proxy_server\":\"\",\"proxy_port\":\"\",\"proxy_username\":\"\",\"proxy_password\":\"\",\"img_auto_alt\":\"0\",\"img_auto_alt_rule\":\"{name} {title}\",\"img_auto_title\":\"0\",\"img_auto_title_rule\":\"{name} image\",\"sitemapauto\":\"0\",\"sitemapprotocol\":\"0\",\"sitemaport\":\"0\",\"ga_account\":\"\",\"ga_start\":\"\",\"ga_end\":\"\",\"ga_token\":\"\",\"sitemap_menus\":\"YToxOntpOjA7czo4OiJtYWlubWVudSI7fQ==\",\"sitemap_excludes\":\"YTowOnt9\",\"sitemap_timestamp\":\"0\",\"enable_sef\":\"1\",\"ga_options\":\"\",\"report\":\"{\\\"email_report\\\":\\\"0\\\",\\\"mode\\\":\\\"weekly\\\",\\\"mode_days\\\":\\\"5\\\",\\\"mode_day\\\":\\\"8\\\",\\\"email\\\":\\\"\\\",\\\"subject\\\":\\\"SEO Report for {sitename}\\\",\\\"message\\\":\\\"<p>Hello,<\\\\/p>\\r\\n<p>This is the SEO report for {sitename}.<\\\\/p>\\\",\\\"font\\\":\\\"times\\\",\\\"orientation\\\":\\\"landscape\\\",\\\"paper\\\":\\\"a4\\\",\\\"statistics\\\":\\\"1\\\",\\\"last_crawled\\\":\\\"1\\\",\\\"most_visited\\\":\\\"1\\\",\\\"error_links\\\":\\\"1\\\",\\\"no_title\\\":\\\"1\\\",\\\"no_desc\\\":\\\"1\\\",\\\"limit\\\":\\\"10\\\",\\\"enable_competitors\\\":\\\"1\\\",\\\"enable_gkeywords\\\":\\\"1\\\"}\",\"lastrun\":\"2021-05-17 01:47:12\",\"autodeletevisitors\":\"\",\"lastrunvisitors\":\"\",\"exclude_autocrawled\":\"0\",\"sitemap_limit\":\"500\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10004, 0, 'plg_system_rsseo', 'plugin', 'rsseo', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_rsseo\",\"type\":\"plugin\",\"creationDate\":\"June 2012\",\"author\":\"RSJoomla!\",\"copyright\":\"\",\"authorEmail\":\"supporttickets@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"1.5.0\",\"description\":\"RSSEO_SYSTEM_PLUGIN_DESC\",\"group\":\"\",\"filename\":\"rsseo\"}', '{\"frontend_seo\":\"0\",\"frontend_seo_groups\":\"\",\"generator\":\"0\",\"cookie_accept\":\"0\",\"cookie_info\":\"\",\"cookie_position\":\"down\",\"enablecan\":\"0\",\"domain\":\"\",\"enable\":\"0\",\"type\":\"google-site-verification\",\"content\":\"\",\"enabley\":\"0\",\"contenty\":\"\",\"enableb\":\"0\",\"contentb\":\"\",\"minify_js\":\"0\",\"merge_all_js\":\"0\",\"merge_inline_js\":\"0\",\"minify_css\":\"0\",\"merge_all_css\":\"0\",\"merge_inline_css\":\"0\",\"gzip\":\"0\",\"try_catch\":\"0\",\"minify_html\":\"0\",\"enable_webp\":\"0\",\"webp_image_location\":\"1\",\"enable_cdn\":\"0\",\"cdn_filetypes\":\"\"}', '', '', 0, '0000-00-00 00:00:00', 4, 0),
 (10005, 0, 'plg_installer_rsseo', 'plugin', 'rsseo', 'installer', 0, 1, 1, 0, '{\"name\":\"plg_installer_rsseo\",\"type\":\"plugin\",\"creationDate\":\"July 2015\",\"author\":\"RSJoomla!\",\"copyright\":\"(c) 2015 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"https:\\/\\/www.rsjoomla.com\",\"version\":\"1.0.0\",\"description\":\"PLG_INSTALLER_RSSEO_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"rsseo\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10006, 0, 'partoandisheh', 'template', 'partoandisheh', '', 0, 1, 1, 0, '{\"name\":\"partoandisheh\",\"type\":\"template\",\"creationDate\":\"Ordibehesht 1400\",\"author\":\"Khashayar Pouradabi\",\"copyright\":\"Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.\",\"authorEmail\":\"pouradaby@gmail.com\",\"authorUrl\":\"www.netparsi.com\",\"version\":\"1.0\",\"description\":\"\",\"group\":\"\",\"filename\":\"templateDetails\"}', '[]', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10007, 0, 'com_rsform', 'component', 'com_rsform', '', 1, 1, 0, 0, '{\"name\":\"com_rsform\",\"type\":\"component\",\"creationDate\":\"July 2019\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2007-2020 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"2.3.20\",\"description\":\"COM_RSFORM_INSTALL_DESC\",\"group\":\"\",\"filename\":\"rsform\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10007, 0, 'com_rsform', 'component', 'com_rsform', '', 1, 1, 0, 0, '{\"name\":\"com_rsform\",\"type\":\"component\",\"creationDate\":\"June 2021\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2007-2021 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"3.0.3\",\"description\":\"COM_RSFORM_INSTALL_DESC\",\"group\":\"\",\"filename\":\"rsform\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10008, 0, 'TCPDF', 'library', 'tcpdf', '', 0, 1, 1, 0, '{\"name\":\"TCPDF\",\"type\":\"library\",\"creationDate\":\"28 January 2011\",\"author\":\"Nicola Asuni\",\"copyright\":\"http:\\/\\/www.tcpdf.org\",\"authorEmail\":\"\",\"authorUrl\":\"http:\\/\\/www.tcpdf.org\",\"version\":\"2.5.0\",\"description\":\"Class for generating PDF files on-the-fly without requiring external extensions.\",\"group\":\"\",\"filename\":\"tcpdf\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10009, 0, 'plg_installer_rsform', 'plugin', 'rsform', 'installer', 0, 1, 1, 0, '{\"name\":\"plg_installer_rsform\",\"type\":\"plugin\",\"creationDate\":\"July 2015\",\"author\":\"RSJoomla!\",\"copyright\":\"(c) 2015 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"https:\\/\\/www.rsjoomla.com\",\"version\":\"1.0.0\",\"description\":\"PLG_INSTALLER_RSFORM_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"rsform\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10010, 0, 'System - RSForm! Pro Delete Submissions', 'plugin', 'rsformdeletesubmissions', 'system', 0, 1, 1, 0, '{\"name\":\"System - RSForm! Pro Delete Submissions\",\"type\":\"plugin\",\"creationDate\":\"April 2018\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2007-2019 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"1.0.0\",\"description\":\"PLG_SYSTEM_RSFORMDELETESUBMISSIONS_DESC\",\"group\":\"\",\"filename\":\"rsformdeletesubmissions\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10011, 0, 'RSForm Farsi (Iran)', 'file', 'rsform_fa_IR', '', 0, 1, 0, 0, '{\"name\":\"RSForm Farsi (Iran)\",\"type\":\"file\",\"creationDate\":\"2019-11-14\",\"author\":\"Joomla! Translate\",\"copyright\":\"2019 - Joomla! Translate. All rights reserved!\",\"authorEmail\":\"info@joomlatranslate.com\",\"authorUrl\":\"https:\\/\\/joomlatranslate.com\",\"version\":\"57\",\"description\":\"\",\"group\":\"\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10012, 0, 'System - RSForm! Pro reCAPTCHA v3', 'plugin', 'rsfprecaptchav3', 'system', 0, 1, 1, 0, '{\"name\":\"System - RSForm! Pro reCAPTCHA v3\",\"type\":\"plugin\",\"creationDate\":\"March 2020\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2014-2020 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"1.0.1\",\"description\":\"PLG_SYSTEM_RSFPRECAPTCHAV3_DESC\",\"group\":\"\",\"filename\":\"rsfprecaptchav3\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10012, 0, 'System - RSForm! Pro reCAPTCHA v3', 'plugin', 'rsfprecaptchav3', 'system', 0, 1, 1, 0, '{\"name\":\"System - RSForm! Pro reCAPTCHA v3\",\"type\":\"plugin\",\"creationDate\":\"March 2020\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2014-2020 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"3.0.0\",\"description\":\"PLG_SYSTEM_RSFPRECAPTCHAV3_DESC\",\"group\":\"\",\"filename\":\"rsfprecaptchav3\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10014, 10019, 'بستن لاگین و ثبت نام جوملا - جومینا مارکت', 'plugin', 'bandjoomlalogreg', 'system', 0, 1, 1, 0, '{\"name\":\"\\u0628\\u0633\\u062a\\u0646 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0648 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u062c\\u0648\\u0645\\u0644\\u0627 - \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a\",\"type\":\"plugin\",\"creationDate\":\"11 October 2018\",\"author\":\"JoominaMarket Team\",\"copyright\":\"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.\",\"authorEmail\":\"sale@joominamarket.com\",\"authorUrl\":\"www.joominamarket.com\",\"version\":\"1.0\",\"description\":\"\\u0627\\u06af\\u0631 \\u0627\\u06cc\\u0646 \\u067e\\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0641\\u0639\\u0627\\u0644 \\u0634\\u0648\\u062f \\u060c \\u0635\\u0641\\u062d\\u0627\\u062a \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0648 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u062c\\u0648\\u0645\\u0644\\u0627 \\u0628\\u0633\\u062a\\u0647 \\u062e\\u0648\\u0627\\u0647\\u062f \\u0634\\u062f \\u0648 \\u0627\\u06af\\u0631 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0628\\u062e\\u0648\\u0627\\u0647\\u062f \\u0628\\u0647 \\u0627\\u06cc\\u0646 2 \\u0635\\u0641\\u062d\\u0647 \\u0648\\u0631\\u0648\\u062f \\u06a9\\u0646\\u062f \\u0628\\u0635\\u0648\\u0631\\u062a \\u062e\\u0648\\u062f\\u06a9\\u0627\\u0631 \\u0628\\u0647 \\u06a9\\u0627\\u0645\\u067e\\u0648\\u0646\\u0646\\u062a \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u0647\\u062f\\u0627\\u06cc\\u062a \\u062e\\u0648\\u0627\\u0647\\u062f \\u0634\\u062f\",\"group\":\"\",\"filename\":\"bandjoomlalogreg\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10015, 10019, 'تغییر نام کاربری - جومینا مارکت', 'plugin', 'changeusernamelogreg', 'system', 0, 1, 1, 0, '{\"name\":\"\\u062a\\u063a\\u06cc\\u06cc\\u0631 \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc - \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a\",\"type\":\"plugin\",\"creationDate\":\"11 October 2018\",\"author\":\"JoominaMarket Team\",\"copyright\":\"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.\",\"authorEmail\":\"sale@joominamarket.com\",\"authorUrl\":\"www.joominamarket.com\",\"version\":\"1.0\",\"description\":\"\\u0627\\u06af\\u0631 \\u0627\\u06cc\\u0646 \\u067e\\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0641\\u0639\\u0627\\u0644 \\u0628\\u0627\\u0634\\u062f \\u060c \\u06a9\\u0627\\u0631\\u0628\\u0631\\u0627\\u0646\\u06cc \\u06a9\\u0647 \\u0642\\u0628\\u0644 \\u0627\\u0632 \\u0646\\u0635\\u0628 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0648 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u062f\\u0631 \\u062c\\u0648\\u0645\\u0644\\u0627\\u06cc \\u0634\\u0645\\u0627 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0634\\u062f\\u0647 \\u0628\\u0627\\u0634\\u0646\\u062f \\u0642\\u0627\\u0628\\u0644\\u06cc\\u062a \\u0627\\u0635\\u0644\\u0627\\u062d \\u0627\\u0637\\u0644\\u0627\\u0639\\u0627\\u062a \\u0648\\u062c\\u0648\\u062f \\u062e\\u0648\\u0627\\u0647\\u062f \\u062f\\u0627\\u0634\\u062a. \\u0628\\u062f\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u06a9\\u0647 \\u0641\\u0631\\u0636 \\u06a9\\u0646\\u06cc\\u062f \\u06cc\\u06a9 \\u06a9\\u0627\\u0631\\u0628\\u0631 \\u0642\\u0628\\u0644 \\u0627\\u0632 \\u0631\\u0627\\u0647 \\u0627\\u0646\\u062f\\u0627\\u0632\\u06cc \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u0628\\u0627 \\u06cc\\u06a9 \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0628\\u0647 \\u063a\\u06cc\\u0631 \\u0627\\u0632 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644 \\u062e\\u0648\\u062f \\u062f\\u0631 \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u062b\\u0628\\u062a \\u0634\\u062f\\u0647 \\u0627\\u0633\\u062a. \\u0647\\u0645\\u0627\\u0646 \\u0637\\u0648\\u0631 \\u06a9\\u0647 \\u0645\\u06cc \\u062f\\u0627\\u0646\\u06cc\\u062f \\u0627\\u06cc\\u0646 \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u0628\\u062f\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0639\\u0645\\u0644 \\u0645\\u06cc \\u06a9\\u0646\\u062f \\u06a9\\u0647 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644 \\u06a9\\u0627\\u0631\\u0628\\u0631 \\u0631\\u0627 \\u060c \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0648\\u06cc \\u0642\\u0631\\u0627\\u0631 \\u0645\\u06cc \\u062f\\u0647\\u062f \\u0641\\u0644\\u0630\\u0627 \\u062f\\u0631 \\u0647\\u0646\\u06af\\u0627\\u0645 \\u0644\\u0627\\u06af\\u06cc\\u0646\\u060c \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u0628\\u0647 \\u062f\\u0646\\u0628\\u0627\\u0644 \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0627\\u06cc \\u0645\\u06cc\\u06af\\u0631\\u062f\\u062f \\u06a9\\u0647 \\u06cc\\u0648\\u0632\\u0631 \\u062f\\u0631 \\u0645\\u0631\\u062d\\u0644\\u0647 \\u0627\\u0648\\u0644 \\u0628\\u0647 \\u0639\\u0646\\u0648\\u0627\\u0646 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644 \\u0648\\u0627\\u0631\\u062f \\u06a9\\u0631\\u062f\\u0647 \\u0627\\u0633\\u062a \\u0648 \\u0627\\u06af\\u0631 \\u067e\\u06cc\\u062f\\u0627 \\u0646\\u06a9\\u0646\\u062f \\u06a9\\u0627\\u0631\\u0628\\u0631 \\u0631\\u0627 \\u0628\\u0647 \\u0635\\u0641\\u062d\\u0647 \\u0641\\u0631\\u0645 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0647\\u062f\\u0627\\u06cc\\u062a \\u0645\\u06cc \\u06a9\\u0646\\u062f. \\u0627\\u06af\\u0631 \\u0627\\u06cc\\u0646 \\u067e\\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0641\\u0639\\u0627\\u0644 \\u0628\\u0627\\u0634\\u062f \\u0648 \\u06af\\u0632\\u06cc\\u0646\\u0647 \\u0627\\u06cc\\u0645\\u06cc\\u0644 \\u0647\\u0645 \\u062f\\u0631 \\u062a\\u0646\\u0638\\u06cc\\u0645\\u0627\\u062a \\u0641\\u0639\\u0627\\u0644 \\u0634\\u062f\\u0647 \\u0628\\u0627\\u0634\\u062f \\u060c \\u062f\\u0631 \\u0647\\u0646\\u06af\\u0627\\u0645 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u0628\\u0647 \\u062f\\u0646\\u0628\\u0627\\u0644 \\u0627\\u06cc\\u0645\\u06cc\\u0644 \\u06a9\\u0627\\u0631\\u0628\\u0631 \\u0645\\u06cc\\u06af\\u0631\\u062f\\u062f \\u0648 \\u0627\\u06af\\u0631 \\u0627\\u06cc\\u0645\\u06cc\\u0644 \\u0645\\u0634\\u0627\\u0628\\u0647 \\u0631\\u0627 \\u062f\\u0631 \\u067e\\u0627\\u06cc\\u06af\\u0627\\u0647 \\u062f\\u0627\\u062f\\u0647 \\u067e\\u06cc\\u062f\\u0627 \\u06a9\\u0646\\u062f \\u060c \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0648\\u06cc \\u0631\\u0627 \\u0628\\u0647 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644\\u0634 \\u062a\\u063a\\u06cc\\u06cc\\u0631 \\u0645\\u06cc \\u062f\\u0647\\u062f \\u0648 \\u0647\\u0645\\u0627\\u0646 \\u0644\\u062d\\u0638\\u0647 \\u06cc\\u0648\\u0632\\u0631 \\u0631\\u0627 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0645\\u06cc \\u06a9\\u0646\\u062f. \\u0627\\u0632 \\u0622\\u0646 \\u0644\\u062d\\u0638\\u0647 \\u0628\\u0647 \\u0628\\u0639\\u062f \\u06a9\\u0627\\u0631\\u0628\\u0631 \\u0628\\u0627 \\u0632\\u062f\\u0646 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644 \\u062e\\u0648\\u062f \\u0628\\u06cc \\u062f\\u0631\\u0646\\u06af \\u0628\\u0647 \\u0633\\u06cc\\u0633\\u062a\\u0645 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0645\\u06cc \\u0634\\u0648\\u062f \\u0686\\u0631\\u0627 \\u06a9\\u0647 \\u0646\\u0627\\u0645 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc \\u0627\\u0634 \\u0628\\u0647 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u0645\\u0648\\u0628\\u0627\\u06cc\\u0644 \\u0627\\u0634 \\u062a\\u063a\\u06cc\\u06cc\\u0631 \\u067e\\u06cc\\u062f\\u0627 \\u06a9\\u0631\\u062f\\u0647 \\u0627\\u0633\\u062a. \\u062a\\u0648\\u062c\\u0647 \\u06a9\\u0646\\u06cc\\u062f \\u06a9\\u0647 \\u0627\\u06cc\\u0646 \\u0642\\u0627\\u0628\\u0644\\u06cc\\u062a \\u0632\\u0645\\u0627\\u0646\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f \\u062e\\u0648\\u0627\\u0647\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u0641\\u06cc\\u0644\\u062f \\u0627\\u06cc\\u0645\\u06cc\\u0644 \\u062f\\u0631 \\u062a\\u0646\\u0638\\u06cc\\u0645\\u0627\\u062a \\u0641\\u0639\\u0627\\u0644 \\u0634\\u062f\\u0647 \\u0628\\u0627\\u0634\\u062f \\u0686\\u0648\\u0646 \\u0627\\u06af\\u0631 \\u0641\\u0639\\u0627\\u0644 \\u0646\\u0628\\u0627\\u0634\\u062f \\u06cc\\u06a9 \\u0627\\u06cc\\u0645\\u06cc\\u0644 \\u0631\\u0646\\u062f\\u0648\\u0645 \\u0633\\u0627\\u062e\\u062a\\u0647 \\u062e\\u0648\\u0627\\u0647\\u062f \\u0634\\u062f\",\"group\":\"\",\"filename\":\"changeusernamelogreg\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10017, 10019, 'LOGREGSMS', 'component', 'com_logregsms', '', 1, 1, 0, 0, '{\"name\":\"LOGREGSMS\",\"type\":\"component\",\"creationDate\":\"04-JUNE-2019\",\"author\":\"Mohammad Hosein Miri\",\"copyright\":\"JoominaMarket.Com\",\"authorEmail\":\"miri.mohamadhosein@gmail.com\",\"authorUrl\":\"www.joominamarket.com\",\"version\":\"1.8\",\"description\":\"\\u0633\\u06cc\\u0633\\u062a\\u0645 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0648 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 - \\u0628\\u0631\\u0646\\u0627\\u0645\\u0647 \\u0646\\u0648\\u06cc\\u0633: \\u0645\\u062d\\u0645\\u062f\\u062d\\u0633\\u06cc\\u0646 \\u0645\\u06cc\\u0631\\u06cc (www.joominamarket.com)\",\"group\":\"\",\"filename\":\"com_logregsms\"}', '{\"resend\":\"1\",\"load_bootstrap\":\"0\",\"username\":\"09122079572\",\"password\":\"8383\",\"line\":\"50004001079572\",\"reseller\":\"panel.melipayamak.com\",\"smstext\":\"\\u06a9\\u062f \\u062a\\u0627\\u06cc\\u06cc\\u062f\\u06cc\\u0647 \\u0634\\u0645\\u0627: {code}\",\"is_email_required\":\"3\",\"after_login\":\"105\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10018, 10019, ' ماژول نمایش ثبت نام و لاگین پیامکی ', 'module', 'mod_logreg', '', 0, 1, 0, 0, '{\"name\":\" \\u0645\\u0627\\u0698\\u0648\\u0644 \\u0646\\u0645\\u0627\\u06cc\\u0634 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u0648 \\u0644\\u0627\\u06af\\u06cc\\u0646 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \",\"type\":\"module\",\"creationDate\":\"\\u0645\\u0631\\u062f\\u0627\\u062f 1397\",\"author\":\"\\u062a\\u06cc\\u0645 \\u0628\\u0631\\u0646\\u0627\\u0645\\u0647 \\u0646\\u0648\\u06cc\\u0633\\u06cc \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a (joominamarket)\",\"copyright\":\"\\u062a\\u0648\\u0633\\u0639\\u0647 \\u0648 \\u0628\\u0631\\u0646\\u0627\\u0645\\u0647 \\u0646\\u0648\\u06cc\\u0633\\u06cc \\u062a\\u0648\\u0633\\u0637 \\u06af\\u0631\\u0648\\u0647 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0648\\u0628 \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a\",\"authorEmail\":\"miri.mohamadhosein@gmail.com\",\"authorUrl\":\"www.joominamarket.com\",\"version\":\"1.0.0\",\"description\":\"\",\"group\":\"\",\"filename\":\"mod_logreg\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10019, 0, 'لاگین و ثبت نام پیامکی جوملا - جومینا مارکت', 'package', 'pkg_logregsms', '', 0, 1, 1, 0, '{\"name\":\"\\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0648 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u062c\\u0648\\u0645\\u0644\\u0627 - \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a\",\"type\":\"package\",\"creationDate\":\"11 October 2019\",\"author\":\"JoominaMarket.Com\",\"copyright\":\"JoominaMarket Team\",\"authorEmail\":\"miri.mohamadhosein@gmail.com\",\"authorUrl\":\"http:\\/\\/www.joominamarket.com\",\"version\":\"1.9\",\"description\":\"\",\"group\":\"\",\"filename\":\"pkg_logregsms\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10019, 0, 'لاگین و ثبت نام پیامکی جوملا - جومینا مارکت', 'package', 'pkg_logregsms', '', 0, 1, 1, 0, '{\"name\":\"\\u0644\\u0627\\u06af\\u06cc\\u0646 \\u0648 \\u062b\\u0628\\u062a \\u0646\\u0627\\u0645 \\u067e\\u06cc\\u0627\\u0645\\u06a9\\u06cc \\u062c\\u0648\\u0645\\u0644\\u0627 - \\u062c\\u0648\\u0645\\u06cc\\u0646\\u0627 \\u0645\\u0627\\u0631\\u06a9\\u062a\",\"type\":\"package\",\"creationDate\":\"11 October 2019\",\"author\":\"JoominaMarket.Com\",\"copyright\":\"JoominaMarket Team\",\"authorEmail\":\"miri.mohamadhosein@gmail.com\",\"authorUrl\":\"http:\\/\\/www.joominamarket.com\",\"version\":\"1.9\",\"description\":\"\",\"group\":\"\",\"filename\":\"pkg_logregsms\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10020, 0, 'System - RSForm! Pro', 'plugin', 'rsform', 'system', 0, 0, 1, 0, '{\"name\":\"System - RSForm! Pro\",\"type\":\"plugin\",\"creationDate\":\"June 2020\",\"author\":\"RSJoomla!\",\"copyright\":\"(C) 2007-2020 www.rsjoomla.com\",\"authorEmail\":\"support@rsjoomla.com\",\"authorUrl\":\"www.rsjoomla.com\",\"version\":\"3.0.0\",\"description\":\"PLG_SYSTEM_RSFORM_DESC\",\"group\":\"\",\"filename\":\"rsform\"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10021, 0, 'UT Joomstagram', 'module', 'mod_ut_joomstagram', '', 0, 1, 0, 0, '{\"name\":\"UT Joomstagram\",\"type\":\"module\",\"creationDate\":\"May 2021\",\"author\":\"Unitemplates.com\",\"copyright\":\"Copyright (C) 2015 - 2021 Unitemplates.com. All rights reserved.\",\"authorEmail\":\"info@unitemplates.com\",\"authorUrl\":\"www.unitemplates.com\",\"version\":\"3.0.0\",\"description\":\"MOD_UT_JOOMSTAGRAM_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"mod_ut_joomstagram\"}', '{\"jg_cache_time\":\"360\",\"jg_show_profile\":\"0\",\"jg_image_size\":\"320\",\"jg_columns\":\"4\",\"jg_columns_md\":\"3\",\"jg_columns_sm\":\"2\",\"jg_rows\":\"2\",\"jg_padding\":\"0\",\"add_container\":\"0\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1781,30 +1892,30 @@ INSERT INTO `brqs1_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 --
 
 CREATE TABLE `brqs1_fields` (
-                                `id` int(10) UNSIGNED NOT NULL,
-                                `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `default_value` text COLLATE utf8mb4_unicode_ci,
-                                `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
-                                `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                `state` tinyint(4) NOT NULL DEFAULT '0',
-                                `required` tinyint(4) NOT NULL DEFAULT '0',
-                                `checked_out` int(11) NOT NULL DEFAULT '0',
-                                `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                `ordering` int(11) NOT NULL DEFAULT '0',
-                                `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                `fieldparams` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                `access` int(11) NOT NULL DEFAULT '1'
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `default_value` text COLLATE utf8mb4_unicode_ci,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'text',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `required` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(11) NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fieldparams` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1831,8 +1942,8 @@ INSERT INTO `brqs1_fields` (`id`, `asset_id`, `context`, `group_id`, `title`, `n
 --
 
 CREATE TABLE `brqs1_fields_categories` (
-                                           `field_id` int(11) NOT NULL DEFAULT '0',
-                                           `category_id` int(11) NOT NULL DEFAULT '0'
+  `field_id` int(11) NOT NULL DEFAULT '0',
+  `category_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1866,23 +1977,23 @@ INSERT INTO `brqs1_fields_categories` (`field_id`, `category_id`) VALUES
 --
 
 CREATE TABLE `brqs1_fields_groups` (
-                                       `id` int(10) UNSIGNED NOT NULL,
-                                       `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                       `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `state` tinyint(4) NOT NULL DEFAULT '0',
-                                       `checked_out` int(11) NOT NULL DEFAULT '0',
-                                       `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                       `ordering` int(11) NOT NULL DEFAULT '0',
-                                       `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                       `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                       `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                       `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                       `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                       `access` int(11) NOT NULL DEFAULT '1'
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(11) NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1892,7 +2003,9 @@ CREATE TABLE `brqs1_fields_groups` (
 INSERT INTO `brqs1_fields_groups` (`id`, `asset_id`, `context`, `title`, `note`, `description`, `state`, `checked_out`, `checked_out_time`, `ordering`, `params`, `language`, `created`, `created_by`, `modified`, `modified_by`, `access`) VALUES
 (1, 89, 'com_content.article', 'More Information', '', '', 1, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-05-30 09:27:23', 120, '0000-00-00 00:00:00', 0, 1),
 (2, 106, 'com_content.article', 'Linked Banner', '', '', -2, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-06-11 10:37:05', 120, '0000-00-00 00:00:00', 0, 1),
-(3, 107, 'com_content.categories', 'Linked Banner', '', '', 1, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-06-11 10:38:17', 120, '0000-00-00 00:00:00', 0, 1);
+(3, 107, 'com_content.categories', 'Linked Banner', '', '', 1, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-06-11 10:38:17', 120, '0000-00-00 00:00:00', 0, 1),
+(4, 124, 'com_content.article', 'Intro Section', '', '', 0, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-06-27 00:10:00', 120, '0000-00-00 00:00:00', 0, 1),
+(5, 125, 'com_content.article', 'Statistics', '', '', 1, 0, '0000-00-00 00:00:00', 0, '{\"display_readonly\":\"1\"}', '*', '2021-06-27 00:10:10', 120, '0000-00-00 00:00:00', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1901,9 +2014,9 @@ INSERT INTO `brqs1_fields_groups` (`id`, `asset_id`, `context`, `title`, `note`,
 --
 
 CREATE TABLE `brqs1_fields_values` (
-                                       `field_id` int(10) UNSIGNED NOT NULL,
-                                       `item_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
-                                       `value` text COLLATE utf8mb4_unicode_ci
+  `field_id` int(10) UNSIGNED NOT NULL,
+  `item_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
+  `value` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1913,16 +2026,20 @@ CREATE TABLE `brqs1_fields_values` (
 INSERT INTO `brqs1_fields_values` (`field_id`, `item_id`, `value`) VALUES
 (1, '6', '{\"education0\":{\"degree\":\"\\u062f\\u06a9\\u062a\\u0631\\u0627\\u06cc \\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u06cc \\u0628\\u0627\\u0644\\u06cc\\u0646\\u06cc\",\"university\":\"\\u062f\\u0627\\u0646\\u0634\\u06af\\u0627\\u0647 \\u062a\\u0647\\u0631\\u0627\\u0646\"},\"education1\":{\"degree\":\"\\u0641\\u0648\\u0642 \\u0644\\u06cc\\u0633\\u0627\\u0646\\u0633 \\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u06cc\",\"university\":\"\\u062f\\u0627\\u0646\\u0634\\u06af\\u0627\\u0647 \\u0634\\u06cc\\u0631\\u0627\\u0632\"}}'),
 (6, '6', 'روز های زوج صبح ها\r\nروز های فرد عصر ها'),
-(1, '7', '[]'),
-(2, '7', '[]'),
 (4, '6', '۰۹۱۲ ۳۴۵ ۶۷۸۹'),
 (5, '6', 'name@domain.com'),
 (7, '6', 'متخصص امور کودکان'),
-(2, '6', '[]'),
 (8, '8', 'images/psychologist.jpg'),
 (9, '8', 'آیا دچار مشکل افسردگی هستید ؟'),
 (10, '8', 'ما میتوانیم با جدیدترین متد ها به شما کمک منیم.'),
-(11, '8', 'https://www.google.com/');
+(11, '8', 'https://www.google.com/'),
+(1, '7', '[]'),
+(2, '7', '[]'),
+(2, '6', '[]'),
+(1, '18', '[]'),
+(2, '18', '[]'),
+(1, '17', '[]'),
+(2, '17', '[]');
 
 -- --------------------------------------------------------
 
@@ -1931,20 +2048,20 @@ INSERT INTO `brqs1_fields_values` (`field_id`, `item_id`, `value`) VALUES
 --
 
 CREATE TABLE `brqs1_finder_filters` (
-                                        `filter_id` int(10) UNSIGNED NOT NULL,
-                                        `title` varchar(255) NOT NULL,
-                                        `alias` varchar(255) NOT NULL,
-                                        `state` tinyint(4) NOT NULL DEFAULT '1',
-                                        `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `created_by` int(10) UNSIGNED NOT NULL,
-                                        `created_by_alias` varchar(255) NOT NULL,
-                                        `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `map_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `data` text NOT NULL,
-                                        `params` mediumtext
+  `filter_id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `alias` varchar(255) NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) UNSIGNED NOT NULL,
+  `created_by_alias` varchar(255) NOT NULL,
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `map_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `data` text NOT NULL,
+  `params` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1954,25 +2071,25 @@ CREATE TABLE `brqs1_finder_filters` (
 --
 
 CREATE TABLE `brqs1_finder_links` (
-                                      `link_id` int(10) UNSIGNED NOT NULL,
-                                      `url` varchar(255) NOT NULL,
-                                      `route` varchar(255) NOT NULL,
-                                      `title` varchar(400) DEFAULT NULL,
-                                      `description` text,
-                                      `indexdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                      `md5sum` varchar(32) DEFAULT NULL,
-                                      `published` tinyint(4) NOT NULL DEFAULT '1',
-                                      `state` int(11) DEFAULT '1',
-                                      `access` int(11) DEFAULT '0',
-                                      `language` varchar(8) NOT NULL,
-                                      `publish_start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                      `publish_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                      `start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                      `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                      `list_price` double UNSIGNED NOT NULL DEFAULT '0',
-                                      `sale_price` double UNSIGNED NOT NULL DEFAULT '0',
-                                      `type_id` int(11) NOT NULL,
-                                      `object` mediumblob NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `route` varchar(255) NOT NULL,
+  `title` varchar(400) DEFAULT NULL,
+  `description` text,
+  `indexdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md5sum` varchar(32) DEFAULT NULL,
+  `published` tinyint(4) NOT NULL DEFAULT '1',
+  `state` int(11) DEFAULT '1',
+  `access` int(11) DEFAULT '0',
+  `language` varchar(8) NOT NULL,
+  `publish_start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `list_price` double UNSIGNED NOT NULL DEFAULT '0',
+  `sale_price` double UNSIGNED NOT NULL DEFAULT '0',
+  `type_id` int(11) NOT NULL,
+  `object` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1982,9 +2099,9 @@ CREATE TABLE `brqs1_finder_links` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms0` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1994,9 +2111,9 @@ CREATE TABLE `brqs1_finder_links_terms0` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms1` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2006,9 +2123,9 @@ CREATE TABLE `brqs1_finder_links_terms1` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms2` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2018,9 +2135,9 @@ CREATE TABLE `brqs1_finder_links_terms2` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms3` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2030,9 +2147,9 @@ CREATE TABLE `brqs1_finder_links_terms3` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms4` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2042,9 +2159,9 @@ CREATE TABLE `brqs1_finder_links_terms4` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms5` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2054,9 +2171,9 @@ CREATE TABLE `brqs1_finder_links_terms5` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms6` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2066,9 +2183,9 @@ CREATE TABLE `brqs1_finder_links_terms6` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms7` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2078,9 +2195,9 @@ CREATE TABLE `brqs1_finder_links_terms7` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms8` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2090,9 +2207,9 @@ CREATE TABLE `brqs1_finder_links_terms8` (
 --
 
 CREATE TABLE `brqs1_finder_links_terms9` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2102,9 +2219,9 @@ CREATE TABLE `brqs1_finder_links_terms9` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsa` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2114,9 +2231,9 @@ CREATE TABLE `brqs1_finder_links_termsa` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsb` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2126,9 +2243,9 @@ CREATE TABLE `brqs1_finder_links_termsb` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsc` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2138,9 +2255,9 @@ CREATE TABLE `brqs1_finder_links_termsc` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsd` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2150,9 +2267,9 @@ CREATE TABLE `brqs1_finder_links_termsd` (
 --
 
 CREATE TABLE `brqs1_finder_links_termse` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2162,9 +2279,9 @@ CREATE TABLE `brqs1_finder_links_termse` (
 --
 
 CREATE TABLE `brqs1_finder_links_termsf` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `term_id` int(10) UNSIGNED NOT NULL,
-                                             `weight` float UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2174,12 +2291,12 @@ CREATE TABLE `brqs1_finder_links_termsf` (
 --
 
 CREATE TABLE `brqs1_finder_taxonomy` (
-                                         `id` int(10) UNSIGNED NOT NULL,
-                                         `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                         `title` varchar(255) NOT NULL,
-                                         `state` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
-                                         `access` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                         `ordering` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
+  `id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL,
+  `state` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
+  `access` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `ordering` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2196,8 +2313,8 @@ INSERT INTO `brqs1_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 --
 
 CREATE TABLE `brqs1_finder_taxonomy_map` (
-                                             `link_id` int(10) UNSIGNED NOT NULL,
-                                             `node_id` int(10) UNSIGNED NOT NULL
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `node_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2207,15 +2324,15 @@ CREATE TABLE `brqs1_finder_taxonomy_map` (
 --
 
 CREATE TABLE `brqs1_finder_terms` (
-                                      `term_id` int(10) UNSIGNED NOT NULL,
-                                      `term` varchar(75) NOT NULL,
-                                      `stem` varchar(75) NOT NULL,
-                                      `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                      `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                      `weight` float UNSIGNED NOT NULL DEFAULT '0',
-                                      `soundex` varchar(75) NOT NULL,
-                                      `links` int(11) NOT NULL DEFAULT '0',
-                                      `language` char(3) NOT NULL DEFAULT ''
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `term` varchar(75) NOT NULL,
+  `stem` varchar(75) NOT NULL,
+  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `weight` float UNSIGNED NOT NULL DEFAULT '0',
+  `soundex` varchar(75) NOT NULL,
+  `links` int(11) NOT NULL DEFAULT '0',
+  `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2225,8 +2342,8 @@ CREATE TABLE `brqs1_finder_terms` (
 --
 
 CREATE TABLE `brqs1_finder_terms_common` (
-                                             `term` varchar(75) NOT NULL,
-                                             `language` varchar(3) NOT NULL
+  `term` varchar(75) NOT NULL,
+  `language` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2352,13 +2469,13 @@ INSERT INTO `brqs1_finder_terms_common` (`term`, `language`) VALUES
 --
 
 CREATE TABLE `brqs1_finder_tokens` (
-                                       `term` varchar(75) NOT NULL,
-                                       `stem` varchar(75) NOT NULL,
-                                       `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                       `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                       `weight` float UNSIGNED NOT NULL DEFAULT '1',
-                                       `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
-                                       `language` char(3) NOT NULL DEFAULT ''
+  `term` varchar(75) NOT NULL,
+  `stem` varchar(75) NOT NULL,
+  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `weight` float UNSIGNED NOT NULL DEFAULT '1',
+  `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
+  `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2368,17 +2485,17 @@ CREATE TABLE `brqs1_finder_tokens` (
 --
 
 CREATE TABLE `brqs1_finder_tokens_aggregate` (
-                                                 `term_id` int(10) UNSIGNED NOT NULL,
-                                                 `map_suffix` char(1) NOT NULL,
-                                                 `term` varchar(75) NOT NULL,
-                                                 `stem` varchar(75) NOT NULL,
-                                                 `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                                 `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                                 `term_weight` float UNSIGNED NOT NULL,
-                                                 `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
-                                                 `context_weight` float UNSIGNED NOT NULL,
-                                                 `total_weight` float UNSIGNED NOT NULL,
-                                                 `language` char(3) NOT NULL DEFAULT ''
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `map_suffix` char(1) NOT NULL,
+  `term` varchar(75) NOT NULL,
+  `stem` varchar(75) NOT NULL,
+  `common` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `term_weight` float UNSIGNED NOT NULL,
+  `context` tinyint(3) UNSIGNED NOT NULL DEFAULT '2',
+  `context_weight` float UNSIGNED NOT NULL,
+  `total_weight` float UNSIGNED NOT NULL,
+  `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2388,9 +2505,9 @@ CREATE TABLE `brqs1_finder_tokens_aggregate` (
 --
 
 CREATE TABLE `brqs1_finder_types` (
-                                      `id` int(10) UNSIGNED NOT NULL,
-                                      `title` varchar(100) NOT NULL,
-                                      `mime` varchar(100) NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2400,20 +2517,20 @@ CREATE TABLE `brqs1_finder_types` (
 --
 
 CREATE TABLE `brqs1_languages` (
-                                   `lang_id` int(10) UNSIGNED NOT NULL,
-                                   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-                                   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `title_native` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `sef` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `description` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `sitename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                   `published` int(11) NOT NULL DEFAULT '0',
-                                   `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `ordering` int(11) NOT NULL DEFAULT '0'
+  `lang_id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_native` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sef` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sitename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `published` int(11) NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2431,19 +2548,19 @@ INSERT INTO `brqs1_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `tit
 --
 
 CREATE TABLE `brqs1_logregsms_confirm` (
-                                           `id` int(11) NOT NULL,
-                                           `created_on` varchar(255) NOT NULL,
-                                           `mobile` varchar(255) NOT NULL,
-                                           `from` varchar(255) NOT NULL,
-                                           `code` varchar(255) NOT NULL,
-                                           `time` varchar(255) NOT NULL,
-                                           `is_confirmed` int(11) NOT NULL,
-                                           `state` int(11) NOT NULL,
-                                           `asset_id` int(11) NOT NULL,
-                                           `ordering` int(11) NOT NULL,
-                                           `checked_out` int(11) NOT NULL,
-                                           `checked_out_time` datetime NOT NULL,
-                                           `created_by` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `created_on` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `from` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `is_confirmed` int(11) NOT NULL,
+  `state` int(11) NOT NULL,
+  `asset_id` int(11) NOT NULL,
+  `ordering` int(11) NOT NULL,
+  `checked_out` int(11) NOT NULL,
+  `checked_out_time` datetime NOT NULL,
+  `created_by` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -2460,14 +2577,14 @@ INSERT INTO `brqs1_logregsms_confirm` (`id`, `created_on`, `mobile`, `from`, `co
 --
 
 CREATE TABLE `brqs1_logregsms_smsarchives` (
-                                               `id` int(11) NOT NULL,
-                                               `created_on` varchar(20) NOT NULL,
-                                               `time` varchar(20) NOT NULL,
-                                               `to` varchar(20) NOT NULL,
-                                               `from` varchar(20) NOT NULL,
-                                               `message` text NOT NULL,
-                                               `text` text NOT NULL,
-                                               `result` text NOT NULL
+  `id` int(11) NOT NULL,
+  `created_on` varchar(20) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `to` varchar(20) NOT NULL,
+  `from` varchar(20) NOT NULL,
+  `message` text NOT NULL,
+  `text` text NOT NULL,
+  `result` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -2484,30 +2601,30 @@ INSERT INTO `brqs1_logregsms_smsarchives` (`id`, `created_on`, `time`, `to`, `fr
 --
 
 CREATE TABLE `brqs1_menu` (
-                              `id` int(11) NOT NULL,
-                              `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
-                              `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The display title of the menu item.',
-                              `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'The SEF alias of the menu item.',
-                              `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                              `path` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The computed path of the menu item based on the alias field.',
-                              `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The actually link the menu item refers to.',
-                              `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of link: Component, URL, Alias, Separator',
-                              `published` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The published state of the menu link.',
-                              `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'The parent menu item in the menu tree.',
-                              `level` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The relative level in the tree.',
-                              `component_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__extensions.id',
-                              `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__users.id',
-                              `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'The time the menu item was checked out.',
-                              `browserNav` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The click behaviour of the link.',
-                              `access` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The access level required to view the menu item.',
-                              `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The image of the menu item.',
-                              `template_style_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `params` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded data for the menu item.',
-                              `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
-                              `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-                              `home` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
-                              `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                              `client_id` tinyint(4) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The display title of the menu item.',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'The SEF alias of the menu item.',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `path` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The computed path of the menu item based on the alias field.',
+  `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The actually link the menu item refers to.',
+  `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of link: Component, URL, Alias, Separator',
+  `published` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The published state of the menu link.',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'The parent menu item in the menu tree.',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The relative level in the tree.',
+  `component_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__extensions.id',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__users.id',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'The time the menu item was checked out.',
+  `browserNav` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The click behaviour of the link.',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The access level required to view the menu item.',
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The image of the menu item.',
+  `template_style_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded data for the menu item.',
+  `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+  `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+  `home` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `client_id` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2515,7 +2632,7 @@ CREATE TABLE `brqs1_menu` (
 --
 
 INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 129, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 133, 0, '*', 0),
 (2, 'main', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 1, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'main', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'main', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 1, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -2561,25 +2678,27 @@ INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (124, 'mainmenu-fa-ir', 'روانشناسان', 'psychologists', '', 'psychologists', 'index.php?option=com_content&view=category&layout=partoandisheh:psychologists&id=9', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"secondary\",\"textcolor\":\"secondary\",\"bgimg\":\"\",\"subtitle\":\"\\u0628\\u0627 \\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646 \\u0648 \\u062f\\u0631\\u0645\\u0627\\u0646\\u06af\\u0631\\u0627\\u0646 \\u0645\\u0631\\u06a9\\u0632 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647 \\u0622\\u0634\\u0646\\u0627 \\u0634\\u0648\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"layout_type\":\"blog\",\"show_category_heading_title_text\":\"\",\"show_category_title\":\"\",\"show_description\":\"\",\"show_description_image\":\"\",\"maxLevel\":\"\",\"show_empty_categories\":\"\",\"show_no_articles\":\"\",\"show_subcat_desc\":\"\",\"show_cat_num_articles\":\"\",\"show_cat_tags\":\"\",\"page_subheading\":\"\",\"num_leading_articles\":\"\",\"num_intro_articles\":\"\",\"num_columns\":\"4\",\"num_links\":\"\",\"multi_column_order\":\"1\",\"show_subcategory_content\":\"\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"show_featured\":\"\",\"article_layout\":\"partoandisheh:psychologist\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0631\\u0648\\u0627\\u0646\\u0634\\u0646\\u0627\\u0633\\u0627\\u0646\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 59, 60, 0, 'fa-IR', 0),
 (125, 'mainmenu-fa-ir', 'رزرو نوبت مشاوره', 'appointment', '', 'appointment', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:appointment&formId=4', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"secondary\",\"bgimg\":\"\",\"subtitle\":\"\\u0628\\u0631\\u0627\\u06cc \\u062a\\u0639\\u06cc\\u06cc\\u0646 \\u0632\\u0645\\u0627\\u0646 \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647 \\u060c \\u0641\\u0631\\u0645 \\u0632\\u06cc\\u0631 \\u0631\\u0627 \\u0628\\u0647 \\u062f\\u0642\\u062a \\u0645\\u0637\\u0627\\u0644\\u0639\\u0647 \\u0648 \\u062a\\u06a9\\u0645\\u06cc\\u0644 \\u0646\\u0645\\u0627\\u06cc\\u06cc\\u062f.\",\"height\":\"uk-padding-large\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0631\\u0632\\u0631\\u0648 \\u0646\\u0648\\u0628\\u062a \\u0645\\u0634\\u0627\\u0648\\u0631\\u0647\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 61, 62, 0, 'fa-IR', 0),
 (126, 'mainmenu-fa-ir', 'بلاگ', 'blog', '', 'blog', 'index.php?option=com_content&view=category&layout=partoandisheh:webblog&id=10', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"secondary\",\"textcolor\":\"primary\",\"bgimg\":\"\",\"subtitle\":\"\\u0622\\u062e\\u0631\\u06cc\\u0646 \\u0645\\u0637\\u0627\\u0644\\u0628 \\u0639\\u0644\\u0645\\u06cc \\u0648 \\u0622\\u0645\\u0648\\u0632\\u0634\\u06cc \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647\",\"height\":\"uk-padding-large\",\"layout_type\":\"blog\",\"show_category_heading_title_text\":\"\",\"show_category_title\":\"\",\"show_description\":\"\",\"show_description_image\":\"\",\"maxLevel\":\"\",\"show_empty_categories\":\"\",\"show_no_articles\":\"\",\"show_subcat_desc\":\"\",\"show_cat_num_articles\":\"\",\"show_cat_tags\":\"\",\"page_subheading\":\"\",\"num_leading_articles\":\"18\",\"num_intro_articles\":\"\",\"num_columns\":\"\",\"num_links\":\"\",\"multi_column_order\":\"1\",\"show_subcategory_content\":\"\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"0\",\"show_featured\":\"\",\"article_layout\":\"partoandisheh:article\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"0\",\"show_category\":\"0\",\"link_category\":\"0\",\"show_parent_category\":\"0\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"0\",\"show_vote\":\"\",\"show_readmore\":\"0\",\"show_readmore_title\":\"0\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u0628\\u0644\\u0627\\u06af\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 63, 64, 0, 'fa-IR', 0),
-(127, 'mainmenu-fa-ir', 'درباره ما', 'about', '', 'about', 'index.php?option=com_rsseo', 'component', 1, 1, 1, 10003, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"columns\":\"1\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 65, 66, 0, 'fa-IR', 0),
-(128, 'main', 'RSFormPro', 'rsformpro', '', 'rsformpro', 'index.php?option=com_rsform', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 103, 114, 0, '', 1),
-(129, 'main', 'COM_RSFORM_MANAGE_FORMS', 'com_rsform_manage_forms', '', 'rsformpro/com_rsform_manage_forms', 'index.php?option=com_rsform&view=forms', 'component', 1, 128, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 104, 105, 0, '', 1),
-(130, 'main', 'COM_RSFORM_MANAGE_SUBMISSIONS', 'com_rsform_manage_submissions', '', 'rsformpro/com_rsform_manage_submissions', 'index.php?option=com_rsform&view=submissions', 'component', 1, 128, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 106, 107, 0, '', 1),
-(131, 'main', 'COM_RSFORM_MANAGE_DIRECTORY_SUBMISSIONS', 'com_rsform_manage_directory_submissions', '', 'rsformpro/com_rsform_manage_directory_submissions', 'index.php?option=com_rsform&view=directory', 'component', 1, 128, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 108, 109, 0, '', 1),
-(132, 'main', 'COM_RSFORM_CONFIGURATION', 'com_rsform_configuration', '', 'rsformpro/com_rsform_configuration', 'index.php?option=com_rsform&view=configuration', 'component', 1, 128, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 110, 111, 0, '', 1),
-(133, 'main', 'COM_RSFORM_BACKUP_RESTORE', 'com_rsform_backup_restore', '', 'rsformpro/com_rsform_backup_restore', 'index.php?option=com_rsform&view=backuprestore', 'component', 1, 128, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 112, 113, 0, '', 1),
-(134, 'mainmenu-en-gb', 'Services', 'services', '', 'services', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 115, 116, 0, 'en-GB', 0),
-(135, 'mainmenu-en-gb', 'Psychologists', 'psychologists', '', 'psychologists', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 117, 118, 0, 'en-GB', 0),
-(136, 'mainmenu-en-gb', 'Appointment Booking', 'appointment', '', 'appointment', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:appointment&formId=4', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 119, 120, 0, 'en-GB', 0),
-(137, 'mainmenu-en-gb', 'Blog', 'blog', '', 'blog', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 121, 122, 0, 'en-GB', 0),
-(138, 'mainmenu-en-gb', 'About us', 'about', '', 'about', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 123, 124, 0, 'en-GB', 0),
-(139, 'mainmenu-en-gb', 'Contact', 'contact', '', 'contact', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:contact&formId=5', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 125, 126, 0, 'en-GB', 0),
-(141, 'main', 'LOGREGSMS', 'logregsms', '', 'logregsms', 'index.php?option=com_logregsms', 'component', 1, 1, 1, 10017, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 127, 128, 0, '', 1),
+(127, 'mainmenu-fa-ir', 'درباره ما', 'about', '', 'about', 'index.php?option=com_content&view=article&layout=partoandisheh:about&id=15', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0633\\u0648\\u0627\\u0628\\u0642 \\u0648 \\u0686\\u0634\\u0645 \\u0627\\u0646\\u062f\\u0627\\u0632 \\u067e\\u0631\\u062a\\u0648 \\u0627\\u0646\\u062f\\u06cc\\u0634\\u0647 \\u0628\\u06cc\\u0634\\u062a\\u0631 \\u0628\\u062f\\u0627\\u0646\\u06cc\\u062f\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 65, 66, 0, 'fa-IR', 0),
+(134, 'mainmenu-en-gb', 'Services', 'services', '', 'services', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 103, 104, 0, 'en-GB', 0),
+(135, 'mainmenu-en-gb', 'Psychologists', 'psychologists', '', 'psychologists', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 105, 106, 0, 'en-GB', 0),
+(136, 'mainmenu-en-gb', 'Appointment Booking', 'appointment', '', 'appointment', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:appointment&formId=4', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 107, 108, 0, 'en-GB', 0),
+(137, 'mainmenu-en-gb', 'Blog', 'blog', '', 'blog', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 109, 110, 0, 'en-GB', 0),
+(138, 'mainmenu-en-gb', 'About us', 'about', '', 'about', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"featured_categories\":[\"\"],\"layout_type\":\"blog\",\"num_leading_articles\":\"1\",\"num_intro_articles\":\"3\",\"num_columns\":\"3\",\"num_links\":\"0\",\"multi_column_order\":\"1\",\"orderby_pri\":\"\",\"orderby_sec\":\"front\",\"order_date\":\"\",\"show_pagination\":\"2\",\"show_pagination_results\":\"1\",\"page_subheading\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_vote\":\"\",\"show_readmore\":\"\",\"show_readmore_title\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_hits\":\"\",\"show_tags\":\"\",\"show_noauth\":\"\",\"show_feed_link\":\"1\",\"feed_summary\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 111, 112, 0, 'en-GB', 0),
+(139, 'mainmenu-en-gb', 'Contact', 'contact', '', 'contact', 'index.php?option=com_rsform&view=rsform&layout=partoandisheh:contact&formId=5', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"\",\"page_heading\":\"\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 113, 114, 0, 'en-GB', 0),
+(141, 'main', 'LOGREGSMS', 'logregsms', '', 'logregsms', 'index.php?option=com_logregsms', 'component', 1, 1, 1, 10017, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 115, 116, 0, '', 1),
 (142, 'mainmenu-fa-ir', 'مشاوره پیش از ازدواج', 'مشاوره-پیش-از-ازدواج', '', 'services/مشاوره-پیش-از-ازدواج', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=9', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 48, 49, 0, 'fa-IR', 0),
 (143, 'mainmenu-fa-ir', 'مشاوره امور طلاق', 'مشاوره-امور-طلاق', '', 'services/مشاوره-امور-طلاق', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=10', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 50, 51, 0, 'fa-IR', 0),
 (144, 'mainmenu-fa-ir', 'مشاوره تحصیلی', 'مشاوره-تحصیلی', '', 'services/مشاوره-تحصیلی', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=11', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 52, 53, 0, 'fa-IR', 0),
 (145, 'mainmenu-fa-ir', 'امور استرس و کنترل اضطراب', 'امور-استرس-و-کنترل-اضطراب', '', 'services/امور-استرس-و-کنترل-اضطراب', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=12', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 54, 55, 0, 'fa-IR', 0),
-(146, 'mainmenu-fa-ir', 'امور مربوط به وسواس', 'امور-مربوط-به-وسواس', '', 'services/امور-مربوط-به-وسواس', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=14', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 56, 57, 0, 'fa-IR', 0);
+(146, 'mainmenu-fa-ir', 'امور مربوط به وسواس', 'امور-مربوط-به-وسواس', '', 'services/امور-مربوط-به-وسواس', 'index.php?option=com_content&view=article&layout=partoandisheh:service&id=14', 'component', 1, 123, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{\"bg\":\"muted\",\"textcolor\":\"dark\",\"bgimg\":\"\",\"subtitle\":\"\",\"height\":\"uk-padding-large\",\"show_title\":\"\",\"link_titles\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"0\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"0\",\"link_author\":\"0\",\"show_create_date\":\"0\",\"show_modify_date\":\"0\",\"show_publish_date\":\"0\",\"show_item_navigation\":\"0\",\"show_vote\":\"0\",\"show_icons\":\"0\",\"show_print_icon\":\"0\",\"show_email_icon\":\"0\",\"show_hits\":\"0\",\"show_tags\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"menu-anchor_title\":\"\",\"menu-anchor_css\":\"\",\"menu_image\":\"\",\"menu_image_css\":\"\",\"menu_text\":1,\"menu_show\":1,\"page_title\":\"\",\"show_page_heading\":\"1\",\"page_heading\":\"\\u062e\\u062f\\u0645\\u0627\\u062a \\u0645\\u0627\",\"pageclass_sfx\":\"\",\"menu-meta_description\":\"\",\"menu-meta_keywords\":\"\",\"robots\":\"\",\"secure\":0}', 56, 57, 0, 'fa-IR', 0),
+(147, 'main', 'RSFormPro', 'rsformpro', '', 'rsformpro', 'index.php?option=com_rsform', 'component', 1, 1, 1, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 117, 132, 0, '', 1),
+(148, 'main', 'COM_RSFORM_DASHBOARD', 'com_rsform_dashboard', '', 'rsformpro/com_rsform_dashboard', 'index.php?option=com_rsform', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 118, 119, 0, '', 1),
+(149, 'main', 'COM_RSFORM_MANAGE_FORMS', 'com_rsform_manage_forms', '', 'rsformpro/com_rsform_manage_forms', 'index.php?option=com_rsform&view=forms', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 120, 121, 0, '', 1),
+(150, 'main', 'COM_RSFORM_MANAGE_SUBMISSIONS', 'com_rsform_manage_submissions', '', 'rsformpro/com_rsform_manage_submissions', 'index.php?option=com_rsform&view=submissions', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 122, 123, 0, '', 1),
+(151, 'main', 'COM_RSFORM_MANAGE_DIRECTORY_SUBMISSIONS', 'com_rsform_manage_directory_submissions', '', 'rsformpro/com_rsform_manage_directory_submissions', 'index.php?option=com_rsform&view=directory', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 124, 125, 0, '', 1),
+(152, 'main', 'COM_RSFORM_CONFIGURATION', 'com_rsform_configuration', '', 'rsformpro/com_rsform_configuration', 'index.php?option=com_rsform&view=configuration', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 126, 127, 0, '', 1),
+(153, 'main', 'COM_RSFORM_BACKUP_SCREEN', 'com_rsform_backup_screen', '', 'rsformpro/com_rsform_backup_screen', 'index.php?option=com_rsform&view=backupscreen', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 128, 129, 0, '', 1),
+(154, 'main', 'COM_RSFORM_RESTORE_SCREEN', 'com_rsform_restore_screen', '', 'rsformpro/com_rsform_restore_screen', 'index.php?option=com_rsform&view=restorescreen', 'component', 1, 147, 2, 10007, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 130, 131, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -2588,12 +2707,12 @@ INSERT INTO `brqs1_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 --
 
 CREATE TABLE `brqs1_menu_types` (
-                                    `id` int(10) UNSIGNED NOT NULL,
-                                    `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `title` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `client_id` int(11) NOT NULL DEFAULT '0'
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `client_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2612,15 +2731,15 @@ INSERT INTO `brqs1_menu_types` (`id`, `asset_id`, `menutype`, `title`, `descript
 --
 
 CREATE TABLE `brqs1_messages` (
-                                  `message_id` int(10) UNSIGNED NOT NULL,
-                                  `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                  `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                  `folder_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                  `date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                  `state` tinyint(4) NOT NULL DEFAULT '0',
-                                  `priority` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `message_id` int(10) UNSIGNED NOT NULL,
+  `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `folder_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `priority` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2630,9 +2749,9 @@ CREATE TABLE `brqs1_messages` (
 --
 
 CREATE TABLE `brqs1_messages_cfg` (
-                                      `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                      `cfg_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                      `cfg_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `cfg_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `cfg_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2642,24 +2761,24 @@ CREATE TABLE `brqs1_messages_cfg` (
 --
 
 CREATE TABLE `brqs1_modules` (
-                                 `id` int(11) NOT NULL,
-                                 `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
-                                 `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `content` text COLLATE utf8mb4_unicode_ci,
-                                 `ordering` int(11) NOT NULL DEFAULT '0',
-                                 `position` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                 `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                 `published` tinyint(4) NOT NULL DEFAULT '0',
-                                 `module` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                 `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                 `showtitle` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
-                                 `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `client_id` tinyint(4) NOT NULL DEFAULT '0',
-                                 `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `position` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `published` tinyint(4) NOT NULL DEFAULT '0',
+  `module` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `showtitle` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `client_id` tinyint(4) NOT NULL DEFAULT '0',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2695,7 +2814,10 @@ INSERT INTO `brqs1_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (97, 114, 'خدمات', '', NULL, 1, 'sidestart', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{\"menutype\":\"mainmenu-fa-ir\",\"base\":123,\"startLevel\":2,\"endLevel\":2,\"showAllChildren\":1,\"tag_id\":\"\",\"class_sfx\":\"\",\"window_open\":\"\",\"layout\":\"partoandisheh:side\",\"moduleclass_sfx\":\" uk-background-muted uk-border-rounded uk-overflow-hidden uk-box-shadow-small sideModule sideServices\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"uk-h4 uk-background-primary uk-padding-small uk-text-bold uk-text-white uk-position-relative uk-margin-remove font head\",\"style\":\"Partoandisheh-side\"}', 0, 'fa-IR'),
 (98, 115, 'به مشاوره نیاز دارید ؟', '', '<div class=\"uk-padding-small uk-text-white font\">\r\n<p class=\"uk-margin-remove uk-text-light\">با ما در تماس باشید</p>\r\n<p class=\"uk-margin-remove uk-text-bold uk-text-white uk-h3 font\">۴۲۳۲۳۴۳</p>\r\n</div>', 1, 'sidestart', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"partoandisheh:partoandisheh\",\"moduleclass_sfx\":\" uk-border-rounded uk-overflow-hidden uk-box-shadow-small sideModule sideConsult hasCover primaryCover\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"uk-h4 uk-padding-small uk-text-bold uk-text-white uk-position-relative uk-margin-remove font head\",\"style\":\"Partoandisheh-side\"}', 0, '*'),
 (99, 116, 'ساعات کاری مرکز', '', '<div class=\"uk-padding-small uk-text-white font\">\r\n<p class=\"uk-margin-remove uk-text-light\">شنبه الی چهارشنبه</p>\r\n<p class=\"uk-margin-remove-top uk-text-bold uk-text-white uk-h4 font\">ساعت ۹ صبح الی ۵ عصر</p>\r\n<p class=\"uk-margin-remove uk-text-light\">پنج‌شنبه ها</p>\r\n<p class=\"uk-margin-remove uk-text-bold uk-text-white uk-h4 font\">ساعت ۹ صبح الی ۱ عصر</p>\r\n</div>', 1, 'sidestart', 0, '0000-00-00 00:00:00', '2021-06-12 07:59:27', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"partoandisheh:partoandisheh\",\"moduleclass_sfx\":\" uk-background-secondary uk-border-rounded uk-overflow-hidden uk-box-shadow-small sideModule sideHours\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"uk-h4 uk-padding-small uk-text-bold uk-text-white uk-position-relative uk-margin-remove font head\",\"style\":\"Partoandisheh-side\"}', 0, '*'),
-(100, 117, 'شاید این مطالب برای شما مفید باشد', '', NULL, 2, 'pagebottom', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_articles_news', 1, 1, '{\"catid\":[10],\"image\":1,\"img_intro_full\":\"intro\",\"item_title\":0,\"link_titles\":\"\",\"item_heading\":\"h4\",\"triggerevents\":1,\"showLastSeparator\":0,\"show_introtext\":1,\"readmore\":0,\"count\":3,\"show_featured\":1,\"ordering\":\"a.publish_up\",\"direction\":1,\"layout\":\"partoandisheh:cards\",\"moduleclass_sfx\":\" uk-margin-large-bottom\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"section\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"uk-text-center uk-text-dark uk-text-bold font\",\"style\":\"0\"}', 0, '*');
+(100, 117, 'شاید این مطالب برای شما مفید باشد', '', NULL, 2, 'pagebottom', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_articles_news', 1, 1, '{\"catid\":[10],\"image\":1,\"img_intro_full\":\"intro\",\"item_title\":0,\"link_titles\":\"\",\"item_heading\":\"h4\",\"triggerevents\":1,\"showLastSeparator\":0,\"show_introtext\":1,\"readmore\":0,\"count\":3,\"show_featured\":1,\"ordering\":\"a.publish_up\",\"direction\":1,\"layout\":\"partoandisheh:cards\",\"moduleclass_sfx\":\" uk-margin-large-bottom\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"section\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"uk-text-center uk-text-dark uk-text-bold font\",\"style\":\"0\"}', 0, '*'),
+(101, 120, 'روانشناسان پرتو اندیشه', '', NULL, 2, 'outerbottom', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_articles_news', 1, 1, '{\"catid\":[9],\"image\":1,\"img_intro_full\":\"intro\",\"item_title\":1,\"link_titles\":1,\"item_heading\":\"h4\",\"triggerevents\":0,\"showLastSeparator\":0,\"show_introtext\":0,\"readmore\":0,\"count\":4,\"show_featured\":\"\",\"ordering\":\"rand()\",\"direction\":1,\"layout\":\"partoandisheh:psychologists\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"section\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"System-none\"}', 0, 'fa-IR'),
+(102, 123, 'فید اینستاگرام', '', '', 1, 'outerbottom', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_ut_joomstagram', 1, 1, '{\"jg_token\":\"3e3e3e3e\",\"jg_username\":\"khashiz\",\"jg_cache_time\":360,\"jg_intro\":\"\",\"jg_show_profile\":\"0\",\"jg_user_img\":\"\",\"jg_name\":\"\",\"jg_biography\":\"\",\"jg_image_size\":\"320\",\"jg_columns\":\"4\",\"jg_columns_md\":\"3\",\"jg_columns_sm\":\"2\",\"jg_rows\":\"2\",\"jg_padding\":\"0\",\"layout\":\"_:default\",\"add_container\":\"0\",\"moduleclass_sfx\":\"\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"0\"}', 0, '*'),
+(103, 126, 'درباره ما', '', NULL, 1, 'outertop', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_articles_news', 1, 0, '{\"catid\":[8],\"image\":1,\"img_intro_full\":\"intro\",\"item_title\":1,\"link_titles\":1,\"item_heading\":\"h4\",\"triggerevents\":0,\"showLastSeparator\":0,\"show_introtext\":1,\"readmore\":0,\"count\":4,\"show_featured\":\"\",\"ordering\":\"rand()\",\"direction\":1,\"layout\":\"partoandisheh:aboutintro\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"itemid\",\"module_tag\":\"div\",\"bootstrap_size\":\"0\",\"header_tag\":\"h3\",\"header_class\":\"\",\"style\":\"System-none\"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -2704,8 +2826,8 @@ INSERT INTO `brqs1_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 --
 
 CREATE TABLE `brqs1_modules_menu` (
-                                      `moduleid` int(11) NOT NULL DEFAULT '0',
-                                      `menuid` int(11) NOT NULL DEFAULT '0'
+  `moduleid` int(11) NOT NULL DEFAULT '0',
+  `menuid` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2761,7 +2883,10 @@ INSERT INTO `brqs1_modules_menu` (`moduleid`, `menuid`) VALUES
 (99, 144),
 (99, 145),
 (99, 146),
-(100, 123);
+(100, 123),
+(101, 127),
+(102, 127),
+(103, 127);
 
 -- --------------------------------------------------------
 
@@ -2770,36 +2895,36 @@ INSERT INTO `brqs1_modules_menu` (`moduleid`, `menuid`) VALUES
 --
 
 CREATE TABLE `brqs1_newsfeeds` (
-                                   `catid` int(11) NOT NULL DEFAULT '0',
-                                   `id` int(10) UNSIGNED NOT NULL,
-                                   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                                   `link` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                   `published` tinyint(4) NOT NULL DEFAULT '0',
-                                   `numarticles` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                   `cache_time` int(10) UNSIGNED NOT NULL DEFAULT '3600',
-                                   `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                   `ordering` int(11) NOT NULL DEFAULT '0',
-                                   `rtl` tinyint(4) NOT NULL DEFAULT '0',
-                                   `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                   `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                   `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-                                   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                   `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                   `images` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `catid` int(11) NOT NULL DEFAULT '0',
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `link` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `published` tinyint(4) NOT NULL DEFAULT '0',
+  `numarticles` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `cache_time` int(10) UNSIGNED NOT NULL DEFAULT '3600',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `rtl` tinyint(4) NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `images` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2809,10 +2934,10 @@ CREATE TABLE `brqs1_newsfeeds` (
 --
 
 CREATE TABLE `brqs1_overrider` (
-                                   `id` int(11) NOT NULL COMMENT 'Primary Key',
-                                   `constant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `string` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL COMMENT 'Primary Key',
+  `constant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `string` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2822,20 +2947,20 @@ CREATE TABLE `brqs1_overrider` (
 --
 
 CREATE TABLE `brqs1_postinstall_messages` (
-                                              `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
-                                              `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
-                                              `title_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
-                                              `description_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for description',
-                                              `action_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `language_extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'com_postinstall' COMMENT 'Extension holding lang keys',
-                                              `language_client_id` tinyint(4) NOT NULL DEFAULT '1',
-                                              `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'link' COMMENT 'Message type - message, link, action',
-                                              `action_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'RAD URI to the PHP file containing action method',
-                                              `action` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'Action method name or URL',
-                                              `condition_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'RAD URI to file holding display condition method',
-                                              `condition_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Display condition method, must return boolean',
-                                              `version_introduced` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
-                                              `enabled` tinyint(4) NOT NULL DEFAULT '1'
+  `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
+  `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
+  `title_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
+  `description_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for description',
+  `action_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `language_extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'com_postinstall' COMMENT 'Extension holding lang keys',
+  `language_client_id` tinyint(4) NOT NULL DEFAULT '1',
+  `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'link' COMMENT 'Message type - message, link, action',
+  `action_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'RAD URI to the PHP file containing action method',
+  `action` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'Action method name or URL',
+  `condition_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'RAD URI to file holding display condition method',
+  `condition_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Display condition method, must return boolean',
+  `version_introduced` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
+  `enabled` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2861,14 +2986,14 @@ INSERT INTO `brqs1_postinstall_messages` (`postinstall_message_id`, `extension_i
 --
 
 CREATE TABLE `brqs1_privacy_consents` (
-                                          `id` int(10) UNSIGNED NOT NULL,
-                                          `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                          `state` int(11) NOT NULL DEFAULT '1',
-                                          `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                          `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                          `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                          `remind` tinyint(4) NOT NULL DEFAULT '0',
-                                          `token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `state` int(11) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remind` tinyint(4) NOT NULL DEFAULT '0',
+  `token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2878,13 +3003,13 @@ CREATE TABLE `brqs1_privacy_consents` (
 --
 
 CREATE TABLE `brqs1_privacy_requests` (
-                                          `id` int(10) UNSIGNED NOT NULL,
-                                          `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                          `requested_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                          `status` tinyint(4) NOT NULL DEFAULT '0',
-                                          `request_type` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                          `confirm_token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                          `confirm_token_created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(10) UNSIGNED NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `requested_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `request_type` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `confirm_token` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `confirm_token_created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2894,16 +3019,16 @@ CREATE TABLE `brqs1_privacy_requests` (
 --
 
 CREATE TABLE `brqs1_redirect_links` (
-                                        `id` int(10) UNSIGNED NOT NULL,
-                                        `old_url` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `new_url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-                                        `referer` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                        `published` tinyint(4) NOT NULL,
-                                        `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `header` smallint(6) NOT NULL DEFAULT '301'
+  `id` int(10) UNSIGNED NOT NULL,
+  `old_url` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `new_url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `referer` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `published` tinyint(4) NOT NULL,
+  `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `header` smallint(6) NOT NULL DEFAULT '301'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -2913,11 +3038,11 @@ CREATE TABLE `brqs1_redirect_links` (
 --
 
 CREATE TABLE `brqs1_rsform_calculations` (
-                                             `id` int(11) NOT NULL,
-                                             `formId` int(11) NOT NULL,
-                                             `total` varchar(255) NOT NULL,
-                                             `expression` text NOT NULL,
-                                             `ordering` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `formId` int(11) NOT NULL,
+  `total` varchar(255) NOT NULL,
+  `expression` text NOT NULL,
+  `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2927,11 +3052,11 @@ CREATE TABLE `brqs1_rsform_calculations` (
 --
 
 CREATE TABLE `brqs1_rsform_components` (
-                                           `ComponentId` int(11) NOT NULL,
-                                           `FormId` int(11) NOT NULL DEFAULT '0',
-                                           `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
-                                           `Order` int(11) NOT NULL DEFAULT '0',
-                                           `Published` tinyint(1) NOT NULL DEFAULT '1'
+  `ComponentId` int(11) NOT NULL,
+  `FormId` int(11) NOT NULL DEFAULT '0',
+  `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
+  `Order` int(11) NOT NULL DEFAULT '0',
+  `Published` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2987,35 +3112,36 @@ INSERT INTO `brqs1_rsform_components` (`ComponentId`, `FormId`, `ComponentTypeId
 --
 
 CREATE TABLE `brqs1_rsform_component_types` (
-                                                `ComponentTypeId` int(11) NOT NULL,
-                                                `ComponentTypeName` text NOT NULL
+  `ComponentTypeId` int(11) NOT NULL,
+  `ComponentTypeName` text NOT NULL,
+  `CanBeDuplicated` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `brqs1_rsform_component_types`
 --
 
-INSERT INTO `brqs1_rsform_component_types` (`ComponentTypeId`, `ComponentTypeName`) VALUES
-(1, 'textBox'),
-(2, 'textArea'),
-(3, 'selectList'),
-(4, 'checkboxGroup'),
-(5, 'radioGroup'),
-(6, 'calendar'),
-(7, 'button'),
-(8, 'captcha'),
-(9, 'fileUpload'),
-(10, 'freeText'),
-(11, 'hidden'),
-(13, 'submitButton'),
-(14, 'password'),
-(15, 'ticket'),
-(41, 'pageBreak'),
-(211, 'birthDay'),
-(212, 'gmaps'),
-(355, 'rangeSlider'),
-(411, 'jQueryCalendar'),
-(2423, 'recaptchav3');
+INSERT INTO `brqs1_rsform_component_types` (`ComponentTypeId`, `ComponentTypeName`, `CanBeDuplicated`) VALUES
+(1, 'textBox', 1),
+(2, 'textArea', 1),
+(3, 'selectList', 1),
+(4, 'checkboxGroup', 1),
+(5, 'radioGroup', 1),
+(6, 'calendar', 1),
+(7, 'button', 1),
+(8, 'captcha', 0),
+(9, 'fileUpload', 1),
+(10, 'freeText', 1),
+(11, 'hidden', 1),
+(13, 'submitButton', 1),
+(14, 'password', 1),
+(15, 'ticket', 1),
+(41, 'pageBreak', 1),
+(211, 'birthDay', 1),
+(212, 'gmaps', 1),
+(355, 'rangeSlider', 1),
+(411, 'jQueryCalendar', 1),
+(2423, 'recaptchav3', 0);
 
 -- --------------------------------------------------------
 
@@ -3024,12 +3150,12 @@ INSERT INTO `brqs1_rsform_component_types` (`ComponentTypeId`, `ComponentTypeNam
 --
 
 CREATE TABLE `brqs1_rsform_component_type_fields` (
-                                                      `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
-                                                      `FieldName` text NOT NULL,
-                                                      `FieldType` varchar(32) NOT NULL DEFAULT 'hidden',
-                                                      `FieldValues` text NOT NULL,
-                                                      `Properties` text NOT NULL,
-                                                      `Ordering` int(11) NOT NULL DEFAULT '0'
+  `ComponentTypeId` int(11) NOT NULL DEFAULT '0',
+  `FieldName` text NOT NULL,
+  `FieldType` varchar(32) NOT NULL DEFAULT 'hidden',
+  `FieldValues` text NOT NULL,
+  `Properties` text NOT NULL,
+  `Ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3104,7 +3230,8 @@ INSERT INTO `brqs1_rsform_component_type_fields` (`ComponentTypeId`, `FieldName`
 (5, 'VALIDATIONMESSAGE', 'textarea', 'INVALIDINPUT', '', 100),
 (6, 'NAME', 'textbox', '', '', 1),
 (6, 'CAPTION', 'textbox', '', '', 2),
-(6, 'REQUIRED', 'select', 'NO\r\nYES', '', 3),
+(6, 'DEFAULTVALUE', 'textarea', '', '', 3),
+(6, 'REQUIRED', 'select', 'NO\r\nYES', '', 4),
 (6, 'VALIDATIONCALENDAR', 'select', '//<code>\r\nreturn RSFormProHelper::getOtherCalendars(6);\r\n//</code>', '{\"case\":{\"\":{\"show\":[],\"hide\":[\"VALIDATIONCALENDAROFFSET\"]}},\"indexcase\":{\"min\":{\"show\":[\"VALIDATIONCALENDAROFFSET\"],\"hide\":[]},\"max\":{\"show\":[\"VALIDATIONCALENDAROFFSET\"],\"hide\":[]}}}', 4),
 (6, 'VALIDATIONCALENDAROFFSET', 'textbox', '1', 'numeric', 5),
 (6, 'VALIDATIONDATE', 'select', 'YES\r\nNO', '', 8),
@@ -3118,7 +3245,6 @@ INSERT INTO `brqs1_rsform_component_type_fields` (`ComponentTypeId`, `FieldName`
 (6, 'POPUPLABEL', 'textbox', '...', '', 6),
 (6, 'MINDATE', 'textarea', '', '', 5),
 (6, 'MAXDATE', 'textarea', '', '', 5),
-(6, 'DEFAULTVALUE', 'textarea', '', '', 2),
 (7, 'NAME', 'textbox', '', '', 1),
 (7, 'CAPTION', 'textbox', '', '', 3),
 (7, 'LABEL', 'textbox', '', '', 2),
@@ -3309,13 +3435,13 @@ INSERT INTO `brqs1_rsform_component_type_fields` (`ComponentTypeId`, `FieldName`
 --
 
 CREATE TABLE `brqs1_rsform_conditions` (
-                                           `id` int(11) NOT NULL,
-                                           `form_id` int(11) NOT NULL,
-                                           `action` varchar(16) NOT NULL,
-                                           `block` tinyint(1) NOT NULL,
-                                           `component_id` text NOT NULL,
-                                           `condition` varchar(16) NOT NULL,
-                                           `lang_code` varchar(32) NOT NULL
+  `id` int(11) NOT NULL,
+  `form_id` int(11) NOT NULL,
+  `action` varchar(16) NOT NULL,
+  `block` tinyint(1) NOT NULL,
+  `component_id` text NOT NULL,
+  `condition` varchar(16) NOT NULL,
+  `lang_code` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3333,11 +3459,11 @@ INSERT INTO `brqs1_rsform_conditions` (`id`, `form_id`, `action`, `block`, `comp
 --
 
 CREATE TABLE `brqs1_rsform_condition_details` (
-                                                  `id` int(11) NOT NULL,
-                                                  `condition_id` int(11) NOT NULL,
-                                                  `component_id` int(11) NOT NULL,
-                                                  `operator` varchar(16) NOT NULL,
-                                                  `value` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `condition_id` int(11) NOT NULL,
+  `component_id` int(11) NOT NULL,
+  `operator` varchar(16) NOT NULL,
+  `value` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3355,8 +3481,8 @@ INSERT INTO `brqs1_rsform_condition_details` (`id`, `condition_id`, `component_i
 --
 
 CREATE TABLE `brqs1_rsform_config` (
-                                       `SettingName` varchar(64) NOT NULL DEFAULT '',
-                                       `SettingValue` text NOT NULL
+  `SettingName` varchar(64) NOT NULL DEFAULT '',
+  `SettingValue` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3370,7 +3496,7 @@ INSERT INTO `brqs1_rsform_config` (`SettingName`, `SettingValue`) VALUES
 ('calculations.nodecimals', '2'),
 ('calculations.thousands', ','),
 ('deleteafter.interval', '10'),
-('deleteafter.last_run', '1623600655'),
+('deleteafter.last_run', '1625856464'),
 ('disposable_domains', ''),
 ('export.limit', '500'),
 ('export.mask', 'export-{formId}-{domain}-{date}'),
@@ -3389,7 +3515,8 @@ INSERT INTO `brqs1_rsform_config` (`SettingName`, `SettingValue`) VALUES
 ('recaptchav3.secretkey', '6Lc0IvwaAAAAAAqw6jzR29dpbtEpVQ9o23mNug--'),
 ('recaptchav3.sitekey', '6Lc0IvwaAAAAAMhEPhpney_9nXOfFrJb6zcqbDu7'),
 ('recaptchav3.threshold', '0.5'),
-('request_timeout', '0');
+('request_timeout', '0'),
+('use_csrf', '1');
 
 -- --------------------------------------------------------
 
@@ -3398,24 +3525,24 @@ INSERT INTO `brqs1_rsform_config` (`SettingName`, `SettingValue`) VALUES
 --
 
 CREATE TABLE `brqs1_rsform_directory` (
-                                          `formId` int(11) NOT NULL,
-                                          `filename` varchar(255) NOT NULL DEFAULT 'export.pdf',
-                                          `csvfilename` varchar(255) NOT NULL DEFAULT '{alias}.csv',
-                                          `enablepdf` tinyint(1) NOT NULL,
-                                          `enablecsv` tinyint(1) NOT NULL,
-                                          `HideEmptyValues` tinyint(1) NOT NULL,
-                                          `ShowGoogleMap` tinyint(1) NOT NULL,
-                                          `ViewLayout` longtext NOT NULL,
-                                          `ViewLayoutName` text NOT NULL,
-                                          `ViewLayoutAutogenerate` tinyint(1) NOT NULL,
-                                          `CSS` text NOT NULL,
-                                          `JS` text NOT NULL,
-                                          `ListScript` text NOT NULL,
-                                          `DetailsScript` text NOT NULL,
-                                          `EmailsScript` text NOT NULL,
-                                          `EmailsCreatedScript` text NOT NULL,
-                                          `groups` text NOT NULL,
-                                          `DeletionGroups` text NOT NULL
+  `formId` int(11) NOT NULL,
+  `filename` varchar(255) NOT NULL DEFAULT 'export.pdf',
+  `csvfilename` varchar(255) NOT NULL DEFAULT '{alias}.csv',
+  `enablepdf` tinyint(1) NOT NULL,
+  `enablecsv` tinyint(1) NOT NULL,
+  `HideEmptyValues` tinyint(1) NOT NULL,
+  `ShowGoogleMap` tinyint(1) NOT NULL,
+  `ViewLayout` longtext NOT NULL,
+  `ViewLayoutName` text NOT NULL,
+  `ViewLayoutAutogenerate` tinyint(1) NOT NULL,
+  `CSS` text NOT NULL,
+  `JS` text NOT NULL,
+  `ListScript` text NOT NULL,
+  `DetailsScript` text NOT NULL,
+  `EmailsScript` text NOT NULL,
+  `EmailsCreatedScript` text NOT NULL,
+  `groups` text NOT NULL,
+  `DeletionGroups` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3425,14 +3552,14 @@ CREATE TABLE `brqs1_rsform_directory` (
 --
 
 CREATE TABLE `brqs1_rsform_directory_fields` (
-                                                 `formId` int(11) NOT NULL,
-                                                 `componentId` int(11) NOT NULL,
-                                                 `viewable` tinyint(1) NOT NULL,
-                                                 `searchable` tinyint(1) NOT NULL,
-                                                 `editable` tinyint(1) NOT NULL,
-                                                 `indetails` tinyint(1) NOT NULL,
-                                                 `incsv` tinyint(1) NOT NULL,
-                                                 `ordering` int(11) NOT NULL
+  `formId` int(11) NOT NULL,
+  `componentId` int(11) NOT NULL,
+  `viewable` tinyint(1) NOT NULL,
+  `searchable` tinyint(1) NOT NULL,
+  `editable` tinyint(1) NOT NULL,
+  `indetails` tinyint(1) NOT NULL,
+  `incsv` tinyint(1) NOT NULL,
+  `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3442,19 +3569,19 @@ CREATE TABLE `brqs1_rsform_directory_fields` (
 --
 
 CREATE TABLE `brqs1_rsform_emails` (
-                                       `id` int(11) NOT NULL,
-                                       `formId` int(11) NOT NULL,
-                                       `type` varchar(255) NOT NULL,
-                                       `from` varchar(255) NOT NULL,
-                                       `fromname` varchar(255) NOT NULL,
-                                       `replyto` varchar(255) NOT NULL,
-                                       `replytoname` varchar(255) NOT NULL,
-                                       `to` varchar(255) NOT NULL,
-                                       `cc` varchar(255) NOT NULL,
-                                       `bcc` varchar(255) NOT NULL,
-                                       `subject` varchar(255) NOT NULL,
-                                       `mode` tinyint(1) NOT NULL,
-                                       `message` text NOT NULL
+  `id` int(11) NOT NULL,
+  `formId` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `from` varchar(255) NOT NULL,
+  `fromname` varchar(255) NOT NULL,
+  `replyto` varchar(255) NOT NULL,
+  `replytoname` varchar(255) NOT NULL,
+  `to` varchar(255) NOT NULL,
+  `cc` varchar(255) NOT NULL,
+  `bcc` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `mode` tinyint(1) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3464,91 +3591,91 @@ CREATE TABLE `brqs1_rsform_emails` (
 --
 
 CREATE TABLE `brqs1_rsform_forms` (
-                                      `FormId` int(11) NOT NULL,
-                                      `FormName` text NOT NULL,
-                                      `FormLayout` longtext NOT NULL,
-                                      `GridLayout` mediumtext NOT NULL,
-                                      `FormLayoutName` text NOT NULL,
-                                      `LoadFormLayoutFramework` tinyint(1) NOT NULL DEFAULT '1',
-                                      `FormLayoutAutogenerate` tinyint(1) NOT NULL DEFAULT '1',
-                                      `FormLayoutFlow` tinyint(1) NOT NULL DEFAULT '0',
-                                      `DisableSubmitButton` tinyint(1) NOT NULL DEFAULT '0',
-                                      `RemoveCaptchaLogged` tinyint(1) NOT NULL DEFAULT '0',
-                                      `CSS` text NOT NULL,
-                                      `JS` text NOT NULL,
-                                      `FormTitle` text NOT NULL,
-                                      `ShowFormTitle` tinyint(1) NOT NULL DEFAULT '1',
-                                      `Published` tinyint(1) NOT NULL DEFAULT '1',
-                                      `Lang` varchar(255) NOT NULL DEFAULT '',
-                                      `ReturnUrl` text NOT NULL,
-                                      `ShowSystemMessage` tinyint(1) NOT NULL DEFAULT '1',
-                                      `ShowThankyou` tinyint(1) NOT NULL DEFAULT '1',
-                                      `ScrollToThankYou` tinyint(1) NOT NULL DEFAULT '0',
-                                      `ThankYouMessagePopUp` tinyint(1) NOT NULL DEFAULT '0',
-                                      `Thankyou` text NOT NULL,
-                                      `ShowContinue` tinyint(1) NOT NULL DEFAULT '1',
-                                      `UserEmailText` text NOT NULL,
-                                      `UserEmailTo` text NOT NULL,
-                                      `UserEmailCC` varchar(255) NOT NULL,
-                                      `UserEmailBCC` varchar(255) NOT NULL,
-                                      `UserEmailFrom` varchar(255) NOT NULL DEFAULT '',
-                                      `UserEmailReplyTo` varchar(255) NOT NULL,
-                                      `UserEmailReplyToName` varchar(255) NOT NULL,
-                                      `UserEmailFromName` varchar(255) NOT NULL DEFAULT '',
-                                      `UserEmailSubject` varchar(255) NOT NULL DEFAULT '',
-                                      `UserEmailMode` tinyint(4) NOT NULL DEFAULT '1',
-                                      `UserEmailAttach` tinyint(4) NOT NULL,
-                                      `UserEmailAttachFile` varchar(255) NOT NULL,
-                                      `AdminEmailText` text NOT NULL,
-                                      `AdminEmailTo` text NOT NULL,
-                                      `AdminEmailCC` varchar(255) NOT NULL,
-                                      `AdminEmailBCC` varchar(255) NOT NULL,
-                                      `AdminEmailFrom` varchar(255) NOT NULL DEFAULT '',
-                                      `AdminEmailReplyTo` varchar(255) NOT NULL,
-                                      `AdminEmailReplyToName` varchar(255) NOT NULL,
-                                      `AdminEmailFromName` varchar(255) NOT NULL DEFAULT '',
-                                      `AdminEmailSubject` varchar(255) NOT NULL DEFAULT '',
-                                      `AdminEmailMode` tinyint(4) NOT NULL DEFAULT '1',
-                                      `DeletionEmailText` text NOT NULL,
-                                      `DeletionEmailTo` text NOT NULL,
-                                      `DeletionEmailCC` varchar(255) NOT NULL,
-                                      `DeletionEmailBCC` varchar(255) NOT NULL,
-                                      `DeletionEmailFrom` varchar(255) NOT NULL DEFAULT '',
-                                      `DeletionEmailReplyTo` varchar(255) NOT NULL,
-                                      `DeletionEmailReplyToName` varchar(255) NOT NULL,
-                                      `DeletionEmailFromName` varchar(255) NOT NULL DEFAULT '',
-                                      `DeletionEmailSubject` varchar(255) NOT NULL DEFAULT '',
-                                      `DeletionEmailMode` tinyint(4) NOT NULL DEFAULT '1',
-                                      `ScriptProcess` text NOT NULL,
-                                      `ScriptProcess2` text NOT NULL,
-                                      `ScriptBeforeDisplay` text NOT NULL,
-                                      `ScriptBeforeValidation` text NOT NULL,
-                                      `ScriptDisplay` text NOT NULL,
-                                      `UserEmailScript` text NOT NULL,
-                                      `AdminEmailScript` text NOT NULL,
-                                      `AdditionalEmailsScript` text NOT NULL,
-                                      `MetaTitle` tinyint(1) NOT NULL,
-                                      `MetaDesc` text NOT NULL,
-                                      `MetaKeywords` text NOT NULL,
-                                      `Required` varchar(255) NOT NULL DEFAULT '(*)',
-                                      `ErrorMessage` text NOT NULL,
-                                      `MultipleSeparator` varchar(64) NOT NULL DEFAULT '\\n',
-                                      `TextareaNewLines` tinyint(1) NOT NULL DEFAULT '1',
-                                      `CSSClass` varchar(255) NOT NULL,
-                                      `CSSId` varchar(255) NOT NULL DEFAULT 'userForm',
-                                      `CSSName` varchar(255) NOT NULL,
-                                      `CSSAction` text NOT NULL,
-                                      `CSSAdditionalAttributes` text NOT NULL,
-                                      `AjaxValidation` tinyint(1) NOT NULL,
-                                      `ScrollToError` tinyint(1) NOT NULL,
-                                      `Keepdata` tinyint(1) NOT NULL DEFAULT '1',
-                                      `KeepIP` tinyint(1) NOT NULL DEFAULT '1',
-                                      `DeleteSubmissionsAfter` int(11) NOT NULL DEFAULT '0',
-                                      `Backendmenu` tinyint(1) NOT NULL,
-                                      `ConfirmSubmission` tinyint(1) NOT NULL DEFAULT '0',
-                                      `ConfirmSubmissionUrl` text NOT NULL,
-                                      `Access` varchar(5) NOT NULL,
-                                      `LimitSubmissions` int(11) NOT NULL DEFAULT '0'
+  `FormId` int(11) NOT NULL,
+  `FormName` text NOT NULL,
+  `FormLayout` longtext NOT NULL,
+  `GridLayout` mediumtext NOT NULL,
+  `FormLayoutName` text NOT NULL,
+  `LoadFormLayoutFramework` tinyint(1) NOT NULL DEFAULT '1',
+  `FormLayoutAutogenerate` tinyint(1) NOT NULL DEFAULT '1',
+  `FormLayoutFlow` tinyint(1) NOT NULL DEFAULT '0',
+  `DisableSubmitButton` tinyint(1) NOT NULL DEFAULT '0',
+  `RemoveCaptchaLogged` tinyint(1) NOT NULL DEFAULT '0',
+  `CSS` mediumtext,
+  `JS` mediumtext,
+  `FormTitle` text NOT NULL,
+  `ShowFormTitle` tinyint(1) NOT NULL DEFAULT '1',
+  `Published` tinyint(1) NOT NULL DEFAULT '1',
+  `Lang` varchar(255) NOT NULL DEFAULT '',
+  `ReturnUrl` text NOT NULL,
+  `ShowSystemMessage` tinyint(1) NOT NULL DEFAULT '1',
+  `ShowThankyou` tinyint(1) NOT NULL DEFAULT '1',
+  `ScrollToThankYou` tinyint(1) NOT NULL DEFAULT '0',
+  `ThankYouMessagePopUp` tinyint(1) NOT NULL DEFAULT '0',
+  `Thankyou` text NOT NULL,
+  `ShowContinue` tinyint(1) NOT NULL DEFAULT '1',
+  `UserEmailText` text NOT NULL,
+  `UserEmailTo` text NOT NULL,
+  `UserEmailCC` varchar(255) NOT NULL,
+  `UserEmailBCC` varchar(255) NOT NULL,
+  `UserEmailFrom` varchar(255) NOT NULL DEFAULT '',
+  `UserEmailReplyTo` varchar(255) NOT NULL,
+  `UserEmailReplyToName` varchar(255) NOT NULL,
+  `UserEmailFromName` varchar(255) NOT NULL DEFAULT '',
+  `UserEmailSubject` varchar(255) NOT NULL DEFAULT '',
+  `UserEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+  `UserEmailAttach` tinyint(4) NOT NULL,
+  `UserEmailAttachFile` varchar(255) NOT NULL,
+  `AdminEmailText` text NOT NULL,
+  `AdminEmailTo` text NOT NULL,
+  `AdminEmailCC` varchar(255) NOT NULL,
+  `AdminEmailBCC` varchar(255) NOT NULL,
+  `AdminEmailFrom` varchar(255) NOT NULL DEFAULT '',
+  `AdminEmailReplyTo` varchar(255) NOT NULL,
+  `AdminEmailReplyToName` varchar(255) NOT NULL,
+  `AdminEmailFromName` varchar(255) NOT NULL DEFAULT '',
+  `AdminEmailSubject` varchar(255) NOT NULL DEFAULT '',
+  `AdminEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+  `DeletionEmailText` text NOT NULL,
+  `DeletionEmailTo` text NOT NULL,
+  `DeletionEmailCC` varchar(255) NOT NULL,
+  `DeletionEmailBCC` varchar(255) NOT NULL,
+  `DeletionEmailFrom` varchar(255) NOT NULL DEFAULT '',
+  `DeletionEmailReplyTo` varchar(255) NOT NULL,
+  `DeletionEmailReplyToName` varchar(255) NOT NULL,
+  `DeletionEmailFromName` varchar(255) NOT NULL DEFAULT '',
+  `DeletionEmailSubject` varchar(255) NOT NULL DEFAULT '',
+  `DeletionEmailMode` tinyint(4) NOT NULL DEFAULT '1',
+  `ScriptProcess` mediumtext,
+  `ScriptProcess2` mediumtext,
+  `ScriptBeforeDisplay` mediumtext,
+  `ScriptBeforeValidation` mediumtext,
+  `ScriptDisplay` mediumtext,
+  `UserEmailScript` mediumtext,
+  `AdminEmailScript` mediumtext,
+  `AdditionalEmailsScript` mediumtext,
+  `MetaTitle` tinyint(1) NOT NULL,
+  `MetaDesc` text NOT NULL,
+  `MetaKeywords` text NOT NULL,
+  `Required` varchar(255) NOT NULL DEFAULT '(*)',
+  `ErrorMessage` text NOT NULL,
+  `MultipleSeparator` varchar(64) NOT NULL DEFAULT '\\n',
+  `TextareaNewLines` tinyint(1) NOT NULL DEFAULT '1',
+  `CSSClass` varchar(255) NOT NULL,
+  `CSSId` varchar(255) NOT NULL DEFAULT 'userForm',
+  `CSSName` varchar(255) NOT NULL,
+  `CSSAction` text NOT NULL,
+  `CSSAdditionalAttributes` text NOT NULL,
+  `AjaxValidation` tinyint(1) NOT NULL,
+  `ScrollToError` tinyint(1) NOT NULL,
+  `Keepdata` tinyint(1) NOT NULL DEFAULT '1',
+  `KeepIP` tinyint(1) NOT NULL DEFAULT '1',
+  `DeleteSubmissionsAfter` int(11) NOT NULL DEFAULT '0',
+  `Backendmenu` tinyint(1) NOT NULL,
+  `ConfirmSubmission` tinyint(1) NOT NULL DEFAULT '0',
+  `ConfirmSubmissionUrl` text NOT NULL,
+  `Access` varchar(5) NOT NULL,
+  `LimitSubmissions` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3566,22 +3693,22 @@ INSERT INTO `brqs1_rsform_forms` (`FormId`, `FormName`, `FormLayout`, `GridLayou
 --
 
 CREATE TABLE `brqs1_rsform_mappings` (
-                                         `id` int(11) NOT NULL,
-                                         `formId` int(11) NOT NULL,
-                                         `connection` tinyint(1) NOT NULL,
-                                         `host` varchar(255) NOT NULL,
-                                         `driver` varchar(16) NOT NULL,
-                                         `port` int(10) NOT NULL,
-                                         `username` varchar(255) NOT NULL,
-                                         `password` varchar(255) NOT NULL,
-                                         `database` varchar(255) NOT NULL,
-                                         `method` tinyint(1) NOT NULL,
-                                         `table` varchar(255) NOT NULL,
-                                         `data` text NOT NULL,
-                                         `wheredata` text NOT NULL,
-                                         `extra` text NOT NULL,
-                                         `andor` text NOT NULL,
-                                         `ordering` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `formId` int(11) NOT NULL,
+  `connection` tinyint(1) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `driver` varchar(16) NOT NULL,
+  `port` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `database` varchar(255) NOT NULL,
+  `method` tinyint(1) NOT NULL,
+  `table` varchar(255) NOT NULL,
+  `data` text NOT NULL,
+  `wheredata` text NOT NULL,
+  `extra` text NOT NULL,
+  `andor` text NOT NULL,
+  `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3591,13 +3718,13 @@ CREATE TABLE `brqs1_rsform_mappings` (
 --
 
 CREATE TABLE `brqs1_rsform_posts` (
-                                      `form_id` int(11) NOT NULL,
-                                      `enabled` tinyint(1) NOT NULL,
-                                      `method` tinyint(1) NOT NULL,
-                                      `fields` mediumtext NOT NULL,
-                                      `headers` mediumtext NOT NULL,
-                                      `silent` tinyint(1) NOT NULL,
-                                      `url` text NOT NULL
+  `form_id` int(11) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `method` tinyint(1) NOT NULL,
+  `fields` mediumtext NOT NULL,
+  `headers` mediumtext NOT NULL,
+  `silent` tinyint(1) NOT NULL,
+  `url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3615,10 +3742,10 @@ INSERT INTO `brqs1_rsform_posts` (`form_id`, `enabled`, `method`, `fields`, `hea
 --
 
 CREATE TABLE `brqs1_rsform_properties` (
-                                           `PropertyId` int(11) NOT NULL,
-                                           `ComponentId` int(11) NOT NULL DEFAULT '0',
-                                           `PropertyName` text NOT NULL,
-                                           `PropertyValue` text NOT NULL
+  `PropertyId` int(11) NOT NULL,
+  `ComponentId` int(11) NOT NULL DEFAULT '0',
+  `PropertyName` text NOT NULL,
+  `PropertyValue` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4161,15 +4288,15 @@ INSERT INTO `brqs1_rsform_properties` (`PropertyId`, `ComponentId`, `PropertyNam
 --
 
 CREATE TABLE `brqs1_rsform_submissions` (
-                                            `SubmissionId` int(11) NOT NULL,
-                                            `FormId` int(11) NOT NULL DEFAULT '0',
-                                            `DateSubmitted` datetime NOT NULL,
-                                            `UserIp` varchar(255) NOT NULL DEFAULT '',
-                                            `Username` varchar(255) NOT NULL DEFAULT '',
-                                            `UserId` text NOT NULL,
-                                            `Lang` varchar(255) NOT NULL,
-                                            `confirmed` tinyint(1) NOT NULL,
-                                            `SubmissionHash` varchar(32) NOT NULL
+  `SubmissionId` int(11) NOT NULL,
+  `FormId` int(11) NOT NULL DEFAULT '0',
+  `DateSubmitted` datetime NOT NULL,
+  `UserIp` varchar(255) NOT NULL DEFAULT '',
+  `Username` varchar(255) NOT NULL DEFAULT '',
+  `UserId` int(11) NOT NULL DEFAULT '0',
+  `Lang` varchar(255) NOT NULL,
+  `confirmed` tinyint(1) NOT NULL,
+  `SubmissionHash` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4177,11 +4304,11 @@ CREATE TABLE `brqs1_rsform_submissions` (
 --
 
 INSERT INTO `brqs1_rsform_submissions` (`SubmissionId`, `FormId`, `DateSubmitted`, `UserIp`, `Username`, `UserId`, `Lang`, `confirmed`, `SubmissionHash`) VALUES
-(1, 5, '2021-05-29 17:57:57', '::1', '', '0', 'fa-IR', 1, '61e233989d471494db9f964c239f6c56'),
-(2, 5, '2021-05-29 18:00:52', '::1', '', '0', 'fa-IR', 1, '6fd0c56af2d29e98d5ad148c23827ccb'),
-(3, 5, '2021-05-29 18:01:45', '::1', '', '0', 'fa-IR', 1, '7578aef3f98aff88b8805de14624c90b'),
-(4, 4, '2021-05-31 10:05:50', '::1', '', '0', 'fa-IR', 1, '57b150b329228035a9fa6e2ec06dca9b'),
-(5, 4, '2021-05-31 10:08:30', '::1', '', '0', 'fa-IR', 1, '16036da20e9528ded49754745ebbd485');
+(1, 5, '2021-05-29 17:57:57', '::1', '', 0, 'fa-IR', 1, '61e233989d471494db9f964c239f6c56'),
+(2, 5, '2021-05-29 18:00:52', '::1', '', 0, 'fa-IR', 1, '6fd0c56af2d29e98d5ad148c23827ccb'),
+(3, 5, '2021-05-29 18:01:45', '::1', '', 0, 'fa-IR', 1, '7578aef3f98aff88b8805de14624c90b'),
+(4, 4, '2021-05-31 10:05:50', '::1', '', 0, 'fa-IR', 1, '57b150b329228035a9fa6e2ec06dca9b'),
+(5, 4, '2021-05-31 10:08:30', '::1', '', 0, 'fa-IR', 1, '16036da20e9528ded49754745ebbd485');
 
 -- --------------------------------------------------------
 
@@ -4190,9 +4317,9 @@ INSERT INTO `brqs1_rsform_submissions` (`SubmissionId`, `FormId`, `DateSubmitted
 --
 
 CREATE TABLE `brqs1_rsform_submission_columns` (
-                                                   `FormId` int(11) NOT NULL,
-                                                   `ColumnName` varchar(255) NOT NULL,
-                                                   `ColumnStatic` tinyint(1) NOT NULL
+  `FormId` int(11) NOT NULL,
+  `ColumnName` varchar(255) NOT NULL,
+  `ColumnStatic` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4202,11 +4329,11 @@ CREATE TABLE `brqs1_rsform_submission_columns` (
 --
 
 CREATE TABLE `brqs1_rsform_submission_values` (
-                                                  `SubmissionValueId` int(11) NOT NULL,
-                                                  `FormId` int(11) NOT NULL,
-                                                  `SubmissionId` int(11) NOT NULL DEFAULT '0',
-                                                  `FieldName` text NOT NULL,
-                                                  `FieldValue` text NOT NULL
+  `SubmissionValueId` int(11) NOT NULL,
+  `FormId` int(11) NOT NULL,
+  `SubmissionId` int(11) NOT NULL DEFAULT '0',
+  `FieldName` text NOT NULL,
+  `FieldValue` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4305,12 +4432,12 @@ INSERT INTO `brqs1_rsform_submission_values` (`SubmissionValueId`, `FormId`, `Su
 --
 
 CREATE TABLE `brqs1_rsform_translations` (
-                                             `id` int(11) NOT NULL,
-                                             `form_id` int(11) NOT NULL,
-                                             `lang_code` varchar(32) NOT NULL,
-                                             `reference` varchar(255) NOT NULL,
-                                             `reference_id` varchar(255) NOT NULL,
-                                             `value` text NOT NULL
+  `id` int(11) NOT NULL,
+  `form_id` int(11) NOT NULL,
+  `lang_code` varchar(32) NOT NULL,
+  `reference` varchar(255) NOT NULL,
+  `reference_id` varchar(255) NOT NULL,
+  `value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4560,11 +4687,11 @@ INSERT INTO `brqs1_rsform_translations` (`id`, `form_id`, `lang_code`, `referenc
 --
 
 CREATE TABLE `brqs1_rsseo_broken_links` (
-                                            `id` int(11) NOT NULL,
-                                            `pid` int(11) NOT NULL DEFAULT '0',
-                                            `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                            `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                            `published` tinyint(1) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `published` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4574,22 +4701,22 @@ CREATE TABLE `brqs1_rsseo_broken_links` (
 --
 
 CREATE TABLE `brqs1_rsseo_competitors` (
-                                           `id` int(11) NOT NULL,
-                                           `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `parent_id` int(11) NOT NULL DEFAULT '0',
-                                           `age` int(11) NOT NULL DEFAULT '0',
-                                           `alexa` int(11) NOT NULL DEFAULT '-1',
-                                           `technorati` int(11) NOT NULL DEFAULT '-1',
-                                           `googlep` int(11) NOT NULL DEFAULT '-1',
-                                           `bingp` int(11) NOT NULL DEFAULT '-1',
-                                           `googleb` int(11) NOT NULL DEFAULT '-1',
-                                           `bingb` int(11) NOT NULL DEFAULT '-1',
-                                           `googler` int(11) NOT NULL DEFAULT '-1',
-                                           `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                           `tags` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `mozpagerank` int(11) NOT NULL DEFAULT '0',
-                                           `mozpa` int(11) NOT NULL DEFAULT '0',
-                                           `mozda` int(11) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `age` int(11) NOT NULL DEFAULT '0',
+  `alexa` int(11) NOT NULL DEFAULT '-1',
+  `technorati` int(11) NOT NULL DEFAULT '-1',
+  `googlep` int(11) NOT NULL DEFAULT '-1',
+  `bingp` int(11) NOT NULL DEFAULT '-1',
+  `googleb` int(11) NOT NULL DEFAULT '-1',
+  `bingb` int(11) NOT NULL DEFAULT '-1',
+  `googler` int(11) NOT NULL DEFAULT '-1',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tags` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `mozpagerank` int(11) NOT NULL DEFAULT '0',
+  `mozpa` int(11) NOT NULL DEFAULT '0',
+  `mozda` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4599,8 +4726,8 @@ CREATE TABLE `brqs1_rsseo_competitors` (
 --
 
 CREATE TABLE `brqs1_rsseo_data` (
-                                    `type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `data` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+  `type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `data` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4610,14 +4737,14 @@ CREATE TABLE `brqs1_rsseo_data` (
 --
 
 CREATE TABLE `brqs1_rsseo_errors` (
-                                      `id` int(11) NOT NULL,
-                                      `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                      `error` int(5) NOT NULL DEFAULT '0',
-                                      `type` tinyint(1) NOT NULL DEFAULT '0',
-                                      `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                      `layout` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `itemid` int(11) NOT NULL DEFAULT '0',
-                                      `published` tinyint(1) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `error` int(5) NOT NULL DEFAULT '0',
+  `type` tinyint(1) NOT NULL DEFAULT '0',
+  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `layout` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `itemid` int(11) NOT NULL DEFAULT '0',
+  `published` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4627,10 +4754,10 @@ CREATE TABLE `brqs1_rsseo_errors` (
 --
 
 CREATE TABLE `brqs1_rsseo_error_links` (
-                                           `id` int(11) NOT NULL,
-                                           `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                           `code` int(11) NOT NULL DEFAULT '0',
-                                           `count` int(11) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `code` int(11) NOT NULL DEFAULT '0',
+  `count` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4683,7 +4810,8 @@ INSERT INTO `brqs1_rsseo_error_links` (`id`, `url`, `code`, `count`) VALUES
 (43, 'http://localhost/partoandisheh/templates/partoandisheh/css/images/ui-icons_454545_256x240.png', 404, 1),
 (44, 'http://localhost/partoandisheh/services.html', 0, 1),
 (45, 'http://localhost/partoandisheh/templates/images/psychologist.jpg', 404, 4),
-(46, 'http://localhost/partoandisheh/templates/partoandisheh/images/psychologist.jpg', 404, 2);
+(46, 'http://localhost/partoandisheh/templates/partoandisheh/images/psychologist.jpg', 404, 2),
+(47, 'http://localhost/partoandisheh/about.html', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -4692,10 +4820,10 @@ INSERT INTO `brqs1_rsseo_error_links` (`id`, `url`, `code`, `count`) VALUES
 --
 
 CREATE TABLE `brqs1_rsseo_error_links_referer` (
-                                                   `id` int(11) NOT NULL,
-                                                   `idl` int(11) NOT NULL DEFAULT '0',
-                                                   `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                                   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(11) NOT NULL,
+  `idl` int(11) NOT NULL DEFAULT '0',
+  `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5051,7 +5179,8 @@ INSERT INTO `brqs1_rsseo_error_links_referer` (`id`, `idl`, `referer`, `date`) V
 (346, 45, 'http://localhost/partoandisheh/templates/partoandisheh/css/partoandisheh-rtl.css?e7407806235bc7d4591672ebe08ecf6e', '2021-06-12 08:01:48'),
 (347, 45, 'http://localhost/partoandisheh/templates/partoandisheh/css/partoandisheh-rtl.css?e7407806235bc7d4591672ebe08ecf6e', '2021-06-12 08:02:13'),
 (348, 45, 'http://localhost/partoandisheh/templates/partoandisheh/css/partoandisheh-rtl.css?e7407806235bc7d4591672ebe08ecf6e', '2021-06-12 08:03:57'),
-(349, 46, 'http://localhost/partoandisheh/templates/partoandisheh/css/partoandisheh-rtl.css?e7407806235bc7d4591672ebe08ecf6e', '2021-06-12 08:04:45');
+(349, 46, 'http://localhost/partoandisheh/templates/partoandisheh/css/partoandisheh-rtl.css?e7407806235bc7d4591672ebe08ecf6e', '2021-06-12 08:04:45'),
+(350, 47, 'http://localhost/partoandisheh/psychologists.html', '2021-06-26 23:55:02');
 
 -- --------------------------------------------------------
 
@@ -5060,10 +5189,10 @@ INSERT INTO `brqs1_rsseo_error_links_referer` (`id`, `idl`, `referer`, `date`) V
 --
 
 CREATE TABLE `brqs1_rsseo_gkeywords` (
-                                         `id` int(11) NOT NULL,
-                                         `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `site` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `site` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5073,16 +5202,16 @@ CREATE TABLE `brqs1_rsseo_gkeywords` (
 --
 
 CREATE TABLE `brqs1_rsseo_gkeywords_data` (
-                                              `id` int(11) NOT NULL,
-                                              `idk` int(11) NOT NULL DEFAULT '0',
-                                              `date` date NOT NULL DEFAULT '0000-00-00',
-                                              `page` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `device` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `clicks` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `impressions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `ctr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                              `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `id` int(11) NOT NULL,
+  `idk` int(11) NOT NULL DEFAULT '0',
+  `date` date NOT NULL DEFAULT '0000-00-00',
+  `page` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `device` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `clicks` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `impressions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `ctr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5092,15 +5221,15 @@ CREATE TABLE `brqs1_rsseo_gkeywords_data` (
 --
 
 CREATE TABLE `brqs1_rsseo_keywords` (
-                                        `id` int(11) NOT NULL,
-                                        `keyword` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `importance` enum('low','relevant','important','critical') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'low',
-                                        `bold` int(2) NOT NULL DEFAULT '0',
-                                        `underline` int(2) NOT NULL DEFAULT '0',
-                                        `limit` int(3) NOT NULL DEFAULT '0',
-                                        `attributes` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(11) NOT NULL,
+  `keyword` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `importance` enum('low','relevant','important','critical') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'low',
+  `bold` int(2) NOT NULL DEFAULT '0',
+  `underline` int(2) NOT NULL DEFAULT '0',
+  `limit` int(3) NOT NULL DEFAULT '0',
+  `attributes` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastcheck` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5110,10 +5239,10 @@ CREATE TABLE `brqs1_rsseo_keywords` (
 --
 
 CREATE TABLE `brqs1_rsseo_keyword_position` (
-                                                `id` int(11) NOT NULL,
-                                                `idk` int(11) NOT NULL DEFAULT '0',
-                                                `position` int(11) NOT NULL DEFAULT '0',
-                                                `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(11) NOT NULL,
+  `idk` int(11) NOT NULL DEFAULT '0',
+  `position` int(11) NOT NULL DEFAULT '0',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5123,10 +5252,10 @@ CREATE TABLE `brqs1_rsseo_keyword_position` (
 --
 
 CREATE TABLE `brqs1_rsseo_logs` (
-                                    `id` int(11) NOT NULL,
-                                    `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `message` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5136,22 +5265,22 @@ CREATE TABLE `brqs1_rsseo_logs` (
 --
 
 CREATE TABLE `brqs1_rsseo_pages` (
-                                     `id` int(11) NOT NULL,
-                                     `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                     `hash` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `sef` varchar(444) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `short` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                     `keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                     `keywordsdensity` text COLLATE utf8mb4_unicode_ci,
-                                     `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                     `sitemap` tinyint(1) NOT NULL DEFAULT '0',
-                                     `insitemap` int(2) NOT NULL DEFAULT '0',
-                                     `crawled` tinyint(1) NOT NULL DEFAULT '0',
-                                     `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `modified` int(3) NOT NULL DEFAULT '0',
-                                     `level` tinyint(4) NOT NULL DEFAULT '0',
-                                     `grade` float(10,2) NOT NULL DEFAULT '-1.00',
+  `id` int(11) NOT NULL,
+  `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hash` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `sef` varchar(444) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `short` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keywordsdensity` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sitemap` tinyint(1) NOT NULL DEFAULT '0',
+  `insitemap` int(2) NOT NULL DEFAULT '0',
+  `crawled` tinyint(1) NOT NULL DEFAULT '0',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified` int(3) NOT NULL DEFAULT '0',
+  `level` tinyint(4) NOT NULL DEFAULT '0',
+  `grade` float(10,2) NOT NULL DEFAULT '-1.00',
   `params` text COLLATE utf8mb4_unicode_ci,
   `densityparams` text COLLATE utf8mb4_unicode_ci,
   `canonical` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -5177,7 +5306,7 @@ CREATE TABLE `brqs1_rsseo_pages` (
 --
 
 INSERT INTO `brqs1_rsseo_pages` (`id`, `url`, `hash`, `sef`, `short`, `title`, `keywords`, `keywordsdensity`, `description`, `sitemap`, `insitemap`, `crawled`, `date`, `modified`, `level`, `grade`, `params`, `densityparams`, `canonical`, `robots`, `frequency`, `priority`, `imagesnoalt`, `imagesnowh`, `hits`, `custom`, `parent`, `external`, `internal`, `customhead`, `scripts`, `css`, `status`, `published`) VALUES
-(1, '', '', '', '', '', '', '', '', 0, 0, 0, '2021-05-17 06:17:12', 0, 0, 0.00, '', '', '', '', '', '', '', '', 284, NULL, '', 0, 0, NULL, NULL, NULL, 0, 1);
+(1, '', '', '', '', '', '', '', '', 0, 0, 0, '2021-05-17 06:17:12', 0, 0, 0.00, '', '', '', '', '', '', '', '', 297, NULL, '', 0, 0, NULL, NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5186,12 +5315,12 @@ INSERT INTO `brqs1_rsseo_pages` (`id`, `url`, `hash`, `sef`, `short`, `title`, `
 --
 
 CREATE TABLE `brqs1_rsseo_redirects` (
-                                         `id` int(11) NOT NULL,
-                                         `from` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `type` enum('301','302') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '301',
-                                         `hits` int(11) NOT NULL DEFAULT '0',
-                                         `published` int(2) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `from` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `type` enum('301','302') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '301',
+  `hits` int(11) NOT NULL DEFAULT '0',
+  `published` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5201,11 +5330,11 @@ CREATE TABLE `brqs1_rsseo_redirects` (
 --
 
 CREATE TABLE `brqs1_rsseo_redirects_referer` (
-                                                 `id` int(11) NOT NULL,
-                                                 `rid` int(11) NOT NULL DEFAULT '0',
-                                                 `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                                 `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                                 `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(11) NOT NULL,
+  `rid` int(11) NOT NULL DEFAULT '0',
+  `referer` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `url` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5215,21 +5344,21 @@ CREATE TABLE `brqs1_rsseo_redirects_referer` (
 --
 
 CREATE TABLE `brqs1_rsseo_statistics` (
-                                          `id` int(11) NOT NULL,
-                                          `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                          `age` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                          `googlep` int(11) NOT NULL DEFAULT '0',
-                                          `googleb` int(11) NOT NULL DEFAULT '0',
-                                          `googler` int(11) NOT NULL DEFAULT '0',
-                                          `bingp` int(11) NOT NULL DEFAULT '0',
-                                          `bingb` int(11) NOT NULL DEFAULT '0',
-                                          `alexa` int(11) NOT NULL DEFAULT '0',
-                                          `fb_share_count` int(11) NOT NULL DEFAULT '0',
-                                          `fb_like_count` int(11) NOT NULL DEFAULT '0',
-                                          `linkedin` int(11) NOT NULL DEFAULT '0',
-                                          `mozpagerank` int(11) NOT NULL DEFAULT '0',
-                                          `mozpa` int(11) NOT NULL DEFAULT '0',
-                                          `mozda` int(11) NOT NULL DEFAULT '0'
+  `id` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `age` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `googlep` int(11) NOT NULL DEFAULT '0',
+  `googleb` int(11) NOT NULL DEFAULT '0',
+  `googler` int(11) NOT NULL DEFAULT '0',
+  `bingp` int(11) NOT NULL DEFAULT '0',
+  `bingb` int(11) NOT NULL DEFAULT '0',
+  `alexa` int(11) NOT NULL DEFAULT '0',
+  `fb_share_count` int(11) NOT NULL DEFAULT '0',
+  `fb_like_count` int(11) NOT NULL DEFAULT '0',
+  `linkedin` int(11) NOT NULL DEFAULT '0',
+  `mozpagerank` int(11) NOT NULL DEFAULT '0',
+  `mozpa` int(11) NOT NULL DEFAULT '0',
+  `mozda` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5246,15 +5375,15 @@ INSERT INTO `brqs1_rsseo_statistics` (`id`, `date`, `age`, `googlep`, `googleb`,
 --
 
 CREATE TABLE `brqs1_rsseo_visitors` (
-                                        `id` int(11) NOT NULL,
-                                        `session_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                        `time` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `ip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `user_id` int(11) NOT NULL DEFAULT '0',
-                                        `agent` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                        `referer` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                        `page` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `session_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `time` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `ip` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `agent` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `referer` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5264,8 +5393,8 @@ CREATE TABLE `brqs1_rsseo_visitors` (
 --
 
 CREATE TABLE `brqs1_schemas` (
-                                 `extension_id` int(11) NOT NULL,
-                                 `version_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `extension_id` int(11) NOT NULL,
+  `version_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5283,13 +5412,13 @@ INSERT INTO `brqs1_schemas` (`extension_id`, `version_id`) VALUES
 --
 
 CREATE TABLE `brqs1_session` (
-                                 `session_id` varbinary(192) NOT NULL,
-                                 `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
-                                 `guest` tinyint(3) UNSIGNED DEFAULT '1',
-                                 `time` int(11) NOT NULL DEFAULT '0',
-                                 `data` mediumtext COLLATE utf8mb4_unicode_ci,
-                                 `userid` int(11) DEFAULT '0',
-                                 `username` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT ''
+  `session_id` varbinary(192) NOT NULL,
+  `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
+  `guest` tinyint(3) UNSIGNED DEFAULT '1',
+  `time` int(11) NOT NULL DEFAULT '0',
+  `data` mediumtext COLLATE utf8mb4_unicode_ci,
+  `userid` int(11) DEFAULT '0',
+  `username` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5297,8 +5426,12 @@ CREATE TABLE `brqs1_session` (
 --
 
 INSERT INTO `brqs1_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-(0x39716964386f6d767063736375746f38756f6e72753775726b6b, 1, 1, 1623600655, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:736:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo1O3M6NToidG9rZW4iO3M6MzI6InQwVWN2cEFBbUR4c3p4a005cVNaQndBak84N0NhS0xGIjtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjM1OTgwODI7czo0OiJsYXN0IjtpOjE2MjM1OTk4MTU7czozOiJub3ciO2k6MTYyMzYwMDY1NTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
-(0x6a3535756d6a346b6167386f626e67746f326771726775363932, 0, 1, 1623497367, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTozO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyMzQ5NzIwOTtzOjQ6Imxhc3QiO2k6MTYyMzQ5NzIwOTtzOjM6Im5vdyI7aToxNjIzNDk3MzY3O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, '');
+(0x3030316238313265356131323134393532353037633062366361303638393330, 0, 1, 1625856480, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToyO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyNTg1NjQ3NTtzOjQ6Imxhc3QiO2k6MTYyNTg1NjQ3NTtzOjM6Im5vdyI7aToxNjI1ODU2NDc5O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
+(0x3035326631663833326532323962626135376263396636646364363333326465, 1, 0, 1625856708, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:1188:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyMDtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjU4NTY0NjM7czo0OiJsYXN0IjtpOjE2MjU4NTY3MDY7czozOiJub3ciO2k6MTYyNTg1NjcwODt9czo1OiJ0b2tlbiI7czozMjoiTlk5WGpGc09HV3VUU0JER0NpbnhvcXU2UFdPc3NQaUIiO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjt9czoxNjoiY29tX2pvb21sYXVwZGF0ZSI7Tzo4OiJzdGRDbGFzcyI6NTp7czo2OiJtZXRob2QiO3M6NjoiZGlyZWN0IjtzOjQ6ImZpbGUiO047czoxMDoib2xkdmVyc2lvbiI7TjtzOjg6InBhc3N3b3JkIjtzOjMyOiJvbTg5NkFzYTliY3pFUlA2SFN6SDJwWkRTanl6T1pMSiI7czo4OiJmaWxlc2l6ZSI7aToxMjM3MzQ2NDt9fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO3M6MzoiMTIwIjt9czoxMToiYXBwbGljYXRpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NToicXVldWUiO2E6MDp7fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 120, 'developer'),
+(0x34746c6d753373376a6e33717439386c75676b38377670736d67, 1, 1, 1624785309, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:808:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo2O3M6NToidG9rZW4iO3M6MzI6IllLTUJadWIwQUtZS3M5dFVrTHhRc2JkY2VjaDVobExSIjtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjQ3ODI3ODM7czo0OiJsYXN0IjtpOjE2MjQ3ODQ0NTA7czozOiJub3ciO2k6MTYyNDc4NTMwOTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 0, ''),
+(0x676e393235363831396871393674673868686f3468753938366a, 0, 1, 1624754232, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo0NztzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE2MjQ3NTA1MTY7czo0OiJsYXN0IjtpOjE2MjQ3NTQxNzk7czozOiJub3ciO2k6MTYyNDc1NDIzMDt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO31zOjI1OiJwbGdfc3lzdGVtX2xhbmd1YWdlZmlsdGVyIjtPOjg6InN0ZENsYXNzIjoxOntzOjg6Imxhbmd1YWdlIjtzOjU6ImZhLUlSIjt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=\";', 0, ''),
+(0x6a71626871746b706a62306338736c39706b676c6b7067727175, 0, 1, 1624752367, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo2O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyNDc1MjE5MDtzOjQ6Imxhc3QiO2k6MTYyNDc1MjMyNTtzOjM6Im5vdyI7aToxNjI0NzUyMzY2O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
+(0x76633066386b7274676a346f6a636c333334626275336c63316f, 0, 1, 1624752190, 'VMCHECK|s:7:\"NOCHECK\";joomla|s:772:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToxO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTYyNDc1MjE5MDtzOjQ6Imxhc3QiO2k6MTYyNDc1MjE5MDtzOjM6Im5vdyI7aToxNjI0NzUyMTkwO319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MjU6InBsZ19zeXN0ZW1fbGFuZ3VhZ2VmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoibGFuZ3VhZ2UiO3M6NToiZmEtSVIiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, '');
 
 -- --------------------------------------------------------
 
@@ -5307,36 +5440,36 @@ INSERT INTO `brqs1_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 --
 
 CREATE TABLE `brqs1_tags` (
-                              `id` int(10) UNSIGNED NOT NULL,
-                              `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `lft` int(11) NOT NULL DEFAULT '0',
-                              `rgt` int(11) NOT NULL DEFAULT '0',
-                              `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                              `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                              `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                              `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `published` tinyint(4) NOT NULL DEFAULT '0',
-                              `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                              `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta description for the page.',
-                              `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta keywords for the page.',
-                              `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded metadata properties.',
-                              `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                              `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                              `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                              `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                              `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-                              `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                              `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                              `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `lft` int(11) NOT NULL DEFAULT '0',
+  `rgt` int(11) NOT NULL DEFAULT '0',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `published` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta description for the page.',
+  `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta keywords for the page.',
+  `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded metadata properties.',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5356,12 +5489,12 @@ INSERT INTO `brqs1_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 --
 
 CREATE TABLE `brqs1_template_styles` (
-                                         `id` int(10) UNSIGNED NOT NULL,
-                                         `template` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `client_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                         `home` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-                                         `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                         `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `template` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `client_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `home` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5382,10 +5515,10 @@ INSERT INTO `brqs1_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 --
 
 CREATE TABLE `brqs1_ucm_base` (
-                                  `ucm_id` int(10) UNSIGNED NOT NULL,
-                                  `ucm_item_id` int(11) NOT NULL,
-                                  `ucm_type_id` int(11) NOT NULL,
-                                  `ucm_language_id` int(11) NOT NULL
+  `ucm_id` int(10) UNSIGNED NOT NULL,
+  `ucm_item_id` int(11) NOT NULL,
+  `ucm_type_id` int(11) NOT NULL,
+  `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5402,38 +5535,38 @@ INSERT INTO `brqs1_ucm_base` (`ucm_id`, `ucm_item_id`, `ucm_type_id`, `ucm_langu
 --
 
 CREATE TABLE `brqs1_ucm_content` (
-                                     `core_content_id` int(10) UNSIGNED NOT NULL,
-                                     `core_type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
-                                     `core_title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `core_alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-                                     `core_body` mediumtext COLLATE utf8mb4_unicode_ci,
-                                     `core_state` tinyint(4) NOT NULL DEFAULT '0',
-                                     `core_checked_out_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `core_checked_out_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_access` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_params` text COLLATE utf8mb4_unicode_ci,
-                                     `core_featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-                                     `core_created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `core_created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `core_modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Most recent user that modified',
-                                     `core_modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `core_language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                     `core_publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `core_publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `core_content_item_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'ID from the individual type table',
-                                     `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
-                                     `core_images` text COLLATE utf8mb4_unicode_ci,
-                                     `core_urls` text COLLATE utf8mb4_unicode_ci,
-                                     `core_hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_version` int(10) UNSIGNED NOT NULL DEFAULT '1',
-                                     `core_ordering` int(11) NOT NULL DEFAULT '0',
-                                     `core_metakey` text COLLATE utf8mb4_unicode_ci,
-                                     `core_metadesc` text COLLATE utf8mb4_unicode_ci,
-                                     `core_catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-                                     `core_type_id` int(10) UNSIGNED NOT NULL DEFAULT '0'
+  `core_content_id` int(10) UNSIGNED NOT NULL,
+  `core_type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
+  `core_title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `core_alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `core_body` mediumtext COLLATE utf8mb4_unicode_ci,
+  `core_state` tinyint(4) NOT NULL DEFAULT '0',
+  `core_checked_out_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `core_checked_out_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_params` text COLLATE utf8mb4_unicode_ci,
+  `core_featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `core_metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
+  `core_created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `core_created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `core_modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Most recent user that modified',
+  `core_modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `core_language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `core_publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `core_publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `core_content_item_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'ID from the individual type table',
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `core_images` text COLLATE utf8mb4_unicode_ci,
+  `core_urls` text COLLATE utf8mb4_unicode_ci,
+  `core_hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `core_ordering` int(11) NOT NULL DEFAULT '0',
+  `core_metakey` text COLLATE utf8mb4_unicode_ci,
+  `core_metadesc` text COLLATE utf8mb4_unicode_ci,
+  `core_catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
+  `core_type_id` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
 
 --
@@ -5450,16 +5583,16 @@ INSERT INTO `brqs1_ucm_content` (`core_content_id`, `core_type_alias`, `core_tit
 --
 
 CREATE TABLE `brqs1_ucm_history` (
-                                     `version_id` int(10) UNSIGNED NOT NULL,
-                                     `ucm_item_id` int(10) UNSIGNED NOT NULL,
-                                     `ucm_type_id` int(10) UNSIGNED NOT NULL,
-                                     `version_note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Optional version name',
-                                     `save_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                     `editor_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                     `character_count` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
-                                     `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
-                                     `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
-                                     `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
+  `version_id` int(10) UNSIGNED NOT NULL,
+  `ucm_item_id` int(10) UNSIGNED NOT NULL,
+  `ucm_type_id` int(10) UNSIGNED NOT NULL,
+  `version_note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Optional version name',
+  `save_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `editor_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `character_count` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
+  `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
+  `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
+  `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5543,7 +5676,20 @@ INSERT INTO `brqs1_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 INSERT INTO `brqs1_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
 (69, 9, 1, '', '2021-06-12 06:00:10', 120, 12360, '279d94145da86ab3bb30f8ac16991548be5bb053', '{\"id\":9,\"asset_id\":\"100\",\"title\":\"\\u0645\\u0634\\u0627\\u0648\\u0631\\u0647 \\u067e\\u06cc\\u0634 \\u0627\\u0632 \\u0627\\u0632\\u062f\\u0648\\u0627\\u062c\",\"alias\":\"\\u0645\\u0634\\u0627\\u0648\\u0631\\u0647-\\u067e\\u06cc\\u0634-\\u0627\\u0632-\\u0627\\u0632\\u062f\\u0648\\u0627\\u062c\",\"introtext\":\"<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a<\\/p>\\r\\n\",\"fulltext\":\"\\r\\n<p>\\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\",\"state\":1,\"catid\":\"8\",\"created\":\"2021-06-11 00:00:16\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-12 06:00:10\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-12 05:58:54\",\"publish_up\":\"2021-06-11 00:00:16\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/services\\\\\\/1.png\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"images\\\\\\/psychologist.jpg\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":5,\"ordering\":\"5\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"8\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
 (70, 2, 1, '', '2021-06-12 08:50:19', 120, 12368, '833935220a67ff8ca96edca5dfcbdc30e7af482d', '{\"id\":2,\"asset_id\":\"78\",\"title\":\"\\u0622\\u06cc\\u062a\\u0645 \\u0634\\u0645\\u0627\\u0631\\u0647 \\u06cc\\u06a9 \\u0628\\u0644\\u0627\\u06af (2)\",\"alias\":\"\\u0622\\u06cc\\u062a\\u0645-\\u0634\\u0645\\u0627\\u0631\\u0647-\\u06cc\\u06a9-\\u0628\\u0644\\u0627\\u06af-2\",\"introtext\":\"<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646<\\/p>\\r\\n\",\"fulltext\":\"\\r\\n<p>\\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\",\"state\":1,\"catid\":\"10\",\"created\":\"2021-05-20 18:38:31\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-12 08:50:19\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-12 08:50:06\",\"publish_up\":\"2021-05-20 18:38:31\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/sampledata\\\\\\/parks\\\\\\/landscape\\\\\\/800px_pinnacles_western_australia.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":4,\"ordering\":\"4\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"3\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"1\",\"language\":\"*\",\"xreference\":\"\",\"note\":\"\"}', 0),
-(71, 3, 1, '', '2021-06-12 08:50:37', 120, 12646, '7fa09a5e22c455377f16ae7b8751925879c3847b', '{\"id\":3,\"asset_id\":\"79\",\"title\":\"\\u0627\\u06cc\\u0646 \\u0622\\u06cc\\u062a\\u0645 \\u0646\\u0633\\u0628\\u062a \\u0628\\u0647 \\u0628\\u0642\\u06cc\\u0647 \\u0622\\u06cc\\u062a\\u0645 \\u0647\\u0627 \\u062f\\u0627\\u0631\\u0627\\u06cc \\u0639\\u0646\\u0648\\u0627\\u0646 \\u0628\\u0644\\u0646\\u062f \\u062a\\u0631\\u06cc \\u0627\\u0633\\u062a \\u0628\\u0631\\u0627\\u06cc \\u062a\\u0633\\u062a \\u0631\\u0627\\u0628\\u0637 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc\",\"alias\":\"\\u0622\\u06cc\\u062a\\u0645-\\u0634\\u0645\\u0627\\u0631\\u0647-\\u06cc\\u06a9-\\u0628\\u0644\\u0627\\u06af-3\",\"introtext\":\"<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc<\\/p>\\r\\n\",\"fulltext\":\"\\r\\n<p>\\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\",\"state\":1,\"catid\":\"10\",\"created\":\"2021-05-20 18:38:31\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-12 08:50:37\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-12 08:50:21\",\"publish_up\":\"2021-05-20 18:38:31\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/sampledata\\\\\\/parks\\\\\\/landscape\\\\\\/800px_pinnacles_western_australia.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":4,\"ordering\":\"3\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"3\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"1\",\"language\":\"*\",\"xreference\":\"\",\"note\":\"\"}', 0);
+(71, 3, 1, '', '2021-06-12 08:50:37', 120, 12646, '7fa09a5e22c455377f16ae7b8751925879c3847b', '{\"id\":3,\"asset_id\":\"79\",\"title\":\"\\u0627\\u06cc\\u0646 \\u0622\\u06cc\\u062a\\u0645 \\u0646\\u0633\\u0628\\u062a \\u0628\\u0647 \\u0628\\u0642\\u06cc\\u0647 \\u0622\\u06cc\\u062a\\u0645 \\u0647\\u0627 \\u062f\\u0627\\u0631\\u0627\\u06cc \\u0639\\u0646\\u0648\\u0627\\u0646 \\u0628\\u0644\\u0646\\u062f \\u062a\\u0631\\u06cc \\u0627\\u0633\\u062a \\u0628\\u0631\\u0627\\u06cc \\u062a\\u0633\\u062a \\u0631\\u0627\\u0628\\u0637 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u06cc\",\"alias\":\"\\u0622\\u06cc\\u062a\\u0645-\\u0634\\u0645\\u0627\\u0631\\u0647-\\u06cc\\u06a9-\\u0628\\u0644\\u0627\\u06af-3\",\"introtext\":\"<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc<\\/p>\\r\\n\",\"fulltext\":\"\\r\\n<p>\\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\",\"state\":1,\"catid\":\"10\",\"created\":\"2021-05-20 18:38:31\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-12 08:50:37\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-12 08:50:21\",\"publish_up\":\"2021-05-20 18:38:31\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/sampledata\\\\\\/parks\\\\\\/landscape\\\\\\/800px_pinnacles_western_australia.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":4,\"ordering\":\"3\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"3\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"1\",\"language\":\"*\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(72, 15, 1, '', '2021-06-26 14:49:21', 120, 1837, '06618d8fdb790a86e31d4f115238b3b5e1d08f91', '{\"id\":15,\"asset_id\":118,\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"alias\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647-\\u0645\\u0627\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"11\",\"created\":\"2021-06-26 14:49:21\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:49:21\",\"modified_by\":null,\"checked_out\":null,\"checked_out_time\":null,\"publish_up\":\"2021-06-26 14:49:21\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":1,\"ordering\":null,\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":null,\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"*\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(73, 16, 1, '', '2021-06-26 14:49:34', 120, 1756, '065f159360a9484bd936ce179e4ecdfa5436f41c', '{\"id\":16,\"asset_id\":119,\"title\":\"About us\",\"alias\":\"about\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"11\",\"created\":\"2021-06-26 14:49:34\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:49:34\",\"modified_by\":null,\"checked_out\":null,\"checked_out_time\":null,\"publish_up\":\"2021-06-26 14:49:34\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":1,\"ordering\":null,\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":null,\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"en-GB\",\"xreference\":\"\",\"note\":\"\"}', 0);
+INSERT INTO `brqs1_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
+(74, 15, 1, '', '2021-06-26 14:49:45', 120, 1860, 'cc9c801c2ca37ff131faf1438898b56473302789', '{\"id\":15,\"asset_id\":\"118\",\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"alias\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647-\\u0645\\u0627\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"11\",\"created\":\"2021-06-26 14:49:21\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:49:45\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 14:49:35\",\"publish_up\":\"2021-06-26 14:49:21\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":2,\"ordering\":\"1\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"0\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(75, 16, 1, '', '2021-06-26 14:49:52', 120, 1775, 'ef9f3e406f1f985f9f89ba45684090630cb646fe', '{\"id\":16,\"asset_id\":\"119\",\"title\":\"About us\",\"alias\":\"about\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"15\",\"created\":\"2021-06-26 14:49:34\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:49:52\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 14:49:47\",\"publish_up\":\"2021-06-26 14:49:34\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":2,\"ordering\":\"0\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"0\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"en-GB\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(76, 15, 1, '', '2021-06-26 14:51:11', 120, 1879, '08c8f459e666f76f8e9a502ff371bb9b26bce494', '{\"id\":15,\"asset_id\":\"118\",\"title\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647 \\u0645\\u0627\",\"alias\":\"\\u062f\\u0631\\u0628\\u0627\\u0631\\u0647-\\u0645\\u0627\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"11\",\"created\":\"2021-06-26 14:49:21\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:51:11\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 14:51:05\",\"publish_up\":\"2021-06-26 14:49:21\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"partoandisheh:about\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":3,\"ordering\":\"1\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"1\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(77, 16, 1, '', '2021-06-26 14:51:19', 120, 1794, '6c1a635f5439e9e96388e50e3520baa6817b5166', '{\"id\":16,\"asset_id\":\"119\",\"title\":\"About us\",\"alias\":\"about\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"15\",\"created\":\"2021-06-26 14:49:34\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 14:51:19\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 14:51:14\",\"publish_up\":\"2021-06-26 14:49:34\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"partoandisheh:about\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":3,\"ordering\":\"0\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"0\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"en-GB\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(78, 7, 1, '', '2021-06-26 15:49:25', 120, 1915, 'c8597a35b49ed4ba8ba5c7c3165656454d8578e7', '{\"id\":7,\"asset_id\":\"96\",\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc\",\"alias\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631-\\u0634\\u0647\\u06cc\\u062f\\u06cc\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"9\",\"created\":\"2021-05-30 12:32:57\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 15:49:25\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 15:48:52\",\"publish_up\":\"2021-05-30 12:32:57\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/portrait.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":2,\"ordering\":\"0\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"2\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(79, 6, 1, '', '2021-06-26 15:49:51', 120, 12333, '2b3868d390c3c8540ed374d6e5f2fecfb3fb1bdd', '{\"id\":6,\"asset_id\":\"84\",\"title\":\"\\u062a\\u06a9\\u062a\\u0645 \\u062c\\u0627\\u0646 \\u0646\\u062b\\u0627\\u0631\\u06cc\",\"alias\":\"\\u062a\\u06a9\\u062a\\u0645-\\u062c\\u0627\\u0646-\\u0646\\u062b\\u0627\\u0631\\u06cc\",\"introtext\":\"<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\\r\\n<p>\\u0644\\u0648\\u0631\\u0645 \\u0627\\u06cc\\u067e\\u0633\\u0648\\u0645 \\u0645\\u062a\\u0646 \\u0633\\u0627\\u062e\\u062a\\u06af\\u06cc \\u0628\\u0627 \\u062a\\u0648\\u0644\\u06cc\\u062f \\u0633\\u0627\\u062f\\u06af\\u06cc \\u0646\\u0627\\u0645\\u0641\\u0647\\u0648\\u0645 \\u0627\\u0632 \\u0635\\u0646\\u0639\\u062a \\u0686\\u0627\\u067e \\u0648 \\u0628\\u0627 \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0627\\u0632 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u06af\\u0631\\u0627\\u0641\\u06cc\\u06a9 \\u0627\\u0633\\u062a. \\u0686\\u0627\\u067e\\u06af\\u0631\\u0647\\u0627 \\u0648 \\u0645\\u062a\\u0648\\u0646 \\u0628\\u0644\\u06a9\\u0647 \\u0631\\u0648\\u0632\\u0646\\u0627\\u0645\\u0647 \\u0648 \\u0645\\u062c\\u0644\\u0647 \\u062f\\u0631 \\u0633\\u062a\\u0648\\u0646 \\u0648 \\u0633\\u0637\\u0631\\u0622\\u0646\\u0686\\u0646\\u0627\\u0646 \\u06a9\\u0647 \\u0644\\u0627\\u0632\\u0645 \\u0627\\u0633\\u062a \\u0648 \\u0628\\u0631\\u0627\\u06cc \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0641\\u0639\\u0644\\u06cc \\u062a\\u06a9\\u0646\\u0648\\u0644\\u0648\\u0698\\u06cc \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0648 \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0645\\u062a\\u0646\\u0648\\u0639 \\u0628\\u0627 \\u0647\\u062f\\u0641 \\u0628\\u0647\\u0628\\u0648\\u062f \\u0627\\u0628\\u0632\\u0627\\u0631\\u0647\\u0627\\u06cc \\u06a9\\u0627\\u0631\\u0628\\u0631\\u062f\\u06cc \\u0645\\u06cc \\u0628\\u0627\\u0634\\u062f. \\u06a9\\u062a\\u0627\\u0628\\u0647\\u0627\\u06cc \\u0632\\u06cc\\u0627\\u062f\\u06cc \\u062f\\u0631 \\u0634\\u0635\\u062a \\u0648 \\u0633\\u0647 \\u062f\\u0631\\u0635\\u062f \\u06af\\u0630\\u0634\\u062a\\u0647\\u060c \\u062d\\u0627\\u0644 \\u0648 \\u0622\\u06cc\\u0646\\u062f\\u0647 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0641\\u0631\\u0627\\u0648\\u0627\\u0646 \\u062c\\u0627\\u0645\\u0639\\u0647 \\u0648 \\u0645\\u062a\\u062e\\u0635\\u0635\\u0627\\u0646 \\u0631\\u0627 \\u0645\\u06cc \\u0637\\u0644\\u0628\\u062f \\u062a\\u0627 \\u0628\\u0627 \\u0646\\u0631\\u0645 \\u0627\\u0641\\u0632\\u0627\\u0631\\u0647\\u0627 \\u0634\\u0646\\u0627\\u062e\\u062a \\u0628\\u06cc\\u0634\\u062a\\u0631\\u06cc \\u0631\\u0627 \\u0628\\u0631\\u0627\\u06cc \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u0631\\u0627\\u06cc\\u0627\\u0646\\u0647 \\u0627\\u06cc \\u0639\\u0644\\u06cc \\u0627\\u0644\\u062e\\u0635\\u0648\\u0635 \\u0637\\u0631\\u0627\\u062d\\u0627\\u0646 \\u062e\\u0644\\u0627\\u0642\\u06cc \\u0648 \\u0641\\u0631\\u0647\\u0646\\u06af \\u067e\\u06cc\\u0634\\u0631\\u0648 \\u062f\\u0631 \\u0632\\u0628\\u0627\\u0646 \\u0641\\u0627\\u0631\\u0633\\u06cc \\u0627\\u06cc\\u062c\\u0627\\u062f \\u06a9\\u0631\\u062f. \\u062f\\u0631 \\u0627\\u06cc\\u0646 \\u0635\\u0648\\u0631\\u062a \\u0645\\u06cc \\u062a\\u0648\\u0627\\u0646 \\u0627\\u0645\\u06cc\\u062f \\u062f\\u0627\\u0634\\u062a \\u06a9\\u0647 \\u062a\\u0645\\u0627\\u0645 \\u0648 \\u062f\\u0634\\u0648\\u0627\\u0631\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u062f\\u0631 \\u0627\\u0631\\u0627\\u0626\\u0647 \\u0631\\u0627\\u0647\\u06a9\\u0627\\u0631\\u0647\\u0627 \\u0648 \\u0634\\u0631\\u0627\\u06cc\\u0637 \\u0633\\u062e\\u062a \\u062a\\u0627\\u06cc\\u067e \\u0628\\u0647 \\u067e\\u0627\\u06cc\\u0627\\u0646 \\u0631\\u0633\\u062f \\u0648\\u0632\\u0645\\u0627\\u0646 \\u0645\\u0648\\u0631\\u062f \\u0646\\u06cc\\u0627\\u0632 \\u0634\\u0627\\u0645\\u0644 \\u062d\\u0631\\u0648\\u0641\\u0686\\u06cc\\u0646\\u06cc \\u062f\\u0633\\u062a\\u0627\\u0648\\u0631\\u062f\\u0647\\u0627\\u06cc \\u0627\\u0635\\u0644\\u06cc \\u0648 \\u062c\\u0648\\u0627\\u0628\\u06af\\u0648\\u06cc \\u0633\\u0648\\u0627\\u0644\\u0627\\u062a \\u067e\\u06cc\\u0648\\u0633\\u062a\\u0647 \\u0627\\u0647\\u0644 \\u062f\\u0646\\u06cc\\u0627\\u06cc \\u0645\\u0648\\u062c\\u0648\\u062f \\u0637\\u0631\\u0627\\u062d\\u06cc \\u0627\\u0633\\u0627\\u0633\\u0627 \\u0645\\u0648\\u0631\\u062f \\u0627\\u0633\\u062a\\u0641\\u0627\\u062f\\u0647 \\u0642\\u0631\\u0627\\u0631 \\u06af\\u06cc\\u0631\\u062f.<\\/p>\",\"fulltext\":\"\",\"state\":1,\"catid\":\"9\",\"created\":\"2021-05-29 21:35:56\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 15:49:51\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 15:49:27\",\"publish_up\":\"2021-05-29 21:35:56\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/portrait.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"images\\\\\\/sampledata\\\\\\/parks\\\\\\/landscape\\\\\\/800px_pinnacles_western_australia.jpg\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":15,\"ordering\":\"1\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"137\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"*\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(80, 17, 1, '', '2021-06-26 16:31:33', 120, 1885, 'e9c4322327afad7915d08b03df09200593315c0d', '{\"id\":17,\"asset_id\":121,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"alias\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631-\\u0634\\u0647\\u06cc\\u062f\\u06cc-2\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":0,\"catid\":\"9\",\"created\":\"2021-05-30 12:32:57\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 16:31:33\",\"modified_by\":null,\"checked_out\":null,\"checked_out_time\":null,\"publish_up\":\"2021-05-30 12:32:57\",\"publish_down\":\"\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/portrait.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":1,\"ordering\":null,\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":null,\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(81, 18, 1, '', '2021-06-26 16:31:34', 120, 1885, 'a115b1e266cc061e7481f135cab02e4dea455cf8', '{\"id\":18,\"asset_id\":122,\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (3)\",\"alias\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631-\\u0634\\u0647\\u06cc\\u062f\\u06cc-3\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":0,\"catid\":\"9\",\"created\":\"2021-05-30 12:32:57\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 16:31:34\",\"modified_by\":null,\"checked_out\":null,\"checked_out_time\":null,\"publish_up\":\"2021-05-30 12:32:57\",\"publish_down\":\"\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/portrait.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":1,\"ordering\":null,\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":null,\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(82, 17, 1, '', '2021-06-26 23:58:00', 120, 1927, '0a5425d93c4a9b4d353be53579dd84a002459436', '{\"id\":17,\"asset_id\":\"121\",\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"alias\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631-\\u0634\\u0647\\u06cc\\u062f\\u06cc-2\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"9\",\"created\":\"2021-05-30 12:32:57\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 23:58:00\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 23:57:54\",\"publish_up\":\"2021-05-30 12:32:57\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"images\\\\\\/psychologist.jpg\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":2,\"ordering\":\"1\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"0\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0),
+(83, 17, 1, '', '2021-06-26 23:58:14', 120, 1901, 'bada1ee730340b48380459f493c4dab1afa6b124', '{\"id\":17,\"asset_id\":\"121\",\"title\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631 \\u0634\\u0647\\u06cc\\u062f\\u06cc (2)\",\"alias\":\"\\u0634\\u0647\\u0631\\u06cc\\u0627\\u0631-\\u0634\\u0647\\u06cc\\u062f\\u06cc-2\",\"introtext\":\"\",\"fulltext\":\"\",\"state\":1,\"catid\":\"9\",\"created\":\"2021-05-30 12:32:57\",\"created_by\":\"120\",\"created_by_alias\":\"\",\"modified\":\"2021-06-26 23:58:14\",\"modified_by\":\"120\",\"checked_out\":\"120\",\"checked_out_time\":\"2021-06-26 23:58:00\",\"publish_up\":\"2021-05-30 12:32:57\",\"publish_down\":\"0000-00-00 00:00:00\",\"images\":\"{\\\"image_intro\\\":\\\"\\\",\\\"float_intro\\\":\\\"\\\",\\\"image_intro_alt\\\":\\\"\\\",\\\"image_intro_caption\\\":\\\"\\\",\\\"image_fulltext\\\":\\\"\\\",\\\"float_fulltext\\\":\\\"\\\",\\\"image_fulltext_alt\\\":\\\"\\\",\\\"image_fulltext_caption\\\":\\\"\\\"}\",\"urls\":\"{\\\"urla\\\":false,\\\"urlatext\\\":\\\"\\\",\\\"targeta\\\":\\\"\\\",\\\"urlb\\\":false,\\\"urlbtext\\\":\\\"\\\",\\\"targetb\\\":\\\"\\\",\\\"urlc\\\":false,\\\"urlctext\\\":\\\"\\\",\\\"targetc\\\":\\\"\\\"}\",\"attribs\":\"{\\\"article_layout\\\":\\\"\\\",\\\"show_title\\\":\\\"\\\",\\\"link_titles\\\":\\\"\\\",\\\"show_tags\\\":\\\"\\\",\\\"show_intro\\\":\\\"\\\",\\\"info_block_position\\\":\\\"\\\",\\\"info_block_show_title\\\":\\\"\\\",\\\"show_category\\\":\\\"\\\",\\\"link_category\\\":\\\"\\\",\\\"show_parent_category\\\":\\\"\\\",\\\"link_parent_category\\\":\\\"\\\",\\\"show_associations\\\":\\\"\\\",\\\"show_author\\\":\\\"\\\",\\\"link_author\\\":\\\"\\\",\\\"show_create_date\\\":\\\"\\\",\\\"show_modify_date\\\":\\\"\\\",\\\"show_publish_date\\\":\\\"\\\",\\\"show_item_navigation\\\":\\\"\\\",\\\"show_icons\\\":\\\"\\\",\\\"show_print_icon\\\":\\\"\\\",\\\"show_email_icon\\\":\\\"\\\",\\\"show_vote\\\":\\\"\\\",\\\"show_hits\\\":\\\"\\\",\\\"show_noauth\\\":\\\"\\\",\\\"urls_position\\\":\\\"\\\",\\\"alternative_readmore\\\":\\\"\\\",\\\"article_page_title\\\":\\\"\\\",\\\"show_publishing_options\\\":\\\"\\\",\\\"show_article_options\\\":\\\"\\\",\\\"show_urls_images_backend\\\":\\\"\\\",\\\"show_urls_images_frontend\\\":\\\"\\\"}\",\"version\":3,\"ordering\":\"1\",\"metakey\":\"\",\"metadesc\":\"\",\"access\":\"1\",\"hits\":\"0\",\"metadata\":\"{\\\"robots\\\":\\\"\\\",\\\"author\\\":\\\"\\\",\\\"rights\\\":\\\"\\\",\\\"xreference\\\":\\\"\\\"}\",\"featured\":\"0\",\"language\":\"fa-IR\",\"xreference\":\"\",\"note\":\"\"}', 0);
 
 -- --------------------------------------------------------
 
@@ -5552,21 +5698,103 @@ INSERT INTO `brqs1_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 --
 
 CREATE TABLE `brqs1_updates` (
-                                 `update_id` int(11) NOT NULL,
-                                 `update_site_id` int(11) DEFAULT '0',
-                                 `extension_id` int(11) DEFAULT '0',
-                                 `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                 `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `element` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                 `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                 `folder` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                 `client_id` tinyint(4) DEFAULT '0',
-                                 `version` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                 `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `detailsurl` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `infourl` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                 `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
+  `update_id` int(11) NOT NULL,
+  `update_site_id` int(11) DEFAULT '0',
+  `extension_id` int(11) DEFAULT '0',
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `element` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `folder` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `client_id` tinyint(4) DEFAULT '0',
+  `version` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detailsurl` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `infourl` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
+
+--
+-- Dumping data for table `brqs1_updates`
+--
+
+INSERT INTO `brqs1_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
+(157, 2, 0, 'Armenian', '', 'pkg_hy-AM', 'package', '', 0, '3.4.4.1', '', 'https://update.joomla.org/language/details3/hy-AM_details.xml', '', ''),
+(158, 2, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.4.1.2', '', 'https://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(159, 2, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(160, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(161, 2, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.8.0.1', '', 'https://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(162, 2, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
+(163, 2, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
+(164, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/ka-GE_details.xml', '', ''),
+(165, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(166, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(167, 2, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(168, 2, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/bn-BD_details.xml', '', ''),
+(169, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.9.19.1', '', 'https://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(170, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(171, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(172, 2, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(173, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(174, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.9.23.1', '', 'https://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(175, 2, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(176, 2, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.9.28.2', '', 'https://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(177, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
+(178, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
+(179, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
+(180, 2, 0, 'Esperanto', '', 'pkg_eo-XX', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/eo-XX_details.xml', '', ''),
+(181, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
+(182, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
+(183, 2, 0, 'Khmer', '', 'pkg_km-KH', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/km-KH_details.xml', '', ''),
+(184, 2, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.8.9.1', '', 'https://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
+(185, 2, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.9.25.2', '', 'https://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
+(186, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/lt-LT_details.xml', '', ''),
+(187, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
+(188, 2, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
+(189, 2, 0, 'Norwegian Nynorsk', '', 'pkg_nn-NO', 'package', '', 0, '3.4.2.1', '', 'https://update.joomla.org/language/details3/nn-NO_details.xml', '', ''),
+(191, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.9.25.2', '', 'https://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(192, 2, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
+(193, 2, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
+(194, 2, 0, 'English AU', '', 'pkg_en-AU', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(195, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(196, 2, 0, 'English US', '', 'pkg_en-US', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(197, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(198, 2, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(199, 2, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(200, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
+(201, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(202, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.9.24.1', '', 'https://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
+(203, 2, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.7.5.2', '', 'https://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
+(204, 2, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
+(205, 2, 0, 'Basque', '', 'pkg_eu-ES', 'package', '', 0, '3.9.24.1', '', 'https://update.joomla.org/language/details3/eu-ES_details.xml', '', ''),
+(206, 2, 0, 'Hindi', '', 'pkg_hi-IN', 'package', '', 0, '3.3.6.2', '', 'https://update.joomla.org/language/details3/hi-IN_details.xml', '', ''),
+(207, 2, 0, 'German DE', '', 'pkg_de-DE', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
+(208, 2, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.9.21.1', '', 'https://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
+(209, 2, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(210, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.9.18.1', '', 'https://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
+(211, 2, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.9.24.1', '', 'https://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
+(212, 2, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
+(213, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
+(214, 2, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
+(215, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.9.16.1', '', 'https://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(216, 2, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(217, 2, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
+(218, 2, 0, 'English CA', '', 'pkg_en-CA', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
+(219, 2, 0, 'French CA', '', 'pkg_fr-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(220, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
+(221, 2, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
+(222, 2, 0, 'Dari Persian', '', 'pkg_prs-AF', 'package', '', 0, '3.4.4.3', '', 'https://update.joomla.org/language/details3/prs-AF_details.xml', '', ''),
+(223, 2, 0, 'Turkmen', '', 'pkg_tk-TM', 'package', '', 0, '3.5.0.2', '', 'https://update.joomla.org/language/details3/tk-TM_details.xml', '', ''),
+(224, 2, 0, 'Irish', '', 'pkg_ga-IE', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/ga-IE_details.xml', '', ''),
+(225, 2, 0, 'Dzongkha', '', 'pkg_dz-BT', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/dz-BT_details.xml', '', ''),
+(226, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/sl-SI_details.xml', '', ''),
+(227, 2, 0, 'Spanish CO', '', 'pkg_es-CO', 'package', '', 0, '3.9.15.1', '', 'https://update.joomla.org/language/details3/es-CO_details.xml', '', ''),
+(228, 2, 0, 'German CH', '', 'pkg_de-CH', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/de-CH_details.xml', '', ''),
+(229, 2, 0, 'German AT', '', 'pkg_de-AT', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/de-AT_details.xml', '', ''),
+(230, 2, 0, 'German LI', '', 'pkg_de-LI', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/de-LI_details.xml', '', ''),
+(231, 2, 0, 'German LU', '', 'pkg_de-LU', 'package', '', 0, '3.9.28.1', '', 'https://update.joomla.org/language/details3/de-LU_details.xml', '', ''),
+(232, 2, 0, 'English NZ', '', 'pkg_en-NZ', 'package', '', 0, '3.9.27.1', '', 'https://update.joomla.org/language/details3/en-NZ_details.xml', '', ''),
+(233, 2, 0, 'Kazakh', '', 'pkg_kk-KZ', 'package', '', 0, '3.9.23.1', '', 'https://update.joomla.org/language/details3/kk-KZ_details.xml', '', '');
 
 -- --------------------------------------------------------
 
@@ -5575,13 +5803,13 @@ CREATE TABLE `brqs1_updates` (
 --
 
 CREATE TABLE `brqs1_update_sites` (
-                                      `update_site_id` int(11) NOT NULL,
-                                      `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                      `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
-                                      `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `enabled` int(11) DEFAULT '0',
-                                      `last_check_timestamp` bigint(20) DEFAULT '0',
-                                      `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
+  `update_site_id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `enabled` int(11) DEFAULT '0',
+  `last_check_timestamp` bigint(20) DEFAULT '0',
+  `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Update Sites';
 
 --
@@ -5589,14 +5817,16 @@ CREATE TABLE `brqs1_update_sites` (
 --
 
 INSERT INTO `brqs1_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1623583127, ''),
-(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1623476619, ''),
-(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1623476631, ''),
-(4, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1623476642, ''),
-(5, 'RSSeo!', 'extension', 'https://www.rsjoomla.com/updates/com_rsseo/Component/com_rsseo_2.5-3.0.xml', 1, 1623476654, ''),
-(6, 'RSForm! Pro', 'extension', 'https://www.rsjoomla.com/updates/com_rsform/Component/com_rsform.xml', 1, 1623476665, ''),
-(7, 'RSForm! Pro - reCAPTCHA v3 Plugin', 'extension', 'https://www.rsjoomla.com/updates/com_rsform/Plugins/plg_recaptchav3.xml', 1, 1623476676, ''),
-(9, 'بروزرسانی سیستم لاگین و ثبت نام پیامکی جومینا مارکت', 'extension', 'http://joominamarket.com/updates/package/pkg_logregsms.xml', 1, 1623476688, '');
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1625856466, ''),
+(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1625856475, ''),
+(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1625856593, ''),
+(4, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1625856477, ''),
+(5, 'RSSeo!', 'extension', 'https://www.rsjoomla.com/updates/com_rsseo/Component/com_rsseo_2.5-3.0.xml', 1, 1625856481, ''),
+(6, 'RSForm! Pro', 'extension', 'https://www.rsjoomla.com/updates/com_rsform/Component/com_rsform.xml', 1, 1625856501, ''),
+(7, 'RSForm! Pro - reCAPTCHA v3 Plugin', 'extension', 'https://www.rsjoomla.com/updates/com_rsform/Plugins/plg_recaptchav3.xml', 1, 1625856502, ''),
+(9, 'بروزرسانی سیستم لاگین و ثبت نام پیامکی جومینا مارکت', 'extension', 'http://joominamarket.com/updates/package/pkg_logregsms.xml', 0, 1624750272, ''),
+(10, 'RSForm! Pro - System Plugin', 'extension', 'https://www.rsjoomla.com/updates/com_rsform/Plugins/plg_rsform.xml', 1, 1625856681, ''),
+(11, 'UT Joomstagram', 'extension', 'https://update.unitemplates.com/extensions/mod_ut_joomstagram.xml', 1, 1625856685, '');
 
 -- --------------------------------------------------------
 
@@ -5605,8 +5835,8 @@ INSERT INTO `brqs1_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 --
 
 CREATE TABLE `brqs1_update_sites_extensions` (
-                                                 `update_site_id` int(11) NOT NULL DEFAULT '0',
-                                                 `extension_id` int(11) NOT NULL DEFAULT '0'
+  `update_site_id` int(11) NOT NULL DEFAULT '0',
+  `extension_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Links extensions to update sites';
 
 --
@@ -5621,7 +5851,9 @@ INSERT INTO `brqs1_update_sites_extensions` (`update_site_id`, `extension_id`) V
 (5, 10003),
 (6, 10007),
 (7, 10012),
-(9, 10019);
+(9, 10019),
+(10, 10020),
+(11, 10021);
 
 -- --------------------------------------------------------
 
@@ -5630,11 +5862,11 @@ INSERT INTO `brqs1_update_sites_extensions` (`update_site_id`, `extension_id`) V
 --
 
 CREATE TABLE `brqs1_usergroups` (
-                                    `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-                                    `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
-                                    `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
-                                    `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-                                    `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
+  `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
+  `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5659,22 +5891,22 @@ INSERT INTO `brqs1_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 --
 
 CREATE TABLE `brqs1_users` (
-                               `id` int(11) NOT NULL,
-                               `name` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                               `username` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                               `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                               `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                               `block` tinyint(4) NOT NULL DEFAULT '0',
-                               `sendEmail` tinyint(4) DEFAULT '0',
-                               `registerDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                               `lastvisitDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                               `activation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                               `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                               `lastResetTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date of last password reset',
-                               `resetCount` int(11) NOT NULL DEFAULT '0' COMMENT 'Count of password resets since lastResetTime',
-                               `otpKey` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
-                               `otep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
-                               `requireReset` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Require user to reset password on next login'
+  `id` int(11) NOT NULL,
+  `name` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `username` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `block` tinyint(4) NOT NULL DEFAULT '0',
+  `sendEmail` tinyint(4) DEFAULT '0',
+  `registerDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `lastvisitDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `activation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastResetTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date of last password reset',
+  `resetCount` int(11) NOT NULL DEFAULT '0' COMMENT 'Count of password resets since lastResetTime',
+  `otpKey` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
+  `otep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
+  `requireReset` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Require user to reset password on next login'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5682,7 +5914,7 @@ CREATE TABLE `brqs1_users` (
 --
 
 INSERT INTO `brqs1_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(120, 'Super User', 'developer', 'pouradaby@gmail.com', '$2y$10$Z6edbSeUa.FCLNbrs5S/9eI5MyVHhywPRhM85HE2VZTjZFcSYBNDK', 0, 1, '2021-04-29 01:18:21', '2021-06-12 10:57:23', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+(120, 'Super User', 'developer', 'pouradaby@gmail.com', '$2y$10$Z6edbSeUa.FCLNbrs5S/9eI5MyVHhywPRhM85HE2VZTjZFcSYBNDK', 0, 1, '2021-04-29 01:18:21', '2021-07-09 18:47:52', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -5691,13 +5923,13 @@ INSERT INTO `brqs1_users` (`id`, `name`, `username`, `email`, `password`, `block
 --
 
 CREATE TABLE `brqs1_user_keys` (
-                                   `id` int(10) UNSIGNED NOT NULL,
-                                   `user_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `series` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `invalid` tinyint(4) NOT NULL,
-                                   `time` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                   `uastring` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `series` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `invalid` tinyint(4) NOT NULL,
+  `time` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uastring` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5707,21 +5939,21 @@ CREATE TABLE `brqs1_user_keys` (
 --
 
 CREATE TABLE `brqs1_user_notes` (
-                                    `id` int(10) UNSIGNED NOT NULL,
-                                    `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `subject` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                    `state` tinyint(4) NOT NULL DEFAULT '0',
-                                    `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
-                                    `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `modified_user_id` int(10) UNSIGNED NOT NULL,
-                                    `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-                                    `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `subject` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(4) NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_user_id` int(10) UNSIGNED NOT NULL,
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5731,10 +5963,10 @@ CREATE TABLE `brqs1_user_notes` (
 --
 
 CREATE TABLE `brqs1_user_profiles` (
-                                       `user_id` int(11) NOT NULL,
-                                       `profile_key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `profile_value` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                       `ordering` int(11) NOT NULL DEFAULT '0'
+  `user_id` int(11) NOT NULL,
+  `profile_key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_value` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Simple user profile storage table';
 
 -- --------------------------------------------------------
@@ -5744,8 +5976,8 @@ CREATE TABLE `brqs1_user_profiles` (
 --
 
 CREATE TABLE `brqs1_user_usergroup_map` (
-                                            `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-                                            `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+  `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5762,7 +5994,7 @@ INSERT INTO `brqs1_user_usergroup_map` (`user_id`, `group_id`) VALUES
 --
 
 CREATE TABLE `brqs1_utf8_conversion` (
-    `converted` tinyint(4) NOT NULL DEFAULT '0'
+  `converted` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5779,10 +6011,10 @@ INSERT INTO `brqs1_utf8_conversion` (`converted`) VALUES
 --
 
 CREATE TABLE `brqs1_viewlevels` (
-                                    `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
-                                    `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-                                    `ordering` int(11) NOT NULL DEFAULT '0',
-                                    `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5804,7 +6036,7 @@ INSERT INTO `brqs1_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Indexes for table `brqs1_action_logs`
 --
 ALTER TABLE `brqs1_action_logs`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_user_id_logdate` (`user_id`,`log_date`),
   ADD KEY `idx_user_id_extension` (`user_id`,`extension`),
@@ -5814,26 +6046,26 @@ ALTER TABLE `brqs1_action_logs`
 -- Indexes for table `brqs1_action_logs_extensions`
 --
 ALTER TABLE `brqs1_action_logs_extensions`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_action_logs_users`
 --
 ALTER TABLE `brqs1_action_logs_users`
-    ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`user_id`),
   ADD KEY `idx_notify` (`notify`);
 
 --
 -- Indexes for table `brqs1_action_log_config`
 --
 ALTER TABLE `brqs1_action_log_config`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_assets`
 --
 ALTER TABLE `brqs1_assets`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_asset_name` (`name`),
   ADD KEY `idx_lft_rgt` (`lft`,`rgt`),
   ADD KEY `idx_parent_id` (`parent_id`);
@@ -5842,14 +6074,14 @@ ALTER TABLE `brqs1_assets`
 -- Indexes for table `brqs1_associations`
 --
 ALTER TABLE `brqs1_associations`
-    ADD PRIMARY KEY (`context`,`id`),
+  ADD PRIMARY KEY (`context`,`id`),
   ADD KEY `idx_key` (`key`);
 
 --
 -- Indexes for table `brqs1_banners`
 --
 ALTER TABLE `brqs1_banners`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100)),
@@ -5860,7 +6092,7 @@ ALTER TABLE `brqs1_banners`
 -- Indexes for table `brqs1_banner_clients`
 --
 ALTER TABLE `brqs1_banner_clients`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100));
 
@@ -5868,7 +6100,7 @@ ALTER TABLE `brqs1_banner_clients`
 -- Indexes for table `brqs1_banner_tracks`
 --
 ALTER TABLE `brqs1_banner_tracks`
-    ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
+  ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
   ADD KEY `idx_track_date` (`track_date`),
   ADD KEY `idx_track_type` (`track_type`),
   ADD KEY `idx_banner_id` (`banner_id`);
@@ -5877,7 +6109,7 @@ ALTER TABLE `brqs1_banner_tracks`
 -- Indexes for table `brqs1_categories`
 --
 ALTER TABLE `brqs1_categories`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `cat_idx` (`extension`,`published`,`access`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -5890,7 +6122,7 @@ ALTER TABLE `brqs1_categories`
 -- Indexes for table `brqs1_contact_details`
 --
 ALTER TABLE `brqs1_contact_details`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`published`),
@@ -5904,7 +6136,7 @@ ALTER TABLE `brqs1_contact_details`
 -- Indexes for table `brqs1_content`
 --
 ALTER TABLE `brqs1_content`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
@@ -5919,35 +6151,35 @@ ALTER TABLE `brqs1_content`
 -- Indexes for table `brqs1_contentitem_tag_map`
 --
 ALTER TABLE `brqs1_contentitem_tag_map`
-    ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
-    ADD KEY `idx_tag_type` (`tag_id`,`type_id`),
-    ADD KEY `idx_date_id` (`tag_date`,`tag_id`),
-    ADD KEY `idx_core_content_id` (`core_content_id`);
+  ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
+  ADD KEY `idx_tag_type` (`tag_id`,`type_id`),
+  ADD KEY `idx_date_id` (`tag_date`,`tag_id`),
+  ADD KEY `idx_core_content_id` (`core_content_id`);
 
 --
 -- Indexes for table `brqs1_content_frontpage`
 --
 ALTER TABLE `brqs1_content_frontpage`
-    ADD PRIMARY KEY (`content_id`);
+  ADD PRIMARY KEY (`content_id`);
 
 --
 -- Indexes for table `brqs1_content_rating`
 --
 ALTER TABLE `brqs1_content_rating`
-    ADD PRIMARY KEY (`content_id`);
+  ADD PRIMARY KEY (`content_id`);
 
 --
 -- Indexes for table `brqs1_content_types`
 --
 ALTER TABLE `brqs1_content_types`
-    ADD PRIMARY KEY (`type_id`),
+  ADD PRIMARY KEY (`type_id`),
   ADD KEY `idx_alias` (`type_alias`(100));
 
 --
 -- Indexes for table `brqs1_extensions`
 --
 ALTER TABLE `brqs1_extensions`
-    ADD PRIMARY KEY (`extension_id`),
+  ADD PRIMARY KEY (`extension_id`),
   ADD KEY `element_clientid` (`element`,`client_id`),
   ADD KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
@@ -5956,7 +6188,7 @@ ALTER TABLE `brqs1_extensions`
 -- Indexes for table `brqs1_fields`
 --
 ALTER TABLE `brqs1_fields`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_created_user_id` (`created_user_id`),
@@ -5968,13 +6200,13 @@ ALTER TABLE `brqs1_fields`
 -- Indexes for table `brqs1_fields_categories`
 --
 ALTER TABLE `brqs1_fields_categories`
-    ADD PRIMARY KEY (`field_id`,`category_id`);
+  ADD PRIMARY KEY (`field_id`,`category_id`);
 
 --
 -- Indexes for table `brqs1_fields_groups`
 --
 ALTER TABLE `brqs1_fields_groups`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_created_by` (`created_by`),
@@ -5986,20 +6218,20 @@ ALTER TABLE `brqs1_fields_groups`
 -- Indexes for table `brqs1_fields_values`
 --
 ALTER TABLE `brqs1_fields_values`
-    ADD KEY `idx_field_id` (`field_id`),
+  ADD KEY `idx_field_id` (`field_id`),
   ADD KEY `idx_item_id` (`item_id`(191));
 
 --
 -- Indexes for table `brqs1_finder_filters`
 --
 ALTER TABLE `brqs1_finder_filters`
-    ADD PRIMARY KEY (`filter_id`);
+  ADD PRIMARY KEY (`filter_id`);
 
 --
 -- Indexes for table `brqs1_finder_links`
 --
 ALTER TABLE `brqs1_finder_links`
-    ADD PRIMARY KEY (`link_id`),
+  ADD PRIMARY KEY (`link_id`),
   ADD KEY `idx_type` (`type_id`),
   ADD KEY `idx_title` (`title`(100)),
   ADD KEY `idx_md5` (`md5sum`),
@@ -6011,7 +6243,7 @@ ALTER TABLE `brqs1_finder_links`
 -- Indexes for table `brqs1_finder_links_terms0`
 --
 ALTER TABLE `brqs1_finder_links_terms0`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6019,7 +6251,7 @@ ALTER TABLE `brqs1_finder_links_terms0`
 -- Indexes for table `brqs1_finder_links_terms1`
 --
 ALTER TABLE `brqs1_finder_links_terms1`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6027,7 +6259,7 @@ ALTER TABLE `brqs1_finder_links_terms1`
 -- Indexes for table `brqs1_finder_links_terms2`
 --
 ALTER TABLE `brqs1_finder_links_terms2`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6035,7 +6267,7 @@ ALTER TABLE `brqs1_finder_links_terms2`
 -- Indexes for table `brqs1_finder_links_terms3`
 --
 ALTER TABLE `brqs1_finder_links_terms3`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6043,7 +6275,7 @@ ALTER TABLE `brqs1_finder_links_terms3`
 -- Indexes for table `brqs1_finder_links_terms4`
 --
 ALTER TABLE `brqs1_finder_links_terms4`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6051,7 +6283,7 @@ ALTER TABLE `brqs1_finder_links_terms4`
 -- Indexes for table `brqs1_finder_links_terms5`
 --
 ALTER TABLE `brqs1_finder_links_terms5`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6059,7 +6291,7 @@ ALTER TABLE `brqs1_finder_links_terms5`
 -- Indexes for table `brqs1_finder_links_terms6`
 --
 ALTER TABLE `brqs1_finder_links_terms6`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6067,7 +6299,7 @@ ALTER TABLE `brqs1_finder_links_terms6`
 -- Indexes for table `brqs1_finder_links_terms7`
 --
 ALTER TABLE `brqs1_finder_links_terms7`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6075,7 +6307,7 @@ ALTER TABLE `brqs1_finder_links_terms7`
 -- Indexes for table `brqs1_finder_links_terms8`
 --
 ALTER TABLE `brqs1_finder_links_terms8`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6083,7 +6315,7 @@ ALTER TABLE `brqs1_finder_links_terms8`
 -- Indexes for table `brqs1_finder_links_terms9`
 --
 ALTER TABLE `brqs1_finder_links_terms9`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6091,7 +6323,7 @@ ALTER TABLE `brqs1_finder_links_terms9`
 -- Indexes for table `brqs1_finder_links_termsa`
 --
 ALTER TABLE `brqs1_finder_links_termsa`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6099,7 +6331,7 @@ ALTER TABLE `brqs1_finder_links_termsa`
 -- Indexes for table `brqs1_finder_links_termsb`
 --
 ALTER TABLE `brqs1_finder_links_termsb`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6107,7 +6339,7 @@ ALTER TABLE `brqs1_finder_links_termsb`
 -- Indexes for table `brqs1_finder_links_termsc`
 --
 ALTER TABLE `brqs1_finder_links_termsc`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6115,7 +6347,7 @@ ALTER TABLE `brqs1_finder_links_termsc`
 -- Indexes for table `brqs1_finder_links_termsd`
 --
 ALTER TABLE `brqs1_finder_links_termsd`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6123,7 +6355,7 @@ ALTER TABLE `brqs1_finder_links_termsd`
 -- Indexes for table `brqs1_finder_links_termse`
 --
 ALTER TABLE `brqs1_finder_links_termse`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6131,7 +6363,7 @@ ALTER TABLE `brqs1_finder_links_termse`
 -- Indexes for table `brqs1_finder_links_termsf`
 --
 ALTER TABLE `brqs1_finder_links_termsf`
-    ADD PRIMARY KEY (`link_id`,`term_id`),
+  ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
@@ -6139,7 +6371,7 @@ ALTER TABLE `brqs1_finder_links_termsf`
 -- Indexes for table `brqs1_finder_taxonomy`
 --
 ALTER TABLE `brqs1_finder_taxonomy`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `parent_id` (`parent_id`),
   ADD KEY `state` (`state`),
   ADD KEY `ordering` (`ordering`),
@@ -6150,7 +6382,7 @@ ALTER TABLE `brqs1_finder_taxonomy`
 -- Indexes for table `brqs1_finder_taxonomy_map`
 --
 ALTER TABLE `brqs1_finder_taxonomy_map`
-    ADD PRIMARY KEY (`link_id`,`node_id`),
+  ADD PRIMARY KEY (`link_id`,`node_id`),
   ADD KEY `link_id` (`link_id`),
   ADD KEY `node_id` (`node_id`);
 
@@ -6158,7 +6390,7 @@ ALTER TABLE `brqs1_finder_taxonomy_map`
 -- Indexes for table `brqs1_finder_terms`
 --
 ALTER TABLE `brqs1_finder_terms`
-    ADD PRIMARY KEY (`term_id`),
+  ADD PRIMARY KEY (`term_id`),
   ADD UNIQUE KEY `idx_term` (`term`),
   ADD KEY `idx_term_phrase` (`term`,`phrase`),
   ADD KEY `idx_stem_phrase` (`stem`,`phrase`),
@@ -6168,35 +6400,35 @@ ALTER TABLE `brqs1_finder_terms`
 -- Indexes for table `brqs1_finder_terms_common`
 --
 ALTER TABLE `brqs1_finder_terms_common`
-    ADD KEY `idx_word_lang` (`term`,`language`),
+  ADD KEY `idx_word_lang` (`term`,`language`),
   ADD KEY `idx_lang` (`language`);
 
 --
 -- Indexes for table `brqs1_finder_tokens`
 --
 ALTER TABLE `brqs1_finder_tokens`
-    ADD KEY `idx_word` (`term`),
+  ADD KEY `idx_word` (`term`),
   ADD KEY `idx_context` (`context`);
 
 --
 -- Indexes for table `brqs1_finder_tokens_aggregate`
 --
 ALTER TABLE `brqs1_finder_tokens_aggregate`
-    ADD KEY `token` (`term`),
+  ADD KEY `token` (`term`),
   ADD KEY `keyword_id` (`term_id`);
 
 --
 -- Indexes for table `brqs1_finder_types`
 --
 ALTER TABLE `brqs1_finder_types`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `title` (`title`);
 
 --
 -- Indexes for table `brqs1_languages`
 --
 ALTER TABLE `brqs1_languages`
-    ADD PRIMARY KEY (`lang_id`),
+  ADD PRIMARY KEY (`lang_id`),
   ADD UNIQUE KEY `idx_sef` (`sef`),
   ADD UNIQUE KEY `idx_langcode` (`lang_code`),
   ADD KEY `idx_access` (`access`),
@@ -6206,19 +6438,19 @@ ALTER TABLE `brqs1_languages`
 -- Indexes for table `brqs1_logregsms_confirm`
 --
 ALTER TABLE `brqs1_logregsms_confirm`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_logregsms_smsarchives`
 --
 ALTER TABLE `brqs1_logregsms_smsarchives`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_menu`
 --
 ALTER TABLE `brqs1_menu`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`(100),`language`),
   ADD KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`),
   ADD KEY `idx_menutype` (`menutype`),
@@ -6231,27 +6463,27 @@ ALTER TABLE `brqs1_menu`
 -- Indexes for table `brqs1_menu_types`
 --
 ALTER TABLE `brqs1_menu_types`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_menutype` (`menutype`);
 
 --
 -- Indexes for table `brqs1_messages`
 --
 ALTER TABLE `brqs1_messages`
-    ADD PRIMARY KEY (`message_id`),
+  ADD PRIMARY KEY (`message_id`),
   ADD KEY `useridto_state` (`user_id_to`,`state`);
 
 --
 -- Indexes for table `brqs1_messages_cfg`
 --
 ALTER TABLE `brqs1_messages_cfg`
-    ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
+  ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
 
 --
 -- Indexes for table `brqs1_modules`
 --
 ALTER TABLE `brqs1_modules`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `published` (`published`,`access`),
   ADD KEY `newsfeeds` (`module`,`published`),
   ADD KEY `idx_language` (`language`);
@@ -6260,13 +6492,13 @@ ALTER TABLE `brqs1_modules`
 -- Indexes for table `brqs1_modules_menu`
 --
 ALTER TABLE `brqs1_modules_menu`
-    ADD PRIMARY KEY (`moduleid`,`menuid`);
+  ADD PRIMARY KEY (`moduleid`,`menuid`);
 
 --
 -- Indexes for table `brqs1_newsfeeds`
 --
 ALTER TABLE `brqs1_newsfeeds`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`published`),
@@ -6279,32 +6511,32 @@ ALTER TABLE `brqs1_newsfeeds`
 -- Indexes for table `brqs1_overrider`
 --
 ALTER TABLE `brqs1_overrider`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_postinstall_messages`
 --
 ALTER TABLE `brqs1_postinstall_messages`
-    ADD PRIMARY KEY (`postinstall_message_id`);
+  ADD PRIMARY KEY (`postinstall_message_id`);
 
 --
 -- Indexes for table `brqs1_privacy_consents`
 --
 ALTER TABLE `brqs1_privacy_consents`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
 -- Indexes for table `brqs1_privacy_requests`
 --
 ALTER TABLE `brqs1_privacy_requests`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_redirect_links`
 --
 ALTER TABLE `brqs1_redirect_links`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_old_url` (`old_url`(100)),
   ADD KEY `idx_link_modifed` (`modified_date`);
 
@@ -6312,7 +6544,7 @@ ALTER TABLE `brqs1_redirect_links`
 -- Indexes for table `brqs1_rsform_calculations`
 --
 ALTER TABLE `brqs1_rsform_calculations`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `formId` (`formId`),
   ADD KEY `ordering` (`ordering`),
   ADD KEY `formId_2` (`formId`,`ordering`);
@@ -6321,34 +6553,34 @@ ALTER TABLE `brqs1_rsform_calculations`
 -- Indexes for table `brqs1_rsform_components`
 --
 ALTER TABLE `brqs1_rsform_components`
-    ADD UNIQUE KEY `ComponentId` (`ComponentId`),
-    ADD KEY `ComponentTypeId` (`ComponentTypeId`),
-    ADD KEY `FormId` (`FormId`);
+  ADD UNIQUE KEY `ComponentId` (`ComponentId`),
+  ADD KEY `ComponentTypeId` (`ComponentTypeId`),
+  ADD KEY `FormId` (`FormId`);
 
 --
 -- Indexes for table `brqs1_rsform_component_types`
 --
 ALTER TABLE `brqs1_rsform_component_types`
-    ADD PRIMARY KEY (`ComponentTypeId`);
+  ADD PRIMARY KEY (`ComponentTypeId`);
 
 --
 -- Indexes for table `brqs1_rsform_component_type_fields`
 --
 ALTER TABLE `brqs1_rsform_component_type_fields`
-    ADD KEY `ComponentTypeId` (`ComponentTypeId`);
+  ADD KEY `ComponentTypeId` (`ComponentTypeId`);
 
 --
 -- Indexes for table `brqs1_rsform_conditions`
 --
 ALTER TABLE `brqs1_rsform_conditions`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `form_id` (`form_id`);
 
 --
 -- Indexes for table `brqs1_rsform_condition_details`
 --
 ALTER TABLE `brqs1_rsform_condition_details`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `condition_id` (`condition_id`),
   ADD KEY `component_id` (`component_id`);
 
@@ -6356,56 +6588,56 @@ ALTER TABLE `brqs1_rsform_condition_details`
 -- Indexes for table `brqs1_rsform_config`
 --
 ALTER TABLE `brqs1_rsform_config`
-    ADD PRIMARY KEY (`SettingName`);
+  ADD PRIMARY KEY (`SettingName`);
 
 --
 -- Indexes for table `brqs1_rsform_directory`
 --
 ALTER TABLE `brqs1_rsform_directory`
-    ADD PRIMARY KEY (`formId`);
+  ADD PRIMARY KEY (`formId`);
 
 --
 -- Indexes for table `brqs1_rsform_directory_fields`
 --
 ALTER TABLE `brqs1_rsform_directory_fields`
-    ADD UNIQUE KEY `formId` (`formId`,`componentId`);
+  ADD UNIQUE KEY `formId` (`formId`,`componentId`);
 
 --
 -- Indexes for table `brqs1_rsform_emails`
 --
 ALTER TABLE `brqs1_rsform_emails`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsform_forms`
 --
 ALTER TABLE `brqs1_rsform_forms`
-    ADD PRIMARY KEY (`FormId`);
+  ADD PRIMARY KEY (`FormId`);
 
 --
 -- Indexes for table `brqs1_rsform_mappings`
 --
 ALTER TABLE `brqs1_rsform_mappings`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsform_posts`
 --
 ALTER TABLE `brqs1_rsform_posts`
-    ADD PRIMARY KEY (`form_id`);
+  ADD PRIMARY KEY (`form_id`);
 
 --
 -- Indexes for table `brqs1_rsform_properties`
 --
 ALTER TABLE `brqs1_rsform_properties`
-    ADD UNIQUE KEY `PropertyId` (`PropertyId`),
-    ADD KEY `ComponentId` (`ComponentId`);
+  ADD UNIQUE KEY `PropertyId` (`PropertyId`),
+  ADD KEY `ComponentId` (`ComponentId`);
 
 --
 -- Indexes for table `brqs1_rsform_submissions`
 --
 ALTER TABLE `brqs1_rsform_submissions`
-    ADD PRIMARY KEY (`SubmissionId`),
+  ADD PRIMARY KEY (`SubmissionId`),
   ADD KEY `FormId` (`FormId`),
   ADD KEY `SubmissionId` (`SubmissionId`,`FormId`,`DateSubmitted`),
   ADD KEY `SubmissionHash` (`SubmissionHash`);
@@ -6414,13 +6646,13 @@ ALTER TABLE `brqs1_rsform_submissions`
 -- Indexes for table `brqs1_rsform_submission_columns`
 --
 ALTER TABLE `brqs1_rsform_submission_columns`
-    ADD PRIMARY KEY (`FormId`,`ColumnName`,`ColumnStatic`);
+  ADD PRIMARY KEY (`FormId`,`ColumnName`,`ColumnStatic`);
 
 --
 -- Indexes for table `brqs1_rsform_submission_values`
 --
 ALTER TABLE `brqs1_rsform_submission_values`
-    ADD PRIMARY KEY (`SubmissionValueId`),
+  ADD PRIMARY KEY (`SubmissionValueId`),
   ADD KEY `FormId` (`FormId`),
   ADD KEY `SubmissionId` (`SubmissionId`);
 
@@ -6428,7 +6660,7 @@ ALTER TABLE `brqs1_rsform_submission_values`
 -- Indexes for table `brqs1_rsform_translations`
 --
 ALTER TABLE `brqs1_rsform_translations`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `form_id` (`form_id`),
   ADD KEY `lang_code` (`lang_code`),
   ADD KEY `reference` (`reference`),
@@ -6438,78 +6670,78 @@ ALTER TABLE `brqs1_rsform_translations`
 -- Indexes for table `brqs1_rsseo_broken_links`
 --
 ALTER TABLE `brqs1_rsseo_broken_links`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `brqs1_rsseo_competitors`
 --
 ALTER TABLE `brqs1_rsseo_competitors`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_data`
 --
 ALTER TABLE `brqs1_rsseo_data`
-    ADD PRIMARY KEY (`type`);
+  ADD PRIMARY KEY (`type`);
 
 --
 -- Indexes for table `brqs1_rsseo_errors`
 --
 ALTER TABLE `brqs1_rsseo_errors`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_error_links`
 --
 ALTER TABLE `brqs1_rsseo_error_links`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_error_links_referer`
 --
 ALTER TABLE `brqs1_rsseo_error_links_referer`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idl` (`idl`);
 
 --
 -- Indexes for table `brqs1_rsseo_gkeywords`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_gkeywords_data`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords_data`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idk` (`idk`);
 
 --
 -- Indexes for table `brqs1_rsseo_keywords`
 --
 ALTER TABLE `brqs1_rsseo_keywords`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Keyword` (`keyword`);
 
 --
 -- Indexes for table `brqs1_rsseo_keyword_position`
 --
 ALTER TABLE `brqs1_rsseo_keyword_position`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idk` (`idk`);
 
 --
 -- Indexes for table `brqs1_rsseo_logs`
 --
 ALTER TABLE `brqs1_rsseo_logs`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_pages`
 --
 ALTER TABLE `brqs1_rsseo_pages`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `sef` (`sef`(200)),
   ADD KEY `hash` (`hash`),
   ADD KEY `hash_2` (`hash`,`published`);
@@ -6518,26 +6750,26 @@ ALTER TABLE `brqs1_rsseo_pages`
 -- Indexes for table `brqs1_rsseo_redirects`
 --
 ALTER TABLE `brqs1_rsseo_redirects`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_redirects_referer`
 --
 ALTER TABLE `brqs1_rsseo_redirects_referer`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `rid` (`rid`);
 
 --
 -- Indexes for table `brqs1_rsseo_statistics`
 --
 ALTER TABLE `brqs1_rsseo_statistics`
-    ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brqs1_rsseo_visitors`
 --
 ALTER TABLE `brqs1_rsseo_visitors`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `session_id` (`session_id`),
   ADD KEY `id-session_id` (`id`,`session_id`);
 
@@ -6545,13 +6777,13 @@ ALTER TABLE `brqs1_rsseo_visitors`
 -- Indexes for table `brqs1_schemas`
 --
 ALTER TABLE `brqs1_schemas`
-    ADD PRIMARY KEY (`extension_id`,`version_id`);
+  ADD PRIMARY KEY (`extension_id`,`version_id`);
 
 --
 -- Indexes for table `brqs1_session`
 --
 ALTER TABLE `brqs1_session`
-    ADD PRIMARY KEY (`session_id`),
+  ADD PRIMARY KEY (`session_id`),
   ADD KEY `userid` (`userid`),
   ADD KEY `time` (`time`),
   ADD KEY `client_id_guest` (`client_id`,`guest`);
@@ -6560,7 +6792,7 @@ ALTER TABLE `brqs1_session`
 -- Indexes for table `brqs1_tags`
 --
 ALTER TABLE `brqs1_tags`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `tag_idx` (`published`,`access`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -6573,7 +6805,7 @@ ALTER TABLE `brqs1_tags`
 -- Indexes for table `brqs1_template_styles`
 --
 ALTER TABLE `brqs1_template_styles`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_template` (`template`),
   ADD KEY `idx_client_id` (`client_id`),
   ADD KEY `idx_client_id_home` (`client_id`,`home`);
@@ -6582,7 +6814,7 @@ ALTER TABLE `brqs1_template_styles`
 -- Indexes for table `brqs1_ucm_base`
 --
 ALTER TABLE `brqs1_ucm_base`
-    ADD PRIMARY KEY (`ucm_id`),
+  ADD PRIMARY KEY (`ucm_id`),
   ADD KEY `idx_ucm_item_id` (`ucm_item_id`),
   ADD KEY `idx_ucm_type_id` (`ucm_type_id`),
   ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
@@ -6591,7 +6823,7 @@ ALTER TABLE `brqs1_ucm_base`
 -- Indexes for table `brqs1_ucm_content`
 --
 ALTER TABLE `brqs1_ucm_content`
-    ADD PRIMARY KEY (`core_content_id`),
+  ADD PRIMARY KEY (`core_content_id`),
   ADD KEY `tag_idx` (`core_state`,`core_access`),
   ADD KEY `idx_access` (`core_access`),
   ADD KEY `idx_alias` (`core_alias`(100)),
@@ -6609,7 +6841,7 @@ ALTER TABLE `brqs1_ucm_content`
 -- Indexes for table `brqs1_ucm_history`
 --
 ALTER TABLE `brqs1_ucm_history`
-    ADD PRIMARY KEY (`version_id`),
+  ADD PRIMARY KEY (`version_id`),
   ADD KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`),
   ADD KEY `idx_save_date` (`save_date`);
 
@@ -6617,25 +6849,25 @@ ALTER TABLE `brqs1_ucm_history`
 -- Indexes for table `brqs1_updates`
 --
 ALTER TABLE `brqs1_updates`
-    ADD PRIMARY KEY (`update_id`);
+  ADD PRIMARY KEY (`update_id`);
 
 --
 -- Indexes for table `brqs1_update_sites`
 --
 ALTER TABLE `brqs1_update_sites`
-    ADD PRIMARY KEY (`update_site_id`);
+  ADD PRIMARY KEY (`update_site_id`);
 
 --
 -- Indexes for table `brqs1_update_sites_extensions`
 --
 ALTER TABLE `brqs1_update_sites_extensions`
-    ADD PRIMARY KEY (`update_site_id`,`extension_id`);
+  ADD PRIMARY KEY (`update_site_id`,`extension_id`);
 
 --
 -- Indexes for table `brqs1_usergroups`
 --
 ALTER TABLE `brqs1_usergroups`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`),
   ADD KEY `idx_usergroup_title_lookup` (`title`),
   ADD KEY `idx_usergroup_adjacency_lookup` (`parent_id`),
@@ -6645,7 +6877,7 @@ ALTER TABLE `brqs1_usergroups`
 -- Indexes for table `brqs1_users`
 --
 ALTER TABLE `brqs1_users`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_username` (`username`),
   ADD KEY `idx_name` (`name`(100)),
   ADD KEY `idx_block` (`block`),
@@ -6655,7 +6887,7 @@ ALTER TABLE `brqs1_users`
 -- Indexes for table `brqs1_user_keys`
 --
 ALTER TABLE `brqs1_user_keys`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `series` (`series`),
   ADD KEY `user_id` (`user_id`);
 
@@ -6663,7 +6895,7 @@ ALTER TABLE `brqs1_user_keys`
 -- Indexes for table `brqs1_user_notes`
 --
 ALTER TABLE `brqs1_user_notes`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_category_id` (`catid`);
 
@@ -6671,19 +6903,19 @@ ALTER TABLE `brqs1_user_notes`
 -- Indexes for table `brqs1_user_profiles`
 --
 ALTER TABLE `brqs1_user_profiles`
-    ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
+  ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
 
 --
 -- Indexes for table `brqs1_user_usergroup_map`
 --
 ALTER TABLE `brqs1_user_usergroup_map`
-    ADD PRIMARY KEY (`user_id`,`group_id`);
+  ADD PRIMARY KEY (`user_id`,`group_id`);
 
 --
 -- Indexes for table `brqs1_viewlevels`
 --
 ALTER TABLE `brqs1_viewlevels`
-    ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
 
 --
@@ -6694,412 +6926,417 @@ ALTER TABLE `brqs1_viewlevels`
 -- AUTO_INCREMENT for table `brqs1_action_logs`
 --
 ALTER TABLE `brqs1_action_logs`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=882;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=967;
 
 --
 -- AUTO_INCREMENT for table `brqs1_action_logs_extensions`
 --
 ALTER TABLE `brqs1_action_logs_extensions`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `brqs1_action_log_config`
 --
 ALTER TABLE `brqs1_action_log_config`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `brqs1_assets`
 --
 ALTER TABLE `brqs1_assets`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=118;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `brqs1_banners`
 --
 ALTER TABLE `brqs1_banners`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_banner_clients`
 --
 ALTER TABLE `brqs1_banner_clients`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_categories`
 --
 ALTER TABLE `brqs1_categories`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `brqs1_contact_details`
 --
 ALTER TABLE `brqs1_contact_details`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_content`
 --
 ALTER TABLE `brqs1_content`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `brqs1_content_types`
 --
 ALTER TABLE `brqs1_content_types`
-    MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `brqs1_extensions`
 --
 ALTER TABLE `brqs1_extensions`
-    MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10020;
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10022;
 
 --
 -- AUTO_INCREMENT for table `brqs1_fields`
 --
 ALTER TABLE `brqs1_fields`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `brqs1_fields_groups`
 --
 ALTER TABLE `brqs1_fields_groups`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_filters`
 --
 ALTER TABLE `brqs1_finder_filters`
-    MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_links`
 --
 ALTER TABLE `brqs1_finder_links`
-    MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_taxonomy`
 --
 ALTER TABLE `brqs1_finder_taxonomy`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_terms`
 --
 ALTER TABLE `brqs1_finder_terms`
-    MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_finder_types`
 --
 ALTER TABLE `brqs1_finder_types`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_languages`
 --
 ALTER TABLE `brqs1_languages`
-    MODIFY `lang_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `lang_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_logregsms_confirm`
 --
 ALTER TABLE `brqs1_logregsms_confirm`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_logregsms_smsarchives`
 --
 ALTER TABLE `brqs1_logregsms_smsarchives`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_menu`
 --
 ALTER TABLE `brqs1_menu`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `brqs1_menu_types`
 --
 ALTER TABLE `brqs1_menu_types`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `brqs1_messages`
 --
 ALTER TABLE `brqs1_messages`
-    MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_modules`
 --
 ALTER TABLE `brqs1_modules`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `brqs1_newsfeeds`
 --
 ALTER TABLE `brqs1_newsfeeds`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_overrider`
 --
 ALTER TABLE `brqs1_overrider`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
 
 --
 -- AUTO_INCREMENT for table `brqs1_postinstall_messages`
 --
 ALTER TABLE `brqs1_postinstall_messages`
-    MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `brqs1_privacy_consents`
 --
 ALTER TABLE `brqs1_privacy_consents`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_privacy_requests`
 --
 ALTER TABLE `brqs1_privacy_requests`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_redirect_links`
 --
 ALTER TABLE `brqs1_redirect_links`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_calculations`
 --
 ALTER TABLE `brqs1_rsform_calculations`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_components`
 --
 ALTER TABLE `brqs1_rsform_components`
-    MODIFY `ComponentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `ComponentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_component_types`
 --
 ALTER TABLE `brqs1_rsform_component_types`
-    MODIFY `ComponentTypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2424;
+  MODIFY `ComponentTypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2424;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_conditions`
 --
 ALTER TABLE `brqs1_rsform_conditions`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_condition_details`
 --
 ALTER TABLE `brqs1_rsform_condition_details`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_emails`
 --
 ALTER TABLE `brqs1_rsform_emails`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_forms`
 --
 ALTER TABLE `brqs1_rsform_forms`
-    MODIFY `FormId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `FormId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_mappings`
 --
 ALTER TABLE `brqs1_rsform_mappings`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_properties`
 --
 ALTER TABLE `brqs1_rsform_properties`
-    MODIFY `PropertyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=693;
+  MODIFY `PropertyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=693;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_submissions`
 --
 ALTER TABLE `brqs1_rsform_submissions`
-    MODIFY `SubmissionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `SubmissionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_submission_values`
 --
 ALTER TABLE `brqs1_rsform_submission_values`
-    MODIFY `SubmissionValueId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `SubmissionValueId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsform_translations`
 --
 ALTER TABLE `brqs1_rsform_translations`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_broken_links`
 --
 ALTER TABLE `brqs1_rsseo_broken_links`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_competitors`
 --
 ALTER TABLE `brqs1_rsseo_competitors`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_errors`
 --
 ALTER TABLE `brqs1_rsseo_errors`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_error_links`
 --
 ALTER TABLE `brqs1_rsseo_error_links`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_error_links_referer`
 --
 ALTER TABLE `brqs1_rsseo_error_links_referer`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=350;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=351;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_gkeywords`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_gkeywords_data`
 --
 ALTER TABLE `brqs1_rsseo_gkeywords_data`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_keywords`
 --
 ALTER TABLE `brqs1_rsseo_keywords`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_keyword_position`
 --
 ALTER TABLE `brqs1_rsseo_keyword_position`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_logs`
 --
 ALTER TABLE `brqs1_rsseo_logs`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_pages`
 --
 ALTER TABLE `brqs1_rsseo_pages`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_redirects`
 --
 ALTER TABLE `brqs1_rsseo_redirects`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_redirects_referer`
 --
 ALTER TABLE `brqs1_rsseo_redirects_referer`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_statistics`
 --
 ALTER TABLE `brqs1_rsseo_statistics`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_rsseo_visitors`
 --
 ALTER TABLE `brqs1_rsseo_visitors`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_tags`
 --
 ALTER TABLE `brqs1_tags`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `brqs1_template_styles`
 --
 ALTER TABLE `brqs1_template_styles`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brqs1_ucm_content`
 --
 ALTER TABLE `brqs1_ucm_content`
-    MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brqs1_ucm_history`
 --
 ALTER TABLE `brqs1_ucm_history`
-    MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `brqs1_updates`
 --
 ALTER TABLE `brqs1_updates`
-    MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT for table `brqs1_update_sites`
 --
 ALTER TABLE `brqs1_update_sites`
-    MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `brqs1_usergroups`
 --
 ALTER TABLE `brqs1_usergroups`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brqs1_users`
 --
 ALTER TABLE `brqs1_users`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `brqs1_user_keys`
 --
 ALTER TABLE `brqs1_user_keys`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_user_notes`
 --
 ALTER TABLE `brqs1_user_notes`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brqs1_viewlevels`
 --
 ALTER TABLE `brqs1_viewlevels`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
