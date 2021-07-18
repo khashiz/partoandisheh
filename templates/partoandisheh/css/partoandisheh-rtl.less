@@ -180,6 +180,54 @@ section{
   &.psychologists{
     background-color: fade(@primary, 10%);
   }
+  &.aboutIntro{
+    div{
+      &[class*="item"]{
+        &.item-1,
+        &.item-3{
+          right: 90%;
+          @media(max-width: 959px){
+            right: initial;
+            left: -40px;
+          }
+        }
+        &.item-2,
+        &.item-4{
+          left: 90%;
+          @media(max-width: 959px){
+            left: initial;
+            right: -40px;
+          }
+        }
+        &.item-1,
+        &.item-2{
+          top: 70px;
+          @media(max-width: 959px){
+            top: -10px;
+          }
+        }
+        &.item-3,
+        &.item-4{
+          bottom: 70px;
+          @media(max-width: 959px){
+            bottom: -10px;
+          }
+        }
+      }
+    }
+  }
+  &.statistics{
+    &:after{
+      position: absolute;
+      content: "";
+      width: 100%;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background-color: #fff;
+      bottom: 0;
+    }
+  }
 }
 div{
   &.sideModule{

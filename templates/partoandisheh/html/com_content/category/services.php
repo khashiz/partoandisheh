@@ -71,7 +71,7 @@ endforeach;
 
 	<?php $leadingcount = 0; ?>
 	<?php if (!empty($this->lead_items)) : ?>
-        <div class="items-leading clearfix uk-child-width-1-1 uk-child-width-1-3@m uk-grid-divider uk-grid-large uk-margin-large-bottom" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div; delay: 250;">
+        <div class="items-leading clearfix uk-child-width-1-1 uk-child-width-1-4@m uk-grid-divider uk-grid-large uk-margin-large-bottom" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div; delay: 250;">
 			<?php foreach ($this->lead_items as &$item) : ?>
 				<div class="leading-<?php echo $leadingcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
 					itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">

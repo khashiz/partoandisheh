@@ -14,26 +14,11 @@ defined('_JEXEC') or die;
         <div class="uk-padding-large uk-padding-remove-horizontal<?php echo $moduleclass_sfx; ?>">
             <div>
                 <div class="uk-position-relative uk-text-center">
-                    <div class="uk-width-medium uk-border-circle uk-text-center uk-padding uk-box-shadow-small uk-display-inline-block uk-position-relative">
-                        <div><img src="images/square.png" width="400" height="400"></div>
+                    <div class="uk-width-2-3 uk-width-large@m uk-border-circle uk-text-center uk-padding-large uk-box-shadow-small uk-display-inline-block uk-position-relative" data-uk-scrollspy="target: > div; delay: 500;">
+                        <div data-uk-scrollspy-class="uk-animation-fade"><?php echo JHTML::_('image', 'images/square.png', null, 'class="uk-width-1-1"'); ?></div>
                         <?php $i=1; foreach ($list as $item) : ?>
-                        <?php
-                            switch ($i) {
-                                case 1:
-                                    $pos = 'uk-position-top-right';
-                                    break;
-                                case 2:
-                                    $pos = 'uk-position-top-left';
-                                    break;
-                                case 3:
-                                    $pos = 'uk-position-bottom-right';
-                                    break;
-                                case 4:
-                                    $pos = 'uk-position-bottom-left';
-                                    break;
-                            }
-                            ?>
-                            <div class="uk-position-absolute uk-background-muted uk-width-medium item-<?php echo $i.' '.$pos; ?>"><?php require JModuleHelper::getLayoutPath('mod_articles_news', '_aboutintroitem'); ?></div>
+                            <?php if ($i % 2 != 0) {$layout = "left";} else {$layout = "right";} ?>
+                            <div data-uk-scrollspy-class="uk-animation-slide-<?php echo $layout; ?>" class="uk-position-absolute uk-width-auto uk-width-medium@m item-<?php echo $i; ?>"><?php require JModuleHelper::getLayoutPath('mod_articles_news', '_aboutintroitem'.$layout); ?></div>
                         <?php $i++; endforeach; ?>
                     </div>
                 </div>

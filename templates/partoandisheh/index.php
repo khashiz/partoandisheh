@@ -114,7 +114,7 @@ $cells = explode("\n", $params->get('cellphone'));
             <div class="uk-grid-small" data-uk-grid>
                 <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@m">
                     <div>
-                        <a href="#hamMenu" data-uk-toggle class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero"><img src="<?php echo JURI::base().'images/sprite.svg#bars'; ?>" width="18" height="18" data-uk-svg></a>
+                        <a href="#hamMenu" data-uk-toggle class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero uk-border-rounded uk-box-shadow-small"><img src="<?php echo JURI::base().'images/sprite.svg#bars'; ?>" width="18" height="18" data-uk-svg></a>
                     </div>
                 </div>
                 <div class="uk-width-auto">
@@ -131,7 +131,7 @@ $cells = explode("\n", $params->get('cellphone'));
                 <jdoc:include type="modules" name="header" style="xhtml" />
                 <div class="uk-width-expand uk-flex uk-flex-middle uk-flex-center uk-hidden@m">
                     <div>
-                        <a href="tel:<?php echo $phones[0]; ?>" class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></a>
+                        <a href="tel:<?php echo $phones[0]; ?>" class="uk-button uk-button-default uk-padding-small uk-display-inline-block uk-text-zero uk-text-secondary uk-line-height-zero uk-border-rounded uk-box-shadow-small"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></a>
                     </div>
                 </div>
             </div>
@@ -163,8 +163,8 @@ $cells = explode("\n", $params->get('cellphone'));
         <jdoc:include type="modules" name="bodytop" style="xhtml" />
         <div>
             <iv class="<?php echo $pageparams->get('gridsize', 'uk-container'); if ($pageclass == 'checkout') { echo ' uk-container-xsmall';} ?> ">
-                <div class="hikashop_cpanel_main_interface">
-                    <div class="hikashop_dashboard" id="hikashop_dashboard" data-uk-grid>
+                <div>
+                    <div data-uk-grid>
                         <?php if ($this->countModules( 'sidestart' )) { ?>
                             <div class="uk-width-1-1 uk-width-1-4@m">
                                 <aside data-uk-sticky="offset: 110; bottom: true;">
