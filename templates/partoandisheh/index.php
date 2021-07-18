@@ -42,7 +42,7 @@ $cells = explode("\n", $params->get('cellphone'));
     <jdoc:include type="head" />
 </head>
 <body class="<?php echo $view.' '.$layout.' '.$task; ?>">
-<header class="uk-position-relative">
+<header class="uk-position-relative <?php echo $pageclass; ?>">
     <div class="topBar uk-visible@m">
         <div class="uk-container">
             <div class="uk-grid-small" data-uk-grid>
@@ -51,7 +51,7 @@ $cells = explode("\n", $params->get('cellphone'));
                         <div class="uk-grid-medium uk-child-width-auto uk-height-1-1 uk-text-zero uk-text-white" data-uk-grid>
                             <?php if (!empty($params->get('phone')) && in_array('phone', $params->get('headercontact'))) { ?>
                                 <div class="uk-height-1-1">
-                                    <a href="tel:<?php echo $phones[0]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1 uk-link-reset" target="_blank" title="">
+                                    <a href="tel:021 <?php echo $phones[0]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1 uk-link-reset" target="_blank" title="">
                                         <span class="icon"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></span>
                                         <span class="uk-text-medium uk-margin-small-right uk-display-inline-block uk-text-small value font ltr"><?php echo $phones[0]; ?></span>
                                     </a>
@@ -138,7 +138,7 @@ $cells = explode("\n", $params->get('cellphone'));
         </div>
     </div>
 </header>
-<?php if ($pageparams->get('show_page_heading')) : ?>
+<?php if ($pageparams->get('show_page_heading') && $pageclass != 'home') : ?>
     <section class="uk-background-center uk-background-cover uk-padding-remove-horizontal pageHeading uk-background-<?php echo $pageparams->get('bg', 'primary') ?>" <?php if ($pageparams->get('bg') == 'image' && !empty($pageparams->get('bgimg'))) echo 'style="background-image: url('.$pageparams->get('bgimg').')"'; ?>>
         <div class="uk-position-relative <?php echo $pageparams->get('height', 'uk-padding') ?>">
             <?php if ($pageparams->get('bg') == 'image' && !empty($pageparams->get('bgimg'))) { ?>
@@ -162,7 +162,7 @@ $cells = explode("\n", $params->get('cellphone'));
     <div class="uk-padding uk-padding-remove-horizontal">
         <jdoc:include type="modules" name="bodytop" style="xhtml" />
         <div>
-            <iv class="<?php echo $pageparams->get('gridsize', 'uk-container'); if ($pageclass == 'checkout') { echo ' uk-container-xsmall';} ?> ">
+            <div class="<?php echo $pageparams->get('gridsize', 'uk-container'); if ($pageclass == 'checkout') { echo ' uk-container-xsmall';} ?> ">
                 <div>
                     <div data-uk-grid>
                         <?php if ($this->countModules( 'sidestart' )) { ?>
@@ -188,7 +188,7 @@ $cells = explode("\n", $params->get('cellphone'));
                         <?php } ?>
                     </div>
                 </div>
-            </iv>
+            </div>
         </div>
         <jdoc:include type="modules" name="bodybottom" style="xhtml" />
     </div>
@@ -230,21 +230,17 @@ $cells = explode("\n", $params->get('cellphone'));
     </div>
 </footer>
 <div id="hamMenu" data-uk-offcanvas="overlay: true">
-    <div class="uk-offcanvas-bar uk-card uk-card-default uk-padding-remove bgWhite">
+    <div class="uk-offcanvas-bar uk-padding-remove bgWhite">
         <div class="uk-flex uk-flex-column uk-height-1-1">
             <div class="uk-width-expand">
                 <div class="offcanvasTop uk-box-shadow-small uk-position-relative uk-flex-stretch">
                     <div class="uk-grid-collapse uk-height-1-1 uk-grid uk-grid-stack" data-uk-grid="">
                         <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#chevron-right'; ?>" width="24" height="24" data-uk-svg></a></div>
-                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="<?php echo JRoute::_("index.php?Itemid=167"); ?>" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#shopping-cart'; ?>" width="24" height="24" data-uk-svg></a></div>
-                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#phone'; ?>" width="24" height="24" data-uk-svg></a></div>
+                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="<?php echo JUri::base(); ?>" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#home'; ?>" width="24" height="24" data-uk-svg></a></div>
+                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="tel:021<?php echo $phones[0]; ?>" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#phone'; ?>" width="22" height="22" data-uk-svg></a></div>
                     </div>
                 </div>
                 <div class="uk-padding-small"><jdoc:include type="modules" name="offcanvas" style="xhtml" /></div>
-            </div>
-            <div class="uk-text-center uk-padding">
-                <a href="<?php echo JURI::base(); ?>" title="<?php echo $sitename; ?>" class="uk-display-block uk- logo" target="_self"><img src="<?php echo JURI::base().'images/sprite.svg#logo'.$languageCode; ?>" width="150" alt="<?php echo $sitename; ?>" data-uk-svg></a>
-                <p class="uk-text-small font uk-text-bold uk-text-white uk-margin-remove"><?php echo $sitename; ?></p>
             </div>
         </div>
     </div>

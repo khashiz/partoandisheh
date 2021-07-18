@@ -15,7 +15,7 @@ $params = $displayData->params;
 <?php if (!empty($images->image_fulltext)) : ?>
 	<?php $imgfloat = empty($images->float_fulltext) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
 	<div class="uk-cover-container uk-overflow-hidden uk-box-shadow-small">
-        <canvas width="400" height="300"></canvas>
+        <canvas width="300" height="400"></canvas>
         <img
 		<?php if ($images->image_fulltext_caption) :
 			echo 'class="caption"' . ' title="' . htmlspecialchars($images->image_fulltext_caption) . '"';
