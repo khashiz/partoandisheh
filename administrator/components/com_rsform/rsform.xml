@@ -7,7 +7,7 @@
 	<authorUrl>www.rsjoomla.com</authorUrl>
 	<copyright>(C) 2007-2021 www.rsjoomla.com</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
-	<version>3.0.3</version>
+	<version>3.0.6</version>
 	<description>COM_RSFORM_INSTALL_DESC</description>
 	<scriptfile>script.rsform.php</scriptfile>
 

@@ -34,7 +34,7 @@ class TableRSForm_Mappings extends JTable
 
 	public function check()
 	{
-		if (!$this->ordering)
+		if (!$this->ordering && !$this->id)
 		{
 			$db = $this->getDbo();
 			$this->ordering = $this->getNextOrder($db->qn('formId') . ' = ' . $db->q($this->formId));

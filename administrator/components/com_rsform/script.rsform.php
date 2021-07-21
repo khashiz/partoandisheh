@@ -1098,10 +1098,9 @@ class com_rsformInstallerScript
 				<p>This is an upgrade - please make sure you update all of your RSForm! Pro Plugins as well, since they have changed to support Joomla! 4 and this version of RSForm! Pro.</p>
 			</div>
 		<?php } ?>
-		<h2>Changelog v3.0.3</h2>
+		<h2>Changelog v3.0.6</h2>
 		<ul class="version-history">
-			<li><span class="version-fixed">Fix</span> Editing an email with 'Text' mode was not possible.</li>
-			<li><span class="version-fixed">Fix</span> 'Check All' checkbox when exporting submissions was not working intuitively.</li>
+			<li><span class="version-fixed">Fix</span> Saving a 'DELETE' mapping was not working.</li>
 		</ul>
 		<a class="btn btn-large btn-lg btn-primary" href="index.php?option=com_rsform">Start using RSForm! Pro</a>
 		<a class="btn btn-secondary" href="https://www.rsjoomla.com/support/documentation/rsform-pro.html" target="_blank">Read the RSForm! Pro User Guide</a>

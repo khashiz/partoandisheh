@@ -58,7 +58,7 @@ class RsformControllerMappings extends RsformController
 	public function save()
 	{
 		$app    = JFactory::getApplication();
-		$data   = $app->input->post->getArray();
+		$data   = $app->input->post->getArray(array(), null, 'raw');
 		$config	= $app->input->get('jform', array(), 'array');
 		$data   = array_merge($data, $config);
 

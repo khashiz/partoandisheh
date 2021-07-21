@@ -14,7 +14,6 @@ class RSFormProFieldUikit3CheckboxGroup extends RSFormProFieldCheckboxGroup
 	protected function buildLabel($data) {
 		// For convenience
 		extract($data);
-
         return '<div class="uk-text-zero"><label class="uk-flex uk-flex-middle" for="'.$this->escape($id).$i.'">'.$this->buildInput($data).'<span class="uk-text-dark uk-text-small">'.$item->label.'</span></label></div>';
 	}
 	

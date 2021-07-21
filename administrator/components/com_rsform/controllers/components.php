@@ -308,6 +308,9 @@ class RsformControllerComponents extends RsformController
 
 		$cids = array_map('intval', $cids);
 
+		// Remove duplicates
+		$cids = array_unique($cids);
+
 		$count = count($cids);
 		foreach ($cids as $cid)
 		{
@@ -359,6 +362,10 @@ class RsformControllerComponents extends RsformController
 		$model 	= $this->getModel('forms');
 
 		$cids = array_map('intval', $cids);
+
+		// Remove duplicates
+		$cids = array_unique($cids);
+
 		$count = count($cids);
 		foreach ($cids as $cid)
 		{
@@ -436,6 +443,11 @@ class RsformControllerComponents extends RsformController
 		$formId = $app->input->getInt('formId');
 		$ajax 	= $app->input->getInt('ajax');
 		$cids 	= $app->input->get('cid', array(), 'array');
+
+		$cids = array_map('intval', $cids);
+
+		// Remove duplicates
+		$cids = array_unique($cids);
 
 		// Escape IDs and implode them so they can be used in the queries below
 		$componentIds = $cids;

@@ -108,16 +108,12 @@ class RsformModelSubmissions extends JModelList
 
 			if ($from = $this->getDateFrom())
 			{
-				$from = JFactory::getDate($from, JFactory::getConfig()->get('offset'))->toSql();
-
-				$query->where($this->_db->qn('s.DateSubmitted') . ' >= ' . $this->_db->q($from));
+				$query->where($this->_db->qn('s.DateSubmitted') . ' >= ' . $this->_db->q(JFactory::getDate($from)->toSql()));
 			}
 
 			if ($to = $this->getDateTo())
 			{
-				$to = JFactory::getDate($to, JFactory::getConfig()->get('offset'))->toSql();
-
-				$query->where($this->_db->qn('s.DateSubmitted') . ' <= ' . $this->_db->q($to));
+				$query->where($this->_db->qn('s.DateSubmitted') . ' <= ' . $this->_db->q(JFactory::getDate($to)->toSql()));
 			}
 		}
 
@@ -495,10 +491,17 @@ class RsformModelSubmissions extends JModelList
 
 	protected function populateState($ordering = null, $direction = null)
 	{
+		// We do this here because it overrides our setUserState() below
+		parent::populateState('DateSubmitted', 'desc');
+
 		$search = $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
+
 		$language = $this->getUserStateFromRequest($this->context . '.filter.language', 'filter_language', '');
 		$this->setState('filter.language', $language);
+
+		$app = JFactory::getApplication();
+		$offset = JFactory::getConfig()->get('offset');
 
 		foreach (array('dateFrom', 'dateTo') as $date)
 		{
@@ -509,11 +512,11 @@ class RsformModelSubmissions extends JModelList
 				// Test if date is valid
 				try
 				{
-					JFactory::getDate($value);
+					$value = JFactory::getDate($value, $offset)->toSql();
 				}
 				catch (Exception $e)
 				{
-					JFactory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
+					$app->enqueueMessage($e->getMessage(), 'warning');
 
 					// Reset the value
 					$value = '';
@@ -521,10 +524,8 @@ class RsformModelSubmissions extends JModelList
 			}
 
 			$this->setState('filter.' . $date, $value);
+			$app->setUserState($this->context . '.filter.' . $date, $value);
 		}
-
-		// List state information.
-		parent::populateState('DateSubmitted', 'desc');
 	}
 	
 	public function getFormId()

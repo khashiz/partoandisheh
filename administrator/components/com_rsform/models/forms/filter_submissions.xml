@@ -63,7 +63,7 @@
                 todaybutton="true"
                 hint="RSFP_FROM"
                 format="%Y-%m-%d %H:%M:%S"
-                onchange="this.form.submit();"
+				filter="USER_UTC"
             />
 
         <field
@@ -73,7 +73,7 @@
                 todaybutton="true"
                 hint="RSFP_TO"
                 format="%Y-%m-%d %H:%M:%S"
-                onchange="this.form.submit();"
+				filter="USER_UTC"
         />
     </fields>
 

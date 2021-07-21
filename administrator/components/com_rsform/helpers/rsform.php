@@ -308,7 +308,7 @@ class RSFormProHelper
 			// Must show small message
 			if ($formparams->showSystemMessage)
 			{
-				$mainframe->enqueueMessage(JText::_('RSFP_THANKYOU_SMALL'), 'success');
+				$mainframe->enqueueMessage(JText::_('RSFP_THANKYOU_SMALL'));
 			}
 
 			if ($form->ScrollToThankYou)
@@ -1207,22 +1207,24 @@ class RSFormProHelper
 		if (!$skip_globals)
 		{
 		    $global_placeholders = array(
-                '{global:username}'     => $user->username,
-                '{global:userid}'       => $user->id,
-                '{global:useremail}'    => $user->email,
-                '{global:fullname}'     => $user->name,
-                '{global:userip}'       => $submission->UserIp,
-                '{global:date_added}'   => RSFormProHelper::getDate($submission->DateSubmitted),
-                '{global:sitename}'     => $config->get('sitename'),
-                '{global:siteurl}'      => JUri::root(),
-                '{global:confirmation}' => $confirmation,
-                '{global:deletion}'     => $deletion,
-                '{global:submissionid}' => $submission->SubmissionId,
-                '{global:submission_id}' => $submission->SubmissionId,
-                '{global:mailfrom}'     => $config->get('mailfrom'),
-                '{global:fromname}'     => $config->get('fromname'),
-                '{global:formid}'       => $formId,
-                '{global:language}'     => $submission->Lang,
+                '{global:username}'     	 => $user->username,
+                '{global:userid}'       	 => $user->id,
+                '{global:useremail}'    	 => $user->email,
+                '{global:fullname}'     	 => $user->name,
+                '{global:userip}'       	 => $submission->UserIp,
+                '{global:date_added}'   	 => RSFormProHelper::getDate($submission->DateSubmitted),
+                '{global:sitename}'     	 => $config->get('sitename'),
+                '{global:siteurl}'      	 => JUri::root(),
+                '{global:confirmation}' 	 => $confirmation,
+                '{global:confirmation_hash}' => $confirmation_hash,
+                '{global:deletion}'     	 => $deletion,
+                '{global:deletion_hash}'     => $submission->SubmissionHash,
+                '{global:submissionid}' 	 => $submission->SubmissionId,
+                '{global:submission_id}' 	 => $submission->SubmissionId,
+                '{global:mailfrom}'     	 => $config->get('mailfrom'),
+                '{global:fromname}'     	 => $config->get('fromname'),
+                '{global:formid}'       	 => $formId,
+                '{global:language}'     	 => $submission->Lang,
             );
 
 		    $placeholders = array_merge($placeholders, array_keys($global_placeholders));
@@ -1255,7 +1257,8 @@ class RSFormProHelper
 			'text'      	=> str_replace($placeholders, $values, $form->UserEmailText),
 			'subject'   	=> str_replace($placeholders, $values, $form->UserEmailSubject),
 			'mode'      	=> $form->UserEmailMode,
-			'files'     	=> array()
+			'files'     	=> array(),
+			'recipientName' => ''
 		);
 
 		// user cc
@@ -1308,7 +1311,8 @@ class RSFormProHelper
 			'text'      	=> str_replace($placeholders, $values, $form->AdminEmailText),
 			'subject'   	=> str_replace($placeholders, $values, $form->AdminEmailSubject),
 			'mode'      	=> $form->AdminEmailMode,
-			'files'     	=> array()
+			'files'     	=> array(),
+			'recipientName' => ''
 		);
 
 		// admin cc
@@ -1345,7 +1349,7 @@ class RSFormProHelper
 		{
 			$recipients = !is_array($userEmail['to']) ? explode(',', $userEmail['to']) : $userEmail['to'];
 
-			RSFormProHelper::sendMail($userEmail['from'], $userEmail['fromName'], $recipients, $userEmail['subject'], $userEmail['text'], $userEmail['mode'], !empty($userEmail['cc']) ? $userEmail['cc'] : null, !empty($userEmail['bcc']) ? $userEmail['bcc'] : null, $userEmail['files'], !empty($userEmail['replyto']) ? $userEmail['replyto'] : '', !empty($userEmail['replytoName']) ? $userEmail['replytoName'] : null);
+			RSFormProHelper::sendMail($userEmail['from'], $userEmail['fromName'], $recipients, $userEmail['subject'], $userEmail['text'], $userEmail['mode'], !empty($userEmail['cc']) ? $userEmail['cc'] : null, !empty($userEmail['bcc']) ? $userEmail['bcc'] : null, $userEmail['files'], !empty($userEmail['replyto']) ? $userEmail['replyto'] : '', !empty($userEmail['replytoName']) ? $userEmail['replytoName'] : null, $userEmail['recipientName']);
 		}
 
 		$mainframe->triggerEvent('onRsformBeforeAdminEmail', array(array('form' => &$form, 'placeholders' => &$placeholders, 'values' => &$values, 'submissionId' => $SubmissionId, 'adminEmail'=>&$adminEmail)));
@@ -1358,7 +1362,7 @@ class RSFormProHelper
 		{
 			$recipients = !is_array($adminEmail['to']) ? explode(',', $adminEmail['to']) : $adminEmail['to'];
 
-			RSFormProHelper::sendMail($adminEmail['from'], $adminEmail['fromName'], $recipients, $adminEmail['subject'], $adminEmail['text'], $adminEmail['mode'], !empty($adminEmail['cc']) ? $adminEmail['cc'] : null, !empty($adminEmail['bcc']) ? $adminEmail['bcc'] : null, $adminEmail['files'], !empty($adminEmail['replyto']) ? $adminEmail['replyto'] : '', !empty($adminEmail['replytoName']) ? $adminEmail['replytoName'] : null);
+			RSFormProHelper::sendMail($adminEmail['from'], $adminEmail['fromName'], $recipients, $adminEmail['subject'], $adminEmail['text'], $adminEmail['mode'], !empty($adminEmail['cc']) ? $adminEmail['cc'] : null, !empty($adminEmail['bcc']) ? $adminEmail['bcc'] : null, $adminEmail['files'], !empty($adminEmail['replyto']) ? $adminEmail['replyto'] : '', !empty($adminEmail['replytoName']) ? $adminEmail['replytoName'] : null, $adminEmail['recipientName']);
 		}
 
 		// Additional emails
@@ -1406,7 +1410,8 @@ class RSFormProHelper
 					'text'      	=> str_replace($placeholders, $values, $email->message),
 					'subject'   	=> str_replace($placeholders, $values, $email->subject),
 					'mode'      	=> $email->mode,
-					'files'     	=> array()
+					'files'     	=> array(),
+					'recipientName' => ''
 				);
 
 				if (isset($additionalEmailUploads, $additionalEmailUploads[$email->id]))
@@ -1440,7 +1445,7 @@ class RSFormProHelper
 				{
 					$recipients = !is_array($additionalEmail['to']) ? explode(',', $additionalEmail['to']) : $additionalEmail['to'];
 
-					RSFormProHelper::sendMail($additionalEmail['from'], $additionalEmail['fromName'], $recipients, $additionalEmail['subject'], $additionalEmail['text'], $additionalEmail['mode'], !empty($additionalEmail['cc']) ? $additionalEmail['cc'] : null, !empty($additionalEmail['bcc']) ? $additionalEmail['bcc'] : null, $additionalEmail['files'], !empty($additionalEmail['replyto']) ? $additionalEmail['replyto'] : '', !empty($additionalEmail['replytoName']) ? $additionalEmail['replytoName'] : null);
+					RSFormProHelper::sendMail($additionalEmail['from'], $additionalEmail['fromName'], $recipients, $additionalEmail['subject'], $additionalEmail['text'], $additionalEmail['mode'], !empty($additionalEmail['cc']) ? $additionalEmail['cc'] : null, !empty($additionalEmail['bcc']) ? $additionalEmail['bcc'] : null, $additionalEmail['files'], !empty($additionalEmail['replyto']) ? $additionalEmail['replyto'] : '', !empty($additionalEmail['replytoName']) ? $additionalEmail['replytoName'] : null, $additionalEmail['recipientName']);
 				}
 			}
 		}
@@ -1876,7 +1881,21 @@ class RSFormProHelper
 			$encType = ' enctype="multipart/form-data"';
 		}
 
-		$token = RSFormProHelper::getConfig('use_csrf') ? JHtml::_('form.token') : '';
+		$useCsrf = RSFormProHelper::getConfig('use_csrf');
+		$token = $useCsrf ? JHtml::_('form.token') : '';
+
+		// Try to keep session alive, using try because Joomla! 4 will trigger exceptions when used in onAfterRender()
+		if ($useCsrf)
+		{
+			try
+			{
+				JHtml::_('behavior.keepalive');
+			}
+			catch (Exception $e)
+			{
+
+			}
+		}
 
 		$formLayout = '<form method="post" '.$CSSId.$CSSClass.$CSSName.$CSSAdditionalAttributes.$encType.' action="'.RSFormProHelper::htmlEscape($u).'">' . $formLayout . $token . '</form>';
 
@@ -2960,7 +2979,7 @@ class RSFormProHelper
 		$value = $db->escape($value);
 	}
 
-	public static function sendMail($from, $fromname, $recipient, $subject, $body, $mode=0, $cc=null, $bcc=null, $attachment=null, $replyto=null, $replytoname=null)
+	public static function sendMail($from, $fromname, $recipient, $subject, $body, $mode = 0, $cc = null, $bcc = null, $attachment = null, $replyto = null, $replytoname = null, $recipientname = '')
 	{
 		try {
 			// Get a JMail instance
@@ -3013,7 +3032,7 @@ class RSFormProHelper
 				}
 			}
 
-			$mail->addRecipient($recipient);
+			$mail->addRecipient($recipient, $recipientname);
 			$mail->addCC($cc);
 			$mail->addBCC($bcc);
 			// If we leave $type = '' then PHPMailer will try to auto-detect the mime type.
@@ -3424,14 +3443,7 @@ class RSFormProHelper
 
 	public static function getRawPost()
 	{
-		if (version_compare(JVERSION, '4.0', '>='))
-		{
-			return JFactory::getApplication()->input->post->getArray();
-		}
-		else
-		{
-			return JFactory::getApplication()->input->post->getArray(array(), null, 'raw');
-		}
+		return JFactory::getApplication()->input->post->getArray(array(), null, 'raw');
 	}
 
 	public static function generateQuickAddGlobal($type = 'display', $justArray = false)
@@ -3452,7 +3464,9 @@ class RSFormProHelper
 					'{global:mailfrom}',
 					'{global:fromname}',
 					'{global:confirmation}',
+					'{global:confirmation_hash}',
 					'{global:deletion}',
+					'{global:deletion_hash}',
 					'{global:submissionid}',
 					'{global:submission_id}',
 					'{global:date_added}',

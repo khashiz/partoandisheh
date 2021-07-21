@@ -14,7 +14,6 @@ class RSFormProFieldUikit3RadioGroup extends RSFormProFieldRadioGroup
 	protected function buildLabel($data) {
 		// For convenience
 		extract($data);
-
         return '<div class="uk-text-zero uk-display-inline-block"><label class="uk-flex uk-flex-middle" for="'.$this->escape($id).$i.'">'.$this->buildInput($data).'<span class="uk-text-dark uk-text-small">&ensp;'.$item->label.'</span></label></div>&emsp;';
 	}
 	

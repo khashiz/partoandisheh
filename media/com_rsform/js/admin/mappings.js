@@ -1,5 +1,17 @@
 Joomla.submitbutton = function(task) {
-	var $inputs = jQuery('#rsfpmappingColumns').find('input[type="text"], textarea');
+	var method = parseInt(jQuery('[name="jform[method]"]').val()),
+		$inputs;
+
+	// Delete
+	if (method === 2)
+	{
+		$inputs = jQuery('#rsfpmappingWhere').find('input[type="text"], textarea');
+	}
+	else
+	{
+		$inputs = jQuery('#rsfpmappingColumns').find('input[type="text"], textarea');
+	}
+
     var hasValues = false;
 
 	$inputs.each(function(){

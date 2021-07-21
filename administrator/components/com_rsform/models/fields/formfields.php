@@ -15,6 +15,8 @@ class JFormFieldFormfields extends JFormFieldList
     {
 		$formId = JFactory::getApplication()->input->getInt('formId');
 
+		$options = array();
+
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select($db->qn('p.PropertyValue'))

@@ -77,7 +77,7 @@ class RsformModelMappings extends JModelAdmin
 	public function save($post)
 	{
 		$row = JTable::getInstance('RSForm_Mappings', 'Table');
-		
+
 		if (!$row->bind($post))
 		{
 			return false;
