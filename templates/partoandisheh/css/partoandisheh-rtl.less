@@ -251,6 +251,32 @@ section{
       }
     }
   }
+  &.quickForm{
+    div{
+      &.wrapper{
+        span{
+          &.logo{
+            left: 50%;
+            top: -35px;
+            width: 70px;
+            height: 70px;
+            background-color: @secondary;
+            .border-radius(100%);
+            .transform(translateX(-50%));
+            .box-shadow(0 2px 8px rgba(0, 0, 0, .08%));
+            svg{
+              circle{
+                fill: @secondary;
+              }
+              path{
+                stroke: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 div{
   &.sideModule{
@@ -499,6 +525,9 @@ footer{
 .uk-radio{
   margin: 0;
 }
+#system-message-container{
+  z-index: 3;
+}
 //Datepicker
 .ui-datepicker{
   background-color: #fff;
@@ -555,6 +584,12 @@ footer{
   }
 }
 //UIKit Overrides
+.uk-alert{
+  &.uk-alert-success{
+    color: #fff;
+    background-color: #32d296;
+  }
+}
 .uk-background-primary{
   background-color: @primary;
 }
