@@ -26,6 +26,6 @@ $total = count($slides['img']);
             <?php } ?>
         <?php } ?>
     </ul>
-    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-next data-uk-slideshow-item="previous"></a>
-    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-previous data-uk-slideshow-item="next"></a>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-<?php echo JFactory::getLanguage()->isRtl() ? 'next' : 'previous'; ?> data-uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-<?php echo JFactory::getLanguage()->isRtl() ? 'previous' : 'next'; ?> data-uk-slideshow-item="next"></a>
 </div>

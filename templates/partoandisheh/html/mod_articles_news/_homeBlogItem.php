@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
                     <div>
                         <dl class="article-info muted uk-margin-small-bottom uk-grid-small uk-grid-divider uk-text-tiny" data-uk-grid>
                             <dd class="published uk-first-column">
-                                <time class="font uk-text-muted" datetime="2021-05-20T18:38:31+00:00" itemprop="datePublished">30 ارديبهشت 1400</time>
+                                <time class="font uk-text-muted" datetime="2021-05-20T18:38:31+00:00" itemprop="datePublished"><?php echo JHtml::date($item->published_up, 'D , j F Y') ?></time>
                             </dd>
                             <dd class="hits">
                                 <meta itemprop="interactionCount" content="UserPageVisits:<?php echo $item->hits; ?>">

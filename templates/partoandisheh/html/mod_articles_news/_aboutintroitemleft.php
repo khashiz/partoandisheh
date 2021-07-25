@@ -23,7 +23,7 @@ defined('_JEXEC') or die;
                 </figure>
             </div>
         <?php endif; ?>
-        <div class="uk-width-expand uk-text-right uk-visible@m">
+        <div class="uk-width-expand uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> uk-visible@m">
             <div class="uk-height-1-1 uk-flex uk-flex-middle">
                 <div class="uk-flex-1">
                     <div class="uk-margin-small-bottom">

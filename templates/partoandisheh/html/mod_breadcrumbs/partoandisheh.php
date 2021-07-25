@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
         <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="uk-flex-center uk-child-width-auto uk-grid-collapse" data-uk-grid>
             <?php if ($params->get('showHere', 1)) : ?>
                 <li class="uk-width-1-1 uk-width-auto@m uk-text-center uk-visible@m">
-                    <span class="font uk-text-light uk-text-small uk-text-muted uk-margin-small-left"><?php echo JText::_('MOD_BREADCRUMBS_HERE'); ?></span>
+                    <span class="font uk-text-light uk-text-small uk-text-muted uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'left' : 'right'; ?>"><?php echo JText::_('MOD_BREADCRUMBS_HERE'); ?></span>
                 </li>
             <?php else : ?>
                 <li class="active">
@@ -52,7 +52,7 @@ defined('_JEXEC') or die;
                             <span itemprop="name" class="font uk-text-small uk-text-dark uk-text-medium"><?php echo $item->name; ?></span>
                         <?php endif; ?>
                         <?php if (($key !== $penult_item_key) || $show_last) : ?>
-                            <span class="divider uk-text-muted uk-display-inline-block uk-margin-small-right uk-margin-small-left"><img src="<?php echo JURI::base().'images/sprite.svg#chevron-left'; ?>" width="16" height="16" data-uk-svg></span>
+                            <span class="divider uk-text-muted uk-display-inline-block uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'left' : 'right'; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#chevron-'; ?><?php echo JFactory::getLanguage()->isRtl() ? 'left' : 'right'; ?>" width="16" height="16" data-uk-svg></span>
                         <?php endif; ?>
                         <meta itemprop="position" content="<?php echo $key + 1; ?>">
                     </li>

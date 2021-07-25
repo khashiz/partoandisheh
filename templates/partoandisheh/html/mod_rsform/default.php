@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
         <div class="uk-position-relative wrapper">
             <span class="uk-position-absolute uk-flex uk-flex-center uk-flex-middle logo"><img src="<?php echo JURI::base().'images/sprite.svg#logo'; ?>" width="50" height="50" data-uk-svg></span>
             <div class="uk-background-muted uk-box-shadow-small uk-padding">
-                <h3 class="uk-text-center uk-text-dark uk-text-bold uk-margin-medium-bottom uk-margin-top font"><?php echo $module->title; ?></h3>
+                <h3 class="uk-text-center uk-text-dark uk-text-bold uk-margin-medium-bottom uk-margin-top font"><?php echo JText::sprintf('QUICKREQUEST'); ?></h3>
                 <?php echo RSFormProHelper::displayForm($formId, true); ?>
             </div>
         </div>

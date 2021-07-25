@@ -30,7 +30,7 @@ $direction = JFactory::getLanguage()->isRtl() ? 'left' : 'right';
 			<?php endif; ?>
 		</a>
 	<?php elseif ($params->get('show_readmore_title', 0) == 0) : ?>
-		<a class="uk-button uk-button-small uk-button-default uk-text-tiny uk-border-rounded uk-box-shadow-small font" href="<?php echo $displayData['link']; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>"><?php echo JText::_('COM_CONTENT_MORE_DETAILS'); ?></a>
+		<a class="uk-button uk-button-small uk-button-default uk-text-tiny uk-border-rounded uk-box-shadow-small uk-text-capitalize font" href="<?php echo $displayData['link']; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>"><?php echo JText::_('COM_CONTENT_MORE_DETAILS'); ?></a>
 	<?php else : ?>
 		<a class="uk-button uk-button-small uk-button-default uk-text-tiny uk-border-rounded uk-box-shadow-small font" href="<?php echo $displayData['link']; ?>" itemprop="url" aria-label="<?php echo JText::_('COM_CONTENT_READ_MORE'); ?> <?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
 			<?php echo JText::_('COM_CONTENT_MORE_DETAILS'); ?>

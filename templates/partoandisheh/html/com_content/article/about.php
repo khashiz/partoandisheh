@@ -46,7 +46,7 @@ $isExpired         = $this->item->publish_down < $currentDate && $this->item->pu
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <div itemprop="articleBody" class="uk-text-right uk-text-dark font"><?php echo $this->item->text; ?></div>
+                <div itemprop="articleBody" class="uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> uk-text-dark font"><?php echo $this->item->text; ?></div>
             </div>
         </div>
 	<?php endif; ?>

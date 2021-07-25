@@ -17,7 +17,11 @@ defined('_JEXEC') or die;
                     <div class="uk-width-2-3 uk-width-large@m uk-border-circle uk-text-center uk-padding uk-box-shadow-small uk-display-inline-block uk-position-relative" data-uk-scrollspy="target: > div; delay: 500;">
                         <div data-uk-scrollspy-class="uk-animation-fade"><?php echo JHTML::_('image', 'images/about.jpg', null, 'class="uk-width-1-1"'); ?></div>
                         <?php $i=1; foreach ($list as $item) : ?>
-                            <?php if ($i % 2 != 0) {$layout = "left";} else {$layout = "right";} ?>
+                            <?php if (JFactory::getLanguage()->isRtl()) { ?>
+                                <?php if ($i % 2 != 0) {$layout = "left";} else {$layout = "right";} ?>
+                            <?php } else { ?>
+                                <?php if ($i % 2 != 0) {$layout = "right";} else {$layout = "left";} ?>
+                            <?php } ?>
                             <div data-uk-scrollspy-class="uk-animation-slide-<?php echo $layout; ?>" class="uk-position-absolute uk-width-auto uk-width-medium@m item-<?php echo $i; ?>"><?php require JModuleHelper::getLayoutPath('mod_articles_news', '_aboutintroitem'.$layout); ?></div>
                         <?php $i++; endforeach; ?>
                     </div>

@@ -53,7 +53,7 @@ $cells = explode("\n", $params->get('cellphone'));
                                 <div class="uk-height-1-1">
                                     <a href="tel:021 <?php echo $phones[0]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1 uk-link-reset" target="_blank" title="">
                                         <span class="icon"><img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg></span>
-                                        <span class="uk-text-medium uk-margin-small-right uk-display-inline-block uk-text-small value font ltr"><?php echo $phones[0]; ?></span>
+                                        <span class="uk-text-medium uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> uk-display-inline-block uk-text-small value font ltr"><?php echo $phones[0]; ?></span>
                                     </a>
                                 </div>
                             <?php } ?>
@@ -61,7 +61,7 @@ $cells = explode("\n", $params->get('cellphone'));
                                 <div class="uk-height-1-1">
                                     <a href="#" class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1 uk-link-reset" target="_blank" title="">
                                         <img src="<?php echo JURI::base().'images/sprite.svg#phone-fa'; ?>" width="18" height="18" data-uk-svg>
-                                        <span class="font uk-text-medium uk-margin-small-right"><?php echo $cells[0]; ?></span>
+                                        <span class="font uk-text-medium uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>"><?php echo $cells[0]; ?></span>
                                     </a>
                                 </div>
                             <?php } ?>
@@ -69,7 +69,7 @@ $cells = explode("\n", $params->get('cellphone'));
                                 <div class="uk-height-1-1">
                                     <a href="mailto:<?php echo $params->get('email'); ?>" class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1 uk-link-reset" target="_blank" title="">
                                         <span class="icon"><img src="<?php echo JURI::base().'images/sprite.svg#envelope'; ?>" width="18" height="18" data-uk-svg></span>
-                                        <span class="uk-text-medium uk-margin-small-right uk-display-inline-block uk-text-small value font ltr"><?php echo $params->get('email'); ?></span>
+                                        <span class="uk-text-medium uk-margin-small-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?> uk-display-inline-block uk-text-small value font ltr"><?php echo $params->get('email'); ?></span>
                                     </a>
                                 </div>
                             <?php } ?>

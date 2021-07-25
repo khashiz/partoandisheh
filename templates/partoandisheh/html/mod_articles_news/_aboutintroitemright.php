@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 ?>
 <div>
     <div class="uk-grid-small" data-uk-grid>
-        <div class="uk-width-expand uk-text-left uk-visible@m">
+        <div class="uk-width-expand uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'left' : 'right'; ?> uk-visible@m">
             <div class="uk-height-1-1 uk-flex uk-flex-middle">
                 <div class="uk-flex-1">
                     <div class="uk-margin-small-bottom">

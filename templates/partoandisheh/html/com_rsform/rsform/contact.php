@@ -31,7 +31,7 @@ $total = count($socialsicons['icon']);
             <div>
                 <div class="uk-child-width-1-1 uk-grid-divider" data-uk-grid>
                     <div>
-                        <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-right@m font"><?php echo JText::sprintf('CONTACTINFO'); ?></h2>
+                        <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>@m font"><?php echo JText::sprintf('CONTACTINFO'); ?></h2>
                         <div>
                             <div>
                                 <div>
@@ -86,7 +86,7 @@ $total = count($socialsicons['icon']);
                         </div>
                     </div>
                     <div>
-                        <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-right@m font"><?php echo JText::sprintf('SOCIALMEDIA'); ?></h2>
+                        <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>@m font"><?php echo JText::sprintf('SOCIALMEDIA'); ?></h2>
                         <div>
                             <div class="uk-grid-small uk-child-width-1-5 uk-child-width-1-5@m uk-flex-center" data-uk-grid>
                                 <?php for($i=0;$i<$total;$i++) { ?>
@@ -99,7 +99,7 @@ $total = count($socialsicons['icon']);
                     </div>
                     <?php if (!empty($params->get('lat')) && !empty($params->get('lng'))) { ?>
                         <div>
-                            <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-right@m uk-hidden@m font"><?php echo JText::sprintf('PATHFINDER'); ?></h2>
+                            <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>@m uk-hidden@m font"><?php echo JText::sprintf('PATHFINDER'); ?></h2>
                             <div class="uk-hidden@m">
                                 <div class="uk-grid-small uk-child-width-1-2" data-uk-grid>
                                     <div><a href="https://waze.com/ul?ll=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>&navigate=yes" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-text-zero" target="_blank"><img src="<?php echo JURI::base().'images/waze-logo.svg' ?>" width="100" alt=""></a></div>
