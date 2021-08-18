@@ -27,6 +27,7 @@
 						<field name="img" type="media" label="TPL_PA_IMAGE" />
 						<field name="title" type="textarea" label="TPL_PA_TITLE" />
 						<field name="text" type="textarea" label="TPL_PA_TEXT" />
+						<field name="menuitem" type="menuitem" label="TPL_PA_LINK" />
 					</fieldset>
 				</field>
 			</fieldset>

@@ -95,7 +95,7 @@ $isExpired         = $this->item->publish_down < $currentDate && $this->item->pu
                     <div class="uk-flex uk-flex-center uk-margin-bottom"><?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?></div>
         <?php endif; ?>
 
-	<div itemprop="articleBody" class="uk-text-justify uk-text-dark font"><?php echo $this->item->text; ?></div>
+	<div itemprop="articleBody" class="uk-text-justify uk-text-dark font"><?php echo $this->item->fulltext; ?></div>
 
 	<?php if ($info == 1 || $info == 2) : ?>
 		<?php if ($useDefList) : ?>

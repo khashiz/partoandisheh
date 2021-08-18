@@ -353,6 +353,88 @@ div{
     }
   }
 }
+div{
+  &.sideModule{
+    h3{
+      &.head{
+        &:after{
+          content: "";
+          display: block;
+          width: 30px;
+          height: 2px;
+          background-color: rgba(255, 255, 255, .7);
+          margin-top: 5px;
+        }
+      }
+      + div{
+        position: relative;
+      }
+    }
+    &.hasCover{
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      &.primaryCover{
+        &:before{
+          background-color: fade(@primary, 80%);
+        }
+      }
+    }
+    &.sideServices{
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          margin-top: 1px;
+          &:not(:first-child){}
+          a{
+            display: block;
+            padding: 15px 25px 15px;
+            color: #222;
+            text-decoration: none;
+            position: relative;
+            font-size: 14px;
+            .font;
+            .transition();
+          }
+          &:hover,
+          &.current{
+            a{
+              background-color: @secondary;
+              color: #fff;
+              &:after{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 8px;
+                background-color: darken(@secondary, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.sideConsult{
+      background: url("../../../images/psychologist.jpg") center;
+      background-size: cover;
+    }
+  }
+  &[itemprop="articleBody"]{
+    h1,h2,h3,h4,h5,h6{
+      .font;
+      font-weight: bold;
+      color: @secondary;
+    }
+  }
+}
 footer{
   &:before{
     content: '';

@@ -18,7 +18,7 @@ $layout   = $app->input->getCmd('layout', '');
 $task     = $app->input->getCmd('task', '');
 $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->get('sitename');
-$netparsi = '<a href="https://netparsi.com" target="_blank">'.JTEXT::_('NETPARSI').'</a>';
+$netparsi = '<a href="https://netparsi.com" target="_blank" rel="noreferrer">'.JTEXT::_('NETPARSI').'</a>';
 $lang = JFactory::getLanguage();
 $languages = JLanguageHelper::getLanguages('lang_code');
 $languageCode = $languages[ $lang->getTag() ]->sef;
@@ -37,7 +37,7 @@ $cells = explode("\n", $params->get('cellphone'));
 <!DOCTYPE html>
 <html lang="<?php echo JFactory::getLanguage()->getTag(); ?>" dir="<?php echo $this->direction; ?>">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="<?php echo $params->get('presetcolor'); ?>">
     <jdoc:include type="head" />
 </head>
@@ -91,7 +91,7 @@ $cells = explode("\n", $params->get('cellphone'));
                                 <?php for($i=0;$i<$total;$i++) { ?>
                                     <?php if ($socialsicons['link'][$i] != '') { ?>
                                         <li>
-                                            <a href="<?php echo $socialsicons['link'][$i]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-padding-remove" target="_blank" title="<?php echo $socialsicons['title'][$i]; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$i] ?>" width="18" height="18" data-uk-svg></a>
+                                            <a href="<?php echo $socialsicons['link'][$i]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-padding-remove" target="_blank" rel="noreferrer" title="<?php echo $socialsicons['title'][$i]; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$i] ?>" width="18" height="18" data-uk-svg></a>
                                         </li>
                                     <?php } ?>
                                 <?php } ?>
@@ -138,9 +138,9 @@ $cells = explode("\n", $params->get('cellphone'));
         </div>
     </div>
 </header>
-<?php if ($pageparams->get('show_page_heading') && $pageclass != 'home') : ?>
+<?php if ($pageparams->get('show_page_heading', 1) && $pageclass != 'home') : ?>
     <section class="uk-background-center uk-background-cover uk-padding-remove-horizontal pageHeading uk-background-<?php echo $pageparams->get('bg', 'primary') ?>" <?php if ($pageparams->get('bg') == 'image' && !empty($pageparams->get('bgimg'))) echo 'style="background-image: url('.$pageparams->get('bgimg').')"'; ?>>
-        <div class="uk-position-relative <?php echo $pageparams->get('height', 'uk-padding') ?>">
+        <div class="uk-position-relative <?php echo $pageparams->get('height', 'uk-padding-large') ?>">
             <?php if ($pageparams->get('bg') == 'image' && !empty($pageparams->get('bgimg'))) { ?>
                 <div class="uk-overlay-primary uk-position-cover"></div>
             <?php } ?>
@@ -212,7 +212,7 @@ $cells = explode("\n", $params->get('cellphone'));
                                     <?php for($j=0;$j<$total;$j++) { ?>
                                         <?php if ($socialsicons['link'][$j] != '') { ?>
                                             <li>
-                                                <a href="<?php echo $socialsicons['link'][$j]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-text-white uk-padding-remove" target="_blank" title="<?php echo $socialsicons['title'][$j]; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$j] ?>" width="18" height="18" data-uk-svg></a>
+                                                <a href="<?php echo $socialsicons['link'][$j]; ?>" class="uk-flex uk-flex-middle uk-flex-center uk-text-white uk-padding-remove" target="_blank" rel="noreferrer" title="<?php echo $socialsicons['title'][$j]; ?>"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$j] ?>" width="18" height="18" data-uk-svg></a>
                                             </li>
                                         <?php } ?>
                                     <?php } ?>
@@ -235,9 +235,9 @@ $cells = explode("\n", $params->get('cellphone'));
             <div class="uk-width-expand">
                 <div class="offcanvasTop uk-box-shadow-small uk-position-relative uk-flex-stretch">
                     <div class="uk-grid-collapse uk-height-1-1 uk-grid uk-grid-stack" data-uk-grid="">
-                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#chevron-right'; ?>" width="24" height="24" data-uk-svg></a></div>
-                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="<?php echo JUri::base(); ?>" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#home'; ?>" width="24" height="24" data-uk-svg></a></div>
+                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a onclick="UIkit.offcanvas('#hamMenu').hide();" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#chevron-'; ?><?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>" width="24" height="24" data-uk-svg></a></div>
                         <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><a href="tel:021<?php echo $phones[0]; ?>" class="uk-flex uk-flex-center uk-flex-middle uk-height-1-1 uk-width-1-1 uk-margin-remove"><img src="<?php echo JURI::base().'images/sprite.svg#phone'; ?>" width="22" height="22" data-uk-svg></a></div>
+                        <div class="uk-flex uk-width-1-3 uk-flex uk-flex-center uk-flex-middle"><jdoc:include type="modules" name="moblang" style="xhtml" /></div>
                     </div>
                 </div>
                 <div class="uk-padding-small"><jdoc:include type="modules" name="offcanvas" style="xhtml" /></div>

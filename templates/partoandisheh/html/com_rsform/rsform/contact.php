@@ -91,7 +91,7 @@ $total = count($socialsicons['icon']);
                             <div class="uk-grid-small uk-child-width-1-5 uk-child-width-1-5@m uk-flex-center" data-uk-grid>
                                 <?php for($i=0;$i<$total;$i++) { ?>
                                     <?php if ($socialsicons['link'][$i] != '') { ?>
-                                        <div><a href="<?php echo $socialsicons['link'][$i]; ?>" title="<?php echo $socialsicons['title'][$i]; ?>" class="uk-width-1-1 uk-padding-small uk-button uk-border-rounded uk-text-zero uk-line-height-zero uk-box-shadow-small uk-button-<?php echo $socialsicons['icon'][$i]; ?>" target="_blank"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$i]; ?>" alt="<?php echo $socialsicons['title'][$i]; ?>" width="20" height="20" data-uk-svg></a></div>
+                                        <div><a href="<?php echo $socialsicons['link'][$i]; ?>" title="<?php echo $socialsicons['title'][$i]; ?>" class="uk-width-1-1 uk-padding-small uk-button uk-border-rounded uk-text-zero uk-line-height-zero uk-box-shadow-small uk-button-<?php echo $socialsicons['icon'][$i]; ?>" rel="noreferrer" target="_blank"><img src="<?php echo JURI::base().'images/sprite.svg#'.$socialsicons['icon'][$i]; ?>" alt="<?php echo $socialsicons['title'][$i]; ?>" width="20" height="20" data-uk-svg></a></div>
                                     <?php } ?>
                                 <?php } ?>
                             </div>
@@ -102,8 +102,8 @@ $total = count($socialsicons['icon']);
                             <h2 class="uk-margin-bottom uk-text-accent uk-text-bold uk-h4 uk-text-center uk-text-<?php echo JFactory::getLanguage()->isRtl() ? 'right' : 'left'; ?>@m uk-hidden@m font"><?php echo JText::sprintf('PATHFINDER'); ?></h2>
                             <div class="uk-hidden@m">
                                 <div class="uk-grid-small uk-child-width-1-2" data-uk-grid>
-                                    <div><a href="https://waze.com/ul?ll=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>&navigate=yes" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-text-zero" target="_blank"><img src="<?php echo JURI::base().'images/waze-logo.svg' ?>" width="100" alt=""></a></div>
-                                    <div><a href="http://maps.google.com/maps?daddr=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-text-zero" target="_blank"><img src="<?php echo JURI::base().'images/google-maps-logo.svg'; ?>" width="100" alt=""></a></div>
+                                    <div><a href="https://waze.com/ul?ll=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>&navigate=yes" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-text-zero" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/waze-logo.svg' ?>" width="100" alt=""></a></div>
+                                    <div><a href="http://maps.google.com/maps?daddr=<?php echo $params->get('lat'); ?>,<?php echo $params->get('lng'); ?>" class="uk-width-1-1 uk-padding-small uk-button uk-button-default uk-border-rounded uk-text-zero" target="_blank" rel="noreferrer"><img src="<?php echo JURI::base().'images/google-maps-logo.svg'; ?>" width="100" alt=""></a></div>
                                 </div>
                             </div>
                             <div class="uk-visible@m" data-uk-lightbox>
